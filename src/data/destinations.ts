@@ -141,7 +141,7 @@ export const DESTINATIONS: Record<string, DestinationData> = {
 			},
 			{
 				name: 'National Park Service - Eastern State',
-				url: 'https://www.nps.gov/places/eastern-state-penitentiary.htm',
+				url: 'https://easternstate.org/',
 				type: 'government',
 				description: 'National Historic Landmark designation and preservation information.',
 			},
@@ -725,7 +725,7 @@ export const DESTINATIONS: Record<string, DestinationData> = {
 			},
 			{
 				name: 'Peabody Essex Museum - Salem Witch Trials',
-				url: 'https://www.pem.org/visit/library/phillips-library/salem-witch-trials',
+				url: 'https://www.pem.org/',
 				type: 'museum',
 				description: 'Houses original court documents and artifacts from the 1692 trials.',
 			},
