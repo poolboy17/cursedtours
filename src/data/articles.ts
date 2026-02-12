@@ -47,6 +47,12 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
     description: 'Exploring the real history behind Bram Stoker\'s Dracula, Vlad the Impaler, vampire mythology, and the gothic literary tradition.',
     hubPage: '/destinations/draculas-castle/',
   },
+  'chicago-haunted-history': {
+    slug: 'chicago-haunted-history',
+    name: 'Chicago Haunted History',
+    description: 'The dark history behind Chicago\'s hauntings—from the Great Fire and H.H. Holmes to Resurrection Mary, gangster ghosts, and the city\'s most haunted landmarks.',
+    hubPage: '/chicago-ghost-tours/',
+  },
   'tour-planning': {
     slug: 'tour-planning',
     name: 'Tour Planning',
