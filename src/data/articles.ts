@@ -64,6 +64,96 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
     name: 'Tour Planning',
     description: 'Practical guides to help you choose, prepare for, and get the most out of ghost tours anywhere in the world.',
   },
+  'savannah-haunted-history': {
+    slug: 'savannah-haunted-history',
+    name: 'Savannah Haunted History',
+    description: 'The haunted history of Savannah—from Bonaventure Cemetery and colonial-era ghosts to the most documented hauntings in America\'s most haunted city.',
+    hubPage: '/savannah-ghost-tours/',
+  },
+  'charleston-haunted-history': {
+    slug: 'charleston-haunted-history',
+    name: 'Charleston Haunted History',
+    description: 'Charleston\'s dark past—from the Old City Jail and Civil War ghosts to Lowcountry hoodoo, pirate legends, and the Holy City\'s most haunted landmarks.',
+    hubPage: '/charleston-ghost-tours/',
+  },
+  'boston-haunted-history': {
+    slug: 'boston-haunted-history',
+    name: 'Boston Haunted History',
+    description: 'Boston\'s haunted colonial past—from the Boston Massacre and revolutionary ghosts to the Boston Strangler, Copp\'s Hill, and New England\'s darkest history.',
+    hubPage: '/boston-ghost-tours/',
+  },
+  'edinburgh-haunted-history': {
+    slug: 'edinburgh-haunted-history',
+    name: 'Edinburgh Haunted History',
+    description: 'Edinburgh\'s haunted underground—from the Vaults and Mary King\'s Close to Burke & Hare, Greyfriars Kirkyard, and Scotland\'s darkest chapters.',
+    hubPage: '/edinburgh-ghost-tours/',
+  },
+  'london-haunted-history': {
+    slug: 'london-haunted-history',
+    name: 'London Haunted History',
+    description: 'London\'s haunted history—from Jack the Ripper and the Tower of London to plague pits, Highgate Cemetery, and 2,000 years of documented ghosts.',
+    hubPage: '/london-ghost-tours/',
+  },
+  'new-york-haunted-history': {
+    slug: 'new-york-haunted-history',
+    name: 'New York Haunted History',
+    description: 'New York City\'s haunted past—from the Five Points and Greenwich Village hauntings to Gilded Age murders, subway ghosts, and the Merchant\'s House Museum.',
+    hubPage: '/new-york-ghost-tours/',
+  },
+  'st-augustine-haunted-history': {
+    slug: 'st-augustine-haunted-history',
+    name: 'St. Augustine Haunted History',
+    description: 'America\'s oldest city and its ghosts—from Castillo de San Marcos and the St. Augustine Lighthouse to Spanish colonial hauntings and 450 years of dark history.',
+    hubPage: '/st-augustine-ghost-tours/',
+  },
+  'san-antonio-haunted-history': {
+    slug: 'san-antonio-haunted-history',
+    name: 'San Antonio Haunted History',
+    description: 'San Antonio\'s haunted past—from the ghosts of the Alamo and Spanish missions to the Menger Hotel, Railroad Tracks legend, and Tejano folklore.',
+    hubPage: '/san-antonio-ghost-tours/',
+  },
+  'rome-haunted-history': {
+    slug: 'rome-haunted-history',
+    name: 'Rome Haunted History',
+    description: 'Rome\'s haunted history—from the Colosseum and catacombs to the Capuchin Crypt, Nero\'s ghost, and 2,700 years of documented hauntings in the Eternal City.',
+    hubPage: '/rome-ghost-tours/',
+  },
+  'paris-haunted-history': {
+    slug: 'paris-haunted-history',
+    name: 'Paris Haunted History',
+    description: 'The dark side of Paris—from the Catacombs and Père Lachaise to French Revolution ghosts, the Phantom of the Opera, and the city\'s most haunted landmarks.',
+    hubPage: '/paris-ghost-tours/',
+  },
+  'dublin-haunted-history': {
+    slug: 'dublin-haunted-history',
+    name: 'Dublin Haunted History',
+    description: 'Dublin\'s haunted history—from Kilmainham Gaol and the Hellfire Club to Viking Dublin, Bram Stoker\'s inspiration, and Ireland\'s most documented ghosts.',
+    hubPage: '/dublin-ghost-tours/',
+  },
+  'washington-dc-haunted-history': {
+    slug: 'washington-dc-haunted-history',
+    name: 'Washington DC Haunted History',
+    description: 'The haunted capital—from Lincoln\'s ghost in the White House and Capitol Hill hauntings to Georgetown\'s Exorcist steps and the Octagon House.',
+    hubPage: '/washington-dc-ghost-tours/',
+  },
+  'nashville-haunted-history': {
+    slug: 'nashville-haunted-history',
+    name: 'Nashville Haunted History',
+    description: 'Nashville\'s haunted side—from the Ryman Auditorium and Printers Alley to the Bell Witch, Two Rivers Mansion, and Tennessee\'s darkest legends.',
+    hubPage: '/nashville-ghost-tours/',
+  },
+  'austin-haunted-history': {
+    slug: 'austin-haunted-history',
+    name: 'Austin Haunted History',
+    description: 'Austin\'s dark history—from the Driskill Hotel and Servant Girl Annihilator to Moonlight Towers, Littlefield House, and Sixth Street hauntings.',
+    hubPage: '/austin-ghost-tours/',
+  },
+  'denver-haunted-history': {
+    slug: 'denver-haunted-history',
+    name: 'Denver Haunted History',
+    description: 'Denver\'s haunted history—from Cheesman Park\'s disturbed graves and the Brown Palace to Molly Brown House, the Lumber Baron Inn, and frontier-era ghosts.',
+    hubPage: '/denver-ghost-tours/',
+  },
 };
 
 let _cache: Article[] | null = null;

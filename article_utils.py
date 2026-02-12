@@ -46,6 +46,21 @@ CATEGORY_HUBS = {
     'chicago-haunted-history': '/chicago-ghost-tours/',
     'dracula-gothic-literature': '/destinations/draculas-castle/',
     'tour-planning': None,
+    'savannah-haunted-history': '/savannah-ghost-tours/',
+    'charleston-haunted-history': '/charleston-ghost-tours/',
+    'boston-haunted-history': '/boston-ghost-tours/',
+    'edinburgh-haunted-history': '/edinburgh-ghost-tours/',
+    'london-haunted-history': '/london-ghost-tours/',
+    'new-york-haunted-history': '/new-york-ghost-tours/',
+    'st-augustine-haunted-history': '/st-augustine-ghost-tours/',
+    'san-antonio-haunted-history': '/san-antonio-ghost-tours/',
+    'rome-haunted-history': '/rome-ghost-tours/',
+    'paris-haunted-history': '/paris-ghost-tours/',
+    'dublin-haunted-history': '/dublin-ghost-tours/',
+    'washington-dc-haunted-history': '/washington-dc-ghost-tours/',
+    'nashville-haunted-history': '/nashville-ghost-tours/',
+    'austin-haunted-history': '/austin-ghost-tours/',
+    'denver-haunted-history': '/denver-ghost-tours/',
 }
 
 # Mojibake fix map (UTF-8 bytes misinterpreted as Windows-1252)
@@ -416,6 +431,21 @@ HUB_LABELS = {
     '/new-orleans-ghost-tours/': 'New Orleans Ghost Tours Hub',
     '/chicago-ghost-tours/': 'Chicago Ghost Tours Hub',
     '/destinations/draculas-castle/': "Dracula's Castle",
+    '/savannah-ghost-tours/': 'Savannah Ghost Tours Hub',
+    '/charleston-ghost-tours/': 'Charleston Ghost Tours Hub',
+    '/boston-ghost-tours/': 'Boston Ghost Tours Hub',
+    '/edinburgh-ghost-tours/': 'Edinburgh Ghost Tours Hub',
+    '/london-ghost-tours/': 'London Ghost Tours Hub',
+    '/new-york-ghost-tours/': 'New York Ghost Tours Hub',
+    '/st-augustine-ghost-tours/': 'St. Augustine Ghost Tours Hub',
+    '/san-antonio-ghost-tours/': 'San Antonio Ghost Tours Hub',
+    '/rome-ghost-tours/': 'Rome Ghost Tours Hub',
+    '/paris-ghost-tours/': 'Paris Ghost Tours Hub',
+    '/dublin-ghost-tours/': 'Dublin Ghost Tours Hub',
+    '/washington-dc-ghost-tours/': 'Washington DC Ghost Tours Hub',
+    '/nashville-ghost-tours/': 'Nashville Ghost Tours Hub',
+    '/austin-ghost-tours/': 'Austin Ghost Tours Hub',
+    '/denver-ghost-tours/': 'Denver Ghost Tours Hub',
 }
 
 
