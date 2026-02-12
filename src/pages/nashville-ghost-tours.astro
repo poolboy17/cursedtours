@@ -1,0 +1,203 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  { id: 'broadway', icon: '🎵', label: 'Broadway' },
+  { id: 'civil-war', icon: '⚔️', label: 'Civil War' },
+  { id: 'belle-meade', icon: '🏛️', label: 'Plantations' },
+  { id: 'printers-alley', icon: '🌙', label: 'Printers Alley' },
+  { id: 'capitol', icon: '🏛️', label: 'State Capitol' },
+];
+
+const faqs = [
+  {
+    question: 'What is the most haunted place in Nashville?',
+    answer: 'The Ryman Auditorium, the "Mother Church of Country Music," is widely considered Nashville\'s most haunted building. The former Union Gospel Tabernacle, built in 1892, has generated reports from performers and staff including the apparition of Captain Tom Ryman, unexplained footsteps in the balcony, and cold spots in the backstage area.'
+  },
+  {
+    question: 'Was Nashville a Civil War battlefield?',
+    answer: 'Yes. The Battle of Nashville on December 15-16, 1864, was one of the most decisive Union victories of the war, effectively destroying the Confederate Army of Tennessee. Over 6,000 casualties occurred across two days of fighting. Fort Negley, the largest inland stone fortification built during the Civil War, was constructed by enslaved people and African American laborers, many of whom died during construction.'
+  },
+  {
+    question: 'Can you visit the Bell Witch Cave?',
+    answer: 'The Bell Witch Cave in Adams, Tennessee, is approximately 60 miles northwest of Nashville. The cave is on private property and is open seasonally for tours. The Bell Witch haunting of 1817-1821 is one of the most documented cases of paranormal activity in American history, reportedly witnessed by hundreds of people including Andrew Jackson.'
+  },
+  {
+    question: 'When do Nashville ghost tours operate?',
+    answer: 'Tours operate year-round, with most departures between 7:00 and 9:00 PM. October is peak season with additional offerings. Downtown walking tours cover approximately 1-1.5 miles over 90 minutes. Some companies offer combination tours that include bus transportation to sites outside the downtown core.'
+  },
+];
+---
+
+<Layout
+  title="Nashville Ghost Tours: Civil War & Honky-Tonks | Cursed Tours"
+  description="Nashville ghost tours covering the Ryman Auditorium, Civil War battlefields, Printers Alley, and Tennessee's most haunted locations."
+  canonical="https://cursedtours.com/nashville-ghost-tours/"
+>
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+    <div class="container relative z-10 px-4 mx-auto max-w-7xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8]">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li class="text-gray-300 font-medium">Nashville Ghost Tours</li>
+        </ol>
+      </nav>
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Nashville Ghost Tours</h1>
+        <p class="text-xl md:text-2xl text-[#a89bb8] italic">"Ghosts of Music City"</p>
+      </div>
+      <nav class="overflow-x-auto pb-2">
+        <div class="flex gap-2 md:gap-3 min-w-max md:justify-center">
+          {categories.map((cat) => (
+            <a href={`#${cat.id}`} class="inline-flex items-center gap-2 px-3 py-2 md:px-4 md:py-2.5 rounded-full bg-white/5 border border-white/10 hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300">
+              <span class="text-lg md:text-xl">{cat.icon}</span>
+              <span class="text-xs md:text-sm text-gray-300">{cat.label}</span>
+            </a>
+          ))}
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          Nashville's neon-lit honky-tonks on Lower Broadway sit atop one of the bloodiest chapters of the Civil War. The Battle of Nashville in December 1864 killed or wounded over 6,000 soldiers across two days. Fort Negley, built by enslaved people and free Black laborers to defend the Union-occupied city, saw hundreds of its builders die from disease, exhaustion, and exposure during construction. The city that became "Music City" was first a garrison, a hospital, and a graveyard.
+        </p>
+        <p>
+          Tennessee's supernatural heritage extends beyond Nashville to one of America's most documented paranormal cases: the Bell Witch of Adams, Tennessee. Between 1817 and 1821, the Bell family experienced phenomena witnessed by hundreds of people, including future President Andrew Jackson. The entity reportedly communicated verbally, displayed knowledge of distant events, and caused the death of John Bell Sr.—the only case in American history where a spirit is officially credited with killing someone.
+        </p>
+        <p>
+          Nashville's ghost tours combine the city's music industry mystique with its deeper and darker history—Civil War violence, the 1998 tornado that cut a 16-mile path through the city, and the documented hauntings of buildings that have served as tabernacles, theaters, and taverns across three centuries.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why Nashville Is Haunted</h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          Nashville fell to Union forces in February 1862, making it one of the first Confederate state capitals to be occupied. For the next three years, the city functioned as a military headquarters, supply depot, and hospital center. Over 20 buildings were converted into hospitals, and the dead from battlefields across middle Tennessee were brought to Nashville for treatment or burial. The National Cemetery, established in 1867, contains over 16,000 Union graves.
+        </p>
+        <p>
+          The Battle of Nashville on December 15-16, 1864, pitted 55,000 Union troops against 30,000 Confederates under General John Bell Hood. The battle destroyed the Confederate Army of Tennessee as an effective fighting force. Fighting ranged across what are now residential neighborhoods, parks, and commercial areas. Human remains from the battle continue to surface during construction projects.
+        </p>
+        <p>
+          Fort Negley, constructed in 1862 on St. Cloud Hill, was the largest inland stone fortification built during the Civil War. The fort was built primarily by impressed enslaved people, free Black laborers, and Union soldiers. Conditions were brutal—over 600 laborers are estimated to have died during construction. The fort fell into disrepair after the war and was partially restored as a public park, though its full history was not officially acknowledged until the 21st century.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="broadway" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🎵</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Broadway & The Ryman</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          The Ryman Auditorium, built in 1892 as the Union Gospel Tabernacle by riverboat captain Tom Ryman after a religious conversion, became the home of the Grand Ole Opry from 1943 to 1974. Captain Ryman's ghost is the most frequently reported—seen in the balcony, in the seats, and backstage. Performers including Hank Williams, Johnny Cash, and Patsy Cline played the Ryman before their deaths, and unexplained phenomena backstage have been reported by modern performers and crew.
+        </p>
+        <p>
+          Lower Broadway's honky-tonks occupy buildings dating to the late 19th and early 20th centuries. Tootsie's Orchid Lounge, the famous bar behind the Ryman, has operated since 1960 and served as an unofficial green room for Opry performers. The building's multiple levels and back-alley entrance create an atmosphere that ghost tours use to contrast the neon exterior with the darker history of the structures themselves.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="civil-war" class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">⚔️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Civil War Sites</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          The Battle of Nashville encompassed an area now covered by residential neighborhoods, shopping centers, and parks. Shy's Hill, where some of the heaviest fighting occurred, is partially preserved as a small park. The Travelers Rest plantation house, used as Confederate headquarters during the battle, is open as a museum and has generated reports of unexplained phenomena since the 19th century.
+        </p>
+        <p>
+          Fort Negley Park, reopened after extensive archaeological work and historical research, now includes interpretive markers that acknowledge the enslaved and free Black laborers who built the fortification. The park's elevated position provides views of downtown Nashville and the surrounding terrain, helping visitors understand the strategic significance of the site.
+        </p>
+        <p>
+          The Tennessee State Museum, located in downtown Nashville, contains extensive Civil War collections including artifacts from the Battle of Nashville, Fort Negley, and the occupation years. Ghost tours that cover Civil War history often recommend the museum as a daytime complement to their evening programming.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="printers-alley" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🌙</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Printers Alley</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Printers Alley, a narrow lane between Third and Fourth Avenues, was Nashville's red-light district and nightlife center from the Prohibition era through the 1980s. Named for the printing presses that once operated in its buildings, the alley transitioned to nightclubs, bars, and adult entertainment venues during the 20th century. The alley's enclosed, dimly lit atmosphere persists today, though its businesses have largely transitioned to mainstream entertainment.
+        </p>
+        <p>
+          The alley's history includes Prohibition-era speakeasies, organized crime activity, and at least one unsolved murder—David "Skull" Schulman, a nightclub owner, was shot in 1998 in circumstances that remain unclear. The buildings along the alley retain their 19th-century facades and interior configurations, creating a streetscape that has changed less than almost any other in Nashville.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="capitol" class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏛️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Tennessee State Capitol</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          The Tennessee State Capitol, completed in 1859, was designed by architect William Strickland, who died before the building was finished and was entombed within its walls—a request honored by the state legislature. His tomb is located in the northeast wall of the building. His ghost has reportedly been seen in the corridors and chambers, making the Capitol unusual among government buildings in that its architect is literally part of the structure.
+        </p>
+        <p>
+          The Capitol grounds include the tomb of President James K. Polk and his wife, relocated to the site in 1893. The building served as a Union military headquarters during the Civil War, and bullet damage from the Battle of Nashville is visible on the exterior walls. Ghost tours pass the Capitol on routes that connect it to the nearby War Memorial Building and the surrounding legislative district.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-white mb-2">{faq.question}</h3>
+            <p class="text-[#a89bb8]">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510] border-t border-[#3d2a4d]">
+    <div class="container px-4 mx-auto max-w-4xl text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Explore More Haunted Cities</h2>
+      <p class="text-[#a89bb8] mb-6">Discover ghost tours in other historic cities.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/savannah-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">Savannah</a>
+        <a href="/charleston-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Charleston</a>
+        <a href="/new-orleans-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">New Orleans</a>
+      </div>
+    </div>
+  </section>
+</Layout>

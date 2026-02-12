@@ -1,0 +1,159 @@
+---
+// Base Layout — replaces Next.js _app.tsx + _document.tsx
+import '@/styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+  structuredData?: object | object[];
+}
+
+const {
+  title,
+  description = 'Discover the most haunted ghost tours worldwide. Book spine-chilling walking tours, paranormal investigations, and haunted pub crawls in cities across the US and Europe.',
+  canonical,
+  ogImage = '/images/og-default.jpg',
+  ogType = 'website',
+  noindex = false,
+  structuredData,
+} = Astro.props;
+
+const siteUrl = 'https://cursedtours.com';
+const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
+const fullTitle = title.includes('Cursed Tours') ? title : `${title} | Cursed Tours`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta -->
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`} />
+    <meta property="og:site_name" content="Cursed Tours" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Search Console verification (copy from current _document.tsx) -->
+    <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
+
+    <!-- Structured Data -->
+    {structuredData && (
+      Array.isArray(structuredData)
+        ? structuredData.map((sd) => (
+            <script type="application/ld+json" set:html={JSON.stringify(sd)} />
+          ))
+        : <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    )}
+  </head>
+
+  <body class="bg-dark-950 text-dark-100 min-h-screen flex flex-col">
+    <header>
+      <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="/" class="text-2xl font-heading font-bold text-white hover:text-cursed-400 transition-colors">
+          Cursed Tours
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="/destinations/" class="text-dark-300 hover:text-white transition-colors">Destinations</a>
+          <a href="/experiences/" class="text-dark-300 hover:text-white transition-colors">Experiences</a>
+          <a href="/articles/" class="text-dark-300 hover:text-white transition-colors">Articles</a>
+          <a href="/guides/" class="text-dark-300 hover:text-white transition-colors">Guides</a>
+          <a href="/find-tours/" class="text-dark-300 hover:text-white transition-colors">Find Tours</a>
+        </div>
+        <!-- Mobile menu button — can be a React island if needed -->
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden text-dark-300 hover:text-white"
+          aria-label="Toggle menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </nav>
+      <!-- Mobile menu dropdown -->
+      <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2">
+        <a href="/destinations/" class="block text-dark-300 hover:text-white py-1">Destinations</a>
+        <a href="/experiences/" class="block text-dark-300 hover:text-white py-1">Experiences</a>
+        <a href="/articles/" class="block text-dark-300 hover:text-white py-1">Articles</a>
+        <a href="/guides/" class="block text-dark-300 hover:text-white py-1">Guides</a>
+        <a href="/find-tours/" class="block text-dark-300 hover:text-white py-1">Find Tours</a>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="bg-dark-900 border-t border-dark-800 mt-16">
+      <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="font-heading text-lg font-bold text-white mb-4">Cursed Tours</h3>
+            <p class="text-dark-400 text-sm">Discover haunted history through expert-led ghost tours in cities worldwide.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-white mb-3">Top Cities</h4>
+            <ul class="space-y-2 text-sm text-dark-400">
+              <li><a href="/new-orleans-ghost-tours/" class="hover:text-white">New Orleans</a></li>
+              <li><a href="/savannah-ghost-tours/" class="hover:text-white">Savannah</a></li>
+              <li><a href="/salem-ghost-tours/" class="hover:text-white">Salem</a></li>
+              <li><a href="/charleston-ghost-tours/" class="hover:text-white">Charleston</a></li>
+              <li><a href="/edinburgh-ghost-tours/" class="hover:text-white">Edinburgh</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-white mb-3">Explore</h4>
+            <ul class="space-y-2 text-sm text-dark-400">
+              <li><a href="/destinations/" class="hover:text-white">Destinations</a></li>
+              <li><a href="/experiences/" class="hover:text-white">Experiences</a></li>
+              <li><a href="/articles/" class="hover:text-white">Articles</a></li>
+              <li><a href="/guides/" class="hover:text-white">Guides</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-white mb-3">Company</h4>
+            <ul class="space-y-2 text-sm text-dark-400">
+              <li><a href="/contact/" class="hover:text-white">Contact</a></li>
+              <li><a href="/find-tours/" class="hover:text-white">Find Tours</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-dark-800 text-center text-dark-500 text-sm">
+          <p>&copy; {new Date().getFullYear()} Cursed Tours. All rights reserved.</p>
+          <p class="mt-1">Tours provided by our partners. We may earn a commission on bookings.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile menu toggle script — zero JS framework needed -->
+    <script>
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  { id: 'underground', icon: '🕳️', label: 'Underground Vaults' },
+  { id: 'graveyards', icon: '⚰️', label: 'Graveyards' },
+  { id: 'old-town', icon: '🏰', label: 'Old Town' },
+  { id: 'castle', icon: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', label: 'Edinburgh Castle' },
+  { id: 'pub-tours', icon: '🍺', label: 'Haunted Pubs' },
+];
+
+const faqs = [
+  {
+    question: 'What are the Edinburgh Vaults?',
+    answer: 'The South Bridge Vaults are a series of chambers formed within the 19 arches of the South Bridge, completed in 1788. Originally used as workshops and storage, they became overcrowded slums and were eventually sealed. Rediscovered in the 1980s, they are now among Edinburgh\'s most popular ghost tour destinations.'
+  },
+  {
+    question: 'Is Greyfriars Kirkyard really haunted?',
+    answer: 'Greyfriars Kirkyard has generated documented reports of unexplained phenomena since the 1990s, particularly around the Black Mausoleum associated with "Bloody" George Mackenzie. Visitors on tours have reported scratches, bruises, and fainting episodes. The City of Edinburgh Council has acknowledged the reports, and the kirkyard\'s night tours are among the most popular in Scotland.'
+  },
+  {
+    question: 'Who were Burke and Hare?',
+    answer: 'William Burke and William Hare murdered at least 16 people in Edinburgh between 1827 and 1828, selling the bodies to anatomist Dr. Robert Knox for medical dissection. Hare testified against Burke to avoid prosecution. Burke was hanged in January 1829, and his skeleton remains on display at the Edinburgh Medical School.'
+  },
+  {
+    question: 'When is the best time to visit Edinburgh for ghost tours?',
+    answer: 'Tours operate year-round, but October and late autumn provide the most atmospheric conditions with early darkness and frequent mist. The Edinburgh Festival in August offers expanded tour options. Winter tours through the vaults are particularly intense due to cold, damp conditions underground.'
+  },
+];
+---
+
+<Layout
+  title="Edinburgh Ghost Tours: Vaults & Graveyards | Cursed Tours"
+  description="Explore Edinburgh's haunted underground vaults, Greyfriars Kirkyard, and centuries of dark Scottish history through expert-led ghost tours."
+  canonical="https://cursedtours.com/edinburgh-ghost-tours/"
+>
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <!-- Hero Section -->
+  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+    <div class="container relative z-10 px-4 mx-auto max-w-7xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8]">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li class="text-gray-300 font-medium">Edinburgh Ghost Tours</li>
+        </ol>
+      </nav>
+
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          Edinburgh Ghost Tours
+        </h1>
+        <p class="text-xl md:text-2xl text-[#a89bb8] italic">
+          "Where the Dead Are Buried Beneath the Living"
+        </p>
+      </div>
+
+      <nav class="overflow-x-auto pb-2">
+        <div class="flex gap-2 md:gap-3 min-w-max md:justify-center">
+          {categories.map((cat) => (
+            <a
+              href={`#${cat.id}`}
+              class="inline-flex items-center gap-2 px-3 py-2 md:px-4 md:py-2.5 rounded-full bg-white/5 border border-white/10 hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300"
+            >
+              <span class="text-lg md:text-xl">{cat.icon}</span>
+              <span class="text-xs md:text-sm text-gray-300">{cat.label}</span>
+            </a>
+          ))}
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          Edinburgh is often described as the most haunted city in Europe—not as a marketing slogan, but as a consequence of centuries of political violence, epidemic disease, religious persecution, and urban density compressed into a medieval street plan. Unlike cities where ghost stories cluster around a handful of landmarks, Edinburgh's supernatural folklore permeates entire neighborhoods, underground vaults, and former burial grounds that remain integrated into daily life.
+        </p>
+        <p>
+          From the shadowed wynds of the Old Town to the sealed chambers beneath the South Bridge, Edinburgh's haunted reputation is inseparable from its historical development. The city expanded vertically before it expanded outward, building new streets directly on top of old ones, sealing entire communities beneath the surface. The dead were not always relocated—they were built over.
+        </p>
+        <p>
+          Ghost tours in Edinburgh access spaces that no other tourist experience can provide: the vaults beneath the South Bridge, the locked sections of Greyfriars Kirkyard, and the narrow closes where plague victims were sealed inside their own homes. This is a city where the past is not preserved at a distance. It is built directly beneath the present.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Haunted Section -->
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why Edinburgh Is One of Europe's Most Haunted Cities</h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          Edinburgh's haunted identity emerges from a unique convergence of factors. The city experienced repeated waves of plague between the 14th and 17th centuries, with the last major outbreak in 1645 killing nearly half the population of some parishes. Entire closes—narrow alleyways running off the Royal Mile—were sealed with residents still inside during quarantine efforts. Mary King's Close, the most famous example, remained buried beneath the Royal Exchange building from 1753 until its rediscovery and opening to the public in 2003.
+        </p>
+        <p>
+          Religious conflict during the Scottish Reformation produced its own toll. The Covenanters—Presbyterian Scots who resisted English religious authority—were imprisoned and executed in large numbers during the late 17th century. Over 1,200 Covenanters were held in an open-air prison in Greyfriars Kirkyard during the winter of 1679, where many died of exposure and starvation. Their persecutor, Lord Advocate Sir George "Bloody" Mackenzie, was later buried in the same kirkyard.
+        </p>
+        <p>
+          The construction of the South Bridge in 1788 created 19 arched vaults that were initially used as workshops, taverns, and storage. As the spaces deteriorated, they became overcrowded slums housing the city's poorest residents. When conditions became untenable, the vaults were sealed—along with whatever remained inside them. When reopened in the 1980s, the vaults were found essentially intact, creating an underground environment where documented suffering occurred within spaces preserved by neglect.
+        </p>
+        <p>
+          William Burke and William Hare murdered at least 16 people in Edinburgh's West Port between 1827 and 1828, selling fresh corpses to Dr. Robert Knox for anatomical dissection. The murders exposed a medical system that created demand for bodies without asking questions about their origin. Burke was hanged on January 28, 1829, before a crowd of 25,000. His skeleton remains on display at the Edinburgh Medical School.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tour Type Sections -->
+  <section id="underground" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🕳️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Underground Vault Tours</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          The South Bridge Vaults are Edinburgh's signature ghost tour experience. Located beneath one of the city's busiest streets, the chambers retain the atmosphere of their 18th and 19th century use as workshops, illicit drinking dens, and shelters for the destitute. The vaults are cold, damp, and dark—conditions that haven't changed in over two centuries.
+        </p>
+        <p>
+          Multiple tour companies operate in different sections of the vaults. Some focus on historical narrative, guiding visitors through the documented conditions that made these spaces notorious. Others offer paranormal investigation experiences with electromagnetic field detectors and audio recording equipment. The vaults have been featured in numerous television investigations, though their reputation predates any media attention.
+        </p>
+        <p>
+          Mary King's Close offers a different underground experience: a preserved 17th-century street buried beneath the Royal Exchange building. Guides in period costume walk visitors through rooms where plague victims lived and died. The close was not a catacomb or tunnel—it was a functioning street with homes, shops, and taverns that was simply built over when the city expanded upward.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="graveyards" class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">⚰️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Graveyard Tours</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Greyfriars Kirkyard is the most investigated graveyard in Scotland. Established in 1561, it holds approximately 100,000 burials in a space designed for far fewer. The kirkyard's most documented phenomena center on the Black Mausoleum of George Mackenzie, where visitors have reported scratches, bruises, nausea, and unconsciousness since a homeless man broke into the vault in 1998.
+        </p>
+        <p>
+          The kirkyard also holds the grave of Greyfriars Bobby, a Skye Terrier who reportedly guarded his master's grave for 14 years. While the ghost stories focus on Mackenzie, the historical density of the kirkyard—containing victims of plague, religious persecution, and body-snatching—provides context that extends well beyond any single spirit.
+        </p>
+        <p>
+          Canongate Kirkyard, located at the foot of the Royal Mile near the Palace of Holyroodhouse, is less frequented by tours but holds significant graves including Adam Smith and Robert Fergusson, the poet whose early death deeply affected Robert Burns. Evening visits offer an alternative to the crowded Greyfriars experience.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="old-town" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏰</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Old Town Walking Tours</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          The Royal Mile, stretching from Edinburgh Castle to the Palace of Holyroodhouse, is a mile-long concentration of haunted history. The wynds and closes branching off it like ribs from a spine each carry their own documented stories—from the victims of Major Thomas Weir, executed for witchcraft in 1670, to the plague-sealed residents of Mary King's Close.
+        </p>
+        <p>
+          Walking tours through the Old Town typically last 90 minutes to two hours, covering roughly a mile of cobblestoned streets. Guides are often professional actors or historians who adapt their presentations to the age and interest of the group. Tours depart from various points along the Royal Mile, with most evening departures happening between 7:00 and 10:00 PM.
+        </p>
+        <p>
+          The Grassmarket, once Edinburgh's place of public execution, has been particularly well-documented for paranormal activity. Maggie Dickson, hanged in 1724 for concealing a stillbirth, revived in her coffin while being transported for burial—and was subsequently freed, as Scottish law considered her sentence carried out. She lived for another 40 years and is commemorated by a pub bearing her name.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="castle" class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Edinburgh Castle</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Edinburgh Castle has been a site of human habitation for over 3,000 years and a military fortification since at least the 12th century. It has been besieged 26 times—more than any other place in Britain. The castle's dungeons held prisoners of war during the Napoleonic conflicts, the American Revolution, and the Seven Years' War. Graffiti carved by these prisoners remains visible in the vaults.
+        </p>
+        <p>
+          In 2001, a scientific study conducted by Dr. Richard Wiseman of the University of Hertfordshire investigated the castle with 240 volunteers. Participants reported unexplained experiences in areas independently identified by others—and in locations the research team had already flagged as historically significant. The study remains one of the most rigorous scientific investigations of a reportedly haunted location.
+        </p>
+        <p>
+          While the castle itself offers daytime tours through Historic Environment Scotland, several tour companies include the castle esplanade in their evening routes. The panoramic views of the city from the castle's ramparts provide both historical context and an atmospheric setting as darkness falls over the Old Town below.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pub-tours" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🍺</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Haunted Pub Tours</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Edinburgh's oldest pubs sit atop cellars and passages that predate their current structures by centuries. The Banshee Labyrinth, marketed as the most haunted pub in Edinburgh, occupies a section of the South Bridge Vaults that has been converted into a multi-room bar. Its underground chambers preserve the original vault architecture while serving pints.
+        </p>
+        <p>
+          The Last Drop on the Grassmarket takes its name from the public executions that took place outside its doors. The White Hart Inn, dating to 1516, claims to be one of Edinburgh's oldest pubs and has hosted Robert Burns and William Wordsworth. Both establishments feature regularly on haunted pub crawl routes.
+        </p>
+        <p>
+          Pub tours typically visit 3-4 establishments over two to three hours, with guides telling stories specific to each location between rounds. The combination of historical storytelling, local ale, and atmospheric settings makes Edinburgh's pub tours among the most popular evening activities in the city.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-white mb-2">{faq.question}</h3>
+            <p class="text-[#a89bb8]">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-12 md:py-16 bg-[#0a0510] border-t border-[#3d2a4d]">
+    <div class="container px-4 mx-auto max-w-4xl text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Explore More Haunted Cities</h2>
+      <p class="text-[#a89bb8] mb-6">Discover ghost tours in other historic cities.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/london-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">London</a>
+        <a href="/dublin-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Dublin</a>
+        <a href="/salem-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Salem</a>
+      </div>
+    </div>
+  </section>
+</Layout>

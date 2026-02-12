@@ -1,0 +1,165 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const cities = [
+  { name: 'New Orleans', slug: 'new-orleans-ghost-tours', highlight: 'St. Louis Cemetery No. 1, Lafayette Cemetery' },
+  { name: 'Savannah', slug: 'savannah-ghost-tours', highlight: 'Bonaventure Cemetery, Colonial Park' },
+  { name: 'Charleston', slug: 'charleston-ghost-tours', highlight: 'Magnolia Cemetery, St. Philip\'s Churchyard' },
+  { name: 'Salem', slug: 'salem-ghost-tours', highlight: 'Charter Street Cemetery, Howard Street' },
+  { name: 'St. Augustine', slug: 'st-augustine-ghost-tours', highlight: 'Huguenot Cemetery, Tolomato Cemetery' },
+];
+---
+
+<Layout 
+  title="Cemetery Ghost Tours & Burial Grounds | Cursed Tours"
+  description="Explore cemetery tours across America's most haunted cities. Discover the history, architecture, and ghost stories of historic burial grounds."
+  canonical="https://cursedtours.com/experiences/cemetery-tours/"
+>
+  <!-- Hero -->
+  <section class="relative py-16 md:py-24 overflow-hidden bg-[#0a0510]">
+    <div class="container relative z-10 px-4 mx-auto max-w-7xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8]">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li><a href="/experiences/" class="hover:text-purple-400 transition-colors">Experiences</a></li>
+          <li class="text-gray-600">/</li>
+          <li class="text-gray-300 font-medium">Cemetery Tours</li>
+        </ol>
+      </nav>
+      
+      <div class="text-center">
+        <span class="text-5xl mb-4 block">⚰️</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          Cemetery Tours
+        </h1>
+        <p class="text-xl text-[#a89bb8] max-w-2xl mx-auto">
+          Walk among the dead in America's most historic burial grounds, where architecture, history, and ghost stories intersect.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          American cemetery tours offer far more than ghost stories. These burial grounds preserve centuries of history, art, and architecture in outdoor museums that most visitors overlook. From New Orleans' above-ground "Cities of the Dead" to Salem's weathered Puritan headstones, each cemetery tells stories about how Americans lived, died, and remembered their dead.
+        </p>
+        <p>
+          The cemetery tourism movement began in the 19th century when rural cemeteries like Mount Auburn in Boston became destinations for Sunday strolls. Today's tours combine this tradition of contemplative visiting with historical research and, often, paranormal investigation.
+        </p>
+        <p>
+          Guided cemetery tours provide context that independent visitors miss: who lies beneath each stone, why certain symbols appear on monuments, and how burial practices reflected the beliefs and fears of each era. The best guides balance respect for the dead with engaging storytelling.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Take Cemetery Tours -->
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why Take a Cemetery Tour?</h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          <strong class="text-white">Historical Access:</strong> Cemeteries often preserve the only remaining evidence of communities that left few other records. Enslaved people, immigrants, epidemic victims, and other marginalized groups may have graves when they have nothing else in the historical record.
+        </p>
+        <p>
+          <strong class="text-white">Architectural Heritage:</strong> Victorian-era cemeteries contain some of America's finest funerary art. Elaborate mausoleums, hand-carved statuary, and ornate ironwork represent craftsmanship rarely seen in modern construction.
+        </p>
+        <p>
+          <strong class="text-white">Paranormal Interest:</strong> For those drawn to ghost stories, cemeteries offer concentrated locations for reported activity. Whether you're a believer or skeptic, the atmosphere of historic burial grounds at dusk creates a unique experience.
+        </p>
+        <p>
+          <strong class="text-white">Genealogical Research:</strong> Cemetery tours often reveal burial locations and family connections that online databases miss. Guides familiar with local history can identify unmarked graves and explain family relationships.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Types of Cemeteries -->
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Types of Historic Cemeteries</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-[#0f0a1a] border border-[#3d2a4d] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Colonial Churchyards</h3>
+          <p class="text-[#a89bb8]">Attached to churches, these small burial grounds hold a community's earliest settlers. Space limitations mean graves often overlap, and headstones may have been moved or lost over centuries.</p>
+        </div>
+        <div class="bg-[#0f0a1a] border border-[#3d2a4d] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Rural Cemeteries</h3>
+          <p class="text-[#a89bb8]">The 19th-century rural cemetery movement created park-like burial grounds with winding paths, landscaping, and monumental sculpture. These were designed as much for the living as the dead.</p>
+        </div>
+        <div class="bg-[#0f0a1a] border border-[#3d2a4d] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Above-Ground Tombs</h3>
+          <p class="text-[#a89bb8]">In New Orleans and other areas with high water tables, above-ground burial became necessary. These "Cities of the Dead" feature distinctive architecture found nowhere else in America.</p>
+        </div>
+        <div class="bg-[#0f0a1a] border border-[#3d2a4d] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Potter's Fields</h3>
+          <p class="text-[#a89bb8]">Municipal burial grounds for the poor, unknown, and unclaimed often contain mass graves from epidemics. Many have been built over, their locations forgotten until construction unearths remains.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- City Guides -->
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Cemetery Tours by City</h2>
+      <div class="space-y-4">
+        {cities.map((city) => (
+          <a 
+            href={`/${city.slug}/`}
+            class="block bg-[#1a1025] border border-[#4a3560] rounded-lg p-6 hover:border-purple-500/50 transition-all"
+          >
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-semibold text-white mb-2">{city.name}</h3>
+                <p class="text-[#a89bb8]">{city.highlight}</p>
+              </div>
+              <svg class="w-5 h-5 text-purple-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Etiquette -->
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Cemetery Tour Etiquette</h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          Cemeteries remain active places of mourning. Even in historic sections that haven't seen new burials in decades, families may visit ancestors' graves. Tour groups should maintain respectful volume levels and avoid blocking access to graves.
+        </p>
+        <p>
+          Never touch, sit on, or lean against monuments. Historic stones are often fragile, and oils from skin can accelerate deterioration. Photography is generally acceptable but ask before photographing recent graves with fresh flowers or personal items.
+        </p>
+        <p>
+          Some cemeteries restrict access or require licensed guides. St. Louis Cemetery No. 1 in New Orleans, for example, only admits visitors with approved tour companies following incidents of vandalism. Check requirements before visiting.
+        </p>
+      </div>
+      <div class="mt-8">
+        <a href="/articles/cemetery-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">
+          Read Our Full Cemetery Etiquette Guide
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-[#0f0a1a] border-t border-[#3d2a4d]">
+    <div class="container px-4 mx-auto max-w-4xl text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Explore Other Experiences</h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/experiences/walking-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Walking Tours</a>
+        <a href="/experiences/pub-crawls/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Haunted Pub Crawls</a>
+        <a href="/experiences/paranormal-investigations/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Paranormal Investigations</a>
+      </div>
+    </div>
+  </section>
+</Layout>

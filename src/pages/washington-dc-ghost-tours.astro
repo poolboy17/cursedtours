@@ -1,0 +1,229 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  { id: 'white-house', icon: '🏛️', label: 'White House' },
+  { id: 'capitol', icon: '🏛️', label: 'Capitol Hill' },
+  { id: 'georgetown', icon: '🏚️', label: 'Georgetown' },
+  { id: 'civil-war', icon: '⚔️', label: 'Civil War' },
+  { id: 'cemeteries', icon: '⚰️', label: 'Arlington' },
+];
+
+const faqs = [
+  {
+    question: 'Is the White House haunted?',
+    answer: 'The White House has a long history of reported hauntings. Abraham Lincoln\'s ghost is the most frequently reported, with sightings claimed by Winston Churchill, Eleanor Roosevelt, and multiple White House staff members. The Lincoln Bedroom, the Rose Room, and the East Room have generated the most consistent reports over nearly 160 years.'
+  },
+  {
+    question: 'Can you go inside haunted buildings on DC ghost tours?',
+    answer: 'Most federal buildings are not accessible on ghost tours. Tours focus on exteriors and surrounding streets, using the architecture as a backdrop for historical narrative. Ford\'s Theatre offers regular tours that include the box where Lincoln was shot and the house across the street where he died. The Capitol and White House require separate tickets or congressional arrangements.'
+  },
+  {
+    question: 'What happened at the Octagon House?',
+    answer: 'The Octagon House on New York Avenue served as the temporary White House after the British burned the original in 1814. Two daughters of original owner Colonel John Tayloe reportedly died on the home\'s elliptical staircase—one falling after an argument with her father about a suitor, the other under similar circumstances years later. The building is now the American Institute of Architects\' museum.'
+  },
+  {
+    question: 'Are there Civil War ghost tours in DC?',
+    answer: 'Yes. Tours cover Ford\'s Theatre, the Surratt House (where conspirators met), Fort Stevens (where Lincoln came under Confederate fire), and various hospitals where wounded soldiers were treated. The National Mall area served as a massive encampment during the war, and several Smithsonian buildings were used as hospitals and barracks.'
+  },
+];
+---
+
+<Layout
+  title="Washington DC Ghost Tours: White House Ghosts | Cursed Tours"
+  description="Explore Washington DC's haunted history through ghost tours covering the White House, Capitol Hill, Georgetown, Civil War sites, and presidential ghosts."
+  canonical="https://cursedtours.com/washington-dc-ghost-tours/"
+>
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+    <div class="container relative z-10 px-4 mx-auto max-w-7xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8]">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li class="text-gray-300 font-medium">Washington DC Ghost Tours</li>
+        </ol>
+      </nav>
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Washington DC Ghost Tours</h1>
+        <p class="text-xl md:text-2xl text-[#a89bb8] italic">"Where the Nation's Dead Never Leave Office"</p>
+      </div>
+      <nav class="overflow-x-auto pb-2">
+        <div class="flex gap-2 md:gap-3 min-w-max md:justify-center">
+          {categories.map((cat) => (
+            <a href={`#${cat.id}`} class="inline-flex items-center gap-2 px-3 py-2 md:px-4 md:py-2.5 rounded-full bg-white/5 border border-white/10 hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300">
+              <span class="text-lg md:text-xl">{cat.icon}</span>
+              <span class="text-xs md:text-sm text-gray-300">{cat.label}</span>
+            </a>
+          ))}
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          Washington, DC was built on a swamp. That's not a metaphor—the city's location at the confluence of the Potomac and Anacostia rivers was marshy, malarial, and considered so unhealthy that European diplomats received hardship pay for serving there. During the Civil War, the capital became a garrison city, a hospital complex, and a target. Over 150,000 soldiers passed through Washington, and thousands died in its improvised hospitals.
+        </p>
+        <p>
+          The most famous ghost in Washington belongs to Abraham Lincoln, whose assassination at Ford's Theatre on April 14, 1865, traumatized a nation already exhausted by four years of war. Lincoln's spirit has been reported in the White House by figures including Winston Churchill, Queen Wilhelmina of the Netherlands, and Eleanor Roosevelt. His funeral train, which carried his body from Washington to Springfield, Illinois, has reportedly been seen as a phantom along the original route.
+        </p>
+        <p>
+          Ghost tours in DC navigate between monuments, federal buildings, and residential neighborhoods where the political history of the nation intersects with personal tragedy, assassination, conspiracy, and the accumulated dead of a capital built for power and maintained by sacrifice.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why Washington DC Is Haunted</h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          Lincoln was shot by John Wilkes Booth at Ford's Theatre during a performance of "Our American Cousin" on April 14, 1865. He was carried across the street to the Petersen House, where he died the following morning. The conspiracy that produced the assassination involved at least eight people, four of whom were hanged at Fort McNair on July 7, 1865. Mary Surratt became the first woman executed by the United States federal government.
+        </p>
+        <p>
+          During the Civil War, Washington transformed into a military headquarters surrounded by a ring of 68 forts. The Capitol building itself was used as a barracks, a bakery, and a hospital. The Smithsonian Castle served as a hospital. Georgetown's cobblestoned streets, already over a century old, saw the passage of troops, supply wagons, and ambulances carrying the wounded from nearby battlefields.
+        </p>
+        <p>
+          The burning of Washington by British forces on August 24, 1814, destroyed the White House, the Capitol, and numerous other public buildings. Dolley Madison reportedly saved the famous Gilbert Stuart portrait of George Washington before fleeing. The rebuilding of the capital after the fire established the architectural language that defines Washington today—but the foundations rest on the ashes of the original city.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="white-house" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏛️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">White House Hauntings</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Abraham Lincoln is the White House's most frequently reported ghost. Winston Churchill claimed to have seen Lincoln standing by the fireplace in the Lincoln Bedroom after emerging from a bath. Queen Wilhelmina of the Netherlands reportedly fainted after answering a knock at her door to find Lincoln's apparition in the hallway. Eleanor Roosevelt said she felt Lincoln's presence while working in the Lincoln Bedroom.
+        </p>
+        <p>
+          The Rose Room is considered one of the White House's most active paranormal locations. Andrew Jackson's ghost has been reported there, as have unexplained cold spots and the sound of laughter. Abigail Adams has reportedly been seen in the East Room, where she used to hang laundry during the early years of the White House when the building was still unfinished.
+        </p>
+        <p>
+          Ghost tours cannot enter the White House but use its exterior and the surrounding area—including Lafayette Square, where the Decatur House and other historic residences have their own documented hauntings—to tell stories about the supernatural history of the presidential residence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="capitol" class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏛️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Capitol Hill & Federal Triangle</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          The Capitol building has generated ghost stories since its construction. A spectral stone mason reportedly appears in the basement, the ghost of John Quincy Adams has been reported in the old House chamber (now Statuary Hall), and a "Demon Cat" has been seen in the basement corridors since the 19th century—reportedly appearing before national tragedies.
+        </p>
+        <p>
+          The Library of Congress, the world's largest library, occupies buildings adjacent to the Capitol. Its underground tunnels, used by members of Congress to move between buildings, have generated reports of unexplained phenomena. The original Library of Congress collection was destroyed when the British burned the Capitol in 1814—Thomas Jefferson sold his personal library as a replacement.
+        </p>
+        <p>
+          The Old Post Office Tower on Pennsylvania Avenue, one of the tallest accessible points in DC, provides panoramic views used by tour guides to orient visitors to the city's haunted geography. The view encompasses the White House, the Capitol, Arlington Cemetery, and the National Mall—a landscape of national memory built on a former swamp.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="georgetown" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏚️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Georgetown</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Georgetown predates Washington, DC by 40 years, founded in 1751 as a tobacco port on the Potomac. Its cobblestoned streets, Federal-era townhouses, and proximity to the river create an atmosphere distinct from the monumental core of the capital. The Exorcist Steps—the steep staircase at 36th and Prospect Streets made famous by the 1973 film—attract visitors year-round, though the real-life case that inspired the film occurred in nearby Mount Rainier, Maryland.
+        </p>
+        <p>
+          The Old Stone House at 3051 M Street, built in 1765, is the oldest unchanged building in Washington. Now maintained by the National Park Service, it has generated reports of unexplained phenomena since the 19th century, including footsteps, cold spots, and the feeling of being watched. The building's age and continuous use make it one of the most historically dense sites in the city.
+        </p>
+        <p>
+          Halcyon House, built in 1787 by the first Secretary of the Navy, Benjamin Stoddert, overlooks the Potomac from Prospect Street. The house has a complex history of additions and modifications—one owner, Albert Clemons, spent decades adding rooms and passages in a Winchester Mystery House-like obsession. Reports of hauntings at the property date to the 19th century.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="civil-war" class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">⚔️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Civil War Sites</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Ford's Theatre, where Lincoln was assassinated, is now a museum and working theater. The presidential box has been restored to its 1865 appearance, and the Petersen House across the street—where Lincoln died the following morning—displays the room where his body lay. Both buildings are open to visitors and are focal points of every DC ghost tour.
+        </p>
+        <p>
+          The Surratt House at 604 H Street NW was the boarding house operated by Mary Surratt, where conspirators met to plan Lincoln's assassination. Mary Surratt was convicted and hanged—a decision that remains controversial, as the evidence against her was largely circumstantial. The building now houses a Chinese restaurant, but tours stop at the exterior to discuss the conspiracy.
+        </p>
+        <p>
+          Fort Stevens, in northwest DC, is the only Civil War battlefield within the District's boundaries. On July 11-12, 1864, Confederate forces under Jubal Early attacked the fort while Lincoln watched from the parapet—making him the only sitting president to come under direct enemy fire. A soldier standing near Lincoln was killed by a sharpshooter. The fort's remains are now a National Park Service site.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cemeteries" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">⚰️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Arlington & Historic Cemeteries</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Arlington National Cemetery, established during the Civil War on the confiscated estate of Robert E. Lee, contains over 400,000 burials. The cemetery was deliberately created on Lee's property as an act of retribution—Quartermaster General Montgomery Meigs wanted to make the land unusable as a residence. The first burials were placed in the rose garden near the house.
+        </p>
+        <p>
+          Congressional Cemetery in Southeast DC, established in 1807, contains the graves of Vice Presidents, members of Congress, and other notable figures. The cemetery fell into neglect during the 20th century but has been restored by a community association. Its cenotaphs—memorial markers for officials who died in office but were buried elsewhere—create an unusual landscape of monuments to the absent dead.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-white mb-2">{faq.question}</h3>
+            <p class="text-[#a89bb8]">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510] border-t border-[#3d2a4d]">
+    <div class="container px-4 mx-auto max-w-4xl text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Explore More Haunted Cities</h2>
+      <p class="text-[#a89bb8] mb-6">Discover ghost tours in other historic cities.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/boston-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">Boston</a>
+        <a href="/charleston-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Charleston</a>
+        <a href="/savannah-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Savannah</a>
+      </div>
+    </div>
+  </section>
+</Layout>

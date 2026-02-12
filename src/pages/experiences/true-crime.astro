@@ -1,0 +1,132 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const cities = [
+  { name: 'New Orleans', slug: 'new-orleans-ghost-tours', highlight: 'The Axeman, LaLaurie Mansion crimes' },
+  { name: 'Charleston', slug: 'charleston-ghost-tours', highlight: 'Lavinia Fisher, Old City Jail' },
+  { name: 'Salem', slug: 'salem-ghost-tours', highlight: 'Witch trial executions, colonial justice' },
+  { name: 'Savannah', slug: 'savannah-ghost-tours', highlight: 'Jim Williams case, historic crimes' },
+];
+---
+
+<Layout 
+  title="True Crime Tours: Dark History | Cursed Tours"
+  description="Explore true crime tours focusing on documented criminal cases, executions, and dark chapters of American history."
+  canonical="https://cursedtours.com/experiences/true-crime/"
+>
+  <section class="relative py-16 md:py-24 overflow-hidden bg-[#0a0510]">
+    <div class="container relative z-10 px-4 mx-auto max-w-7xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8]">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li><a href="/experiences/" class="hover:text-purple-400 transition-colors">Experiences</a></li>
+          <li class="text-gray-600">/</li>
+          <li class="text-gray-300 font-medium">True Crime Tours</li>
+        </ol>
+      </nav>
+      
+      <div class="text-center">
+        <span class="text-5xl mb-4 block">🔍</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          True Crime Tours
+        </h1>
+        <p class="text-xl text-[#a89bb8] max-w-2xl mx-auto">
+          Documented crimes, unsolved mysteries, and the dark side of American history—told at the locations where they happened.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          True crime tours focus on documented criminal cases rather than folklore and legend. These tours examine murders, executions, and criminal enterprises using court records, newspaper accounts, and historical documentation. The stories are real, the victims were real, and the locations often still stand.
+        </p>
+        <p>
+          The true crime tourism genre has exploded alongside podcasts and documentaries exploring cold cases and historic crimes. Tours offer something media cannot: physical presence at crime scenes, execution sites, and the neighborhoods where criminals operated.
+        </p>
+        <p>
+          These tours tend to attract history enthusiasts and true crime fans rather than those seeking supernatural thrills. Content is factual and often disturbing—guides discuss actual violence, victims, and the circumstances of their deaths. Consider this before booking, especially for sensitive travelers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Notable Cases by City</h2>
+      <div class="space-y-6">
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">The Axeman of New Orleans (1918-1919)</h3>
+          <p class="text-[#a89bb8]">An unidentified serial killer attacked victims in their beds with axes, leaving taunting letters to newspapers. The case was never solved, and tours visit attack locations throughout the city.</p>
+        </div>
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Lavinia Fisher (Charleston, 1820)</h3>
+          <p class="text-[#a89bb8]">Often called America's first female serial killer, Fisher and her husband operated the Six Mile Wayfarer House where guests allegedly disappeared. She was hanged at the Old City Jail, now a tour site.</p>
+        </div>
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Delphine LaLaurie (New Orleans, 1834)</h3>
+          <p class="text-[#a89bb8]">A fire at the LaLaurie Mansion revealed that socialite Delphine LaLaurie had been torturing enslaved people in her attic. She fled to France; the house still stands on Royal Street.</p>
+        </div>
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Salem Witch Trials (1692-1693)</h3>
+          <p class="text-[#a89bb8]">Twenty people executed for witchcraft based on spectral evidence and coerced confessions. The trials represent one of America's most documented cases of mass hysteria leading to judicial murder.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ethics of True Crime Tourism</h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          True crime tourism raises ethical questions that participants should consider. Visiting crime scenes commodifies tragedy. Descendants of victims may object to tours that profit from their ancestors' suffering. Some tours sensationalize violence rather than providing historical context.
+        </p>
+        <p>
+          The best true crime tours acknowledge these tensions. They focus on historical understanding rather than entertainment, discuss systemic factors that enabled crimes, and treat victims with dignity. They also distinguish between documented facts and speculation.
+        </p>
+        <p>
+          Before booking, research how tour operators present their content. Do they name victims? Do they discuss historical context? Do they acknowledge the ethical complexities of the genre? Your choices support particular approaches to this sensitive material.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">True Crime Tours by City</h2>
+      <div class="space-y-4">
+        {cities.map((city) => (
+          <a 
+            href={`/${city.slug}/`}
+            class="block bg-[#1a1025] border border-[#4a3560] rounded-lg p-6 hover:border-purple-500/50 transition-all"
+          >
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-semibold text-white mb-2">{city.name}</h3>
+                <p class="text-[#a89bb8]">{city.highlight}</p>
+              </div>
+              <svg class="w-5 h-5 text-purple-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510] border-t border-[#3d2a4d]">
+    <div class="container px-4 mx-auto max-w-4xl text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Explore Other Experiences</h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/experiences/walking-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Walking Tours</a>
+        <a href="/experiences/cemetery-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Cemetery Tours</a>
+        <a href="/experiences/paranormal-investigations/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Paranormal Investigations</a>
+      </div>
+    </div>
+  </section>
+</Layout>

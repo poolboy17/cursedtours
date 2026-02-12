@@ -1,0 +1,232 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { DESTINATIONS } from '../../data/destinations';
+
+export async function getStaticPaths() {
+  return Object.values(DESTINATIONS).map(dest => ({
+    params: { slug: dest.slug },
+    props: { destination: dest },
+  }));
+}
+
+const { destination } = Astro.props;
+
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": destination.faq.map((item: any) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+  }))
+};
+
+const attractionLd = {
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": destination.name,
+  "description": destination.descriptor,
+  "url": `https://cursedtours.com/destinations/${destination.slug}/`,
+};
+
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cursedtours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Destinations", "item": "https://cursedtours.com/destinations/" },
+    { "@type": "ListItem", "position": 3, "name": destination.name, "item": `https://cursedtours.com/destinations/${destination.slug}/` },
+  ]
+};
+
+const tours = destination.featuredTours || [];
+const heroTour = tours.find((t: any) => t.tier === 'hero');
+const otherTours = tours.filter((t: any) => t.tier !== 'hero');
+---
+
+<Layout
+  title={`${destination.name} Ghost Tours | Cursed Tours`}
+  description={`${destination.descriptor}. Explore ghost tours and dark history at ${destination.name}.`}
+  canonical={`https://cursedtours.com/destinations/${destination.slug}/`}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(attractionLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+
+  <!-- Hero -->
+  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+    <div class="container relative z-10 px-4 mx-auto max-w-6xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8]">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li><a href="/destinations/" class="hover:text-purple-400 transition-colors">Destinations</a></li>
+          <li class="text-gray-600">/</li>
+          <li class="text-gray-300 font-medium">{destination.name}</li>
+        </ol>
+      </nav>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">{destination.name}</h1>
+      <p class="text-xl text-[#a89bb8] max-w-3xl">{destination.descriptor}</p>
+    </div>
+  </section>
+
+  <!-- Intro / Why It Matters -->
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      {destination.intro && (
+        <p class="text-xl text-gray-300 leading-relaxed mb-8 italic border-l-3 border-purple-500 pl-6">
+          {destination.intro}
+        </p>
+      )}
+      <div class="text-gray-300 text-lg leading-relaxed">
+        <h2 class="text-2xl font-bold text-white mb-4">Why It Matters</h2>
+        <p>{destination.whyItMatters}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Tours -->
+  {tours.length > 0 && (
+    <section class="py-12 md:py-16 bg-[#0f0a1a] border-t border-white/5">
+      <div class="container px-4 mx-auto max-w-6xl">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Featured Tours</h2>
+
+        {/* Hero tour - large card */}
+        {heroTour && (
+          <a
+            href={heroTour.viatorUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            class="group block mb-8 rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 md:flex"
+          >
+            <div class="md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
+              <img
+                src={heroTour.image}
+                alt={heroTour.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 md:w-3/5 flex flex-col justify-center">
+              <span class="text-xs text-yellow-400 font-medium uppercase tracking-wider mb-2">⭐ Top Pick</span>
+              <h3 class="text-xl md:text-2xl font-bold text-white group-hover:text-purple-400 transition-colors mb-3">
+                {heroTour.title}
+              </h3>
+              <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                <span class="text-yellow-400">★ {heroTour.rating}</span>
+                <span>({heroTour.reviews.toLocaleString()} reviews)</span>
+                {heroTour.duration && <span>{heroTour.duration}</span>}
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="text-2xl font-bold text-white">From {heroTour.price}</span>
+                <span class="px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-semibold group-hover:bg-purple-500 transition-colors">
+                  View Tour →
+                </span>
+              </div>
+            </div>
+          </a>
+        )}
+
+        {/* Other tours - grid */}
+        {otherTours.length > 0 && (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {otherTours.map((tour: any) => (
+              <a
+                href={tour.viatorUrl}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
+              >
+                <div class="aspect-video overflow-hidden">
+                  <img
+                    src={tour.image}
+                    alt={tour.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-4">
+                  <span class="text-xs text-purple-400 uppercase tracking-wider">
+                    {tour.tier === 'budget' ? '💰 Best Value' : tour.tier === 'premium' ? '✨ Premium' : '🔄 Alternative'}
+                  </span>
+                  <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors mt-1 mb-2">
+                    {tour.title}
+                  </h3>
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="text-gray-400">
+                      <span class="text-yellow-400">★ {tour.rating}</span> ({tour.reviews.toLocaleString()})
+                    </span>
+                    <span class="text-white font-bold">From {tour.price}</span>
+                  </div>
+                  {tour.duration && <p class="text-xs text-gray-500 mt-1">{tour.duration}</p>}
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ -->
+  {destination.faq.length > 0 && (
+    <section class="py-12 md:py-16 bg-[#0a0510] border-t border-white/5">
+      <div class="container px-4 mx-auto max-w-4xl">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+        <div class="space-y-6">
+          {destination.faq.map((item: any) => (
+            <details class="group bg-white/5 border border-white/10 rounded-lg overflow-hidden">
+              <summary class="flex items-center justify-between p-5 cursor-pointer text-white font-medium hover:text-purple-400 transition-colors">
+                {item.question}
+                <span class="text-gray-500 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <div class="px-5 pb-5 text-gray-400 leading-relaxed">
+                {item.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Related Destinations -->
+  {destination.relatedDestinations?.length > 0 && (
+    <section class="py-12 md:py-16 bg-[#0f0a1a] border-t border-white/5">
+      <div class="container px-4 mx-auto max-w-4xl">
+        <h2 class="text-2xl font-bold text-white mb-6">Explore More Destinations</h2>
+        <div class="flex flex-wrap gap-3">
+          {destination.relatedDestinations.map((rd: any) => (
+            <a
+              href={`/destinations/${rd.slug}/`}
+              class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:border-purple-500/50 hover:text-purple-400 transition-all"
+            >
+              {rd.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Authoritative Sources -->
+  {destination.authoritativeSources?.length > 0 && (
+    <section class="py-8 bg-[#0a0510] border-t border-white/5">
+      <div class="container px-4 mx-auto max-w-4xl">
+        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Sources & Further Reading</h3>
+        <div class="flex flex-wrap gap-4">
+          {destination.authoritativeSources.map((src: any) => (
+            <a
+              href={src.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm text-purple-400 hover:text-purple-300 underline underline-offset-2 transition-colors"
+            >
+              {src.name} ({src.type})
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>

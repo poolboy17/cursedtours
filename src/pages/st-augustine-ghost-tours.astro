@@ -1,0 +1,250 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  { id: 'old-town', icon: '🏛️', label: 'Old Town' },
+  { id: 'forts', icon: '🏰', label: 'Forts & Fortress' },
+  { id: 'cemeteries', icon: '⚰️', label: 'Cemeteries' },
+  { id: 'haunted-hotels', icon: '🏨', label: 'Haunted Hotels' },
+  { id: 'trolley-tours', icon: '🚋', label: 'Trolley Tours' },
+];
+
+const faqs = [
+  {
+    question: 'Why is St. Augustine considered so haunted?',
+    answer: 'As the oldest continuously occupied European settlement in the US (founded 1565), St. Augustine has accumulated 450+ years of deaths from battles, sieges, epidemics, pirate attacks, and natural disasters—all compressed into a small colonial footprint.'
+  },
+  {
+    question: 'What is the most haunted location in St. Augustine?',
+    answer: 'The St. Augustine Lighthouse is consistently ranked among the most haunted locations, with documented reports dating back decades. The Old Jail and Castillo de San Marcos also have significant paranormal reputations.'
+  },
+  {
+    question: 'Can you go inside the Castillo at night?',
+    answer: 'Special nighttime tours and paranormal events are occasionally offered by the National Park Service. Regular ghost tours pass the fort exterior and discuss its history from outside the walls.'
+  },
+  {
+    question: 'Are St. Augustine ghost tours family-friendly?',
+    answer: 'Many operators offer family-friendly tours that focus on history and lighter ghost stories. Standard evening tours may include content about death and violence unsuitable for young children.'
+  },
+];
+---
+
+<Layout 
+  title="St. Augustine Ghost Tours: Oldest City Ghosts | Cursed Tours"
+  description="Explore ghost tours in St. Augustine, Florida. Experience 450 years of documented hauntings in the nation's oldest European settlement."
+  canonical="https://cursedtours.com/st-augustine-ghost-tours/"
+>
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <!-- Hero Section -->
+  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+    <div class="container relative z-10 px-4 mx-auto max-w-7xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8]">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li class="text-gray-300 font-medium">St. Augustine Ghost Tours</li>
+        </ol>
+      </nav>
+      
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          St. Augustine Ghost Tours
+        </h1>
+        <p class="text-xl md:text-2xl text-[#a89bb8] italic">
+          "America's Oldest Haunted City"
+        </p>
+      </div>
+      
+      <nav class="overflow-x-auto pb-2">
+        <div class="flex gap-2 md:gap-3 min-w-max md:justify-center">
+          {categories.map((cat) => (
+            <a
+              href={`#${cat.id}`}
+              class="inline-flex items-center gap-2 px-3 py-2 md:px-4 md:py-2.5 rounded-full bg-white/5 border border-white/10 hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300"
+            >
+              <span class="text-lg md:text-xl">{cat.icon}</span>
+              <span class="text-xs md:text-sm text-gray-300">{cat.label}</span>
+            </a>
+          ))}
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          Pedro Menéndez de Avilés founded St. Augustine on September 8, 1565, making it the oldest continuously occupied European-established settlement in the United States. Before Jamestown, before Plymouth Rock, Spanish soldiers and settlers were living—and dying—on this narrow strip of Florida coastline.
+        </p>
+        <p>
+          The city changed hands between Spain and Britain twice, endured pirate attacks, survived British siege, and weathered hurricanes that destroyed entire populations. Sir Francis Drake burned the settlement in 1586. The Castillo de San Marcos, completed in 1695, withstood every attack but couldn't prevent the suffering of those imprisoned within its coquina walls.
+        </p>
+        <p>
+          St. Augustine's compact historic district concentrates 450 years of death within walking distance. Yellow fever outbreaks, military executions, Seminole War prisoners, and generations of forgotten dead all left their marks on America's oldest city.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Haunted Section -->
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why St. Augustine Is Haunted</h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          The Castillo de San Marcos served as a prison for Seminole and Apache prisoners of war, including the famous Geronimo's warriors. Osceola, the Seminole leader, was imprisoned at Fort Marion (as the Castillo was then known) in 1837 before being transferred to South Carolina, where he died. Prisoners died of disease, malnutrition, and despair within the fort's walls.
+        </p>
+        <p>
+          Yellow fever struck repeatedly, with major epidemics in 1821, 1839, 1841, and 1877. The 1821 outbreak killed so many soldiers at the military hospital that bodies were buried in mass graves. Huguenot Cemetery, established in 1821, filled quickly with fever victims.
+        </p>
+        <p>
+          The St. Augustine Lighthouse, built in 1874, stands on grounds with documented tragedy. During construction, the lighthouse keeper's daughters drowned when a supply cart they were playing in rolled into the water. Their reported appearances have been investigated by paranormal researchers for decades.
+        </p>
+        <p>
+          Henry Flagler's Gilded Age development brought new buildings but disturbed old graves. The Alcazar Hotel, now the Lightner Museum, was built over the city's first Catholic cemetery. Construction workers reported finding bones throughout the project.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tour Types -->
+  <section id="old-town" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏛️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Old Town Walking Tours</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Walking tours through the colonial district cover St. George Street, the plaza, and surrounding blocks where Spanish, British, and American history layered over centuries. The Oldest House, dating to the early 1700s, demonstrates how archaeological investigation revealed burial sites beneath residential floors.
+        </p>
+        <p>
+          The Spanish Military Hospital Museum recreates the conditions wounded soldiers faced in colonial St. Augustine. Tours explain medical practices—and mortality rates—that left generations of dead in unmarked graves throughout the city center.
+        </p>
+        <p>
+          Casa Monica, now a luxury hotel, incorporates portions of the original 1888 Cordova Hotel. Staff and guests report encounters throughout the building, particularly in the tower rooms and basement-level spa.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="forts" class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏰</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Fort Tours</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          The Castillo de San Marcos, now a National Monument, offers ranger-led tours during the day. Ghost tours operate outside the walls at night, discussing the fort's history of imprisonment, siege warfare, and documented paranormal activity.
+        </p>
+        <p>
+          The fort's coquina construction—made from compressed seashells—gives it an otherworldly appearance, especially at night. Spanish soldiers, British prisoners, Native American captives, and Union soldiers all spent time within these walls across three centuries.
+        </p>
+        <p>
+          Fort Matanzas, 14 miles south, guards the inlet where Spanish forces massacred shipwrecked French Huguenots in 1565. The name "Matanzas" translates to "slaughters." The smaller fort is accessible by ferry and included in some extended tours.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cemeteries" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">⚰️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Cemetery Tours</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Huguenot Cemetery, visible through iron gates on the edge of the historic district, accepted Protestant burials from 1821 to 1884. Yellow fever victims fill many of its plots. Tours pass the cemetery at night, when shadows play across its weathered stones.
+        </p>
+        <p>
+          Tolomato Cemetery served the Catholic population from 1777 to 1892. It holds the remains of the first bishop of St. Augustine, Spanish colonists, and Minorcan settlers. The cemetery is occasionally open for tours organized by the Diocese of St. Augustine.
+        </p>
+        <p>
+          St. Augustine National Cemetery, established in 1881, contains remains relocated from earlier military burial grounds including those from the Seminole Wars. Three Dade Battlefield pyramids mark mass graves of soldiers killed in the 1835 massacre that began the Second Seminole War.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="haunted-hotels" class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏨</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Haunted Hotels</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          The St. Francis Inn, operating since 1845, consistently appears on lists of America's most haunted hotels. Room 3A reports the most activity, attributed to a servant named Lily who died on the property. Guests have reported apparitions, unexplained footsteps, and objects moving.
+        </p>
+        <p>
+          Casa Monica Hotel, originally the Cordova Hotel built in 1888, connects to the Lightner Museum via an underground passage. Staff report a woman in period dress who appears in the tower and disappears when approached.
+        </p>
+        <p>
+          The Casablanca Inn on the Bay, overlooking Matanzas Bay, served as a boarding house during Prohibition when the owner allegedly signaled rum runners from the widow's walk. Her ghost reportedly still keeps watch.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="trolley-tours" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🚋</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Trolley & Train Tours</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Ghost trolley tours cover more ground than walking tours, accessing locations on the outskirts of the historic district including the lighthouse, Old Jail, and areas beyond comfortable walking distance. Tours typically run 75-90 minutes.
+        </p>
+        <p>
+          The Ghost Train operates on the same tracks used by Henry Flagler's Florida East Coast Railway. Evening departures create atmospheric conditions for storytelling as the train passes sites associated with Flagler's development of Florida.
+        </p>
+        <p>
+          Trolleys provide accessibility options for visitors who cannot manage St. Augustine's brick streets and uneven sidewalks. Many operators offer reserved seating and climate control.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-white mb-2">{faq.question}</h3>
+            <p class="text-[#a89bb8]">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-12 md:py-16 bg-[#0a0510] border-t border-[#3d2a4d]">
+    <div class="container px-4 mx-auto max-w-4xl text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Explore More Haunted Cities</h2>
+      <p class="text-[#a89bb8] mb-6">Discover ghost tours in other historic American cities.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/savannah-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">Savannah</a>
+        <a href="/charleston-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Charleston</a>
+        <a href="/new-orleans-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">New Orleans</a>
+      </div>
+    </div>
+  </section>
+</Layout>

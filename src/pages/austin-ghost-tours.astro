@@ -1,0 +1,223 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  { id: 'sixth-street', icon: '🎸', label: 'Sixth Street' },
+  { id: 'capitol', icon: '🏛️', label: 'State Capitol' },
+  { id: 'driskill', icon: '🏨', label: 'Driskill Hotel' },
+  { id: 'ut-campus', icon: '🎓', label: 'UT Campus' },
+  { id: 'bats', icon: '🦇', label: 'Bat Bridge' },
+];
+
+const faqs = [
+  {
+    question: 'Is the Driskill Hotel haunted?',
+    answer: 'The Driskill Hotel, built in 1886, is widely considered Austin\'s most haunted building. Colonel Jesse Driskill, who built the hotel and lost it to bankruptcy, has reportedly been seen in the lobby smelling of cigar smoke. Room 525 generates consistent reports of unexplained activity. Two young girls who died in the hotel decades apart are reported on the upper floors.'
+  },
+  {
+    question: 'What happened at the UT Tower?',
+    answer: 'On August 1, 1966, Charles Whitman ascended the University of Texas Tower and opened fire on the campus below, killing 14 people and wounding 31 others before being shot by police. The observation deck was closed for years and reopened in 1999 with security measures. Tours of the campus address the tragedy as part of the university\'s history.'
+  },
+  {
+    question: 'What are the Congress Avenue bats?',
+    answer: 'The Congress Avenue Bridge is home to the largest urban bat colony in North America—approximately 1.5 million Mexican free-tailed bats. They emerge at dusk from March through November. While not a ghost tour, the bat emergence is often combined with evening walking tours of haunted downtown Austin.'
+  },
+  {
+    question: 'Are Austin ghost tours walking tours?',
+    answer: 'Most Austin ghost tours are walking tours covering 1-2 miles through downtown, Sixth Street, and the Warehouse District over 90 minutes to two hours. Some companies offer bus tours that cover additional sites including the UT campus, historic cemeteries, and sites outside the downtown core.'
+  },
+];
+---
+
+<Layout
+  title="Austin Ghost Tours: Driskill & Dark History | Cursed Tours"
+  description="Discover Austin's haunted side—ghost tours of the Driskill Hotel, Sixth Street saloons, and the Texas State Capitol's dark history."
+  canonical="https://cursedtours.com/austin-ghost-tours/"
+>
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+    <div class="container relative z-10 px-4 mx-auto max-w-7xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8]">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li class="text-gray-300 font-medium">Austin Ghost Tours</li>
+        </ol>
+      </nav>
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Austin Ghost Tours</h1>
+        <p class="text-xl md:text-2xl text-[#a89bb8] italic">"Keep Austin Haunted"</p>
+      </div>
+      <nav class="overflow-x-auto pb-2">
+        <div class="flex gap-2 md:gap-3 min-w-max md:justify-center">
+          {categories.map((cat) => (
+            <a href={`#${cat.id}`} class="inline-flex items-center gap-2 px-3 py-2 md:px-4 md:py-2.5 rounded-full bg-white/5 border border-white/10 hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300">
+              <span class="text-lg md:text-xl">{cat.icon}</span>
+              <span class="text-xs md:text-sm text-gray-300">{cat.label}</span>
+            </a>
+          ))}
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          Austin was a frontier town before it was a state capital. Founded in 1839 on the banks of the Colorado River, the city's early years were marked by conflicts with Comanche raiders, cholera outbreaks, and the kind of frontier violence that comes with building a civilization at the edge of settled territory. The Republic of Texas chose Austin as its capital partly for its defensible position—a decision that placed political power in a location that was, for decades, genuinely dangerous.
+        </p>
+        <p>
+          In 1884-1885, Austin experienced something that predated Jack the Ripper by three years: the Servant Girl Annihilator, a serial killer who murdered at least seven women and one man. The crimes were never solved. The killings terrorized the city and led to the installation of the "moonlight towers"—tall arc-lighting structures that still stand today, making Austin the only city in the world with its original moonlight towers intact.
+        </p>
+        <p>
+          Modern Austin's ghost tours navigate between the frontier-era violence, the grandeur of the Driskill Hotel, the neon-lit chaos of Sixth Street, and the tragedy at the University of Texas Tower in 1966. The city's haunted history is shorter than East Coast counterparts but no less intense.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why Austin Is Haunted</h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          The Servant Girl Annihilator terrorized Austin from December 1884 to December 1885. The killer targeted domestic servants, primarily Black women, before escalating to attacks on white women in wealthier neighborhoods. Seven women and one man were killed; several others were severely injured. The case generated national media coverage and was never solved, though a cook named Nathan Elgin was convicted of one attack. Modern criminologists have proposed various suspects, but the identity of the killer remains unknown.
+        </p>
+        <p>
+          The Driskill Hotel, built by cattle baron Colonel Jesse Driskill in 1886 at a cost of $400,000, was the most opulent building in Texas at the time. Driskill lost the hotel within a year due to financial reversals following a devastating blizzard that killed most of his cattle. He reportedly never recovered from the loss and has been seen in the hotel's lobby and mezzanine, identifiable by the smell of cigar smoke. Two young girls died in the hotel decades apart—both on the grand staircase—and their apparitions have been reported by guests and staff.
+        </p>
+        <p>
+          On August 1, 1966, Charles Whitman killed his wife and mother, then climbed to the observation deck of the University of Texas Tower with a cache of weapons. Over 96 minutes, he killed 14 people and wounded 31 before being shot by Austin police officer Ramiro Martinez and civilian Allen Crum. The event was one of the first mass shootings in American history to receive live media coverage and fundamentally changed how law enforcement responds to active shooters.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sixth-street" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🎸</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Sixth Street & Warehouse District</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Sixth Street, Austin's entertainment corridor, occupies buildings that date to the 1870s and 1880s. Before it became a bar district, Sixth Street (originally Pecan Street) was Austin's commercial center—home to hardware stores, dry goods shops, and saloons where frontier violence was routine. The Servant Girl Annihilator's attacks occurred in neighborhoods adjacent to what is now the entertainment district.
+        </p>
+        <p>
+          The Warehouse District south of Sixth Street contains repurposed industrial buildings, some of which date to the late 19th century. The area's proximity to the Colorado River meant it was subject to periodic flooding, and the basements and sub-levels of older buildings retain evidence of the river's destructive cycles.
+        </p>
+        <p>
+          Ghost tours through Sixth Street operate most nights of the week, though weekend tours compete with the district's nightlife crowds. Weeknight tours tend to offer a quieter, more atmospheric experience. Tours typically cover 8-10 blocks and last approximately 90 minutes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="capitol" class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏛️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Texas State Capitol</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          The Texas State Capitol, completed in 1888, is taller than the U.S. Capitol in Washington—a deliberate design choice. The building was financed through a land grant of over 3 million acres in the Texas Panhandle, which became the XIT Ranch, the largest fenced ranch in the world. The capitol has reported several resident spirits, including a comptroller who reportedly died in the building and a woman seen on the upper floors.
+        </p>
+        <p>
+          The capitol grounds include the Governor's Mansion, the oldest continuously occupied residence in Texas, which has generated its own ghost reports since the 19th century. Governor Sam Houston lived there during the secession crisis of 1861—he was removed from office for refusing to swear loyalty to the Confederacy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="driskill" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏨</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">The Driskill Hotel</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          The Driskill is Austin's most documented haunted building. Room 525 generates the most consistent reports—guests have described waking to find the bathroom lights on, faucets running, and the room temperature dramatically changed. Some guests have checked out early after experiencing phenomena they couldn't explain. The hotel maintains an unofficial log of reported incidents.
+        </p>
+        <p>
+          Colonel Driskill's apparition, typically accompanied by cigar smoke, has been reported in the lobby and mezzanine areas since the early 20th century. The hotel's Romanesque Revival architecture, with its heavy stone arches and dark interior woodwork, creates an atmosphere that makes the ghost stories feel appropriate to the setting. The Driskill is open to non-guests for dining and drinks, making it accessible as a ghost tour stop.
+        </p>
+        <p>
+          Lyndon Johnson watched his 1964 election returns at the Driskill, and the hotel has hosted Texas political events for over a century. This intersection of political power and supernatural reputation gives the Driskill a character distinct from typical haunted hotels.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ut-campus" class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🎓</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">UT Campus & Tower</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          The University of Texas Tower, a 307-foot limestone structure completed in 1937, dominates the Austin skyline. After the 1966 shooting, the observation deck was closed and remained inaccessible until 1999, when it reopened with enhanced security measures. Tours of the observation deck are available through the university and provide panoramic views of the campus and city.
+        </p>
+        <p>
+          The campus itself, established in 1883, has accumulated its own ghost stories independent of the Tower tragedy. Littlefield Home, a Victorian mansion on campus, has reported unexplained phenomena since the 1960s. The university's Battle Hall, Sutton Hall, and several dormitories have generated persistent reports from students and faculty.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="bats" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🦇</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Congress Avenue Bridge Bats</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          The Congress Avenue Bridge houses approximately 1.5 million Mexican free-tailed bats—the largest urban bat colony in North America. The bats took up residence after a 1980 bridge renovation inadvertently created ideal roosting conditions. Each evening from March through November, the colony emerges at dusk in a stream that can take 45 minutes to fully exit the bridge.
+        </p>
+        <p>
+          While not a supernatural attraction, the bat emergence is often paired with evening ghost tours as a dramatic opening or closing act. The spectacle of over a million creatures emerging from beneath a city bridge at twilight provides an uncanny natural event that ghost tour operators have incorporated into their programming.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-white mb-2">{faq.question}</h3>
+            <p class="text-[#a89bb8]">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510] border-t border-[#3d2a4d]">
+    <div class="container px-4 mx-auto max-w-4xl text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Explore More Haunted Cities</h2>
+      <p class="text-[#a89bb8] mb-6">Discover ghost tours in other historic cities.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/san-antonio-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">San Antonio</a>
+        <a href="/new-orleans-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">New Orleans</a>
+        <a href="/nashville-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Nashville</a>
+      </div>
+    </div>
+  </section>
+</Layout>

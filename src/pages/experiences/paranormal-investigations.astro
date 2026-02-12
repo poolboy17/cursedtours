@@ -1,0 +1,154 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const cities = [
+  { name: 'Savannah', slug: 'savannah-ghost-tours', highlight: 'Sorrel-Weed House, Moon River Brewing' },
+  { name: 'St. Augustine', slug: 'st-augustine-ghost-tours', highlight: 'St. Augustine Lighthouse, Old Jail' },
+  { name: 'New Orleans', slug: 'new-orleans-ghost-tours', highlight: 'LaLaurie Mansion area investigations' },
+  { name: 'Charleston', slug: 'charleston-ghost-tours', highlight: 'Old City Jail paranormal access' },
+];
+---
+
+<Layout 
+  title="Paranormal Investigation Tours | Cursed Tours"
+  description="Go beyond ghost tours with hands-on paranormal investigations. Use professional equipment to search for evidence at America's most haunted locations."
+  canonical="https://cursedtours.com/experiences/paranormal-investigations/"
+>
+  <section class="relative py-16 md:py-24 overflow-hidden bg-[#0a0510]">
+    <div class="container relative z-10 px-4 mx-auto max-w-7xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8]">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li><a href="/experiences/" class="hover:text-purple-400 transition-colors">Experiences</a></li>
+          <li class="text-gray-600">/</li>
+          <li class="text-gray-300 font-medium">Paranormal Investigations</li>
+        </ol>
+      </nav>
+      
+      <div class="text-center">
+        <span class="text-5xl mb-4 block">👻</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          Paranormal Investigations
+        </h1>
+        <p class="text-xl text-[#a89bb8] max-w-2xl mx-auto">
+          Move beyond storytelling to active investigation. Use equipment, explore restricted areas, and search for evidence yourself.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          Paranormal investigations offer something standard ghost tours cannot: active participation in the search for evidence. Instead of listening to guides tell stories, you use equipment to conduct your own exploration of allegedly haunted locations—often in areas closed to regular visitors.
+        </p>
+        <p>
+          These experiences appeal to believers and skeptics alike. Believers hope to capture evidence; skeptics enjoy applying scientific thinking to extraordinary claims. Either way, spending hours in reportedly haunted locations after dark creates memorable experiences regardless of what you conclude about the paranormal.
+        </p>
+        <p>
+          Investigation experiences range from brief introductions with provided equipment to multi-hour sessions in restricted areas. Some locations, like the Old City Jail in Charleston, have hosted television paranormal teams and maintain reputations for consistent activity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Common Investigation Equipment</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">EMF Detectors</h3>
+          <p class="text-[#a89bb8]">Electromagnetic field meters detect fluctuations that some believe indicate paranormal presence. Skeptics note that electrical wiring and appliances also trigger readings.</p>
+        </div>
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Spirit Boxes</h3>
+          <p class="text-[#a89bb8]">These devices rapidly scan radio frequencies, producing white noise that allegedly allows spirits to communicate. Results require interpretation and remain controversial.</p>
+        </div>
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Infrared Cameras</h3>
+          <p class="text-[#a89bb8]">Night-vision and thermal cameras capture images in darkness and detect temperature variations. Some investigators claim to photograph apparitions invisible to the eye.</p>
+        </div>
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Digital Voice Recorders</h3>
+          <p class="text-[#a89bb8]">Used to capture EVPs (Electronic Voice Phenomena)—sounds or voices not heard during recording but appearing on playback. Interpretation remains subjective.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">What to Expect</h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          <strong class="text-white">Duration:</strong> Investigation experiences typically last 2-4 hours, with some overnight options available at select locations. Longer sessions allow time for multiple investigation techniques.
+        </p>
+        <p>
+          <strong class="text-white">Group Size:</strong> Small groups (6-12 people) are standard to maintain quiet conditions and allow everyone equipment access. Private investigations can sometimes be arranged.
+        </p>
+        <p>
+          <strong class="text-white">Equipment:</strong> Most experiences provide equipment, but you're often welcome to bring your own. Ask about policies when booking.
+        </p>
+        <p>
+          <strong class="text-white">Physical Requirements:</strong> Investigations often access areas not designed for visitors—uneven floors, stairs, limited lighting. Mobility limitations should be discussed before booking.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Investigation Sites by City</h2>
+      <div class="space-y-4">
+        {cities.map((city) => (
+          <a 
+            href={`/${city.slug}/`}
+            class="block bg-[#1a1025] border border-[#4a3560] rounded-lg p-6 hover:border-purple-500/50 transition-all"
+          >
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-semibold text-white mb-2">{city.name}</h3>
+                <p class="text-[#a89bb8]">{city.highlight}</p>
+              </div>
+              <svg class="w-5 h-5 text-purple-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">A Note on Evidence</h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          No paranormal investigation has produced evidence that meets scientific standards for proof of ghosts. Equipment readings have natural explanations; photographs show artifacts of digital imaging; EVPs depend on subjective interpretation.
+        </p>
+        <p>
+          This doesn't mean investigations aren't worthwhile. The experience of exploring allegedly haunted locations, using equipment, and drawing your own conclusions has value regardless of metaphysical beliefs. Many participants enjoy the process without expecting definitive proof.
+        </p>
+      </div>
+      <div class="mt-8">
+        <a href="/articles/paranormal-investigation-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">
+          Read Our Paranormal Investigation Guide
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a] border-t border-[#3d2a4d]">
+    <div class="container px-4 mx-auto max-w-4xl text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Explore Other Experiences</h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/experiences/walking-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Walking Tours</a>
+        <a href="/experiences/cemetery-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Cemetery Tours</a>
+        <a href="/experiences/true-crime/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">True Crime Tours</a>
+      </div>
+    </div>
+  </section>
+</Layout>

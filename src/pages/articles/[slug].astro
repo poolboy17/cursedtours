@@ -1,0 +1,276 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getAllArticles, getRelatedArticles, CATEGORIES } from '../../data/articles';
+
+export async function getStaticPaths() {
+  const articles = getAllArticles();
+  return articles.map(article => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const related = getRelatedArticles(article, 4);
+const category = article.categories[0];
+const categoryInfo = CATEGORIES[category?.slug];
+const publishDate = new Date(article.date).toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric'
+});
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": article.title,
+  "description": article.excerpt,
+  "image": article.featuredImage?.sourceUrl,
+  "datePublished": article.date,
+  "dateModified": article.modified || article.date,
+  "author": {
+    "@type": "Organization",
+    "name": "Cursed Tours",
+    "url": "https://cursedtours.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cursed Tours",
+    "url": "https://cursedtours.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cursedtours.com/images/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://cursedtours.com/articles/${article.slug}/`
+  }
+};
+
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cursedtours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://cursedtours.com/articles/" },
+    ...(categoryInfo ? [{
+      "@type": "ListItem", "position": 3,
+      "name": categoryInfo.name,
+      "item": `https://cursedtours.com/articles/category/${category.slug}/`
+    }] : []),
+    {
+      "@type": "ListItem",
+      "position": categoryInfo ? 4 : 3,
+      "name": article.title,
+      "item": `https://cursedtours.com/articles/${article.slug}/`
+    }
+  ]
+};
+---
+
+<Layout
+  title={`${article.title} | Cursed Tours`}
+  description={article.excerpt}
+  canonical={`https://cursedtours.com/articles/${article.slug}/`}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+
+  <!-- Hero -->
+  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+    {article.featuredImage?.sourceUrl && (
+      <div class="absolute inset-0">
+        <img
+          src={article.featuredImage.sourceUrl}
+          alt={article.featuredImage.altText || article.title}
+          class="w-full h-full object-cover opacity-20"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0a0510]/60 via-[#0a0510]/80 to-[#0a0510]"></div>
+      </div>
+    )}
+    <div class="container relative z-10 px-4 mx-auto max-w-4xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8] flex-wrap">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li><a href="/articles/" class="hover:text-purple-400 transition-colors">Articles</a></li>
+          {categoryInfo && (
+            <>
+              <li class="text-gray-600">/</li>
+              <li>
+                <a href={`/articles/category/${category.slug}/`} class="hover:text-purple-400 transition-colors">
+                  {categoryInfo.name}
+                </a>
+              </li>
+            </>
+          )}
+        </ol>
+      </nav>
+
+      {categoryInfo && (
+        <a
+          href={`/articles/category/${category.slug}/`}
+          class="inline-block px-3 py-1 mb-4 text-xs font-medium rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 hover:border-purple-400/50 transition-colors"
+        >
+          {categoryInfo.name}
+        </a>
+      )}
+
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+        {article.title}
+      </h1>
+
+      <div class="flex items-center gap-4 text-sm text-[#a89bb8]">
+        <time datetime={article.date}>{publishDate}</time>
+        <span class="text-gray-600">·</span>
+        <span>{Math.ceil(article.content.split(/\s+/).length / 250)} min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="article-content text-gray-300 text-lg leading-relaxed" set:html={article.content} />
+    </div>
+  </article>
+
+  <!-- Related Articles -->
+  {related.length > 0 && (
+    <section class="py-12 md:py-16 bg-[#0f0a1a] border-t border-white/5">
+      <div class="container px-4 mx-auto max-w-6xl">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Related Articles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {related.map((r) => (
+            <a href={`/articles/${r.slug}/`} class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
+              {r.featuredImage?.sourceUrl && (
+                <div class="aspect-video overflow-hidden">
+                  <img
+                    src={r.featuredImage.sourceUrl}
+                    alt={r.featuredImage.altText || r.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+              <div class="p-4">
+                <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors line-clamp-2">
+                  {r.title}
+                </h3>
+                <p class="text-sm text-gray-400 mt-2 line-clamp-2">{r.excerpt}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Back to Hub CTA -->
+  {categoryInfo?.hubPage && (
+    <section class="py-12 bg-[#0a0510] border-t border-white/5">
+      <div class="container px-4 mx-auto max-w-4xl text-center">
+        <p class="text-gray-400 mb-4">Explore more {categoryInfo.name.toLowerCase()} content</p>
+        <a
+          href={categoryInfo.hubPage}
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-semibold transition-colors"
+        >
+          Browse {categoryInfo.name} Ghost Tours →
+        </a>
+      </div>
+    </section>
+  )}
+</Layout>
+
+<style is:global>
+  .article-content h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .article-content h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #e2d9f0;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .article-content p {
+    margin-bottom: 1.25rem;
+  }
+
+  .article-content a {
+    color: #a78bfa;
+    text-decoration: underline;
+    text-decoration-color: rgba(167, 139, 250, 0.3);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s;
+  }
+
+  .article-content a:hover {
+    text-decoration-color: #a78bfa;
+  }
+
+  .article-content ul,
+  .article-content ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+
+  .article-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .article-content ul li {
+    list-style-type: disc;
+  }
+
+  .article-content ol li {
+    list-style-type: decimal;
+  }
+
+  .article-content hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 2.5rem 0;
+  }
+
+  .article-content img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+  }
+
+  .article-content figure {
+    margin: 2rem 0;
+  }
+
+  .article-content figcaption {
+    text-align: center;
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 0.5em;
+  }
+
+  .article-content blockquote {
+    border-left: 3px solid #7c3aed;
+    padding-left: 1.25rem;
+    margin: 1.5rem 0;
+    color: #b8a9cc;
+    font-style: italic;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

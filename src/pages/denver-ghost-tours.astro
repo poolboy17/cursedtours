@@ -1,0 +1,226 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  { id: 'brown-palace', icon: '🏨', label: 'Brown Palace' },
+  { id: 'lodo', icon: '🏚️', label: 'LoDo District' },
+  { id: 'cemeteries', icon: '⚰️', label: 'Cemeteries' },
+  { id: 'molly-brown', icon: '🚢', label: 'Molly Brown' },
+  { id: 'mountains', icon: '⛰️', label: 'Mountain Ghosts' },
+];
+
+const faqs = [
+  {
+    question: 'Is the Brown Palace Hotel haunted?',
+    answer: 'The Brown Palace, operating since 1892, is Denver\'s most documented haunted hotel. Reports include a string quartet heard playing in the empty ballroom, the apparition of a woman in Victorian dress on the upper floors, and unexplained activity in rooms associated with a 1911 murder-suicide involving a socialite and two men. The hotel\'s atrium design allows sounds to carry in unusual ways, contributing to the atmosphere.'
+  },
+  {
+    question: 'What happened at Cheesman Park?',
+    answer: 'Cheesman Park was built on the site of the old City Cemetery (Mount Prospect). When the city decided to relocate the cemetery in 1893, only 5,000 of the estimated 5,000-10,000 burials were moved. The contractor hired to relocate the bodies was caught using child-sized coffins for adult remains to maximize his per-body payment. An estimated 2,000-5,000 bodies remain beneath the park. The 1982 film Poltergeist was partially inspired by this history.'
+  },
+  {
+    question: 'Did the Stanley Hotel inspire The Shining?',
+    answer: 'Yes. Stephen King stayed at the Stanley Hotel in Estes Park (75 miles from Denver) in October 1974, shortly before the hotel closed for winter. He and his wife were the only guests. The experience directly inspired The Shining, though the novel\'s Overlook Hotel differs significantly from the Stanley. The hotel now offers ghost tours and is a major paranormal tourism destination.'
+  },
+  {
+    question: 'When do Denver ghost tours operate?',
+    answer: 'Tours operate year-round, with most departures between 7:00 and 9:00 PM. Denver\'s dry climate and moderate fall temperatures make October particularly comfortable for walking tours. Winter tours add atmosphere with early darkness and occasional snowfall. Most downtown walking tours cover 1-2 miles over 90 minutes.'
+  },
+];
+---
+
+<Layout
+  title="Denver Ghost Tours: Mining Ghosts & Wild West | Cursed Tours"
+  description="Denver ghost tours through Cheesman Park's buried cemetery, the Brown Palace Hotel, LoDo saloons, and Colorado's frontier ghosts."
+  canonical="https://cursedtours.com/denver-ghost-tours/"
+>
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+    <div class="container relative z-10 px-4 mx-auto max-w-7xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8]">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li class="text-gray-300 font-medium">Denver Ghost Tours</li>
+        </ol>
+      </nav>
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Denver Ghost Tours</h1>
+        <p class="text-xl md:text-2xl text-[#a89bb8] italic">"Built on Gold, Greed, and Unmarked Graves"</p>
+      </div>
+      <nav class="overflow-x-auto pb-2">
+        <div class="flex gap-2 md:gap-3 min-w-max md:justify-center">
+          {categories.map((cat) => (
+            <a href={`#${cat.id}`} class="inline-flex items-center gap-2 px-3 py-2 md:px-4 md:py-2.5 rounded-full bg-white/5 border border-white/10 hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300">
+              <span class="text-lg md:text-xl">{cat.icon}</span>
+              <span class="text-xs md:text-sm text-gray-300">{cat.label}</span>
+            </a>
+          ))}
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          Denver was born from the Pike's Peak Gold Rush of 1858. Within a year, a tent city on the banks of Cherry Creek had become a boomtown filled with prospectors, con men, gamblers, and the businesses that served them. The city's early years were defined by lawlessness, fire, flood, and the displacement of Arapaho and Cheyenne peoples whose land the settlers claimed. Denver burned almost entirely in 1863 and flooded in 1864—the city rebuilt both times, each iteration constructed on the debris of the last.
+        </p>
+        <p>
+          The most notorious chapter in Denver's dark history lies beneath one of its most elegant neighborhoods. Cheesman Park, a manicured greenspace surrounded by upscale homes, was built on the site of the old City Cemetery. When the cemetery was ordered relocated in 1893, the process was so badly mismanaged that thousands of bodies were left in the ground. Residents have reported unexplained phenomena in the park and surrounding homes for over a century.
+        </p>
+        <p>
+          Denver's ghost tours navigate between the frontier-era saloons of Lower Downtown (LoDo), the gilded hotels of the mining boom, and the neighborhoods built—literally—on top of the dead. The city's rapid transformation from frontier camp to metropolis compressed centuries of typical urban development into decades, creating a haunted landscape as layered as cities ten times its age.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why Denver Is Haunted</h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          The Sand Creek Massacre of November 29, 1864, saw Colorado militia under Colonel John Chivington attack a peaceful Cheyenne and Arapaho encampment 170 miles southeast of Denver, killing approximately 230 people—mostly women, children, and elderly. Soldiers paraded through Denver displaying body parts as trophies. The massacre, initially celebrated in Denver newspapers, became one of the most shameful episodes in American history and contributed to decades of conflict on the Plains.
+        </p>
+        <p>
+          The Cheesman Park scandal of 1893 exposed the corruption surrounding Denver's growth. The city contracted with an undertaker named E.P. McGovern to relocate approximately 5,000 graves from the old City Cemetery. McGovern was paid $1.90 per body. When inspectors discovered he was using child-sized coffins to transport adult remains—breaking bones to fit and sometimes putting multiple bodies in a single box—the contract was voided. An estimated 2,000-5,000 bodies were never moved. The park was built over them.
+        </p>
+        <p>
+          Denver's Silver Boom of the 1880s and 1890s produced extreme wealth and extreme poverty in close proximity. The mining magnates built mansions on Capitol Hill while workers died in mines throughout the mountains. When the silver market crashed in 1893, fortunes evaporated overnight. The Tabor Grand Opera House, built by silver king Horace Tabor, became a symbol of the boom's hubris—Tabor died penniless in 1899 at the Windsor Hotel downtown.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="brown-palace" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏨</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">The Brown Palace Hotel</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          The Brown Palace, opened in 1892, is one of the first atrium-style hotels in the United States. Its triangular footprint and eight-story open lobby create acoustics where sounds carry unpredictably—a feature that both explains and enhances its haunted reputation. Every president since Theodore Roosevelt has stayed at the Brown Palace, and its guest registry reads like a who's who of American history.
+        </p>
+        <p>
+          The hotel's most documented haunting involves a 1911 incident in which socialite Louise Crawford Hill was at the center of a love triangle that ended in a shooting in the lobby. Two men—one her husband, one her lover—exchanged gunfire. The lover, Frank Henwood, was convicted of murder. Reports of unexplained activity on the floors associated with the shooting have continued for over a century.
+        </p>
+        <p>
+          A string quartet has reportedly been heard playing in the empty ballroom, and guests have described encountering a woman in Victorian dress on the upper floors who vanishes when approached. The Brown Palace is open to non-guests for dining and afternoon tea, making it accessible as a ghost tour stop without requiring a reservation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="lodo" class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏚️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">LoDo & Larimer Square</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Lower Downtown (LoDo) is Denver's oldest neighborhood, containing buildings that survived the 1863 fire and the 1864 flood. Larimer Square, the city's first commercial block, has been preserved with its original Victorian facades. The buildings now house restaurants and shops, but their upper floors and basements retain evidence of their frontier-era uses as saloons, brothels, and opium dens.
+        </p>
+        <p>
+          The Oxford Hotel, built in 1891, claims several resident ghosts, including a mail carrier who reportedly committed suicide in the hotel and a woman seen in the third-floor hallway. The Cruise Room bar, added during Prohibition's repeal in 1933, is modeled after a lounge on the Queen Mary and has its own atmospheric character.
+        </p>
+        <p>
+          Walking tours through LoDo cover approximately 1 mile of streets that have been in continuous use since the 1860s. The neighborhood's warehouse architecture, brick-paved alleys, and proximity to Union Station create a setting that requires minimal imagination to connect to Denver's frontier origins.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cemeteries" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">⚰️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Cheesman Park & Cemeteries</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Cheesman Park occupies 80 acres of what was formerly Denver's City Cemetery (Mount Prospect), established in 1858. The park's elegant Neoclassical pavilion, designed by the same architects who created Denver's Civic Center, sits atop an estimated 2,000-5,000 unrecovered human remains. Homes surrounding the park have generated reports of apparitions, unexplained sounds, and objects moving since the neighborhood was developed in the early 20th century.
+        </p>
+        <p>
+          Riverside Cemetery, established in 1876, is Denver's oldest active cemetery and contains the graves of many prominent early citizens including Augusta Tabor (first wife of silver king Horace Tabor), Silas Soule (a Union officer who refused to participate in the Sand Creek Massacre and was later murdered), and numerous victims of Denver's frequent epidemics.
+        </p>
+        <p>
+          The 1982 film Poltergeist, about a suburban family whose home is built on an ancient burial ground, was partially inspired by the Cheesman Park story. The film's central conceit—that developers moved the headstones but left the bodies—is essentially what happened in Denver in 1893.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="molly-brown" class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🚢</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Molly Brown House</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Margaret "Molly" Brown, famous for surviving the sinking of the Titanic in 1912, lived in a Victorian mansion on Pennsylvania Street in Denver's Capitol Hill neighborhood. The house, now a museum, has generated reports of unexplained activity since it was restored in the 1970s. Staff have documented rearranged furniture, unexplained shadows, and the smell of cigar smoke attributed to Margaret's husband, J.J. Brown.
+        </p>
+        <p>
+          Tours of the Molly Brown House combine the story of Margaret Brown's remarkable life—from poverty in Hannibal, Missouri to Leadville mining wealth to Titanic heroism—with the documented reports of paranormal activity in the building. The house's Victorian interior has been restored to its 1910 appearance, providing an authentic period setting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="mountains" class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">⛰️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Mountain Ghost Towns</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4">
+        <p>
+          Colorado's mining history produced hundreds of towns that boomed and died within decades. Georgetown, Central City, and Idaho Springs—all within 45 minutes of Denver—retain historic buildings, cemeteries, and mine entrances that serve as reminders of the brutal conditions miners endured. Silicosis, cave-ins, avalanches, and explosions killed thousands of miners across the state.
+        </p>
+        <p>
+          The Stanley Hotel in Estes Park, 75 miles northwest of Denver, is Colorado's most famous haunted destination. Stephen King's stay there in 1974 inspired The Shining. The hotel offers daily ghost tours, nighttime paranormal investigation packages, and a horror film festival. While outside Denver proper, it is the most commonly requested add-on to Denver ghost tour itineraries.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-white mb-2">{faq.question}</h3>
+            <p class="text-[#a89bb8]">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510] border-t border-[#3d2a4d]">
+    <div class="container px-4 mx-auto max-w-4xl text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Explore More Haunted Cities</h2>
+      <p class="text-[#a89bb8] mb-6">Discover ghost tours in other historic cities.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/chicago-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">Chicago</a>
+        <a href="/austin-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Austin</a>
+        <a href="/san-antonio-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">San Antonio</a>
+      </div>
+    </div>
+  </section>
+</Layout>

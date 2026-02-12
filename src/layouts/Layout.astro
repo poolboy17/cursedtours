@@ -1,0 +1,177 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const { title, description = "Explore ghost tours across America's most haunted cities.", canonical, ogImage } = Astro.props;
+const siteUrl = 'https://cursedtours.com';
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  {canonical && <link rel="canonical" href={canonical} />}
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="website">
+  {ogImage && <meta property="og:image" content={ogImage} />}
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style is:global>
+    :root {
+      --color-bg-darkest: #0a0510;
+      --color-bg-dark: #0f0a1a;
+      --color-bg-card: #1a1025;
+      --color-bg-elevated: #241430;
+      --color-border: #3d2a4d;
+      --color-border-light: #4a3560;
+      --color-accent: #a855f7;
+      --color-accent-hover: #c084fc;
+      --color-text: #e8e0f0;
+      --color-text-muted: #a89bb8;
+      --color-text-dim: #7a6b8a;
+    }
+    
+    html {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Cinzel', serif;
+    }
+    
+    body {
+      background-color: var(--color-bg-darkest);
+      color: var(--color-text);
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .container {
+      max-width: 80rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--color-bg-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-border);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-accent);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col" style="background-color: #0a0510;">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur border-b" style="background-color: rgba(15, 10, 26, 0.95); border-color: #3d2a4d;">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2">
+          <span class="text-2xl">👻</span>
+          <span class="font-bold text-xl text-white" style="font-family: 'Cinzel', serif;">Cursed Tours</span>
+        </a>
+        
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="/new-orleans-ghost-tours/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">New Orleans</a>
+          <a href="/savannah-ghost-tours/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Savannah</a>
+          <a href="/salem-ghost-tours/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Salem</a>
+          <a href="/charleston-ghost-tours/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Charleston</a>
+          <a href="/st-augustine-ghost-tours/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">St. Augustine</a>
+        </nav>
+        
+        <!-- Mobile menu button -->
+        <button class="md:hidden p-2" style="color: #a89bb8;" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t mt-auto" style="background-color: #0f0a1a; border-color: #3d2a4d;">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Brand -->
+        <div class="md:col-span-1">
+          <a href="/" class="flex items-center gap-2 mb-4">
+            <span class="text-2xl">👻</span>
+            <span class="font-bold text-lg text-white" style="font-family: 'Cinzel', serif;">Cursed Tours</span>
+          </a>
+          <p class="text-sm" style="color: #7a6b8a;">
+            Independent research on ghost tours across America. Our content is based on documented history and regional folklore.
+          </p>
+        </div>
+        
+        <!-- Destinations -->
+        <div>
+          <h3 class="font-semibold text-white mb-4">Destinations</h3>
+          <ul class="space-y-2">
+            <li><a href="/new-orleans-ghost-tours/" class="text-sm transition-colors" style="color: #7a6b8a;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#7a6b8a'">New Orleans</a></li>
+            <li><a href="/savannah-ghost-tours/" class="text-sm transition-colors" style="color: #7a6b8a;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#7a6b8a'">Savannah</a></li>
+            <li><a href="/salem-ghost-tours/" class="text-sm transition-colors" style="color: #7a6b8a;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#7a6b8a'">Salem</a></li>
+            <li><a href="/charleston-ghost-tours/" class="text-sm transition-colors" style="color: #7a6b8a;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#7a6b8a'">Charleston</a></li>
+            <li><a href="/st-augustine-ghost-tours/" class="text-sm transition-colors" style="color: #7a6b8a;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#7a6b8a'">St. Augustine</a></li>
+          </ul>
+        </div>
+        
+        <!-- Experiences -->
+        <div>
+          <h3 class="font-semibold text-white mb-4">Experiences</h3>
+          <ul class="space-y-2">
+            <li><a href="/experiences/cemetery-tours/" class="text-sm transition-colors" style="color: #7a6b8a;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#7a6b8a'">Cemetery Tours</a></li>
+            <li><a href="/experiences/walking-tours/" class="text-sm transition-colors" style="color: #7a6b8a;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#7a6b8a'">Walking Tours</a></li>
+            <li><a href="/experiences/pub-crawls/" class="text-sm transition-colors" style="color: #7a6b8a;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#7a6b8a'">Haunted Pub Crawls</a></li>
+            <li><a href="/experiences/paranormal-investigations/" class="text-sm transition-colors" style="color: #7a6b8a;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#7a6b8a'">Paranormal Investigations</a></li>
+            <li><a href="/experiences/true-crime/" class="text-sm transition-colors" style="color: #7a6b8a;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#7a6b8a'">True Crime Tours</a></li>
+          </ul>
+        </div>
+        
+        <!-- Company -->
+        <div>
+          <h3 class="font-semibold text-white mb-4">Company</h3>
+          <ul class="space-y-2">
+            <li><a href="/about/" class="text-sm transition-colors" style="color: #7a6b8a;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#7a6b8a'">About Us</a></li>
+            <li><a href="/editorial-policy/" class="text-sm transition-colors" style="color: #7a6b8a;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#7a6b8a'">Editorial Policy</a></li>
+            <li><a href="/contact/" class="text-sm transition-colors" style="color: #7a6b8a;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#7a6b8a'">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mt-8 pt-8 text-center" style="border-top: 1px solid #3d2a4d;">
+        <p class="text-sm" style="color: #7a6b8a;">
+          © {new Date().getFullYear()} Cursed Tours. Independent ghost tour research and historical information.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

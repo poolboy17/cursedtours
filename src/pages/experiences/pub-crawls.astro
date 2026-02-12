@@ -1,0 +1,131 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const cities = [
+  { name: 'New Orleans', slug: 'new-orleans-ghost-tours', highlight: 'Lafitte\'s Blacksmith Shop, Old Absinthe House' },
+  { name: 'Savannah', slug: 'savannah-ghost-tours', highlight: 'Moon River Brewing, The Pirates\' House' },
+  { name: 'Charleston', slug: 'charleston-ghost-tours', highlight: 'Poogan\'s Porch, Blind Tiger Pub' },
+];
+---
+
+<Layout 
+  title="Haunted Pub Crawl Tours | Cursed Tours"
+  description="Combine ghost stories with craft cocktails on haunted pub crawls. Visit historic taverns with documented paranormal activity."
+  canonical="https://cursedtours.com/experiences/pub-crawls/"
+>
+  <section class="relative py-16 md:py-24 overflow-hidden bg-[#0a0510]">
+    <div class="container relative z-10 px-4 mx-auto max-w-7xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8]">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li><a href="/experiences/" class="hover:text-purple-400 transition-colors">Experiences</a></li>
+          <li class="text-gray-600">/</li>
+          <li class="text-gray-300 font-medium">Haunted Pub Crawls</li>
+        </ol>
+      </nav>
+      
+      <div class="text-center">
+        <span class="text-5xl mb-4 block">🍺</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          Haunted Pub Crawls
+        </h1>
+        <p class="text-xl text-[#a89bb8] max-w-2xl mx-auto">
+          Historic taverns, craft cocktails, and ghost stories that improve with every drink.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          America's oldest bars have seen centuries of celebrations, brawls, deals, and deaths. Haunted pub crawls combine the social atmosphere of bar hopping with historical storytelling, visiting taverns where documented tragedies—and undocumented spirits—allegedly linger.
+        </p>
+        <p>
+          The format varies by city. In New Orleans and Savannah, open container laws allow participants to carry drinks between stops. In other cities, tours pause at each location for drinks before moving on. Either way, the combination of alcohol, atmosphere, and storytelling creates a uniquely memorable experience.
+        </p>
+        <p>
+          These tours attract adults looking for entertainment rather than academic history. Guides tend toward theatrical presentation, and the stories often emphasize dramatic deaths, forbidden romances, and supernatural revenge. Accuracy varies, but the atmosphere is consistently engaging.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">What to Expect</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Duration & Pace</h3>
+          <p class="text-[#a89bb8]">Most crawls last 2-3 hours and visit 3-5 establishments. Pace is leisurely, with 20-30 minutes at each stop for drinks and stories.</p>
+        </div>
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Drinks Included?</h3>
+          <p class="text-[#a89bb8]">Policies vary. Some tours include drinks in the price; others provide discounts or leave purchasing to participants. Check before booking.</p>
+        </div>
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Age Requirements</h3>
+          <p class="text-[#a89bb8]">All participants must be 21+ with valid ID. These tours aren't appropriate for children even if bars technically allow minors.</p>
+        </div>
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Group Atmosphere</h3>
+          <p class="text-[#a89bb8]">Pub crawls attract bachelorette parties, friend groups, and couples. Expect a social atmosphere rather than quiet contemplation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Historic Haunted Bars</h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          <strong class="text-white">Lafitte's Blacksmith Shop (New Orleans):</strong> Operating since the 1770s, this candlelit bar allegedly served as a front for pirate Jean Lafitte's smuggling operation. No electric lights—just candles and atmosphere that hasn't changed in 250 years.
+        </p>
+        <p>
+          <strong class="text-white">Moon River Brewing Company (Savannah):</strong> The former City Hotel served as a hospital during yellow fever outbreaks. Staff report aggressive paranormal activity, particularly on upper floors closed to the public.
+        </p>
+        <p>
+          <strong class="text-white">The Pirates' House (Savannah):</strong> Mentioned in Robert Louis Stevenson's "Treasure Island," this 1753 tavern reputedly had tunnels for shanghaiing sailors. They'd wake up at sea, conscripted crew on ships they never volunteered to join.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Pub Crawls by City</h2>
+      <div class="space-y-4">
+        {cities.map((city) => (
+          <a 
+            href={`/${city.slug}/`}
+            class="block bg-[#1a1025] border border-[#4a3560] rounded-lg p-6 hover:border-purple-500/50 transition-all"
+          >
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-semibold text-white mb-2">{city.name}</h3>
+                <p class="text-[#a89bb8]">{city.highlight}</p>
+              </div>
+              <svg class="w-5 h-5 text-purple-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510] border-t border-[#3d2a4d]">
+    <div class="container px-4 mx-auto max-w-4xl text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Explore Other Experiences</h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/experiences/walking-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Walking Tours</a>
+        <a href="/experiences/cemetery-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Cemetery Tours</a>
+        <a href="/experiences/true-crime/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">True Crime Tours</a>
+      </div>
+    </div>
+  </section>
+</Layout>

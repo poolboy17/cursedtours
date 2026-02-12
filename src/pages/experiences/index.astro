@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const experiences = [
+  {
+    name: 'Cemetery Tours',
+    slug: 'cemetery-tours',
+    icon: '⚰️',
+    description: 'Walk among the dead in historic burial grounds where architecture, history, and ghost stories intersect.'
+  },
+  {
+    name: 'Walking Tours',
+    slug: 'walking-tours',
+    icon: '🚶',
+    description: 'The classic ghost tour experience—on foot, at street level, where the stories happened.'
+  },
+  {
+    name: 'Haunted Pub Crawls',
+    slug: 'pub-crawls',
+    icon: '🍺',
+    description: 'Historic taverns, craft cocktails, and ghost stories that improve with every drink.'
+  },
+  {
+    name: 'Paranormal Investigations',
+    slug: 'paranormal-investigations',
+    icon: '👻',
+    description: 'Go beyond storytelling with hands-on equipment and access to restricted areas.'
+  },
+  {
+    name: 'True Crime Tours',
+    slug: 'true-crime',
+    icon: '🔍',
+    description: 'Documented crimes, unsolved mysteries, and the dark side of American history.'
+  },
+];
+---
+
+<Layout 
+  title="Ghost Tour Experiences by Type | Cursed Tours"
+  description="Explore different types of ghost tours: cemetery tours, walking tours, pub crawls, paranormal investigations, and true crime experiences."
+  canonical="https://cursedtours.com/experiences/"
+>
+  <section class="relative py-16 md:py-24 overflow-hidden bg-[#0a0510]">
+    <div class="container relative z-10 px-4 mx-auto max-w-7xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8]">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li class="text-gray-300 font-medium">Experiences</li>
+        </ol>
+      </nav>
+      
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          Ghost Tour Experiences
+        </h1>
+        <p class="text-xl text-[#a89bb8] max-w-2xl mx-auto">
+          Different ways to explore America's haunted history—from walking tours to paranormal investigations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="grid gap-6">
+        {experiences.map((exp) => (
+          <a 
+            href={`/experiences/${exp.slug}/`}
+            class="bg-[#0f0a1a] border border-[#3d2a4d] rounded-xl p-6 hover:border-purple-500/50 transition-all group"
+          >
+            <div class="flex items-start gap-4">
+              <span class="text-4xl">{exp.icon}</span>
+              <div class="flex-1">
+                <h2 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors mb-2">
+                  {exp.name}
+                </h2>
+                <p class="text-[#a89bb8]">{exp.description}</p>
+              </div>
+              <svg class="w-5 h-5 text-purple-400 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a] border-t border-[#3d2a4d]">
+    <div class="container px-4 mx-auto max-w-4xl text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Explore Haunted Destinations</h2>
+      <p class="text-[#a89bb8] mb-6">Find ghost tours in America's most haunted cities.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/new-orleans-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">New Orleans</a>
+        <a href="/savannah-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Savannah</a>
+        <a href="/salem-ghost-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Salem</a>
+      </div>
+    </div>
+  </section>
+</Layout>

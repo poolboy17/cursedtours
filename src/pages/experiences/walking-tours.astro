@@ -1,0 +1,136 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const cities = [
+  { name: 'New Orleans', slug: 'new-orleans-ghost-tours', highlight: 'French Quarter, Garden District tours' },
+  { name: 'Savannah', slug: 'savannah-ghost-tours', highlight: 'Historic District squares and lanes' },
+  { name: 'Charleston', slug: 'charleston-ghost-tours', highlight: 'Battery, French Quarter walking routes' },
+  { name: 'Salem', slug: 'salem-ghost-tours', highlight: 'Witch trial sites, maritime history' },
+  { name: 'St. Augustine', slug: 'st-augustine-ghost-tours', highlight: 'Colonial district, St. George Street' },
+];
+---
+
+<Layout 
+  title="Ghost Walking Tours | Cursed Tours"
+  description="Experience ghost walking tours through America's most haunted cities. Discover the stories behind historic buildings, streets, and landmarks."
+  canonical="https://cursedtours.com/experiences/walking-tours/"
+>
+  <section class="relative py-16 md:py-24 overflow-hidden bg-[#0a0510]">
+    <div class="container relative z-10 px-4 mx-auto max-w-7xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8]">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li><a href="/experiences/" class="hover:text-purple-400 transition-colors">Experiences</a></li>
+          <li class="text-gray-600">/</li>
+          <li class="text-gray-300 font-medium">Walking Tours</li>
+        </ol>
+      </nav>
+      
+      <div class="text-center">
+        <span class="text-5xl mb-4 block">🚶</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          Ghost Walking Tours
+        </h1>
+        <p class="text-xl text-[#a89bb8] max-w-2xl mx-auto">
+          The original and most immersive way to experience haunted history—on foot, at street level, where the stories happened.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          Walking tours remain the gold standard for ghost tourism because they put you exactly where historical events occurred. Standing on the same cobblestones, looking up at the same windows, feeling the same humidity—these sensory details connect you to history in ways that vehicles and virtual tours cannot replicate.
+        </p>
+        <p>
+          The best walking tour guides combine theatrical storytelling with genuine historical knowledge. They know which stories have documentary support and which emerged from folklore. They can point to specific windows, doorways, and street corners where documented events unfolded.
+        </p>
+        <p>
+          Most ghost walking tours last 90 minutes to two hours and cover one to two miles. Evening tours take advantage of atmospheric lighting and cooler temperatures, while daytime tours offer better visibility and access to interior spaces that may close at night.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">What Makes a Great Walking Tour</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Knowledgeable Guides</h3>
+          <p class="text-[#a89bb8]">The best guides have researched primary sources, not just repeated legends. They can tell you where stories originated and how they evolved over time.</p>
+        </div>
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Appropriate Group Size</h3>
+          <p class="text-[#a89bb8]">Smaller groups (under 20) allow better interaction with guides and access to narrow streets and courtyards that large groups can't navigate.</p>
+        </div>
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Historical Accuracy</h3>
+          <p class="text-[#a89bb8]">Quality tours distinguish between documented history and folklore. Both have value, but knowing the difference enhances understanding.</p>
+        </div>
+        <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Engaging Storytelling</h3>
+          <p class="text-[#a89bb8]">History comes alive through narrative. Good guides create tension, suspense, and emotional connection to people who lived centuries ago.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Preparing for Your Tour</h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          <strong class="text-white">Wear comfortable shoes.</strong> You'll be standing and walking on uneven surfaces—cobblestones, brick sidewalks, and cemetery paths—for up to two hours.
+        </p>
+        <p>
+          <strong class="text-white">Check the weather.</strong> Most tours operate rain or shine, but knowing conditions helps you dress appropriately. Bring water in hot weather.
+        </p>
+        <p>
+          <strong class="text-white">Arrive early.</strong> Tours often start promptly and may leave without latecomers. Meeting points can be confusing in unfamiliar cities.
+        </p>
+        <p>
+          <strong class="text-white">Bring cash for tips.</strong> Guides often work for tips or low base wages. Standard tipping is $5-10 per person for good service.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Walking Tours by City</h2>
+      <div class="space-y-4">
+        {cities.map((city) => (
+          <a 
+            href={`/${city.slug}/`}
+            class="block bg-[#1a1025] border border-[#4a3560] rounded-lg p-6 hover:border-purple-500/50 transition-all"
+          >
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-semibold text-white mb-2">{city.name}</h3>
+                <p class="text-[#a89bb8]">{city.highlight}</p>
+              </div>
+              <svg class="w-5 h-5 text-purple-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-[#0a0510] border-t border-[#3d2a4d]">
+    <div class="container px-4 mx-auto max-w-4xl text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Explore Other Experiences</h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/experiences/cemetery-tours/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Cemetery Tours</a>
+        <a href="/experiences/pub-crawls/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Haunted Pub Crawls</a>
+        <a href="/experiences/paranormal-investigations/" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1025] hover:bg-[#241430] text-white font-semibold rounded-lg border border-[#4a3560] transition-colors">Paranormal Investigations</a>
+      </div>
+    </div>
+  </section>
+</Layout>
