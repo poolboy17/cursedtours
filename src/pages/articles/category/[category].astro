@@ -3,10 +3,14 @@ import Layout from '../../../layouts/Layout.astro';
 import { getArticlesByCategory, CATEGORIES } from '../../../data/articles';
 
 export async function getStaticPaths() {
-  return Object.entries(CATEGORIES).map(([slug, info]) => ({
-    params: { category: slug },
-    props: { categorySlug: slug, categoryInfo: info },
-  }));
+  // Only topical categories get their own page.
+  // City categories are handled by their parent page (/{city}-ghost-tours/).
+  return Object.entries(CATEGORIES)
+    .filter(([_, info]) => info.type !== 'city')
+    .map(([slug, info]) => ({
+      params: { category: slug },
+      props: { categorySlug: slug, categoryInfo: info },
+    }));
 }
 
 const { categorySlug, categoryInfo } = Astro.props;

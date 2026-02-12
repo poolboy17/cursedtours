@@ -3,13 +3,13 @@ import Layout from '../../layouts/Layout.astro';
 import { getAllArticles, getArticlesByCategory, CATEGORIES } from '../../data/articles';
 
 const allArticles = getAllArticles();
-const categoryOrder = [
-  'salem-witch-trials',
-  'new-orleans-voodoo-haunted-history',
-  'chicago-haunted-history',
-  'dracula-gothic-literature',
-  'tour-planning',
-];
+
+// Show categories that have articles, in a sensible order.
+// City categories link to their parent page.
+// Topical categories link to their category page.
+const categoryOrder = Object.keys(CATEGORIES).filter(
+  slug => getArticlesByCategory(slug).length > 0
+);
 ---
 
 <Layout

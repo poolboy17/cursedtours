@@ -18,6 +18,19 @@ const publishDate = new Date(article.date).toLocaleDateString('en-US', {
   year: 'numeric', month: 'long', day: 'numeric'
 });
 
+// Resolve the correct parent page for this article.
+// City articles → parent is the city hub (/{city}-ghost-tours/)
+// Topical articles → parent is the category page (/articles/category/{slug}/)
+const isCity = categoryInfo?.type === 'city';
+const parentHref = isCity && categoryInfo.hubPage
+  ? categoryInfo.hubPage
+  : categoryInfo
+    ? `/articles/category/${category.slug}/`
+    : null;
+const parentUrl = parentHref
+  ? `https://cursedtours.com${parentHref}`
+  : null;
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -55,14 +68,14 @@ const breadcrumbLd = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cursedtours.com/" },
     { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://cursedtours.com/articles/" },
-    ...(categoryInfo ? [{
+    ...(categoryInfo && parentUrl ? [{
       "@type": "ListItem", "position": 3,
       "name": categoryInfo.name,
-      "item": `https://cursedtours.com/articles/category/${category.slug}/`
+      "item": parentUrl
     }] : []),
     {
       "@type": "ListItem",
-      "position": categoryInfo ? 4 : 3,
+      "position": categoryInfo && parentUrl ? 4 : 3,
       "name": article.title,
       "item": `https://cursedtours.com/articles/${article.slug}/`
     }
@@ -100,11 +113,11 @@ const breadcrumbLd = {
           <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
           <li class="text-gray-600">/</li>
           <li><a href="/articles/" class="hover:text-purple-400 transition-colors">Articles</a></li>
-          {categoryInfo && (
+          {categoryInfo && parentHref && (
             <>
               <li class="text-gray-600">/</li>
               <li>
-                <a href={`/articles/category/${category.slug}/`} class="hover:text-purple-400 transition-colors">
+                <a href={parentHref} class="hover:text-purple-400 transition-colors">
                   {categoryInfo.name}
                 </a>
               </li>
@@ -113,9 +126,9 @@ const breadcrumbLd = {
         </ol>
       </nav>
 
-      {categoryInfo && (
+      {categoryInfo && parentHref && (
         <a
-          href={`/articles/category/${category.slug}/`}
+          href={parentHref}
           class="inline-block px-3 py-1 mb-4 text-xs font-medium rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 hover:border-purple-400/50 transition-colors"
         >
           {categoryInfo.name}

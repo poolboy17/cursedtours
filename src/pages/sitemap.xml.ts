@@ -21,7 +21,6 @@ export const GET: APIRoute = async () => {
   const destinations = Object.keys(DESTINATIONS);
   const utilities = ['about', 'contact', 'editorial-policy', 'privacy-policy', 'terms'];
   const articles = getAllArticles();
-  const categories = Object.keys(CATEGORIES);
 
   function entry(path: string, priority: string, changefreq: string) {
     return `  <url>
@@ -38,7 +37,9 @@ export const GET: APIRoute = async () => {
     entry('/destinations/', '0.7', 'monthly'),
     ...cityHubs.map(c => entry(`/${c}-ghost-tours/`, '0.9', 'monthly')),
     ...destinations.map(d => entry(`/destinations/${d}/`, '0.8', 'monthly')),
-    ...categories.map(c => entry(`/articles/category/${c}/`, '0.7', 'weekly')),
+    ...Object.entries(CATEGORIES)
+      .filter(([_, info]) => info.type !== 'city')
+      .map(([slug]) => entry(`/articles/category/${slug}/`, '0.7', 'weekly')),
     entry('/experiences/', '0.6', 'monthly'),
     ...experiences.map(e => entry(`/experiences/${e}/`, '0.6', 'monthly')),
     ...articles.map(a => entry(`/articles/${a.slug}/`, '0.7', 'weekly')),
