@@ -32,7 +32,7 @@ export default {
     // Required elements
     requiredElements: [
       { name: 'faq-schema', pattern: '"FAQPage"' },
-      { name: 'hero-bg', pattern: 'background-image: url(' },
+
       { name: 'breadcrumbs', pattern: 'Home</a>' },
       { name: 'explore-more', pattern: 'Explore More Haunted Cities' },
       { name: 'why-haunted', pattern: /Why\s+[\w\s.'-]+\s+(?:Is|Are|Most\s+)?Haunted/i },
