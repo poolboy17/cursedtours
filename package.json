@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
+    "shared-test-utils": "file:../shared-test-utils",
     "tailwindcss": "^3.4.0"
   }
 }
