@@ -46,7 +46,8 @@ const faqs = [
   })} />
 
   <!-- Hero Section -->
-  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510] bg-cover bg-center" style="background-image: url('/images/city-hubs/charleston.webp');">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0a0510]/60 via-[#0a0510]/75 to-[#0a0510]"></div>
     <div class="container relative z-10 px-4 mx-auto max-w-7xl">
       <nav class="mb-6 text-sm">
         <ol class="flex items-center gap-2 text-[#a89bb8]">
@@ -81,6 +82,9 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Accent Divider -->
+  <div class="bg-[#0a0510]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
+
   <!-- Intro Section -->
   <section class="py-12 md:py-16 bg-[#0a0510]">
     <div class="container px-4 mx-auto max-w-4xl">
@@ -98,11 +102,14 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Accent Divider -->
+  <div class="bg-[#0f0a1a]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
+
   <!-- Why Haunted Section -->
   <section class="py-12 md:py-16 bg-[#0f0a1a]">
     <div class="container px-4 mx-auto max-w-4xl">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why Charleston Is Haunted</h2>
-      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4 border-l-2 border-purple-500/30 pl-8">
         <p>
           Gadsden's Wharf, now a park near the South Carolina Aquarium, processed enslaved Africans for sale to plantations throughout the South. The Sullivan's Island pest houses, where arriving ships quarantined before unloading their human cargo, saw death on a scale that earned the island the nickname "the Ellis Island of Black America"—though with far different implications.
         </p>
@@ -119,6 +126,9 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Accent Divider -->
+  <div class="bg-[#0a0510]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
+
   <!-- Tour Types -->
   <section id="historic-district" class="py-12 md:py-16 bg-[#0a0510]">
     <div class="container px-4 mx-auto max-w-4xl">
@@ -130,9 +140,7 @@ const faqs = [
         <p>
           Walking tours through the Historic District pass Charleston's most documented haunted locations. The Dock Street Theatre, built on the site of a hotel where a working woman named Nettie reportedly fell to her death, claims multiple active spirits including actors from centuries of theatrical productions.
         </p>
-              <div class="my-8 rounded-lg overflow-hidden"></div>
-
-        <p>
+<p>
           The Unitarian Church cemetery on Archdale Street contains graves dating to 1772 and reports of apparitions among its crumbling stones. Edgar Allan Poe was stationed at nearby Fort Moultrie in 1827, and his experience in Charleston influenced "The Gold-Bug."
         </p>
         <p>
@@ -192,9 +200,7 @@ const faqs = [
         <p>
           Charleston's pub crawl scene offers a different atmosphere than Savannah's, with drinks consumed at each stop rather than carried between bars. Poogan's Porch, a restaurant in a Victorian house, claims a ghost named Zoe who appears to diners and staff.
         </p>
-              <div class="my-8 rounded-lg overflow-hidden"></div>
-
-        <p>
+<p>
           The Blind Tiger Pub takes its name from Prohibition-era speakeasies that displayed stuffed tigers to indicate illegal alcohol was available. The building dates to the 19th century and has its own reported hauntings.
         </p>
         <p>
@@ -225,6 +231,9 @@ const faqs = [
   </section>
 
     
+    <!-- Accent Divider -->
+    <div class="bg-[#0a0510]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
+
     <!-- Articles Section -->
     <section class="py-12 md:py-16 bg-[#0a0510]">
       <div class="container px-4 mx-auto max-w-6xl">
@@ -232,7 +241,9 @@ const faqs = [
         <p class="text-[#a89bb8] mb-8">In-depth guides to Charleston's haunted history, famous ghosts, and dark legends.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <a href="/articles/charleston-civil-war-ghost-stories/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
-            <div class="aspect-video overflow-hidden"></div>
+            <div class="aspect-video overflow-hidden">
+              <img src="/images/articles/charleston-civil-war-ghost-stories.webp" alt="Charleston Civil War Ghost Stories" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+            </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
               <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors line-clamp-2">Charleston's Civil War Ghosts: The Siege That Never Ended</h3>
@@ -240,7 +251,9 @@ const faqs = [
             </div>
           </a>
           <a href="/articles/charleston-old-city-jail-haunted-history/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
-            <div class="aspect-video overflow-hidden"></div>
+            <div class="aspect-video overflow-hidden">
+              <img src="/images/articles/charleston-old-city-jail-haunted-history.webp" alt="Charleston Old City Jail Haunted History" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+            </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
               <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors line-clamp-2">The Old Charleston Jail: America's Most Haunted Prison</h3>
@@ -248,7 +261,9 @@ const faqs = [
             </div>
           </a>
           <a href="/articles/charleston-pirate-ghosts-legends/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
-            <div class="aspect-video overflow-hidden"></div>
+            <div class="aspect-video overflow-hidden">
+              <img src="/images/articles/charleston-pirate-ghosts-legends.webp" alt="Charleston Pirate Ghosts Legends" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+            </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
               <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors line-clamp-2">Charleston's Pirate Ghosts: Blackbeard, Bonnet, and the Golden Age</h3>
@@ -256,7 +271,9 @@ const faqs = [
             </div>
           </a>
           <a href="/articles/charleston-unitarian-church-graveyard/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
-            <div class="aspect-video overflow-hidden"></div>
+            <div class="aspect-video overflow-hidden">
+              <img src="/images/articles/charleston-unitarian-church-graveyard.webp" alt="Charleston Unitarian Church Graveyard" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+            </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
               <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors line-clamp-2">The Unitarian Church Graveyard: Charleston's Forgotten Dead</h3>
@@ -264,7 +281,9 @@ const faqs = [
             </div>
           </a>
           <a href="/articles/most-haunted-places-in-charleston/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
-            <div class="aspect-video overflow-hidden"></div>
+            <div class="aspect-video overflow-hidden">
+              <img src="/images/articles/most-haunted-places-in-charleston.webp" alt="Most Haunted Places In Charleston" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+            </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
               <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors line-clamp-2">Most Haunted Places in Charleston: The Holy City's Dark Side</h3>
@@ -275,6 +294,9 @@ const faqs = [
       </div>
     </section>
 
+    <!-- Accent Divider -->
+    <div class="bg-[#0f0a1a]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
+
     <!-- FAQ Section -->
   <section class="py-12 md:py-16 bg-[#0f0a1a]">
     <div class="container px-4 mx-auto max-w-4xl">
@@ -284,9 +306,7 @@ const faqs = [
           <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
             <h3 class="text-lg font-semibold text-white mb-2">{faq.question}</h3>
             <p class="text-[#a89bb8]">{faq.answer}</p>
-              <div class="my-8 rounded-lg overflow-hidden"></div>
-
-          </div>
+</div>
         ))}
       </div>
     </div>

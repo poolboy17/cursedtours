@@ -45,7 +45,8 @@ const faqs = [
     }))
   })} />
 
-  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510] bg-cover bg-center" style="background-image: url('/images/city-hubs/new-york.webp');">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0a0510]/60 via-[#0a0510]/75 to-[#0a0510]"></div>
     <div class="container relative z-10 px-4 mx-auto max-w-7xl">
       <nav class="mb-6 text-sm">
         <ol class="flex items-center gap-2 text-[#a89bb8]">
@@ -87,10 +88,13 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Accent Divider -->
+  <div class="bg-[#0f0a1a]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
+
   <section class="py-12 md:py-16 bg-[#0f0a1a]">
     <div class="container px-4 mx-auto max-w-4xl">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why New York Is Haunted</h2>
-      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4 border-l-2 border-purple-500/30 pl-8">
         <p>
           The African Burial Ground National Monument at 290 Broadway preserves a portion of the largest known colonial-era cemetery for people of African descent. When rediscovered in 1991, the site disrupted a $276 million federal office building project and prompted one of the most significant archaeological investigations in American history. Analysis of the remains revealed evidence of brutal physical labor, malnutrition, and death at young ages. The site was designated a National Monument in 2006.
         </p>
@@ -104,6 +108,9 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Accent Divider -->
+  <div class="bg-[#0a0510]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
+
   <section id="greenwich" class="py-12 md:py-16 bg-[#0a0510]">
     <div class="container px-4 mx-auto max-w-4xl">
       <div class="flex items-center gap-3 mb-6">
@@ -114,9 +121,7 @@ const faqs = [
         <p>
           Greenwich Village is the epicenter of New York's ghost tour industry, and for good reason. The Village's irregular street grid—one of the few areas of Manhattan that resisted the 1811 Commissioner's Plan—preserves a pre-industrial urban fabric where 18th and 19th-century buildings stand in daily use. The neighborhood's history encompasses yellow fever epidemics, buried streams, erased cemeteries, and the literary ghosts of Edgar Allan Poe and Mark Twain.
         </p>
-              <div class="my-8 rounded-lg overflow-hidden"></div>
-
-        <p>
+<p>
           The Merchant's House Museum at 29 East 4th Street is the only 19th-century family home in Manhattan preserved intact with its original furnishings. Gertrude Tredwell, the last surviving member of the family, died in the house in 1933 at age 93, having lived there since birth. Staff and visitors have reported piano music, footsteps on upper floors, and the scent of flowers in rooms where none are present. The house conducts its own ghost tours and has hosted multiple paranormal investigations.
         </p>
         <p>
@@ -176,9 +181,7 @@ const faqs = [
         <p>
           Brooklyn Heights, one of New York's oldest neighborhoods, served as George Washington's headquarters during the disastrous Battle of Brooklyn in August 1776. The Continental Army's nighttime retreat across the East River, covered by fog, saved the revolution from ending in its first major engagement. Tours through the Heights pass historic houses that predate the Revolution and overlook the harbor where the escape occurred.
         </p>
-              <div class="my-8 rounded-lg overflow-hidden"></div>
-
-        <p>
+<p>
           Staten Island's Conference House, built around 1680, hosted the only peace conference of the American Revolution—a failed meeting between Benjamin Franklin, John Adams, and British Admiral Lord Howe in September 1776. The house has generated reports of unexplained phenomena for generations and offers seasonal ghost tours.
         </p>
         <p>
@@ -216,13 +219,14 @@ const faqs = [
           <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
             <h3 class="text-lg font-semibold text-white mb-2">{faq.question}</h3>
             <p class="text-[#a89bb8]">{faq.answer}</p>
-              <div class="my-8 rounded-lg overflow-hidden"></div>
-
-          </div>
+</div>
         ))}
       </div>
     </div>
   </section>
+
+  <!-- Accent Divider -->
+  <div class="bg-[#0a0510]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
 
   <section class="py-12 md:py-16 bg-[#0a0510] border-t border-[#3d2a4d]">
     <div class="container px-4 mx-auto max-w-4xl text-center">

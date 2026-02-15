@@ -45,7 +45,8 @@ const faqs = [
     }))
   })} />
 
-  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510] bg-cover bg-center" style="background-image: url('/images/city-hubs/austin.webp');">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0a0510]/60 via-[#0a0510]/75 to-[#0a0510]"></div>
     <div class="container relative z-10 px-4 mx-auto max-w-7xl">
       <nav class="mb-6 text-sm">
         <ol class="flex items-center gap-2 text-[#a89bb8]">
@@ -87,10 +88,13 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Accent Divider -->
+  <div class="bg-[#0f0a1a]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
+
   <section class="py-12 md:py-16 bg-[#0f0a1a]">
     <div class="container px-4 mx-auto max-w-4xl">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why Austin Is Haunted</h2>
-      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4 border-l-2 border-purple-500/30 pl-8">
         <p>
           The Servant Girl Annihilator terrorized Austin from December 1884 to December 1885. The killer targeted domestic servants, primarily Black women, before escalating to attacks on white women in wealthier neighborhoods. Seven women and one man were killed; several others were severely injured. The case generated national media coverage and was never solved, though a cook named Nathan Elgin was convicted of one attack. Modern criminologists have proposed various suspects, but the identity of the killer remains unknown.
         </p>
@@ -104,6 +108,9 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Accent Divider -->
+  <div class="bg-[#0a0510]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
+
   <section id="sixth-street" class="py-12 md:py-16 bg-[#0a0510]">
     <div class="container px-4 mx-auto max-w-4xl">
       <div class="flex items-center gap-3 mb-6">
@@ -114,9 +121,7 @@ const faqs = [
         <p>
           Sixth Street, Austin's entertainment corridor, occupies buildings that date to the 1870s and 1880s. Before it became a bar district, Sixth Street (originally Pecan Street) was Austin's commercial center—home to hardware stores, dry goods shops, and saloons where frontier violence was routine. The Servant Girl Annihilator's attacks occurred in neighborhoods adjacent to what is now the entertainment district.
         </p>
-              <div class="my-8 rounded-lg overflow-hidden"></div>
-
-        <p>
+<p>
           The Warehouse District south of Sixth Street contains repurposed industrial buildings, some of which date to the late 19th century. The area's proximity to the Colorado River meant it was subject to periodic flooding, and the basements and sub-levels of older buildings retain evidence of the river's destructive cycles.
         </p>
         <p>
@@ -173,9 +178,7 @@ const faqs = [
         <p>
           The University of Texas Tower, a 307-foot limestone structure completed in 1937, dominates the Austin skyline. After the 1966 shooting, the observation deck was closed and remained inaccessible until 1999, when it reopened with enhanced security measures. Tours of the observation deck are available through the university and provide panoramic views of the campus and city.
         </p>
-              <div class="my-8 rounded-lg overflow-hidden"></div>
-
-        <p>
+<p>
           The campus itself, established in 1883, has accumulated its own ghost stories independent of the Tower tragedy. Littlefield Home, a Victorian mansion on campus, has reported unexplained phenomena since the 1960s. The university's Battle Hall, Sutton Hall, and several dormitories have generated persistent reports from students and faculty.
         </p>
       </div>
@@ -207,13 +210,14 @@ const faqs = [
           <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
             <h3 class="text-lg font-semibold text-white mb-2">{faq.question}</h3>
             <p class="text-[#a89bb8]">{faq.answer}</p>
-              <div class="my-8 rounded-lg overflow-hidden"></div>
-
-          </div>
+</div>
         ))}
       </div>
     </div>
   </section>
+
+  <!-- Accent Divider -->
+  <div class="bg-[#0a0510]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
 
   <section class="py-12 md:py-16 bg-[#0a0510] border-t border-[#3d2a4d]">
     <div class="container px-4 mx-auto max-w-4xl text-center">

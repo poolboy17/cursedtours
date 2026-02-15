@@ -46,7 +46,8 @@ const faqs = [
   })} />
 
   <!-- Hero Section -->
-  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510] bg-cover bg-center" style="background-image: url('/images/city-hubs/london.webp');">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0a0510]/60 via-[#0a0510]/75 to-[#0a0510]"></div>
     <div class="container relative z-10 px-4 mx-auto max-w-7xl">
       <nav class="mb-6 text-sm">
         <ol class="flex items-center gap-2 text-[#a89bb8]">
@@ -97,7 +98,7 @@ const faqs = [
   <section class="py-12 md:py-16 bg-[#0f0a1a]">
     <div class="container px-4 mx-auto max-w-4xl">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why London Is Haunted</h2>
-      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4 border-l-2 border-purple-500/30 pl-8">
         <p>
           The Great Plague of 1665 killed an estimated 100,000 Londoners—roughly a quarter of the city's population—in 18 months. Bodies were collected nightly by dead-carts and deposited in mass graves throughout the city. Many of these plague pits were never properly mapped and were built over during subsequent development. Construction projects continue to uncover human remains across central London.
         </p>
@@ -124,9 +125,7 @@ const faqs = [
         <p>
           Jack the Ripper tours are London's most popular ghost tour format, with multiple companies operating nightly in Whitechapel. The tours follow the documented sequence of the five canonical murders: Mary Ann Nichols on Buck's Row (now Durward Street), Annie Chapman on Hanbury Street, Elizabeth Stride on Berner Street, Catherine Eddowes in Mitre Square, and Mary Jane Kelly at 13 Miller's Court.
         </p>
-              <div class="my-8 rounded-lg overflow-hidden"></div>
-
-        <p>
+<p>
           The quality of Ripper tours varies significantly. The best guides draw on primary sources—police reports, inquest testimony, and contemporary newspaper accounts—rather than speculation about the killer's identity. Tours that focus on the victims' lives and the social conditions of 1888 Whitechapel tend to be more historically valuable than those that emphasize the gore of the murders themselves.
         </p>
         <p>
@@ -186,9 +185,7 @@ const faqs = [
         <p>
           Tours focused on the Great Plague and the Great Fire walk visitors through a 14-month sequence that fundamentally reshaped London. The plague began appearing in parish records in late 1664, peaked in September 1665 with over 7,000 deaths in a single week, and subsided only when the Great Fire of September 1666 destroyed much of the infected city. Whether the fire actually ended the plague remains debated by historians.
         </p>
-              <div class="my-8 rounded-lg overflow-hidden"></div>
-
-        <p>
+<p>
           Charterhouse Square, confirmed as a Black Death burial site during Crossrail excavations, provides a tangible connection to the 14th-century pandemic that killed an estimated 30-50% of Europe's population. The square is a public space that most visitors walk across without awareness of the approximately 50,000 bodies buried beneath their feet.
         </p>
         <p>
@@ -219,6 +216,9 @@ const faqs = [
   </section>
 
     
+    <!-- Accent Divider -->
+    <div class="bg-[#0a0510]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
+
     <!-- Articles Section -->
     <section class="py-12 md:py-16 bg-[#0a0510]">
       <div class="container px-4 mx-auto max-w-6xl">
@@ -226,7 +226,9 @@ const faqs = [
         <p class="text-[#a89bb8] mb-8">In-depth guides to London's haunted history, famous ghosts, and dark legends.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <a href="/articles/haunted-pubs-of-london/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
-            <div class="aspect-video overflow-hidden"></div>
+            <div class="aspect-video overflow-hidden">
+              <img src="/images/articles/haunted-pubs-of-london.webp" alt="Haunted Pubs of London: Where History Drinks" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+            </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
               <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors line-clamp-2">Haunted Pubs of London: Where History Drinks</h3>
@@ -234,7 +236,9 @@ const faqs = [
             </div>
           </a>
           <a href="/articles/jack-the-ripper-london-walking-guide/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
-            <div class="aspect-video overflow-hidden"></div>
+            <div class="aspect-video overflow-hidden">
+              <img src="/images/articles/jack-the-ripper-london-walking-guide.webp" alt="Jack The Ripper London Walking Guide" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+            </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
               <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors line-clamp-2">Jack the Ripper: A Walking Guide Through Whitechapel</h3>
@@ -242,7 +246,9 @@ const faqs = [
             </div>
           </a>
           <a href="/articles/london-plague-pits-hidden-history/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
-            <div class="aspect-video overflow-hidden"></div>
+            <div class="aspect-video overflow-hidden">
+              <img src="/images/articles/london-plague-pits-hidden-history.webp" alt="London Plague Pits Hidden History" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+            </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
               <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors line-clamp-2">London's Plague Pits: The Hidden Dead Beneath the City</h3>
@@ -250,7 +256,9 @@ const faqs = [
             </div>
           </a>
           <a href="/articles/most-haunted-places-in-london/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
-            <div class="aspect-video overflow-hidden"></div>
+            <div class="aspect-video overflow-hidden">
+              <img src="/images/articles/most-haunted-places-in-london.webp" alt="Most Haunted Places In London" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+            </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
               <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors line-clamp-2">Most Haunted Places in London: From the Tower to the Tube</h3>
@@ -258,7 +266,9 @@ const faqs = [
             </div>
           </a>
           <a href="/articles/tower-of-london-ghost-stories/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
-            <div class="aspect-video overflow-hidden"></div>
+            <div class="aspect-video overflow-hidden">
+              <img src="/images/articles/tower-of-london-ghost-stories.webp" alt="Tower Of London Ghost Stories" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+            </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
               <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors line-clamp-2">Tower of London Ghosts: Nine Centuries of the Restless Dead</h3>
@@ -269,6 +279,9 @@ const faqs = [
       </div>
     </section>
 
+    <!-- Accent Divider -->
+    <div class="bg-[#0f0a1a]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
+
     <!-- FAQ Section -->
   <section class="py-12 md:py-16 bg-[#0f0a1a]">
     <div class="container px-4 mx-auto max-w-4xl">
@@ -278,9 +291,7 @@ const faqs = [
           <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
             <h3 class="text-lg font-semibold text-white mb-2">{faq.question}</h3>
             <p class="text-[#a89bb8]">{faq.answer}</p>
-              <div class="my-8 rounded-lg overflow-hidden"></div>
-
-          </div>
+</div>
         ))}
       </div>
     </div>

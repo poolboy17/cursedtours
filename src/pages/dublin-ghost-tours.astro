@@ -45,7 +45,8 @@ const faqs = [
     }))
   })} />
 
-  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510] bg-cover bg-center" style="background-image: url('/images/city-hubs/dublin.webp');">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0a0510]/60 via-[#0a0510]/75 to-[#0a0510]"></div>
     <div class="container relative z-10 px-4 mx-auto max-w-7xl">
       <nav class="mb-6 text-sm">
         <ol class="flex items-center gap-2 text-[#a89bb8]">
@@ -87,10 +88,13 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Accent Divider -->
+  <div class="bg-[#0f0a1a]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
+
   <section class="py-12 md:py-16 bg-[#0f0a1a]">
     <div class="container px-4 mx-auto max-w-4xl">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why Dublin Is Haunted</h2>
-      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4 border-l-2 border-purple-500/30 pl-8">
         <p>
           The Great Famine of 1845-1852 reduced Ireland's population by approximately 25% through death and emigration. Dublin, while less affected than rural areas, served as a departure point for hundreds of thousands of desperate emigrants. The city's workhouses were overwhelmed, and mass burials occurred at sites throughout the metropolitan area. Glasnevin Cemetery, established in 1832, eventually received over 1.5 million burials.
         </p>
@@ -104,6 +108,9 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Accent Divider -->
+  <div class="bg-[#0a0510]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
+
   <section id="medieval" class="py-12 md:py-16 bg-[#0a0510]">
     <div class="container px-4 mx-auto max-w-4xl">
       <div class="flex items-center gap-3 mb-6">
@@ -114,9 +121,7 @@ const faqs = [
         <p>
           Dublin's medieval core survives in fragments scattered through the modern city. Christ Church Cathedral, founded in 1030, contains a crypt dating to the original Viking-era construction—the oldest surviving structure in Dublin. The crypt has been in continuous use for nearly a thousand years and contains artifacts ranging from a mummified cat and rat (trapped in a pipe for centuries) to stocks used for public punishment.
         </p>
-              <div class="my-8 rounded-lg overflow-hidden"></div>
-
-        <p>
+<p>
           St. Audoen's Church, the only surviving medieval parish church in Dublin, dates to the 12th century and sits atop the old city wall. Its graveyard contains burials spanning 800 years, and the church's tower offers views across the medieval Liberties neighborhood. The adjacent St. Audoen's Arch is the only surviving gate of the old walled city.
         </p>
         <p>
@@ -176,9 +181,7 @@ const faqs = [
         <p>
           The Brazen Head on Bridge Street Lower, established in 1198, claims to be the oldest pub in Ireland. The building's medieval foundations, low ceilings, and labyrinthine layout create an atmosphere that requires no theatrical enhancement. Robert Emmet, executed for leading the 1803 rebellion, reportedly used the pub as a meeting point. Documented ghost reports include a spectral figure in the courtyard and unexplained sounds from the upper floors.
         </p>
-              <div class="my-8 rounded-lg overflow-hidden"></div>
-
-        <p>
+<p>
           The Gravediggers (officially John Kavanagh's) on Prospect Square in Glasnevin sits adjacent to Glasnevin Cemetery. Gravediggers would signal for pints through a slot in the cemetery wall, and the pub served them without their having to leave the grounds. The pub has operated continuously since 1833 and maintains its original Victorian interior.
         </p>
         <p>
@@ -216,13 +219,14 @@ const faqs = [
           <div class="bg-[#1a1025] border border-[#4a3560] rounded-lg p-6">
             <h3 class="text-lg font-semibold text-white mb-2">{faq.question}</h3>
             <p class="text-[#a89bb8]">{faq.answer}</p>
-              <div class="my-8 rounded-lg overflow-hidden"></div>
-
-          </div>
+</div>
         ))}
       </div>
     </div>
   </section>
+
+  <!-- Accent Divider -->
+  <div class="bg-[#0a0510]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
 
   <section class="py-12 md:py-16 bg-[#0a0510] border-t border-[#3d2a4d]">
     <div class="container px-4 mx-auto max-w-4xl text-center">
