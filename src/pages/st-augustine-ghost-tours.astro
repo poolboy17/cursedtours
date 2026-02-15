@@ -129,26 +129,27 @@ const faqs = [
   <div class="bg-[#0a0510]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
 
   <!-- Tour Types -->
-  <section id="old-town" class="py-12 md:py-16 bg-[#0a0510]">
-    <div class="container px-4 mx-auto max-w-4xl">
+  <section id="old-town" class="py-12 md:py-16 bg-[#0a0510] relative overflow-hidden">
+    <div class="absolute -left-24 top-1/4 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container relative z-10 px-4 mx-auto max-w-4xl">
       <div class="flex items-center gap-3 mb-6">
         <span class="text-3xl">🏛️</span>
         <h2 class="text-2xl md:text-3xl font-bold text-white">Old Town Walking Tours</h2>
       </div>
-      <div class="text-gray-300 leading-relaxed space-y-4">
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
         <p>
           Walking tours through the colonial district cover St. George Street, the plaza, and surrounding blocks where Spanish, British, and American history layered over centuries. The Oldest House, dating to the early 1700s, demonstrates how archaeological investigation revealed burial sites beneath residential floors.
         </p>
-        <div class="my-8 py-6 text-center">
-          <div class="text-4xl md:text-5xl font-bold text-purple-400" style="font-family: 'Cinzel', serif;">1565</div>
+        <div class="my-8 py-8 text-center bg-gradient-to-b from-purple-950/[0.12] via-purple-950/[0.04] to-transparent rounded-xl">
+          <div class="text-4xl md:text-5xl font-bold text-purple-400" style="font-family: 'Cinzel', serif; text-shadow: 0 0 30px rgba(168, 85, 247, 0.35), 0 0 60px rgba(168, 85, 247, 0.12);">1565</div>
           <p class="text-sm text-[#a89bb8] mt-2 tracking-wide uppercase">YEAR ST. AUGUSTINE WAS FOUNDED</p>
-        <div class="my-8 border-l-4 border-purple-500/50 pl-6 py-2">
-          <p class="text-lg italic text-[#c4b5fd]/80">&ldquo;St. Augustine has been continuously occupied for over 450 years, making it the oldest European-established settlement in the United States.&rdquo;</p>
-        </div>
         </div>
 <p>
           The Spanish Military Hospital Museum recreates the conditions wounded soldiers faced in colonial St. Augustine. Tours explain medical practices—and mortality rates—that left generations of dead in unmarked graves throughout the city center.
         </p>
+        <div class="my-8 border-l-4 border-purple-500/50 pl-6 pr-4 py-4 bg-purple-950/[0.15] rounded-r-lg">
+          <p class="text-lg italic text-[#c4b5fd]/80">&ldquo;St. Augustine has been continuously occupied for over 450 years, making it the oldest European-established settlement in the United States.&rdquo;</p>
+        </div>
         <p>
           Casa Monica, now a luxury hotel, incorporates portions of the original 1888 Cordova Hotel. Staff and guests report encounters throughout the building, particularly in the tower rooms and basement-level spa.
         </p>
@@ -158,13 +159,14 @@ const faqs = [
 
   <div class="bg-[#0f0a1a]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
 
-  <section id="forts" class="py-12 md:py-16 bg-[#0f0a1a]">
-    <div class="container px-4 mx-auto max-w-4xl">
+  <section id="forts" class="py-12 md:py-16 bg-[#0f0a1a] relative overflow-hidden">
+    <div class="absolute -right-24 top-1/3 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container relative z-10 px-4 mx-auto max-w-4xl">
       <div class="flex items-center gap-3 mb-6">
         <span class="text-3xl">🏰</span>
         <h2 class="text-2xl md:text-3xl font-bold text-white">Fort Tours</h2>
       </div>
-      <div class="text-gray-300 leading-relaxed space-y-4">
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
         <p>
           The Castillo de San Marcos, now a National Monument, offers ranger-led tours during the day. Ghost tours operate outside the walls at night, discussing the fort's history of imprisonment, siege warfare, and documented paranormal activity.
         </p>
@@ -180,18 +182,19 @@ const faqs = [
 
   <div class="bg-[#0a0510]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
 
-  <section id="cemeteries" class="py-12 md:py-16 bg-[#0a0510]">
-    <div class="container px-4 mx-auto max-w-4xl">
+  <section id="cemeteries" class="py-12 md:py-16 bg-[#0a0510] relative overflow-hidden">
+    <div class="absolute -left-16 top-1/2 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container relative z-10 px-4 mx-auto max-w-4xl">
       <div class="flex items-center gap-3 mb-6">
         <span class="text-3xl">⚰️</span>
         <h2 class="text-2xl md:text-3xl font-bold text-white">Cemetery Tours</h2>
       </div>
-      <div class="text-gray-300 leading-relaxed space-y-4">
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
         <p>
           Huguenot Cemetery, visible through iron gates on the edge of the historic district, accepted Protestant burials from 1821 to 1884. Yellow fever victims fill many of its plots. Tours pass the cemetery at night, when shadows play across its weathered stones.
         </p>
-        <div class="my-8 py-6 text-center">
-          <div class="text-4xl md:text-5xl font-bold text-purple-400" style="font-family: 'Cinzel', serif;">1821</div>
+        <div class="my-8 py-8 text-center bg-gradient-to-b from-purple-950/[0.12] via-purple-950/[0.04] to-transparent rounded-xl">
+          <div class="text-4xl md:text-5xl font-bold text-purple-400" style="font-family: 'Cinzel', serif; text-shadow: 0 0 30px rgba(168, 85, 247, 0.35), 0 0 60px rgba(168, 85, 247, 0.12);">1821</div>
           <p class="text-sm text-[#a89bb8] mt-2 tracking-wide uppercase">HUGUENOT CEMETERY ESTABLISHED</p>
         </div>
         <p>
@@ -206,13 +209,14 @@ const faqs = [
 
   <div class="bg-[#0f0a1a]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
 
-  <section id="haunted-hotels" class="py-12 md:py-16 bg-[#0f0a1a]">
-    <div class="container px-4 mx-auto max-w-4xl">
+  <section id="haunted-hotels" class="py-12 md:py-16 bg-[#0f0a1a] relative overflow-hidden">
+    <div class="absolute -right-16 bottom-1/4 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container relative z-10 px-4 mx-auto max-w-4xl">
       <div class="flex items-center gap-3 mb-6">
         <span class="text-3xl">🏨</span>
         <h2 class="text-2xl md:text-3xl font-bold text-white">Haunted Hotels</h2>
       </div>
-      <div class="text-gray-300 leading-relaxed space-y-4">
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
         <p>
           The St. Francis Inn, operating since 1845, consistently appears on lists of America's most haunted hotels. Room 3A reports the most activity, attributed to a servant named Lily who died on the property. Guests have reported apparitions, unexplained footsteps, and objects moving.
         </p>
@@ -228,13 +232,14 @@ const faqs = [
 
   <div class="bg-[#0a0510]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
 
-  <section id="trolley-tours" class="py-12 md:py-16 bg-[#0a0510]">
-    <div class="container px-4 mx-auto max-w-4xl">
+  <section id="trolley-tours" class="py-12 md:py-16 bg-[#0a0510] relative overflow-hidden">
+    <div class="absolute -left-20 bottom-1/3 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container relative z-10 px-4 mx-auto max-w-4xl">
       <div class="flex items-center gap-3 mb-6">
         <span class="text-3xl">🚋</span>
         <h2 class="text-2xl md:text-3xl font-bold text-white">Trolley & Train Tours</h2>
       </div>
-      <div class="text-gray-300 leading-relaxed space-y-4">
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
         <p>
           Ghost trolley tours cover more ground than walking tours, accessing locations on the outskirts of the historic district including the lighthouse, Old Jail, and areas beyond comfortable walking distance. Tours typically run 75-90 minutes.
         </p>

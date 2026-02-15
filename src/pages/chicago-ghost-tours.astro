@@ -124,26 +124,27 @@ const faqs = [
   </section>
 
   <!-- Tour Type Sections -->
-  <section id="downtown" class="py-12 md:py-16 bg-[#0a0510]">
-    <div class="container px-4 mx-auto max-w-4xl">
+  <section id="downtown" class="py-12 md:py-16 bg-[#0a0510] relative overflow-hidden">
+    <div class="absolute -left-24 top-1/4 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container relative z-10 px-4 mx-auto max-w-4xl">
       <div class="flex items-center gap-3 mb-6">
         <span class="text-3xl">🏙️</span>
         <h2 class="text-2xl md:text-3xl font-bold text-white">Downtown & Loop Ghost Tours</h2>
       </div>
-      <div class="text-gray-300 leading-relaxed space-y-4">
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
         <p>
           The Loop contains some of Chicago's most concentrated haunted history. Congress Hotel, opened in 1893 for the World's Fair, has reported paranormal activity on multiple floors—particularly Room 441 and the sealed-off "Gold Room." Staff and guests have documented cold spots, disembodied voices, and apparitions since at least the 1930s.
         </p>
-        <div class="my-8 py-6 text-center">
-          <div class="text-4xl md:text-5xl font-bold text-purple-400" style="font-family: 'Cinzel', serif;">17,500</div>
+        <div class="my-8 py-8 text-center bg-gradient-to-b from-purple-950/[0.12] via-purple-950/[0.04] to-transparent rounded-xl">
+          <div class="text-4xl md:text-5xl font-bold text-purple-400" style="font-family: 'Cinzel', serif; text-shadow: 0 0 30px rgba(168, 85, 247, 0.35), 0 0 60px rgba(168, 85, 247, 0.12);">17,500</div>
           <p class="text-sm text-[#a89bb8] mt-2 tracking-wide uppercase">BUILDINGS DESTROYED IN THE GREAT CHICAGO FIRE</p>
-        <div class="my-8 border-l-4 border-purple-500/50 pl-6 py-2">
-          <p class="text-lg italic text-[#c4b5fd]/80">&ldquo;The Eastland capsized at its dock in the Chicago River, killing 844 passengers who were on their way to a company picnic.&rdquo;</p>
-        </div>
         </div>
         <p>
           The Palmer House Hilton, operating since 1871, was destroyed in the Great Fire just 13 days after opening and rebuilt within two years. Reports of a spectral figure on the upper floors have persisted for over a century. The hotel's underground level connects to a network of tunnels that once served as pedestrian passageways and freight routes beneath the city.
         </p>
+        <div class="my-8 border-l-4 border-purple-500/50 pl-6 pr-4 py-4 bg-purple-950/[0.15] rounded-r-lg">
+          <p class="text-lg italic text-[#c4b5fd]/80">&ldquo;The Eastland capsized at its dock in the Chicago River, killing 844 passengers who were on their way to a company picnic.&rdquo;</p>
+        </div>
         <p>
           Walking tours through the Loop typically cover 1.5 to 2 miles over 90 minutes, passing architectural landmarks that double as documented haunting sites. The intersection of commerce, history, and the supernatural is visible at nearly every corner in Chicago's downtown core.
         </p>
@@ -152,13 +153,14 @@ const faqs = [
 
   <div class="bg-[#0f0a1a]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
 
-  <section id="cemeteries" class="py-12 md:py-16 bg-[#0f0a1a]">
-    <div class="container px-4 mx-auto max-w-4xl">
+  <section id="cemeteries" class="py-12 md:py-16 bg-[#0f0a1a] relative overflow-hidden">
+    <div class="absolute -right-24 top-1/3 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container relative z-10 px-4 mx-auto max-w-4xl">
       <div class="flex items-center gap-3 mb-6">
         <span class="text-3xl">⚰️</span>
         <h2 class="text-2xl md:text-3xl font-bold text-white">Cemetery Tours</h2>
       </div>
-      <div class="text-gray-300 leading-relaxed space-y-4">
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
         <p>
           Bachelor's Grove Cemetery in the Rubio Woods Forest Preserve has been generating paranormal reports since the 1960s. The small, abandoned cemetery—accessible only by a half-mile trail through the woods—has produced sightings of phantom farmhouses, a woman in white sitting on a tombstone (famously captured in a 1991 photograph), vanishing automobiles, and unexplained lights. It is arguably the most investigated cemetery in the United States.
         </p>
@@ -174,18 +176,19 @@ const faqs = [
 
   <div class="bg-[#0a0510]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
 
-  <section id="gangsters" class="py-12 md:py-16 bg-[#0a0510]">
-    <div class="container px-4 mx-auto max-w-4xl">
+  <section id="gangsters" class="py-12 md:py-16 bg-[#0a0510] relative overflow-hidden">
+    <div class="absolute -left-16 top-1/2 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container relative z-10 px-4 mx-auto max-w-4xl">
       <div class="flex items-center gap-3 mb-6">
         <span class="text-3xl">🔫</span>
         <h2 class="text-2xl md:text-3xl font-bold text-white">Gangster & Crime History Tours</h2>
       </div>
-      <div class="text-gray-300 leading-relaxed space-y-4">
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
         <p>
           Prohibition turned Chicago into a battlefield. Between 1920 and 1933, over 700 gangland murders occurred in the city, most never solved. Al Capone's operations generated an estimated $100 million annually at their peak. Tours trace the geography of this violence—from Capone's headquarters at the Lexington Hotel to the site of the St. Valentine's Day Massacre at 2122 North Clark Street.
         </p>
-        <div class="my-8 py-6 text-center">
-          <div class="text-4xl md:text-5xl font-bold text-purple-400" style="font-family: 'Cinzel', serif;">700+</div>
+        <div class="my-8 py-8 text-center bg-gradient-to-b from-purple-950/[0.12] via-purple-950/[0.04] to-transparent rounded-xl">
+          <div class="text-4xl md:text-5xl font-bold text-purple-400" style="font-family: 'Cinzel', serif; text-shadow: 0 0 30px rgba(168, 85, 247, 0.35), 0 0 60px rgba(168, 85, 247, 0.12);">700+</div>
           <p class="text-sm text-[#a89bb8] mt-2 tracking-wide uppercase">GANGLAND MURDERS DURING PROHIBITION-ERA CHICAGO</p>
         </div>
         <p>
@@ -200,13 +203,14 @@ const faqs = [
 
   <div class="bg-[#0f0a1a]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
 
-  <section id="pub-crawls" class="py-12 md:py-16 bg-[#0f0a1a]">
-    <div class="container px-4 mx-auto max-w-4xl">
+  <section id="pub-crawls" class="py-12 md:py-16 bg-[#0f0a1a] relative overflow-hidden">
+    <div class="absolute -right-16 bottom-1/4 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container relative z-10 px-4 mx-auto max-w-4xl">
       <div class="flex items-center gap-3 mb-6">
         <span class="text-3xl">🍺</span>
         <h2 class="text-2xl md:text-3xl font-bold text-white">Haunted Pub Crawls</h2>
       </div>
-      <div class="text-gray-300 leading-relaxed space-y-4">
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
         <p>
           Chicago's haunted pub crawls combine the city's tavern culture with its documented supernatural history. Many of the oldest bars in Chicago predate Prohibition and have accumulated their own ghost stories independent of the larger narratives. Tours typically visit 3-4 establishments over two to three hours.
         </p>
@@ -222,13 +226,14 @@ const faqs = [
 
   <div class="bg-[#0a0510]"><div class="max-w-4xl mx-auto px-4"><div class="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div></div></div>
 
-  <section id="architecture" class="py-12 md:py-16 bg-[#0a0510]">
-    <div class="container px-4 mx-auto max-w-4xl">
+  <section id="architecture" class="py-12 md:py-16 bg-[#0a0510] relative overflow-hidden">
+    <div class="absolute -left-20 bottom-1/3 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container relative z-10 px-4 mx-auto max-w-4xl">
       <div class="flex items-center gap-3 mb-6">
         <span class="text-3xl">🏛️</span>
         <h2 class="text-2xl md:text-3xl font-bold text-white">Architecture & Ghost Tours</h2>
       </div>
-      <div class="text-gray-300 leading-relaxed space-y-4">
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
         <p>
           Chicago invented the skyscraper, and its architectural history is inseparable from its haunted reputation. Many of the city's landmark buildings were constructed on the ashes of the Great Fire, atop earlier foundations, or over forgotten burial grounds. Architecture-focused ghost tours combine the city's design legacy with its darker history.
         </p>
