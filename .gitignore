@@ -5,3 +5,6 @@ dist/
 .env
 .env.local
 __pycache__/
+
+# One-time migration scripts (never committed, safe to ignore)
+*.py
