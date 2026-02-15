@@ -15,6 +15,31 @@ const cities = [
   description="Experience ghost walking tours through America's most haunted cities. Discover the stories behind historic buildings, streets, and landmarks."
   canonical="https://cursedtours.com/experiences/walking-tours/"
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Ghost Walking Tours",
+    "description": "Experience ghost walking tours through America's most haunted cities.",
+    "url": "https://cursedtours.com/experiences/walking-tours/",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": cities.map((city, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": city.name,
+        "url": `https://cursedtours.com/${city.slug}/`
+      }))
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cursedtours.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Experiences", "item": "https://cursedtours.com/experiences/" },
+        { "@type": "ListItem", "position": 3, "name": "Ghost Walking Tours", "item": "https://cursedtours.com/experiences/walking-tours/" }
+      ]
+    }
+  })} />
+
   <section class="relative py-16 md:py-24 overflow-hidden bg-[#0a0510]">
     <div class="container relative z-10 px-4 mx-auto max-w-7xl">
       <nav class="mb-6 text-sm">

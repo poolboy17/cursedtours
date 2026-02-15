@@ -8,7 +8,7 @@ interface Props {
   ogImageHeight?: number;
 }
 
-const { title, description = "Explore ghost tours across America's most haunted cities.", canonical, ogImage = '/images/og-homepage.jpg', ogImageWidth = 1200, ogImageHeight = 630 } = Astro.props;
+const { title, description = "Explore ghost tours across America's most haunted cities.", canonical, ogImage = '/images/og-homepage.webp', ogImageWidth = 1200, ogImageHeight = 630 } = Astro.props;
 const siteUrl = 'https://cursedtours.com';
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 ---
@@ -43,6 +43,9 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- DNS prefetch for external image CDNs -->
+  <link rel="dns-prefetch" href="https://media-cdn.tripadvisor.com">
   
   <style is:global>
     :root {
@@ -102,7 +105,7 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <a href="/" class="flex items-center gap-2">
-          <img src="/images/logo.png" alt="Cursed Tours" class="h-8 w-8" />
+          <img loading="eager" decoding="async" src="/images/logo.png" alt="Cursed Tours" class="h-8 w-8"  width="512" height="512" />
           <span class="font-bold text-xl text-white" style="font-family: 'Cinzel', serif;">Cursed Tours</span>
         </a>
         
@@ -249,7 +252,7 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`
         <!-- Brand -->
         <div class="md:col-span-1">
           <a href="/" class="flex items-center gap-2 mb-4">
-            <img src="/images/logo.png" alt="Cursed Tours" class="h-8 w-8" />
+            <img loading="eager" decoding="async" src="/images/logo.png" alt="Cursed Tours" class="h-8 w-8"  width="512" height="512" />
             <span class="font-bold text-lg text-white" style="font-family: 'Cinzel', serif;">Cursed Tours</span>
           </a>
           <p class="text-sm" style="color: #7a6b8a;">

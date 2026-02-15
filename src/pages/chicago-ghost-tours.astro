@@ -45,6 +45,17 @@ const faqs = [
     }))
   })} />
 
+  
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cursedtours.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Chicago Ghost Tours", "item": "https://cursedtours.com/chicago-ghost-tours/" }
+    ]
+  })} />
+
   <!-- Hero Section -->
   <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510] bg-cover bg-center" style="background-image: url('/images/city-hubs/chicago.webp');">
     <div class="absolute inset-0 bg-gradient-to-b from-[#0a0510]/60 via-[#0a0510]/75 to-[#0a0510]"></div>
@@ -309,7 +320,7 @@ const faqs = [
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <a href="/articles/bachelors-grove-cemetery-chicago/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img src="/images/articles/bachelors-grove-cemetery-chicago.jpg" alt="Bachelor's Grove: Most Haunted Cemetery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img decoding="async" src="/images/articles/bachelors-grove-cemetery-chicago.webp" alt="Bachelor's Grove: Most Haunted Cemetery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -319,7 +330,7 @@ const faqs = [
           </a>
           <a href="/articles/chicago-gangster-ghosts/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img src="/images/articles/chicago-gangster-ghosts.jpg" alt="Chicago Gangster Ghosts: Capone & Dillinger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img decoding="async" src="/images/articles/chicago-gangster-ghosts.webp" alt="Chicago Gangster Ghosts: Capone & Dillinger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -329,7 +340,7 @@ const faqs = [
           </a>
           <a href="/articles/chicagos-most-haunted-bars/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img src="/images/articles/chicagos-most-haunted-bars.jpg" alt="Chicago's Most Haunted Bars and Taverns" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img decoding="async" src="/images/articles/chicagos-most-haunted-bars.webp" alt="Chicago's Most Haunted Bars and Taverns" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -339,7 +350,7 @@ const faqs = [
           </a>
           <a href="/articles/congress-plaza-hotel-haunted-history/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img src="/images/articles/congress-plaza-hotel-haunted-history.jpg" alt="Congress Plaza Hotel: Haunted History" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img decoding="async" src="/images/articles/congress-plaza-hotel-haunted-history.webp" alt="Congress Plaza Hotel: Haunted History" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -349,7 +360,7 @@ const faqs = [
           </a>
           <a href="/articles/eastland-disaster-chicago/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img src="/images/articles/eastland-disaster-chicago.jpg" alt="The Eastland Disaster: Chicago's Deadliest Day" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img decoding="async" src="/images/articles/eastland-disaster-chicago.webp" alt="The Eastland Disaster: Chicago's Deadliest Day" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -359,7 +370,7 @@ const faqs = [
           </a>
           <a href="/articles/great-chicago-fire-ghosts/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img src="/images/articles/great-chicago-fire-ghosts.jpg" alt="The Great Chicago Fire: Ghosts of 1871" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img decoding="async" src="/images/articles/great-chicago-fire-ghosts.webp" alt="The Great Chicago Fire: Ghosts of 1871" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -369,7 +380,7 @@ const faqs = [
           </a>
           <a href="/articles/hh-holmes-murder-castle-chicago/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img src="/images/articles/hh-holmes-murder-castle-chicago.jpg" alt="H.H. Holmes and the Murder Castle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img decoding="async" src="/images/articles/hh-holmes-murder-castle-chicago.webp" alt="H.H. Holmes and the Murder Castle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -379,7 +390,7 @@ const faqs = [
           </a>
           <a href="/articles/iroquois-theatre-fire-chicago/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img src="/images/articles/iroquois-theatre-fire-chicago.jpg" alt="The Iroquois Theatre Fire of 1903" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img decoding="async" src="/images/articles/iroquois-theatre-fire-chicago.webp" alt="The Iroquois Theatre Fire of 1903" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -389,7 +400,7 @@ const faqs = [
           </a>
           <a href="/articles/most-haunted-places-in-chicago/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img src="/images/articles/most-haunted-places-in-chicago.jpg" alt="Chicago's Most Haunted Places" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img decoding="async" src="/images/articles/most-haunted-places-in-chicago.webp" alt="Chicago's Most Haunted Places" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -399,7 +410,7 @@ const faqs = [
           </a>
           <a href="/articles/resurrection-mary-chicagos-most-famous-ghost/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img src="/images/articles/resurrection-mary-chicagos-most-famous-ghost.jpg" alt="Resurrection Mary: Chicago's Most Famous Ghost" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img decoding="async" src="/images/articles/resurrection-mary-chicagos-most-famous-ghost.webp" alt="Resurrection Mary: Chicago's Most Famous Ghost" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>

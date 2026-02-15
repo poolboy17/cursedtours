@@ -104,7 +104,10 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
                 src={heroTour.image}
                 alt={heroTour.title}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                width="720"
+                height="480"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="p-6 md:w-3/5 flex flex-col justify-center">
@@ -142,7 +145,10 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
                     src={tour.image}
                     alt={tour.title}
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    width="720"
+                    height="480"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div class="p-4">

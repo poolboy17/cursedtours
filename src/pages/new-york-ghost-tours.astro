@@ -45,6 +45,17 @@ const faqs = [
     }))
   })} />
 
+  
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cursedtours.com/" },
+      { "@type": "ListItem", "position": 2, "name": "New York Ghost Tours", "item": "https://cursedtours.com/new-york-ghost-tours/" }
+    ]
+  })} />
+
   <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510] bg-cover bg-center" style="background-image: url('/images/city-hubs/new-york.webp');">
     <div class="absolute inset-0 bg-gradient-to-b from-[#0a0510]/60 via-[#0a0510]/75 to-[#0a0510]"></div>
     <div class="container relative z-10 px-4 mx-auto max-w-7xl">

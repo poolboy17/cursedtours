@@ -25,6 +25,30 @@ const clusters = articles.slice(1);
   description={categoryInfo.description}
   canonical={`https://cursedtours.com/articles/category/${categorySlug}/`}
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": `${categoryInfo.name} Articles`,
+    "description": categoryInfo.description,
+    "url": `https://cursedtours.com/articles/category/${categorySlug}/`,
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": articles.map((a, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": a.title,
+        "url": `https://cursedtours.com/articles/${a.slug}/`
+      }))
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cursedtours.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://cursedtours.com/articles/" },
+        { "@type": "ListItem", "position": 3, "name": categoryInfo.name, "item": `https://cursedtours.com/articles/category/${categorySlug}/` }
+      ]
+    }
+  })} />
   <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
     <div class="container relative z-10 px-4 mx-auto max-w-6xl">
       <nav class="mb-6 text-sm">
@@ -58,7 +82,10 @@ const clusters = articles.slice(1);
                 src={pillar.featuredImage.sourceUrl}
                 alt={pillar.featuredImage.altText || pillar.title}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                width="800"
+                height="450"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           )}
@@ -88,7 +115,10 @@ const clusters = articles.slice(1);
                   src={article.featuredImage.sourceUrl}
                   alt={article.featuredImage.altText || article.title}
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  width="400"
+                  height="225"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             )}

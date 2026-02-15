@@ -45,6 +45,17 @@ const faqs = [
     }))
   })} />
 
+  
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cursedtours.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Savannah Ghost Tours", "item": "https://cursedtours.com/savannah-ghost-tours/" }
+    ]
+  })} />
+
   <!-- Hero Section -->
   <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510] bg-cover bg-center" style="background-image: url('/images/city-hubs/savannah.webp');">
     <div class="absolute inset-0 bg-gradient-to-b from-[#0a0510]/60 via-[#0a0510]/75 to-[#0a0510]"></div>
@@ -258,7 +269,7 @@ const faqs = [
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <a href="/articles/bonaventure-cemetery-savannah-history/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img src="/images/articles/bonaventure-cemetery-savannah-history.webp" alt="Bonaventure Cemetery: Savannah's Hauntingly Beautiful City of the Dead" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+              <img decoding="async" src="/images/articles/bonaventure-cemetery-savannah-history.webp" alt="Bonaventure Cemetery: Savannah's Hauntingly Beautiful City of the Dead" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy"  width="1792" height="1024" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -268,7 +279,7 @@ const faqs = [
           </a>
           <a href="/articles/mercer-williams-house-savannah-haunted/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img src="/images/articles/mercer-williams-house-savannah-haunted.webp" alt="The Mercer-Williams House: Murder, Mystery, and Midnight" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+              <img decoding="async" src="/images/articles/mercer-williams-house-savannah-haunted.webp" alt="The Mercer-Williams House: Murder, Mystery, and Midnight" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy"  width="1792" height="1024" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -278,7 +289,7 @@ const faqs = [
           </a>
           <a href="/articles/most-haunted-places-in-savannah/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img src="/images/articles/most-haunted-places-in-savannah.webp" alt="Most Haunted Places in Savannah: A Local's Guide" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+              <img decoding="async" src="/images/articles/most-haunted-places-in-savannah.webp" alt="Most Haunted Places in Savannah: A Local's Guide" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy"  width="1792" height="1024" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -288,7 +299,7 @@ const faqs = [
           </a>
           <a href="/articles/savannah-civil-war-ghost-stories/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img src="/images/articles/savannah-civil-war-ghost-stories.webp" alt="Savannah's Civil War Ghosts: Sherman's March and the Dead Left Behind" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+              <img decoding="async" src="/images/articles/savannah-civil-war-ghost-stories.webp" alt="Savannah's Civil War Ghosts: Sherman's March and the Dead Left Behind" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy"  width="1792" height="1024" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -298,7 +309,7 @@ const faqs = [
           </a>
           <a href="/articles/savannah-pirates-house-ghost-stories/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img src="/images/articles/savannah-pirates-house-ghost-stories.webp" alt="The Pirates' House: Savannah's Oldest Haunted Tavern" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+              <img decoding="async" src="/images/articles/savannah-pirates-house-ghost-stories.webp" alt="The Pirates' House: Savannah's Oldest Haunted Tavern" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy"  width="1792" height="1024" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>

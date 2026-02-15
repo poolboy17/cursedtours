@@ -14,6 +14,31 @@ const cities = [
   description="Explore true crime tours focusing on documented criminal cases, executions, and dark chapters of American history."
   canonical="https://cursedtours.com/experiences/true-crime/"
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "True Crime Tours: Dark History",
+    "description": "Explore true crime tours focusing on documented criminal cases.",
+    "url": "https://cursedtours.com/experiences/true-crime/",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": cities.map((city, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": city.name,
+        "url": `https://cursedtours.com/${city.slug}/`
+      }))
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cursedtours.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Experiences", "item": "https://cursedtours.com/experiences/" },
+        { "@type": "ListItem", "position": 3, "name": "True Crime Tours", "item": "https://cursedtours.com/experiences/true-crime/" }
+      ]
+    }
+  })} />
+
   <section class="relative py-16 md:py-24 overflow-hidden bg-[#0a0510]">
     <div class="container relative z-10 px-4 mx-auto max-w-7xl">
       <nav class="mb-6 text-sm">

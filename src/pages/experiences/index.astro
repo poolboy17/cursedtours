@@ -40,6 +40,30 @@ const experiences = [
   description="Explore different types of ghost tours: cemetery tours, walking tours, pub crawls, paranormal investigations, and true crime experiences."
   canonical="https://cursedtours.com/experiences/"
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Ghost Tour Experiences by Type",
+    "description": "Explore different types of ghost tours: cemetery tours, walking tours, pub crawls, paranormal investigations, and true crime experiences.",
+    "url": "https://cursedtours.com/experiences/",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": experiences.map((exp, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": exp.name,
+        "url": `https://cursedtours.com/experiences/${exp.slug}/`
+      }))
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cursedtours.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Experiences", "item": "https://cursedtours.com/experiences/" }
+      ]
+    }
+  })} />
+
   <section class="relative py-16 md:py-24 overflow-hidden bg-[#0a0510]">
     <div class="container relative z-10 px-4 mx-auto max-w-7xl">
       <nav class="mb-6 text-sm">
