@@ -1,0 +1,1120 @@
+{
+  "timestamp": "2026-02-14T23:10:26.671491",
+  "articles_total": 136,
+  "generate": {
+    "generated": [],
+    "failed": []
+  },
+  "validate": {
+    "valid": [
+      {
+        "slug": "alamo-ghost-stories-san-antonio",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\alamo-ghost-stories-san-antonio.webp",
+        "size": 188016,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "apologies-regret-and-reparations-after-salem",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\apologies-regret-and-reparations-after-salem.webp",
+        "size": 266638,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "arlington-cemetery-ghost-stories-dc",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\arlington-cemetery-ghost-stories-dc.webp",
+        "size": 160422,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "austin-moonlight-towers-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\austin-moonlight-towers-history.webp",
+        "size": 145052,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "bachelors-grove-cemetery-chicago",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\bachelors-grove-cemetery-chicago.webp",
+        "size": 273584,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "bell-witch-tennessee-legend",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\bell-witch-tennessee-legend.webp",
+        "size": 357356,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "bonaventure-cemetery-savannah-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\bonaventure-cemetery-savannah-history.webp",
+        "size": 323096,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "boston-freedom-trail-dark-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\boston-freedom-trail-dark-history.webp",
+        "size": 261138,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "boston-harbor-islands-ghost-stories",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\boston-harbor-islands-ghost-stories.webp",
+        "size": 288414,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "boston-strangler-true-crime-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\boston-strangler-true-crime-history.webp",
+        "size": 379282,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "bram-stoker-dracula-fact-vs-fiction",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\bram-stoker-dracula-fact-vs-fiction.webp",
+        "size": 138768,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "bram-stoker-dublin-dracula-origins",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\bram-stoker-dublin-dracula-origins.webp",
+        "size": 374294,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "brown-palace-hotel-denver-ghosts",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\brown-palace-hotel-denver-ghosts.webp",
+        "size": 264248,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "bus-trolley-ghost-tours",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\bus-trolley-ghost-tours.webp",
+        "size": 172954,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "capitol-building-dc-haunted-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\capitol-building-dc-haunted-history.webp",
+        "size": 158976,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "castel-sant-angelo-rome-haunted",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\castel-sant-angelo-rome-haunted.webp",
+        "size": 227312,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "castillo-de-san-marcos-haunted-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\castillo-de-san-marcos-haunted-history.webp",
+        "size": 171552,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "cemetery-ghost-tours",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\cemetery-ghost-tours.webp",
+        "size": 152056,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "charleston-civil-war-ghost-stories",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\charleston-civil-war-ghost-stories.webp",
+        "size": 241346,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "charleston-old-city-jail-haunted-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\charleston-old-city-jail-haunted-history.webp",
+        "size": 187654,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "charleston-pirate-ghosts-legends",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\charleston-pirate-ghosts-legends.webp",
+        "size": 379692,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "charleston-unitarian-church-graveyard",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\charleston-unitarian-church-graveyard.webp",
+        "size": 340504,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "cheesman-park-denver-haunted-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\cheesman-park-denver-haunted-history.webp",
+        "size": 369076,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "chicago-gangster-ghosts",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\chicago-gangster-ghosts.webp",
+        "size": 211426,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "chicagos-most-haunted-bars",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\chicagos-most-haunted-bars.webp",
+        "size": 166352,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "congress-plaza-hotel-haunted-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\congress-plaza-hotel-haunted-history.webp",
+        "size": 272484,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "denver-gold-rush-ghost-stories",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\denver-gold-rush-ghost-stories.webp",
+        "size": 299054,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "dracula-bram-stoker-cultural-legend",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\dracula-bram-stoker-cultural-legend.webp",
+        "size": 165358,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "dracula-for-skeptics",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\dracula-for-skeptics.webp",
+        "size": 156282,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "dracula-modern-vampire-lore",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\dracula-modern-vampire-lore.webp",
+        "size": 148278,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "dracula-movies-cultural-impact",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\dracula-movies-cultural-impact.webp",
+        "size": 255610,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "dracula-myths-not-in-novel",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\dracula-myths-not-in-novel.webp",
+        "size": 235822,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "dracula-vampire-origins",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\dracula-vampire-origins.webp",
+        "size": 119066,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "driskill-hotel-austin-haunted-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\driskill-hotel-austin-haunted-history.webp",
+        "size": 223926,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "dublin-hellfire-club-legends",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\dublin-hellfire-club-legends.webp",
+        "size": 267004,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "eastland-disaster-chicago",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\eastland-disaster-chicago.webp",
+        "size": 224326,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "edinburgh-body-snatchers-burke-hare",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\edinburgh-body-snatchers-burke-hare.webp",
+        "size": 293850,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "edinburgh-castle-ghosts-legends",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\edinburgh-castle-ghosts-legends.webp",
+        "size": 268768,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "edinburgh-underground-vaults-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\edinburgh-underground-vaults-history.webp",
+        "size": 144336,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "georgetown-exorcist-house-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\georgetown-exorcist-house-history.webp",
+        "size": 184338,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "ghost-hunting-equipment-guide",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\ghost-hunting-equipment-guide.webp",
+        "size": 183764,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "ghost-photography-tips",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\ghost-photography-tips.webp",
+        "size": 147052,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "ghost-tour-pub-crawls",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\ghost-tour-pub-crawls.webp",
+        "size": 158136,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "ghost-tours-for-couples",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\ghost-tours-for-couples.webp",
+        "size": 145048,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "ghost-tours-for-skeptics",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\ghost-tours-for-skeptics.webp",
+        "size": 102070,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "ghost-tours-guide",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\ghost-tours-guide.webp",
+        "size": 136026,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "ghost-tours-vs-self-guided",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\ghost-tours-vs-self-guided.webp",
+        "size": 132922,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "ghost-tours-with-kids",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\ghost-tours-with-kids.webp",
+        "size": 149186,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "great-chicago-fire-ghosts",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\great-chicago-fire-ghosts.webp",
+        "size": 206584,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "greenwich-village-ghosts-new-york",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\greenwich-village-ghosts-new-york.webp",
+        "size": 438430,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "greyfriars-kirkyard-edinburgh-haunted",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\greyfriars-kirkyard-edinburgh-haunted.webp",
+        "size": 187924,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "haunted-pubs-of-london",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\haunted-pubs-of-london.webp",
+        "size": 163098,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "hermitage-hotel-nashville-haunted",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\hermitage-hotel-nashville-haunted.webp",
+        "size": 215374,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "hh-holmes-murder-castle-chicago",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\hh-holmes-murder-castle-chicago.webp",
+        "size": 215808,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "history-of-voodoo-in-new-orleans",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\history-of-voodoo-in-new-orleans.webp",
+        "size": 231326,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "how-the-salem-witch-trials-ended-and-why",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\how-the-salem-witch-trials-ended-and-why.webp",
+        "size": 239980,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "how-the-salem-witch-trials-worked-courts-evidence-and-confessions",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\how-the-salem-witch-trials-worked-courts-evidence-and-confessions.webp",
+        "size": 193778,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "how-to-spot-bad-ghost-tour",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\how-to-spot-bad-ghost-tour.webp",
+        "size": 152804,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "iroquois-theatre-fire-chicago",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\iroquois-theatre-fire-chicago.webp",
+        "size": 166338,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "is-dracula-based-on-real-person",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\is-dracula-based-on-real-person.webp",
+        "size": 132448,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "jack-the-ripper-london-walking-guide",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\jack-the-ripper-london-walking-guide.webp",
+        "size": 467832,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "jean-lafitte-pirate-ghost-of-new-orleans",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\jean-lafitte-pirate-ghost-of-new-orleans.webp",
+        "size": 215770,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "kilmainham-gaol-dublin-haunted-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\kilmainham-gaol-dublin-haunted-history.webp",
+        "size": 307818,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "lalaurie-mansion-true-story",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\lalaurie-mansion-true-story.webp",
+        "size": 274638,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "life-in-puritan-new-england-before-the-trials",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\life-in-puritan-new-england-before-the-trials.webp",
+        "size": 225680,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "london-plague-pits-hidden-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\london-plague-pits-hidden-history.webp",
+        "size": 406152,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "marie-laveau-voodoo-queen-of-new-orleans",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\marie-laveau-voodoo-queen-of-new-orleans.webp",
+        "size": 266310,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "menger-hotel-san-antonio-haunted",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\menger-hotel-san-antonio-haunted.webp",
+        "size": 234970,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "mercer-williams-house-savannah-haunted",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\mercer-williams-house-savannah-haunted.webp",
+        "size": 294928,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "morris-jumel-mansion-new-york-haunted",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\morris-jumel-mansion-new-york-haunted.webp",
+        "size": 243918,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-austin",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-austin.webp",
+        "size": 178160,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-boston",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-boston.webp",
+        "size": 187334,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-charleston",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-charleston.webp",
+        "size": 254686,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-chicago",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-chicago.webp",
+        "size": 167004,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-denver",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-denver.webp",
+        "size": 216456,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-dublin",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-dublin.webp",
+        "size": 320834,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-edinburgh",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-edinburgh.webp",
+        "size": 132382,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-london",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-london.webp",
+        "size": 172180,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-nashville",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-nashville.webp",
+        "size": 359426,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-new-orleans",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-new-orleans.webp",
+        "size": 210258,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-new-york",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-new-york.webp",
+        "size": 389650,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-paris",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-paris.webp",
+        "size": 276122,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-rome",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-rome.webp",
+        "size": 235338,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-san-antonio",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-san-antonio.webp",
+        "size": 268888,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-savannah",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-savannah.webp",
+        "size": 240040,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-st-augustine",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-st-augustine.webp",
+        "size": 121270,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "most-haunted-places-in-washington-dc",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\most-haunted-places-in-washington-dc.webp",
+        "size": 162966,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "nashville-civil-war-battles-ghosts",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\nashville-civil-war-battles-ghosts.webp",
+        "size": 429202,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "nashville-ryman-auditorium-ghosts",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\nashville-ryman-auditorium-ghosts.webp",
+        "size": 373860,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "new-orleans-above-ground-burial-traditions",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\new-orleans-above-ground-burial-traditions.webp",
+        "size": 292330,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "new-orleans-french-quarter-ghost-stories",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\new-orleans-french-quarter-ghost-stories.webp",
+        "size": 240514,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "new-orleans-ghost-tours-what-to-expect",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\new-orleans-ghost-tours-what-to-expect.webp",
+        "size": 229580,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "new-orleans-voodoo-haunted-history-complete-guide",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\new-orleans-voodoo-haunted-history-complete-guide.webp",
+        "size": 212252,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "new-york-abandoned-subway-stations",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\new-york-abandoned-subway-stations.webp",
+        "size": 225728,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "new-york-tenement-ghost-stories",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\new-york-tenement-ghost-stories.webp",
+        "size": 171452,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "omni-parker-house-boston-haunted-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\omni-parker-house-boston-haunted-history.webp",
+        "size": 296754,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "paranormal-investigation-tours",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\paranormal-investigation-tours.webp",
+        "size": 177902,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "paris-catacombs-dark-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\paris-catacombs-dark-history.webp",
+        "size": 297086,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "paris-revolution-guillotine-haunted-sites",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\paris-revolution-guillotine-haunted-sites.webp",
+        "size": 247090,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "pere-lachaise-cemetery-paris-ghosts",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\pere-lachaise-cemetery-paris-ghosts.webp",
+        "size": 250294,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "phantom-of-the-opera-paris-true-story",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\phantom-of-the-opera-paris-true-story.webp",
+        "size": 222088,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "private-vs-public-ghost-tours",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\private-vs-public-ghost-tours.webp",
+        "size": 154314,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "resurrection-mary-chicagos-most-famous-ghost",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\resurrection-mary-chicagos-most-famous-ghost.webp",
+        "size": 309292,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "rome-catacombs-underground-dark-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\rome-catacombs-underground-dark-history.webp",
+        "size": 191222,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "rome-colosseum-ghost-stories-gladiators",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\rome-colosseum-ghost-stories-gladiators.webp",
+        "size": 161726,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "rome-nero-haunted-legacy",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\rome-nero-haunted-legacy.webp",
+        "size": 308298,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "salem-witch-trials-myths-that-wont-die",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\salem-witch-trials-myths-that-wont-die.webp",
+        "size": 242372,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "san-antonio-missions-dark-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\san-antonio-missions-dark-history.webp",
+        "size": 252528,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "san-antonio-railroad-ghost-tracks",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\san-antonio-railroad-ghost-tracks.webp",
+        "size": 234134,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "savannah-civil-war-ghost-stories",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\savannah-civil-war-ghost-stories.webp",
+        "size": 303044,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "savannah-pirates-house-ghost-stories",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\savannah-pirates-house-ghost-stories.webp",
+        "size": 427388,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "servant-girl-annihilator-austin-true-crime",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\servant-girl-annihilator-austin-true-crime.webp",
+        "size": 189060,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "solo-ghost-tours",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\solo-ghost-tours.webp",
+        "size": 148630,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "spanish-military-hospital-st-augustine",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\spanish-military-hospital-st-augustine.webp",
+        "size": 202190,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "st-augustine-lighthouse-ghost-stories",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\st-augustine-lighthouse-ghost-stories.webp",
+        "size": 165620,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "st-augustine-oldest-city-dark-history",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\st-augustine-oldest-city-dark-history.webp",
+        "size": 167540,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "st-louis-cemetery-no-1-history-and-legends",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\st-louis-cemetery-no-1-history-and-legends.webp",
+        "size": 243186,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "st-michans-church-dublin-mummies",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\st-michans-church-dublin-mummies.webp",
+        "size": 282612,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "stanley-hotel-colorado-shining-inspiration",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\stanley-hotel-colorado-shining-inspiration.webp",
+        "size": 285666,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "texas-capitol-ghost-stories",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\texas-capitol-ghost-stories.webp",
+        "size": 204030,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "the-role-of-children-in-the-salem-witch-trials",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\the-role-of-children-in-the-salem-witch-trials.webp",
+        "size": 178044,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "the-salem-witch-trial-accusers-who-were-they-really",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\the-salem-witch-trial-accusers-who-were-they-really.webp",
+        "size": 190330,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "the-salem-witch-trials-causes-consequences-and-lasting-legacy",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\the-salem-witch-trials-causes-consequences-and-lasting-legacy.webp",
+        "size": 155796,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "themes-of-dracula",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\themes-of-dracula.webp",
+        "size": 118212,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "tower-of-london-ghost-stories",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\tower-of-london-ghost-stories.webp",
+        "size": 174234,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "vlad-the-impaler-history-dracula",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\vlad-the-impaler-history-dracula.webp",
+        "size": 124100,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "voodoo-vs-hoodoo-whats-the-difference",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\voodoo-vs-hoodoo-whats-the-difference.webp",
+        "size": 206200,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "walking-ghost-tour-guide",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\walking-ghost-tour-guide.webp",
+        "size": 129192,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "were-the-salem-witch-trials-about-religion-or-power",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\were-the-salem-witch-trials-about-religion-or-power.webp",
+        "size": 274198,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "what-the-salem-witch-trials-teach-us-about-moral-panic",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\what-the-salem-witch-trials-teach-us-about-moral-panic.webp",
+        "size": 198220,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "what-to-wear-ghost-tour",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\what-to-wear-ghost-tour.webp",
+        "size": 170344,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "white-house-ghost-stories-lincoln",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\white-house-ghost-stories-lincoln.webp",
+        "size": 135646,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "who-were-the-accused-witches-of-salem",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\who-were-the-accused-witches-of-salem.webp",
+        "size": 245374,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "why-the-salem-witch-trials-still-matter-today",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\why-the-salem-witch-trials-still-matter-today.webp",
+        "size": 272216,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "why-transylvania-dracula",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\why-transylvania-dracula.webp",
+        "size": 172494,
+        "dimensions": "1792x1024"
+      },
+      {
+        "slug": "why-were-women-targeted-in-the-salem-witch-trials",
+        "path": "D:\\headless\\cursedtours-astro\\public\\images\\articles\\why-were-women-targeted-in-the-salem-witch-trials.webp",
+        "size": 152966,
+        "dimensions": "1792x1024"
+      }
+    ],
+    "issues": []
+  },
+  "attach": {
+    "updated": [
+      "alamo-ghost-stories-san-antonio",
+      "apologies-regret-and-reparations-after-salem",
+      "arlington-cemetery-ghost-stories-dc",
+      "austin-moonlight-towers-history",
+      "bachelors-grove-cemetery-chicago",
+      "bell-witch-tennessee-legend",
+      "bonaventure-cemetery-savannah-history",
+      "boston-freedom-trail-dark-history",
+      "boston-harbor-islands-ghost-stories",
+      "boston-strangler-true-crime-history",
+      "bram-stoker-dracula-fact-vs-fiction",
+      "bram-stoker-dublin-dracula-origins",
+      "brown-palace-hotel-denver-ghosts",
+      "bus-trolley-ghost-tours",
+      "capitol-building-dc-haunted-history",
+      "castel-sant-angelo-rome-haunted",
+      "castillo-de-san-marcos-haunted-history",
+      "cemetery-ghost-tours",
+      "charleston-civil-war-ghost-stories",
+      "charleston-old-city-jail-haunted-history",
+      "charleston-pirate-ghosts-legends",
+      "charleston-unitarian-church-graveyard",
+      "cheesman-park-denver-haunted-history",
+      "chicago-gangster-ghosts",
+      "chicagos-most-haunted-bars",
+      "congress-plaza-hotel-haunted-history",
+      "denver-gold-rush-ghost-stories",
+      "dracula-bram-stoker-cultural-legend",
+      "dracula-for-skeptics",
+      "dracula-modern-vampire-lore",
+      "dracula-movies-cultural-impact",
+      "dracula-myths-not-in-novel",
+      "dracula-vampire-origins",
+      "driskill-hotel-austin-haunted-history",
+      "dublin-hellfire-club-legends",
+      "eastland-disaster-chicago",
+      "edinburgh-body-snatchers-burke-hare",
+      "edinburgh-castle-ghosts-legends",
+      "edinburgh-underground-vaults-history",
+      "georgetown-exorcist-house-history",
+      "ghost-hunting-equipment-guide",
+      "ghost-photography-tips",
+      "ghost-tour-pub-crawls",
+      "ghost-tours-for-couples",
+      "ghost-tours-for-skeptics",
+      "ghost-tours-guide",
+      "ghost-tours-vs-self-guided",
+      "ghost-tours-with-kids",
+      "great-chicago-fire-ghosts",
+      "greenwich-village-ghosts-new-york",
+      "greyfriars-kirkyard-edinburgh-haunted",
+      "haunted-pubs-of-london",
+      "hermitage-hotel-nashville-haunted",
+      "hh-holmes-murder-castle-chicago",
+      "history-of-voodoo-in-new-orleans",
+      "how-the-salem-witch-trials-ended-and-why",
+      "how-the-salem-witch-trials-worked-courts-evidence-and-confessions",
+      "how-to-spot-bad-ghost-tour",
+      "iroquois-theatre-fire-chicago",
+      "is-dracula-based-on-real-person",
+      "jack-the-ripper-london-walking-guide",
+      "jean-lafitte-pirate-ghost-of-new-orleans",
+      "kilmainham-gaol-dublin-haunted-history",
+      "lalaurie-mansion-true-story",
+      "life-in-puritan-new-england-before-the-trials",
+      "london-plague-pits-hidden-history",
+      "marie-laveau-voodoo-queen-of-new-orleans",
+      "menger-hotel-san-antonio-haunted",
+      "mercer-williams-house-savannah-haunted",
+      "morris-jumel-mansion-new-york-haunted",
+      "most-haunted-places-in-austin",
+      "most-haunted-places-in-boston",
+      "most-haunted-places-in-charleston",
+      "most-haunted-places-in-chicago",
+      "most-haunted-places-in-denver",
+      "most-haunted-places-in-dublin",
+      "most-haunted-places-in-edinburgh",
+      "most-haunted-places-in-london",
+      "most-haunted-places-in-nashville",
+      "most-haunted-places-in-new-orleans",
+      "most-haunted-places-in-new-york",
+      "most-haunted-places-in-paris",
+      "most-haunted-places-in-rome",
+      "most-haunted-places-in-san-antonio",
+      "most-haunted-places-in-savannah",
+      "most-haunted-places-in-st-augustine",
+      "most-haunted-places-in-washington-dc",
+      "nashville-civil-war-battles-ghosts",
+      "nashville-ryman-auditorium-ghosts",
+      "new-orleans-above-ground-burial-traditions",
+      "new-orleans-french-quarter-ghost-stories",
+      "new-orleans-ghost-tours-what-to-expect",
+      "new-orleans-voodoo-haunted-history-complete-guide",
+      "new-york-abandoned-subway-stations",
+      "new-york-tenement-ghost-stories",
+      "omni-parker-house-boston-haunted-history",
+      "paranormal-investigation-tours",
+      "paris-catacombs-dark-history",
+      "paris-revolution-guillotine-haunted-sites",
+      "pere-lachaise-cemetery-paris-ghosts",
+      "phantom-of-the-opera-paris-true-story",
+      "private-vs-public-ghost-tours",
+      "resurrection-mary-chicagos-most-famous-ghost",
+      "rome-catacombs-underground-dark-history",
+      "rome-colosseum-ghost-stories-gladiators",
+      "rome-nero-haunted-legacy",
+      "salem-witch-trials-myths-that-wont-die",
+      "san-antonio-missions-dark-history",
+      "san-antonio-railroad-ghost-tracks",
+      "savannah-civil-war-ghost-stories",
+      "savannah-pirates-house-ghost-stories",
+      "servant-girl-annihilator-austin-true-crime",
+      "solo-ghost-tours",
+      "spanish-military-hospital-st-augustine",
+      "st-augustine-lighthouse-ghost-stories",
+      "st-augustine-oldest-city-dark-history",
+      "st-louis-cemetery-no-1-history-and-legends",
+      "st-michans-church-dublin-mummies",
+      "stanley-hotel-colorado-shining-inspiration",
+      "texas-capitol-ghost-stories",
+      "the-role-of-children-in-the-salem-witch-trials",
+      "the-salem-witch-trial-accusers-who-were-they-really",
+      "the-salem-witch-trials-causes-consequences-and-lasting-legacy",
+      "themes-of-dracula",
+      "tower-of-london-ghost-stories",
+      "vlad-the-impaler-history-dracula",
+      "voodoo-vs-hoodoo-whats-the-difference",
+      "walking-ghost-tour-guide",
+      "were-the-salem-witch-trials-about-religion-or-power",
+      "what-the-salem-witch-trials-teach-us-about-moral-panic",
+      "what-to-wear-ghost-tour",
+      "white-house-ghost-stories-lincoln",
+      "who-were-the-accused-witches-of-salem",
+      "why-the-salem-witch-trials-still-matter-today",
+      "why-transylvania-dracula",
+      "why-were-women-targeted-in-the-salem-witch-trials"
+    ],
+    "skipped": []
+  },
+  "verify": {
+    "ok": [
+      "alamo-ghost-stories-san-antonio",
+      "apologies-regret-and-reparations-after-salem",
+      "arlington-cemetery-ghost-stories-dc",
+      "austin-moonlight-towers-history",
+      "bachelors-grove-cemetery-chicago",
+      "bell-witch-tennessee-legend",
+      "bonaventure-cemetery-savannah-history",
+      "boston-freedom-trail-dark-history",
+      "boston-harbor-islands-ghost-stories",
+      "boston-strangler-true-crime-history",
+      "bram-stoker-dracula-fact-vs-fiction",
+      "bram-stoker-dublin-dracula-origins",
+      "brown-palace-hotel-denver-ghosts",
+      "bus-trolley-ghost-tours",
+      "capitol-building-dc-haunted-history",
+      "castel-sant-angelo-rome-haunted",
+      "castillo-de-san-marcos-haunted-history",
+      "cemetery-ghost-tours",
+      "charleston-civil-war-ghost-stories",
+      "charleston-old-city-jail-haunted-history",
+      "charleston-pirate-ghosts-legends",
+      "charleston-unitarian-church-graveyard",
+      "cheesman-park-denver-haunted-history",
+      "chicago-gangster-ghosts",
+      "chicagos-most-haunted-bars",
+      "congress-plaza-hotel-haunted-history",
+      "denver-gold-rush-ghost-stories",
+      "dracula-bram-stoker-cultural-legend",
+      "dracula-for-skeptics",
+      "dracula-modern-vampire-lore",
+      "dracula-movies-cultural-impact",
+      "dracula-myths-not-in-novel",
+      "dracula-vampire-origins",
+      "driskill-hotel-austin-haunted-history",
+      "dublin-hellfire-club-legends",
+      "eastland-disaster-chicago",
+      "edinburgh-body-snatchers-burke-hare",
+      "edinburgh-castle-ghosts-legends",
+      "edinburgh-underground-vaults-history",
+      "georgetown-exorcist-house-history",
+      "ghost-hunting-equipment-guide",
+      "ghost-photography-tips",
+      "ghost-tour-pub-crawls",
+      "ghost-tours-for-couples",
+      "ghost-tours-for-skeptics",
+      "ghost-tours-guide",
+      "ghost-tours-vs-self-guided",
+      "ghost-tours-with-kids",
+      "great-chicago-fire-ghosts",
+      "greenwich-village-ghosts-new-york",
+      "greyfriars-kirkyard-edinburgh-haunted",
+      "haunted-pubs-of-london",
+      "hermitage-hotel-nashville-haunted",
+      "hh-holmes-murder-castle-chicago",
+      "history-of-voodoo-in-new-orleans",
+      "how-the-salem-witch-trials-ended-and-why",
+      "how-the-salem-witch-trials-worked-courts-evidence-and-confessions",
+      "how-to-spot-bad-ghost-tour",
+      "iroquois-theatre-fire-chicago",
+      "is-dracula-based-on-real-person",
+      "jack-the-ripper-london-walking-guide",
+      "jean-lafitte-pirate-ghost-of-new-orleans",
+      "kilmainham-gaol-dublin-haunted-history",
+      "lalaurie-mansion-true-story",
+      "life-in-puritan-new-england-before-the-trials",
+      "london-plague-pits-hidden-history",
+      "marie-laveau-voodoo-queen-of-new-orleans",
+      "menger-hotel-san-antonio-haunted",
+      "mercer-williams-house-savannah-haunted",
+      "morris-jumel-mansion-new-york-haunted",
+      "most-haunted-places-in-austin",
+      "most-haunted-places-in-boston",
+      "most-haunted-places-in-charleston",
+      "most-haunted-places-in-chicago",
+      "most-haunted-places-in-denver",
+      "most-haunted-places-in-dublin",
+      "most-haunted-places-in-edinburgh",
+      "most-haunted-places-in-london",
+      "most-haunted-places-in-nashville",
+      "most-haunted-places-in-new-orleans",
+      "most-haunted-places-in-new-york",
+      "most-haunted-places-in-paris",
+      "most-haunted-places-in-rome",
+      "most-haunted-places-in-san-antonio",
+      "most-haunted-places-in-savannah",
+      "most-haunted-places-in-st-augustine",
+      "most-haunted-places-in-washington-dc",
+      "nashville-civil-war-battles-ghosts",
+      "nashville-ryman-auditorium-ghosts",
+      "new-orleans-above-ground-burial-traditions",
+      "new-orleans-french-quarter-ghost-stories",
+      "new-orleans-ghost-tours-what-to-expect",
+      "new-orleans-voodoo-haunted-history-complete-guide",
+      "new-york-abandoned-subway-stations",
+      "new-york-tenement-ghost-stories",
+      "omni-parker-house-boston-haunted-history",
+      "paranormal-investigation-tours",
+      "paris-catacombs-dark-history",
+      "paris-revolution-guillotine-haunted-sites",
+      "pere-lachaise-cemetery-paris-ghosts",
+      "phantom-of-the-opera-paris-true-story",
+      "private-vs-public-ghost-tours",
+      "resurrection-mary-chicagos-most-famous-ghost",
+      "rome-catacombs-underground-dark-history",
+      "rome-colosseum-ghost-stories-gladiators",
+      "rome-nero-haunted-legacy",
+      "salem-witch-trials-myths-that-wont-die",
+      "san-antonio-missions-dark-history",
+      "san-antonio-railroad-ghost-tracks",
+      "savannah-civil-war-ghost-stories",
+      "savannah-pirates-house-ghost-stories",
+      "servant-girl-annihilator-austin-true-crime",
+      "solo-ghost-tours",
+      "spanish-military-hospital-st-augustine",
+      "st-augustine-lighthouse-ghost-stories",
+      "st-augustine-oldest-city-dark-history",
+      "st-louis-cemetery-no-1-history-and-legends",
+      "st-michans-church-dublin-mummies",
+      "stanley-hotel-colorado-shining-inspiration",
+      "texas-capitol-ghost-stories",
+      "the-role-of-children-in-the-salem-witch-trials",
+      "the-salem-witch-trial-accusers-who-were-they-really",
+      "the-salem-witch-trials-causes-consequences-and-lasting-legacy",
+      "themes-of-dracula",
+      "tower-of-london-ghost-stories",
+      "vlad-the-impaler-history-dracula",
+      "voodoo-vs-hoodoo-whats-the-difference",
+      "walking-ghost-tour-guide",
+      "were-the-salem-witch-trials-about-religion-or-power",
+      "what-the-salem-witch-trials-teach-us-about-moral-panic",
+      "what-to-wear-ghost-tour",
+      "white-house-ghost-stories-lincoln",
+      "who-were-the-accused-witches-of-salem",
+      "why-the-salem-witch-trials-still-matter-today",
+      "why-transylvania-dracula",
+      "why-were-women-targeted-in-the-salem-witch-trials"
+    ],
+    "problems": []
+  },
+  "fix": {
+    "fixed": [],
+    "still_failed": []
+  },
+  "commit": {
+    "committed": false,
+    "reason": "skipped"
+  },
+  "cost": "$0.00"
+}

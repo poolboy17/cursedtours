@@ -1,0 +1,183 @@
+{
+  "_description": "City/category-specific visual style profiles for DALL-E prompt generation. Each profile defines the visual DNA for a location or theme so batch-generated images have consistent, high-quality aesthetics.",
+
+  "Austin Haunted History": {
+    "setting": "Texas Hill Country urban landscape",
+    "architecture": "limestone buildings, iron-front facades, Victorian-era Texas architecture",
+    "atmosphere": "warm humid night air, firefly-dotted darkness, live music glow in the distance",
+    "palette": "warm amber and burnt orange tones against deep indigo night sky",
+    "lighting": "warm tungsten street lamps, neon sign glow bleeding through fog",
+    "keywords": ["moonlight towers", "bat colony", "sixth street", "texas capitol"]
+  },
+
+  "Boston Haunted History": {
+    "setting": "Colonial New England waterfront city",
+    "architecture": "red brick colonial buildings, cobblestone streets, church steeples, gas lamps",
+    "atmosphere": "autumn fog rolling off the harbor, fallen leaves on brick sidewalks",
+    "palette": "deep reds and browns of brick, gold autumn foliage, slate gray sky",
+    "lighting": "overcast diffused light, warm glow from tavern windows, period gas lamps",
+    "keywords": ["freedom trail", "harbor", "colonial", "revolutionary"]
+  },
+
+  "Charleston Haunted History": {
+    "setting": "Antebellum Southern port city",
+    "architecture": "pastel row houses with piazzas, wrought-iron gates, palmetto-lined streets, church spires",
+    "atmosphere": "thick humidity, spanish moss on oaks, horse-drawn carriage echoes",
+    "palette": "soft pastels faded by sea air, teal shutters, warm coral walls, deep shadows",
+    "lighting": "golden hour through palmetto fronds, gas lanterns on iron brackets",
+    "keywords": ["battery", "french quarter", "plantation", "civil war"]
+  },
+
+  "Chicago Haunted History": {
+    "setting": "Industrial Great Lakes metropolis",
+    "architecture": "art deco skyscrapers, elevated train tracks, ornate theater facades, brick warehouses",
+    "atmosphere": "lake-effect fog, wind-swept streets, urban grit mixed with architectural grandeur",
+    "palette": "steel gray, industrial brown, cold blue lake reflections, warm interior amber",
+    "lighting": "harsh contrast between shadow and streetlight, moody noir cinematography",
+    "keywords": ["prohibition", "gangster", "great fire", "stockyards"]
+  },
+
+  "Denver Haunted History": {
+    "setting": "Rocky Mountain frontier boomtown",
+    "architecture": "red sandstone Victorian buildings, mining-era saloons, grand hotels with mountain views",
+    "atmosphere": "crisp mountain air, clear starry skies, frontier wildness meeting Victorian refinement",
+    "palette": "red sandstone warm tones, snow-capped purple mountains, deep pine green",
+    "lighting": "sharp mountain light with long dramatic shadows, golden alpenglow",
+    "keywords": ["gold rush", "mining", "frontier", "rocky mountains"]
+  },
+
+  "Dracula & Gothic Literature": {
+    "setting": "Gothic Eastern European landscape",
+    "architecture": "crumbling castle turrets, pointed arches, stone crypts, medieval fortress walls",
+    "atmosphere": "thick mountain fog, wolves howling in distance, ancient darkness",
+    "palette": "deep crimson and black, cold stone gray, moonlit silver, blood red accents",
+    "lighting": "dramatic chiaroscuro, pale moonlight through storm clouds, flickering torchlight",
+    "keywords": ["transylvania", "castle", "vampire", "gothic"]
+  },
+
+  "Dublin Haunted History": {
+    "setting": "Georgian Irish capital city",
+    "architecture": "Georgian townhouse doors in bright colors, gray stone bridges over the Liffey, medieval towers",
+    "atmosphere": "soft Irish rain, low clouds, literary ghosts on every corner",
+    "palette": "emerald green, Georgian door reds and blues, wet gray stone, warm pub amber",
+    "lighting": "overcast silver light, warm golden pub windows cutting through drizzle",
+    "keywords": ["liffey", "georgian", "celtic", "literary"]
+  },
+
+  "Edinburgh Haunted History": {
+    "setting": "Medieval Scottish hilltop city",
+    "architecture": "dark volcanic stone buildings, narrow closes and wynds, castle on crags, vaulted underground chambers",
+    "atmosphere": "haar (sea fog) creeping up the Royal Mile, ancient darkness beneath the streets",
+    "palette": "dark charcoal stone, deep blue twilight, warm amber candlelight, moss green",
+    "lighting": "single candle or lantern against vast stone darkness, chiaroscuro",
+    "keywords": ["royal mile", "castle", "vaults", "closes"]
+  },
+
+  "London Haunted History": {
+    "setting": "Victorian-era East End and historic City",
+    "architecture": "narrow brick alleyways, wrought-iron gas lamps, cobblestone courts, Tudor timber frames",
+    "atmosphere": "thick pea-soup fog, wet cobblestones reflecting gaslight, Jack the Ripper menace",
+    "palette": "cool blue-gray fog, warm amber gaslight, dark brick red, black shadows",
+    "lighting": "dim period gas lamps creating pools of light in fog, cinematic noir",
+    "keywords": ["whitechapel", "tower", "thames", "victorian"]
+  },
+
+  "Nashville Haunted History": {
+    "setting": "Tennessee music city with antebellum roots",
+    "architecture": "Greek Revival mansions, honky-tonk neon signs, grand hotel lobbies, plantation houses",
+    "atmosphere": "warm Southern nights, distant music drifting through darkness, fireflies",
+    "palette": "neon pinks and blues against dark night, warm wood tones, antebellum white columns",
+    "lighting": "neon glow mixing with moonlight, warm interior golden light through tall windows",
+    "keywords": ["broadway", "grand ole opry", "plantation", "civil war"]
+  },
+
+  "New Orleans Voodoo & Haunted History": {
+    "setting": "French Quarter and Garden District",
+    "architecture": "Creole cottages with iron lacework balconies, above-ground tombs, shotgun houses, cathedral spires",
+    "atmosphere": "thick humid air, jazz floating from doorways, voodoo mystery, Spanish moss shadows",
+    "palette": "deep purple twilight, wrought-iron black, warm candlelight amber, cemetery white marble",
+    "lighting": "gas lamp flicker on wet flagstones, votive candle glow, moonlight through iron lace",
+    "keywords": ["french quarter", "voodoo", "cemetery", "bourbon street"]
+  },
+
+  "New York Haunted History": {
+    "setting": "Historic Manhattan neighborhoods",
+    "architecture": "brownstone row houses, colonial-era churches, gaslit Greenwich Village, harbor forts",
+    "atmosphere": "autumn wind through bare trees in old churchyards, history layered beneath modernity",
+    "palette": "brownstone warm earth tones, autumn gold and crimson, cold gray stone, warm lamplight",
+    "lighting": "street lamp glow on brownstone facades, moonlight in old churchyards",
+    "keywords": ["greenwich village", "brownstone", "colonial", "harbor"]
+  },
+
+  "Paris Haunted History": {
+    "setting": "Historic Parisian underground and grand boulevards",
+    "architecture": "Haussmann facades, limestone catacombs, iron balconies, grand monuments, narrow medieval streets",
+    "atmosphere": "romantic darkness, six million dead beneath the city of light, revolutionary echoes",
+    "palette": "warm limestone cream, cool underground gray, iron black, soft blue Parisian twilight",
+    "lighting": "lantern light in underground tunnels, golden hour on Haussmann stone, moody overcast",
+    "keywords": ["catacombs", "notre dame", "revolution", "montmartre"]
+  },
+
+  "Rome Haunted History": {
+    "setting": "Ancient and Renaissance Eternal City",
+    "architecture": "ancient Roman ruins, travertine columns, Renaissance churches, underground catacombs, fortress walls",
+    "atmosphere": "millennia of history layered in stone, emperors and martyrs, eternal and crumbling",
+    "palette": "warm travertine gold, deep terracotta, ancient marble white, olive green, sunset orange",
+    "lighting": "warm Mediterranean golden hour, dramatic shadows through ancient arches, candlelit crypts",
+    "keywords": ["colosseum", "catacombs", "vatican", "ancient"]
+  },
+
+  "Salem Witch Trials": {
+    "setting": "17th-century Puritan New England village",
+    "architecture": "dark timber-frame colonial houses, bare meeting houses, wooden gallows, stone walls through bare woods",
+    "atmosphere": "puritan austerity, hysteria and accusation, bare winter trees, moral darkness",
+    "palette": "muted earth tones, charcoal and ash gray, dark wood brown, cold winter whites",
+    "lighting": "harsh overcast winter light, firelight through small windows, cold and unforgiving",
+    "keywords": ["puritan", "trial", "gallows", "colonial village"]
+  },
+
+  "San Antonio Haunted History": {
+    "setting": "Texas Spanish colonial mission city",
+    "architecture": "Spanish mission stone walls, Alamo limestone facade, Victorian hotels, River Walk bridges",
+    "atmosphere": "desert heat lingering at dusk, mission bells echoing, soldier ghosts at the Alamo",
+    "palette": "warm limestone gold, desert sunset orange and purple, deep blue Texas twilight",
+    "lighting": "golden hour on mission stone, warm lantern light along the River Walk, dramatic desert sunset",
+    "keywords": ["alamo", "missions", "river walk", "spanish colonial"]
+  },
+
+  "Savannah Haunted History": {
+    "setting": "Antebellum coastal Georgia city",
+    "architecture": "grand antebellum mansions, Spanish moss-draped live oaks, ornate iron fences, moss-covered cemetery monuments",
+    "atmosphere": "thick humid air, ghostly moss swaying, genteel Southern decay, midnight garden mystery",
+    "palette": "warm golden amber, deep green moss and canopy, soft gray Spanish moss, warm sunset glow",
+    "lighting": "golden hour filtering through massive live oak canopy, warm gas lamp glow on brick",
+    "keywords": ["spanish moss", "squares", "antebellum", "cemetery"]
+  },
+
+  "St. Augustine Haunted History": {
+    "setting": "America's oldest European-founded city",
+    "architecture": "coquina stone fortress, Spanish colonial buildings, narrow streets, ancient cemetery walls",
+    "atmosphere": "400 years of ghosts in a small coastal town, Spanish colonial mystery, ocean breeze",
+    "palette": "warm coquina shell stone, Spanish terracotta, tropical green, ocean blue, sunset coral",
+    "lighting": "warm coastal golden hour on ancient stone, candlelight in colonial interiors",
+    "keywords": ["castillo", "coquina", "spanish colonial", "oldest city"]
+  },
+
+  "Tour Planning": {
+    "setting": "Generic atmospheric ghost tour scene",
+    "architecture": "cobblestone path with lantern-bearing guide ahead, historic streetscape, cemetery gates",
+    "atmosphere": "anticipation and excitement, group of silhouettes following a storyteller through darkness",
+    "palette": "deep blue night, warm lantern amber, mysterious purple shadows",
+    "lighting": "single lantern or flashlight beam cutting through darkness, dramatic spotlighting",
+    "keywords": ["lantern", "tour guide", "ghost walk", "exploration"]
+  },
+
+  "Washington DC Haunted History": {
+    "setting": "Neoclassical American capital",
+    "architecture": "white marble monuments, neoclassical columns, grand government buildings, Arlington headstones in rows",
+    "atmosphere": "power and secrecy, Lincoln's ghost, marble monuments glowing at night",
+    "palette": "cool white marble, deep patriotic blue night sky, warm memorial amber lighting",
+    "lighting": "dramatic uplighting on white monuments, moonlight on marble, warm interior chandeliers",
+    "keywords": ["capitol", "white house", "monuments", "arlington"]
+  }
+}
