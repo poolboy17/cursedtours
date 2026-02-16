@@ -17,7 +17,6 @@ export type PageType =
 export type ParentVariant =
   | 'city'            // /{city}-ghost-tours/
   | 'destination'     // /destinations/{slug}/
-  | 'topical'         // /articles/category/{slug}/ (dracula, tour-planning)
   | 'experience';     // /experiences/{slug}/
 
 /** Sub-classification for child pages */
@@ -52,8 +51,8 @@ export interface PageIdentity {
   category?: string;
 }
 
-/** Category type flag — determines whether a category generates its own page */
-export type CategoryType = 'city' | 'topical';
+/** Category type flag */
+export type CategoryType = 'city';
 
 /** Extended category info with type flag */
 export interface CategoryInfo {
@@ -74,7 +73,7 @@ export interface CategoryInfo {
  * 4. Parent level MUST be < child level
  * 5. City children MUST parent to /{city}-ghost-tours/ (not a category page)
  * 6. No two parent pages may own the same city
- * 7. Guide variant requires articleType === 'guide' in article data
+ * 7. Guide variant requires wordCount >= 1200 in article data
  * 8. Every city parent MUST have parent = homepage
  * 9. Homepage parent MUST be 'none'
  * 10. Breadcrumb chain must match: homepage → parent → self

@@ -22,7 +22,6 @@ export interface Article {
   }[];
   wordCount?: number;
   readingTime?: number;
-  articleType?: 'pillar' | 'cluster';
   keywords?: string[];
 }
 
@@ -30,9 +29,8 @@ export interface CategoryInfo {
   slug: string;
   name: string;
   description: string;
-  /** 'city' = parent page exists, no category page generated.
-   *  'topical' = standalone category page generated. */
-  type: 'city' | 'topical';
+  /** All categories are city-based, linking up to their city hub page. */
+  type: 'city';
   /** URL of the parent page (city hub or destination page) */
   hubPage?: string;
   /** City key for city-type categories */
@@ -57,13 +55,6 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
     city: 'new-orleans',
     hubPage: '/new-orleans-ghost-tours/',
   },
-  'dracula-gothic-literature': {
-    slug: 'dracula-gothic-literature',
-    name: 'Dracula & Gothic Literature',
-    description: 'Exploring the real history behind Bram Stoker\'s Dracula, Vlad the Impaler, vampire mythology, and the gothic literary tradition.',
-    type: 'topical',
-    hubPage: '/destinations/draculas-castle/',
-  },
   'chicago-haunted-history': {
     slug: 'chicago-haunted-history',
     name: 'Chicago Haunted History',
@@ -71,12 +62,6 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
     type: 'city',
     city: 'chicago',
     hubPage: '/chicago-ghost-tours/',
-  },
-  'tour-planning': {
-    slug: 'tour-planning',
-    name: 'Tour Planning',
-    description: 'Practical guides to help you choose, prepare for, and get the most out of ghost tours anywhere in the world.',
-    type: 'topical',
   },
   'savannah-haunted-history': {
     slug: 'savannah-haunted-history',
@@ -227,7 +212,6 @@ export function getAllArticles(): Article[] {
       ),
       wordCount: data.wordCount,
       readingTime: data.readingTime,
-      articleType: data.articleType,
       keywords: data.keywords,
     };
   }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());

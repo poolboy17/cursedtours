@@ -5,8 +5,7 @@ import { getAllArticles, getArticlesByCategory, CATEGORIES } from '../../data/ar
 const allArticles = getAllArticles();
 
 // Show categories that have articles, in a sensible order.
-// City categories link to their parent page.
-// Topical categories link to their category page.
+// Each category links to its city hub page.
 const categoryOrder = Object.keys(CATEGORIES).filter(
   slug => getArticlesByCategory(slug).length > 0
 );
@@ -14,14 +13,14 @@ const categoryOrder = Object.keys(CATEGORIES).filter(
 
 <Layout
   title="Ghost Tour Articles & Guides | Cursed Tours"
-  description="In-depth articles on haunted history, the Salem witch trials, New Orleans voodoo, Dracula mythology, and practical ghost tour planning guides."
+  description="In-depth articles on haunted history, the Salem witch trials, New Orleans voodoo, and city-specific ghost tour guides."
   canonical="https://cursedtours.com/articles/"
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Ghost Tour Articles & Guides",
-    "description": "In-depth articles on haunted history, the Salem witch trials, New Orleans voodoo, Dracula mythology, and practical ghost tour planning guides.",
+    "description": "In-depth articles on haunted history, the Salem witch trials, New Orleans voodoo, and city-specific ghost tour guides.",
     "url": "https://cursedtours.com/articles/",
     "mainEntity": {
       "@type": "ItemList",
@@ -81,10 +80,10 @@ const categoryOrder = Object.keys(CATEGORIES).filter(
   {categoryOrder.map((catSlug) => {
     const cat = CATEGORIES[catSlug];
     const articles = getArticlesByCategory(catSlug);
-    // Put pillar (longest) article first
+    // Put longest (featured) article first
     articles.sort((a, b) => b.content.split(/\s+/).length - a.content.split(/\s+/).length);
-    const pillar = articles[0];
-    const clusters = articles.slice(1);
+    const featured = articles[0];
+    const rest = articles.slice(1);
 
     return (
       <section id={catSlug} class="py-12 md:py-16 bg-[#0a0510] border-t border-white/5">
@@ -99,17 +98,17 @@ const categoryOrder = Object.keys(CATEGORIES).filter(
             )}
           </div>
 
-          {/* Pillar article - featured large */}
-          {pillar && (
+          {/* Featured article - displayed large */}
+          {featured && (
             <a
-              href={`/articles/${pillar.slug}/`}
+              href={`/articles/${featured.slug}/`}
               class="group block mb-8 rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 md:flex"
             >
-              {pillar.featuredImage?.sourceUrl && (
+              {featured.featuredImage?.sourceUrl && (
                 <div class="md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
                   <img
-                    src={pillar.featuredImage.sourceUrl}
-                    alt={pillar.featuredImage.altText || pillar.title}
+                    src={featured.featuredImage.sourceUrl}
+                    alt={featured.featuredImage.altText || featured.title}
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     width="800"
                     height="450"
@@ -119,21 +118,21 @@ const categoryOrder = Object.keys(CATEGORIES).filter(
                 </div>
               )}
               <div class="p-6 md:w-3/5 flex flex-col justify-center">
-                <span class="text-xs text-purple-400 font-medium uppercase tracking-wider mb-2">Pillar Guide</span>
+                <span class="text-xs text-purple-400 font-medium uppercase tracking-wider mb-2">Featured Guide</span>
                 <h3 class="text-xl md:text-2xl font-bold text-white group-hover:text-purple-400 transition-colors mb-3">
-                  {pillar.title}
+                  {featured.title}
                 </h3>
-                <p class="text-gray-400 line-clamp-3">{pillar.excerpt}</p>
+                <p class="text-gray-400 line-clamp-3">{featured.excerpt}</p>
                 <span class="mt-4 text-sm text-gray-500">
-                  {Math.ceil(pillar.content.split(/\s+/).length / 250)} min read
+                  {Math.ceil(featured.content.split(/\s+/).length / 250)} min read
                 </span>
               </div>
             </a>
           )}
 
-          {/* Cluster articles - grid */}
+          {/* Remaining articles - grid */}
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {clusters.map((article) => (
+            {rest.map((article) => (
               <a
                 href={`/articles/${article.slug}/`}
                 class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300"

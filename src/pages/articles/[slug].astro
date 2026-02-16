@@ -19,14 +19,8 @@ const publishDate = new Date(article.date).toLocaleDateString('en-US', {
 });
 
 // Resolve the correct parent page for this article.
-// City articles → parent is the city hub (/{city}-ghost-tours/)
-// Topical articles → parent is the category page (/articles/category/{slug}/)
-const isCity = categoryInfo?.type === 'city';
-const parentHref = isCity && categoryInfo.hubPage
-  ? categoryInfo.hubPage
-  : categoryInfo
-    ? `/articles/category/${category.slug}/`
-    : null;
+// All articles parent to their city hub (/{city}-ghost-tours/)
+const parentHref = categoryInfo?.hubPage || null;
 const parentUrl = parentHref
   ? `https://cursedtours.com${parentHref}`
   : null;

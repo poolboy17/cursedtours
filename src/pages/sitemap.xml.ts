@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { getAllArticles, CATEGORIES } from '../data/articles';
+import { getAllArticles } from '../data/articles';
 import { DESTINATIONS } from '../data/destinations';
 
 export const GET: APIRoute = async () => {
@@ -37,9 +37,6 @@ export const GET: APIRoute = async () => {
     entry('/destinations/', '0.7', 'monthly'),
     ...cityHubs.map(c => entry(`/${c}-ghost-tours/`, '0.9', 'monthly')),
     ...destinations.map(d => entry(`/destinations/${d}/`, '0.8', 'monthly')),
-    ...Object.entries(CATEGORIES)
-      .filter(([_, info]) => info.type !== 'city')
-      .map(([slug]) => entry(`/articles/category/${slug}/`, '0.7', 'weekly')),
     entry('/experiences/', '0.6', 'monthly'),
     ...experiences.map(e => entry(`/experiences/${e}/`, '0.6', 'monthly')),
     ...articles.map(a => entry(`/articles/${a.slug}/`, '0.7', 'weekly')),
