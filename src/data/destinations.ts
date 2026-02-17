@@ -23,12 +23,25 @@ export interface AuthoritativeSource {
 	description: string
 }
 
+export interface ContentSection {
+	heading: string
+	body: string
+}
+
 export interface DestinationData {
 	slug: string
 	name: string
+	subtitle?: string
 	descriptor: string
 	intro?: string
+	heroImage?: {
+		src: string
+		alt: string
+	}
+	youtubeId?: string
 	whyItMatters: string
+	sections?: ContentSection[]
+	relatedArticleSlugs?: string[]
 	featuredTours?: FeaturedTour[]
 	faq: Array<{
 		question: string
@@ -474,7 +487,7 @@ export const DESTINATIONS: Record<string, DestinationData> = {
 			},
 		],
 		relatedDestinations: [
-			{ name: 'Bran Castle', slug: 'draculas-castle' },
+			{ name: "Dracula's Castle", slug: 'draculas-castle' },
 			{ name: 'Eastern State Penitentiary', slug: 'eastern-state-penitentiary' },
 			{ name: 'Alcatraz Island', slug: 'alcatraz' },
 		],
@@ -507,9 +520,15 @@ export const DESTINATIONS: Record<string, DestinationData> = {
 	},
 	'draculas-castle': {
 		slug: 'draculas-castle',
-		name: 'Bran Castle',
-		descriptor: 'The fortress that inspired the Dracula legend',
-		intro: "Perched on a cliff in the Transylvanian mountains, Bran Castle's Gothic silhouette became forever linked to literature's most famous vampire.",
+		name: "Dracula's Castle",
+		subtitle: 'Bran Castle, Transylvania',
+		descriptor: "The Transylvanian fortress where Bram Stoker set literature's most famous vampire — and where centuries of real dark history lurk behind the legend",
+		intro: "When Bram Stoker imagined a remote castle perched above a Transylvanian mountain pass, he created the most iconic setting in horror literature. Bran Castle — the real fortress that inspired Dracula's lair — stands at the border between myth and history, where the brutal legacy of Vlad the Impaler collides with the Gothic imagination that made this place famous worldwide.",
+		heroImage: {
+			src: '/images/destinations/draculas-castle.webp',
+			alt: "Bran Castle perched on a cliff in the Transylvanian mountains at dusk",
+		},
+		youtubeId: 'Mw9iEvqefHU',
 		featuredTours: [
 			{
 				productCode: '10193P2',
@@ -571,27 +590,73 @@ export const DESTINATIONS: Record<string, DestinationData> = {
 				viatorUrl: 'https://www.viator.com/tours/Bucharest/Transylvania-and-Dracula-Castle-Full-Day-Tour-from-Bucharest/d22134-7745P1?pid=P00166886&mcid=42383',
 			},
 		],
-		whyItMatters: `Bran Castle's connection to Dracula is literary rather than historical, but the fortress itself carries centuries of genuine dark history. Built in 1388 as a customs post and defensive stronghold, it guarded the mountain pass between Transylvania and Wallachia. The castle's association with Vlad the Impaler—the 15th-century ruler whose brutal tactics inspired Bram Stoker—remains tenuous; he may have been imprisoned here briefly. What made Bran famous was Stoker's novel, which transformed the castle into a symbol of Gothic horror despite the author never visiting Romania. Today, the castle stands at the intersection of history and myth, its towers and secret passages fueling imaginations while the real history of Transylvanian power struggles fades into shadow.`,
+		whyItMatters: `Dracula's Castle stands at the intersection of real medieval brutality and the Gothic imagination that transformed a Transylvanian fortress into the most famous haunted castle on Earth. The connection between Bran Castle and the vampire Count Dracula is literary — invented by Bram Stoker in 1897 — but the real history behind these walls is arguably darker than any fiction. For over six centuries, this castle has guarded a mountain pass where empires clashed, armies marched, and a prince nicknamed "the Impaler" earned his reputation through methods that horrified even his contemporaries.`,
+		sections: [
+			{
+				heading: 'The Real History: A Fortress Built for War',
+				body: `Bran Castle was constructed in 1388 by Saxon merchants from the nearby city of Brașov, who needed a customs post and defensive stronghold to guard the Bran Pass — the critical mountain route connecting Transylvania to Wallachia. The castle's strategic position atop a 200-foot cliff made it nearly impregnable. Over the centuries it changed hands between Hungarian kings, Wallachian princes, and Habsburg rulers. It served as a border checkpoint where trade goods were taxed, a military garrison during Ottoman invasions, and eventually a royal residence. Queen Marie of Romania restored the castle in the 1920s, filling it with art and furniture that remain on display today. After World War II, the communist regime seized the castle; it was returned to the Habsburg family in 2009 and opened as a museum.`,
+			},
+			{
+				heading: 'Vlad the Impaler: The Man Behind the Monster',
+				body: `Vlad III, Prince of Wallachia, earned the epithet "Țepeș" (the Impaler) through his preferred method of execution — driving sharpened stakes through the bodies of enemies and leaving them displayed as warnings. During his reign from 1456 to 1462, Vlad is estimated to have killed between 40,000 and 100,000 people through impalement, burning, skinning, and boiling alive. His cruelty was legendary even in an era that expected brutality from its rulers. Vlad's connection to Bran Castle itself is tenuous — he likely passed through the fortress during military campaigns and may have been briefly imprisoned here. But it was his reputation as a bloodthirsty warlord that gave Bram Stoker the raw material to create Count Dracula.`,
+			},
+			{
+				heading: "Bram Stoker's Invention: How a Novel Created a Legend",
+				body: `Bram Stoker never visited Romania. Working from travel guides, maps, and accounts of Transylvanian geography in the British Museum reading room, the Irish author crafted a fictional castle that matched Bran's description almost perfectly: a fortress perched on a cliff above a mountain pass, surrounded by dense forests and the Carpathian peaks. Stoker borrowed Vlad's patronymic — Dracula, meaning "son of the dragon" — for his vampire count, blending Wallachian history with Eastern European vampire folklore and his own Gothic imagination. The novel was published in 1897 and slowly grew into one of the most influential horror stories ever written. By the mid-20th century, Bran Castle had become irrevocably identified as "Dracula's Castle" in the popular imagination, drawing visitors from around the world.`,
+			},
+			{
+				heading: 'Visiting Today: What to Expect',
+				body: `The castle museum spans four floors of winding staircases, narrow corridors, and period-furnished rooms that reflect Queen Marie's early 20th-century restoration. Highlights include a basement torture exhibit, a secret passage connecting the first and third floors, medieval weapons displays, and a courtyard well that — according to local legend — connects to underground tunnels. Outside, the village of Bran has built a cottage industry around Dracula tourism, with souvenir markets, themed restaurants, and a Halloween festival that has become one of Europe's largest. Most visitors arrive on organized day trips from Bucharest (a three-hour drive) or Brașov (30 minutes), often combining the visit with nearby Peleș Castle and the medieval city center of Brașov.`,
+			},
+		],
+		relatedArticleSlugs: [
+			'transylvania-dracula-tourism',
+			'dracula-novel-historical-analysis',
+			'vampire-folklore-eastern-europe',
+			'bram-stoker-dublin-dracula-origins',
+			'real-vampire-legends-history',
+			'vampire-hunters-real-history',
+			'nosferatu-film-history',
+			'new-nosferatu-film-2024-locations',
+			'interview-with-the-vampire-new-orleans',
+			'twilight-vampire-renaissance-pop-culture',
+		],
 		faq: [
 			{
-				question: 'Did Dracula actually live at Bran Castle?',
-				answer: "No. Vlad the Impaler, who inspired the Dracula legend, likely never lived here. He may have been briefly imprisoned in the castle. The Dracula connection comes from Bram Stoker's novel.",
+				question: "Is Bran Castle really Dracula's castle?",
+				answer: "Bran Castle is the real fortress that most closely matches Bram Stoker's description of Count Dracula's castle. Stoker never visited Romania, but used travel guides and maps that described a castle matching Bran's location and appearance. The historical Vlad the Impaler — whose nickname inspired the Dracula character — had only a tenuous connection to the castle itself.",
+			},
+			{
+				question: 'Who was Vlad the Impaler?',
+				answer: "Vlad III (1431–1476) was the Prince of Wallachia, a region in present-day Romania. He earned the name 'the Impaler' for his preferred execution method. His patronymic 'Dracula' (son of the dragon) came from his father's membership in the Order of the Dragon. Bram Stoker borrowed this name and Vlad's fearsome reputation for his 1897 novel.",
 			},
 			{
 				question: 'How long does a Bran Castle visit take?',
-				answer: 'The castle tour takes 1 to 1.5 hours. Add time for the surrounding village market and nearby attractions. Most organized tours from Bucharest or Brașov are full-day excursions.',
+				answer: 'The castle tour takes 1 to 1.5 hours. Add time for the surrounding village market, souvenir shops, and nearby attractions. Most organized tours from Bucharest or Brașov are full-day excursions that also include Peleș Castle and Brașov old town.',
+			},
+			{
+				question: 'How do I get to Bran Castle from Bucharest?',
+				answer: "Bran Castle is about 170 km (3 hours) north of Bucharest by car. You can drive, take an organized day tour, or travel by bus to Brașov and then a local bus to Bran. Most visitors choose a guided day tour that includes hotel pickup and multiple stops.",
 			},
 			{
 				question: 'Is Bran Castle crowded?',
-				answer: 'Summer and October (Halloween season) bring large crowds. Visit early morning or late afternoon for smaller groups. Winter offers the quietest experience with atmospheric mist.',
+				answer: 'Summer and October (Halloween season) bring large crowds, with wait times of up to an hour. Visit early morning or late afternoon for smaller groups. Winter offers the quietest experience with atmospheric mist over the Carpathian peaks.',
 			},
 			{
 				question: 'What is there to see at Bran Castle?',
-				answer: "The castle contains Queen Marie's furniture and art collection, medieval weapons, secret passages, and the surrounding courtyard. A torture exhibit sits in the basement.",
+				answer: "The castle museum includes Queen Marie's restored rooms, medieval weapons displays, a torture exhibit in the basement, secret passages between floors, and a courtyard with panoramic mountain views. The village market outside sells local crafts, cheese, and Dracula-themed souvenirs.",
 			},
 			{
 				question: 'Can I visit independently or do I need a tour?',
-				answer: 'Both options work. Independent visits allow more flexibility. Organized tours from Brașov or Bucharest include transportation and often combine Bran with Peleș Castle and Brașov old town.',
+				answer: 'Both options work. Independent visits allow more flexibility and are easy if you have a rental car or are based in Brașov (30-minute bus ride). Organized tours from Bucharest handle all logistics and typically combine Bran with Peleș Castle and Brașov.',
+			},
+			{
+				question: 'Does Bran Castle have a Halloween event?',
+				answer: "Yes. The annual Halloween party at Bran Castle has become one of Europe's most popular Halloween events, featuring themed decorations, live performances, and nighttime castle access. Tickets sell out months in advance.",
+			},
+			{
+				question: 'Are there other castles nearby worth visiting?',
+				answer: "Peleș Castle in Sinaia (40 minutes away) is a stunning Neo-Renaissance royal palace and one of Europe's most beautiful castles. Rășnov Fortress is a 13th-century citadel just 15 minutes from Bran. Both are commonly included in day tours.",
 			},
 		],
 		relatedDestinations: [
