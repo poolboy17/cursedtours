@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { getAllArticles } from '../data/articles';
 import { DESTINATIONS } from '../data/destinations';
+import { getAllBlogHubSlugs } from '../data/blogHubs';
 
 export const GET: APIRoute = async () => {
   const site = 'https://cursedtours.com';
@@ -8,7 +9,7 @@ export const GET: APIRoute = async () => {
 
   const cityHubs = [
     'austin', 'boston', 'charleston', 'chicago', 'denver', 'dublin',
-    'edinburgh', 'london', 'nashville', 'new-orleans', 'new-york',
+    'edinburgh', 'key-west', 'london', 'nashville', 'new-orleans', 'new-york',
     'paris', 'rome', 'salem', 'san-antonio', 'savannah', 'st-augustine',
     'washington-dc',
   ];
@@ -19,6 +20,7 @@ export const GET: APIRoute = async () => {
   ];
 
   const destinations = Object.keys(DESTINATIONS);
+  const blogHubs = getAllBlogHubSlugs();
   const utilities = ['about', 'contact', 'editorial-policy', 'privacy-policy', 'terms'];
   const articles = getAllArticles();
 
@@ -37,6 +39,8 @@ export const GET: APIRoute = async () => {
     entry('/destinations/', '0.7', 'monthly'),
     ...cityHubs.map(c => entry(`/${c}-ghost-tours/`, '0.9', 'monthly')),
     ...destinations.map(d => entry(`/destinations/${d}/`, '0.8', 'monthly')),
+    entry('/blog/', '0.7', 'weekly'),
+    ...blogHubs.map(b => entry(`/blog/${b}/`, '0.8', 'monthly')),
     entry('/experiences/', '0.6', 'monthly'),
     ...experiences.map(e => entry(`/experiences/${e}/`, '0.6', 'monthly')),
     ...articles.map(a => entry(`/articles/${a.slug}/`, '0.7', 'weekly')),
