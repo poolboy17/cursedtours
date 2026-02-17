@@ -128,17 +128,44 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
                 <div class="text-gray-300 text-lg leading-relaxed">
                   <h2 class="text-2xl font-bold text-white mb-4">{section.heading}</h2>
                   <p>{section.body}</p>
+                  {section.image && (
+                    <figure class="mt-6">
+                      <img src={section.image.src} alt={section.image.alt}
+                        class="w-full rounded-lg" width="1200" height="675" loading="lazy" decoding="async" />
+                      <figcaption class="text-sm text-gray-500 mt-2 italic">{section.image.alt}</figcaption>
+                    </figure>
+                  )}
                 </div>
               ))}
             </div>
           )}
 
-          {/* Related Articles */}
-          {relatedArticles.length > 0 && (
+          {/* FAQ — placed before articles to support buying-intent questions near CTAs */}
+          {destination.faq.length > 0 && (
             <div class="mb-16">
+              <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+              <div class="space-y-4">
+                {destination.faq.map((item: any) => (
+                  <details class="group bg-white/5 border border-white/10 rounded-lg overflow-hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer text-white font-medium hover:text-purple-400 transition-colors">
+                      {item.question}
+                      <span class="text-gray-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-400 leading-relaxed">
+                      {item.answer}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Related Articles — capped at 6, with link to see all */}
+          {relatedArticles.length > 0 && (
+            <div class="mb-8">
               <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Related Articles</h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {relatedArticles.map((article: any) => (
+                {relatedArticles.slice(0, 6).map((article: any) => (
                   <a href={`/articles/${article.slug}/`}
                     class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                     {article.featuredImage?.sourceUrl && (
@@ -160,26 +187,13 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
                   </a>
                 ))}
               </div>
-            </div>
-          )}
-
-          {/* FAQ */}
-          {destination.faq.length > 0 && (
-            <div class="mb-8">
-              <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Frequently Asked Questions</h2>
-              <div class="space-y-4">
-                {destination.faq.map((item: any) => (
-                  <details class="group bg-white/5 border border-white/10 rounded-lg overflow-hidden">
-                    <summary class="flex items-center justify-between p-5 cursor-pointer text-white font-medium hover:text-purple-400 transition-colors">
-                      {item.question}
-                      <span class="text-gray-500 group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <div class="px-5 pb-5 text-gray-400 leading-relaxed">
-                      {item.answer}
-                    </div>
-                  </details>
-                ))}
-              </div>
+              {relatedArticles.length > 6 && (
+                <div class="mt-6 text-center">
+                  <a href="/blog/vampire-culture/" class="inline-block px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-purple-400 hover:border-purple-500/50 hover:text-purple-300 transition-all text-sm font-medium">
+                    View all {relatedArticles.length} related articles →
+                  </a>
+                </div>
+              )}
             </div>
           )}
 
@@ -251,9 +265,9 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
                 </a>
               ))}
 
-              <a href="#all-tours" class="block text-center text-sm text-purple-400 hover:text-purple-300 transition-colors py-2">
-                See all {tours.length} tours ↓
-              </a>
+              <p class="text-center text-sm text-gray-500 py-2">
+                {tours.length} tours available
+              </p>
             </div>
           </aside>
         )}
@@ -262,9 +276,9 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
     </div>
   </section>
 
-  <!-- All Tours (full width) -->
+  <!-- All Tours (mobile/tablet only — desktop has sticky sidebar) -->
   {tours.length > 0 && (
-    <section class="py-12 md:py-16 bg-[#0f0a1a] border-t border-white/5" id="all-tours">
+    <section class="py-12 md:py-16 bg-[#0f0a1a] border-t border-white/5 lg:hidden" id="all-tours">
       <div class="container px-4 mx-auto max-w-6xl">
         <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">All Tours</h2>
 

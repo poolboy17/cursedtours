@@ -26,6 +26,10 @@ export interface AuthoritativeSource {
 export interface ContentSection {
 	heading: string
 	body: string
+	image?: {
+		src: string
+		alt: string
+	}
 }
 
 export interface DestinationData {
@@ -599,6 +603,10 @@ export const DESTINATIONS: Record<string, DestinationData> = {
 			{
 				heading: 'Vlad the Impaler: The Man Behind the Monster',
 				body: `Vlad III, Prince of Wallachia, earned the epithet "Țepeș" (the Impaler) through his preferred method of execution — driving sharpened stakes through the bodies of enemies and leaving them displayed as warnings. During his reign from 1456 to 1462, Vlad is estimated to have killed between 40,000 and 100,000 people through impalement, burning, skinning, and boiling alive. His cruelty was legendary even in an era that expected brutality from its rulers. Vlad's connection to Bran Castle itself is tenuous — he likely passed through the fortress during military campaigns and may have been briefly imprisoned here. But it was his reputation as a bloodthirsty warlord that gave Bram Stoker the raw material to create Count Dracula.`,
+				image: {
+					src: '/images/destinations/transylvania-medieval-fortress.webp',
+					alt: 'Medieval Corvin Castle in Transylvania, Romania — one of the great fortresses of the region Vlad the Impaler once ruled',
+				},
 			},
 			{
 				heading: "Bram Stoker's Invention: How a Novel Created a Legend",
