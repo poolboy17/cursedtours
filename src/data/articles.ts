@@ -29,8 +29,8 @@ export interface CategoryInfo {
   slug: string;
   name: string;
   description: string;
-  /** All categories are city-based, linking up to their city hub page. */
-  type: 'city';
+  /** Category type: 'city' links to a city hub, 'blog' links to a blog hub */
+  type: 'city' | 'blog';
   /** URL of the parent page (city hub or destination page) */
   hubPage?: string;
   /** City key for city-type categories */
@@ -182,6 +182,51 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
     type: 'city',
     city: 'denver',
     hubPage: '/denver-ghost-tours/',
+  },
+  'key-west-haunted-history': {
+    slug: 'key-west-haunted-history',
+    name: 'Key West Haunted History',
+    description: 'Key West\'s haunted history—from Robert the Doll and Fort East Martello to shipwreck legends, yellow fever epidemics, and the ghosts of Bone Island.',
+    type: 'city',
+    city: 'key-west',
+    hubPage: '/key-west-ghost-tours/',
+  },
+
+  // ── Blog Hub Categories ───────────────────────────────────────────
+  'vampire-culture': {
+    slug: 'vampire-culture',
+    name: 'Vampire Culture',
+    description: 'Dracula, Bram Stoker, vampire folklore, and how pop culture from Twilight to Nosferatu keeps the legend alive.',
+    type: 'blog',
+    hubPage: '/blog/vampire-culture/',
+  },
+  'salem-witch-trials-history': {
+    slug: 'salem-witch-trials-history',
+    name: 'Salem Witch Trials History',
+    description: 'The causes, people, courts, and lasting legacy of the 1692 Salem witch trials.',
+    type: 'blog',
+    hubPage: '/blog/salem-witch-trials/',
+  },
+  'tower-of-london-history': {
+    slug: 'tower-of-london-history',
+    name: 'Tower of London History',
+    description: 'Executions, prisoners, the Crown Jewels, and nearly 1,000 years of royal terror.',
+    type: 'blog',
+    hubPage: '/blog/tower-of-london/',
+  },
+  'american-prison-history': {
+    slug: 'american-prison-history',
+    name: 'American Prison History',
+    description: 'From Eastern State to Alcatraz to Port Arthur—solitary confinement, famous inmates, daring escapes, and the haunted remains.',
+    type: 'blog',
+    hubPage: '/blog/prison-history/',
+  },
+  'gettysburg-civil-war': {
+    slug: 'gettysburg-civil-war',
+    name: 'Gettysburg & the Civil War',
+    description: 'The bloodiest battle of the Civil War—tactics, aftermath, ghosts, and why it still haunts.',
+    type: 'blog',
+    hubPage: '/blog/gettysburg/',
   },
 };
 
