@@ -3,6 +3,6 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   output: 'static',
-  site: 'https://cursed3.netlify.app',
+  site: 'https://cursedtours.com',
   integrations: [tailwind()]
 });
