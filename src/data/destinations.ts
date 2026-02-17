@@ -647,8 +647,8 @@ export const DESTINATIONS: Record<string, DestinationData> = {
 				answer: "Bran Castle is about 170 km (3 hours) north of Bucharest by car. You can drive, take an organized day tour, or travel by bus to Brașov and then a local bus to Bran. Most visitors choose a guided day tour that includes hotel pickup and multiple stops.",
 			},
 			{
-				question: 'Is Bran Castle crowded?',
-				answer: 'Summer and October (Halloween season) bring large crowds, with wait times of up to an hour. Visit early morning or late afternoon for smaller groups. Winter offers the quietest experience with atmospheric mist over the Carpathian peaks.',
+				question: 'Why did Bram Stoker choose Bran Castle for Dracula?',
+				answer: "Stoker never actually visited Romania — he researched the novel entirely from books and maps in the British Museum. He needed a castle perched above a remote mountain pass at the edge of Transylvania, and Bran Castle's position guarding the Bran Pass between Transylvania and Wallachia matched his description almost exactly. More dramatic castles like Corvin Castle exist in the region, but Bran's geography — isolated on a cliff above the road into the mountains — fit the narrative he was building. The name 'Dracula' came separately, borrowed from Vlad III's patronymic meaning 'son of the dragon.'",
 			},
 			{
 				question: 'What is there to see at Bran Castle?',
