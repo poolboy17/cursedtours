@@ -153,11 +153,19 @@ const fullTitle = title.includes('Cursed Tours') ? title : `${title} | Cursed To
       </div>
     </footer>
 
-    <!-- Mobile menu toggle script — zero JS framework needed -->
+    <!-- Mobile menu toggle script -->
     <script>
       const btn = document.getElementById('mobile-menu-btn');
       const menu = document.getElementById('mobile-menu');
-      btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+      const openIcon = document.getElementById('menu-open-icon');
+      const closeIcon = document.getElementById('menu-close-icon');
+      btn?.addEventListener('click', () => {
+        const isOpen = !menu?.classList.contains('hidden');
+        menu?.classList.toggle('hidden');
+        openIcon?.classList.toggle('hidden', !isOpen);
+        closeIcon?.classList.toggle('hidden', isOpen);
+        btn?.setAttribute('aria-expanded', String(!isOpen));
+      });
     </script>
   </body>
 </html>
