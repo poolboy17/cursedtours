@@ -72,36 +72,39 @@ const fullTitle = title.includes('Cursed Tours') ? title : `${title} | Cursed To
   </head>
 
   <body class="bg-dark-950 text-dark-100 min-h-screen flex flex-col">
-    <header>
-      <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="/" class="text-2xl font-heading font-bold text-white hover:text-cursed-400 transition-colors">
-          Cursed Tours
+    <header class="sticky top-0 z-50 border-b" style="background-color: rgba(15, 10, 26, 0.97); border-color: #3d2a4d; backdrop-filter: blur(8px);">
+      <nav class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+        <a href="/" class="flex-shrink-0">
+          <img src="/images/header-logo.webp" alt="Cursed Tours" class="h-14 md:h-16 w-auto" width="1213" height="717" loading="eager" decoding="async" />
         </a>
         <div class="hidden md:flex items-center gap-6">
-          <a href="/destinations/" class="text-dark-300 hover:text-white transition-colors">Destinations</a>
-          <a href="/experiences/" class="text-dark-300 hover:text-white transition-colors">Experiences</a>
-          <a href="/articles/" class="text-dark-300 hover:text-white transition-colors">Articles</a>
-          <a href="/guides/" class="text-dark-300 hover:text-white transition-colors">Guides</a>
-          <a href="/find-tours/" class="text-dark-300 hover:text-white transition-colors">Find Tours</a>
+          <a href="/destinations/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Destinations</a>
+          <a href="/experiences/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Experiences</a>
+          <a href="/articles/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Articles</a>
+          <a href="/guides/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Guides</a>
+          <a href="/find-tours/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Find Tours</a>
         </div>
-        <!-- Mobile menu button — can be a React island if needed -->
         <button
           id="mobile-menu-btn"
-          class="md:hidden text-dark-300 hover:text-white"
-          aria-label="Toggle menu"
+          class="md:hidden p-2"
+          style="color: #a89bb8;"
+          aria-label="Menu"
+          aria-expanded="false"
         >
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </nav>
-      <!-- Mobile menu dropdown -->
-      <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2">
-        <a href="/destinations/" class="block text-dark-300 hover:text-white py-1">Destinations</a>
-        <a href="/experiences/" class="block text-dark-300 hover:text-white py-1">Experiences</a>
-        <a href="/articles/" class="block text-dark-300 hover:text-white py-1">Articles</a>
-        <a href="/guides/" class="block text-dark-300 hover:text-white py-1">Guides</a>
-        <a href="/find-tours/" class="block text-dark-300 hover:text-white py-1">Find Tours</a>
+      <div id="mobile-menu" class="hidden md:hidden border-t px-4 pb-4 space-y-2" style="border-color: #3d2a4d;">
+        <a href="/destinations/" class="block py-2 text-sm" style="color: #a89bb8;">Destinations</a>
+        <a href="/experiences/" class="block py-2 text-sm" style="color: #a89bb8;">Experiences</a>
+        <a href="/articles/" class="block py-2 text-sm" style="color: #a89bb8;">Articles</a>
+        <a href="/guides/" class="block py-2 text-sm" style="color: #a89bb8;">Guides</a>
+        <a href="/find-tours/" class="block py-2 text-sm" style="color: #a89bb8;">Find Tours</a>
       </div>
     </header>
 
