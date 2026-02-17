@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { getAllArticles } from '../data/articles';
+import { getAllArticles, CATEGORIES } from '../data/articles';
 import { DESTINATIONS } from '../data/destinations';
 import { getAllBlogHubSlugs } from '../data/blogHubs';
 
@@ -7,12 +7,12 @@ export const GET: APIRoute = async () => {
   const site = 'https://cursedtours.com';
   const now = new Date().toISOString().split('T')[0];
 
-  const cityHubs = [
-    'austin', 'boston', 'charleston', 'chicago', 'denver', 'dublin',
-    'edinburgh', 'key-west', 'london', 'nashville', 'new-orleans', 'new-york',
-    'paris', 'rome', 'salem', 'san-antonio', 'savannah', 'st-augustine',
-    'washington-dc',
-  ];
+  // Derive city hubs dynamically from CATEGORIES — no manual updates needed
+  const cityHubs = [...new Set(
+    Object.values(CATEGORIES)
+      .filter(c => c.type === 'city' && c.city)
+      .map(c => c.city!)
+  )].sort();
 
   const experiences = [
     'cemetery-tours', 'paranormal-investigations', 'pub-crawls',
