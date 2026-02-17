@@ -54,6 +54,11 @@ const fullTitle = title.includes('Cursed Tours') ? title : `${title} | Cursed To
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`} />
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -73,11 +78,12 @@ const fullTitle = title.includes('Cursed Tours') ? title : `${title} | Cursed To
 
   <body class="bg-dark-950 text-dark-100 min-h-screen flex flex-col">
     <header class="sticky top-0 z-50 w-full border-b" style="background-color: #0f0a1a; border-color: #3d2a4d;">
-      <nav class="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-14">
-        <a href="/" class="flex-shrink-0">
-          <img src="/images/header-logo.webp" alt="Cursed Tours" class="h-10 w-auto" width="1199" height="629" loading="eager" decoding="async" />
+      <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-14">
+        <a href="/" class="flex items-center gap-2 flex-shrink-0 group">
+          <img src="/images/header-logo.webp" alt="" class="h-8 w-auto" width="1199" height="629" loading="eager" decoding="async" aria-hidden="true" />
+          <span class="text-base font-semibold tracking-widest uppercase transition-colors" style="font-family: 'Cinzel', serif; color: #e8e0f0; letter-spacing: 0.15em;">Cursed Tours</span>
         </a>
-        <div class="hidden md:flex items-center gap-8">
+        <div class="hidden md:flex items-center gap-6 lg:gap-8">
           <a href="/destinations/" class="text-sm font-medium tracking-wide uppercase transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#e9d5ff'" onmouseout="this.style.color='#a89bb8'">Destinations</a>
           <a href="/experiences/" class="text-sm font-medium tracking-wide uppercase transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#e9d5ff'" onmouseout="this.style.color='#a89bb8'">Experiences</a>
           <a href="/articles/" class="text-sm font-medium tracking-wide uppercase transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#e9d5ff'" onmouseout="this.style.color='#a89bb8'">Articles</a>
@@ -99,12 +105,14 @@ const fullTitle = title.includes('Cursed Tours') ? title : `${title} | Cursed To
           </svg>
         </button>
       </nav>
-      <div id="mobile-menu" class="hidden md:hidden border-t px-6 pb-4 pt-2 space-y-1" style="border-color: #3d2a4d; background-color: #0f0a1a;">
-        <a href="/destinations/" class="block py-2.5 text-sm font-medium tracking-wide uppercase" style="color: #a89bb8;">Destinations</a>
-        <a href="/experiences/" class="block py-2.5 text-sm font-medium tracking-wide uppercase" style="color: #a89bb8;">Experiences</a>
-        <a href="/articles/" class="block py-2.5 text-sm font-medium tracking-wide uppercase" style="color: #a89bb8;">Articles</a>
-        <a href="/guides/" class="block py-2.5 text-sm font-medium tracking-wide uppercase" style="color: #a89bb8;">Guides</a>
-        <a href="/find-tours/" class="block py-2.5 text-sm font-medium tracking-wide uppercase" style="color: #a89bb8;">Find Tours</a>
+      <div id="mobile-menu" class="hidden md:hidden border-t" style="border-color: #3d2a4d; background-color: #0f0a1a;">
+        <div class="max-w-7xl mx-auto px-6 pb-4 pt-2 space-y-1">
+          <a href="/destinations/" class="block py-2.5 text-sm font-medium tracking-wide uppercase" style="color: #a89bb8;">Destinations</a>
+          <a href="/experiences/" class="block py-2.5 text-sm font-medium tracking-wide uppercase" style="color: #a89bb8;">Experiences</a>
+          <a href="/articles/" class="block py-2.5 text-sm font-medium tracking-wide uppercase" style="color: #a89bb8;">Articles</a>
+          <a href="/guides/" class="block py-2.5 text-sm font-medium tracking-wide uppercase" style="color: #a89bb8;">Guides</a>
+          <a href="/find-tours/" class="block py-2.5 text-sm font-medium tracking-wide uppercase" style="color: #a89bb8;">Find Tours</a>
+        </div>
       </div>
     </header>
 
