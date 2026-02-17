@@ -12,7 +12,6 @@ export async function getStaticPaths() {
 
 const { destination } = Astro.props;
 
-// Resolve related articles from slugs
 const allArticles = getAllArticles();
 const relatedArticles = (destination.relatedArticleSlugs || [])
   .map((slug: string) => allArticles.find(a => a.slug === slug))
@@ -27,7 +26,6 @@ const faqLd = {
     "acceptedAnswer": { "@type": "Answer", "text": item.answer }
   }))
 };
-
 const attractionLd = {
   "@context": "https://schema.org",
   "@type": "TouristAttraction",
@@ -35,7 +33,6 @@ const attractionLd = {
   "description": destination.descriptor,
   "url": `https://cursedtours.com/destinations/${destination.slug}/`,
 };
-
 const breadcrumbLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -64,13 +61,8 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
   <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
     {destination.heroImage && (
       <div class="absolute inset-0">
-        <img
-          src={destination.heroImage.src}
-          alt={destination.heroImage.alt}
-          class="w-full h-full object-cover opacity-30"
-          width="1200"
-          height="675"
-        />
+        <img src={destination.heroImage.src} alt={destination.heroImage.alt}
+          class="w-full h-full object-cover opacity-30" width="1200" height="675" />
         <div class="absolute inset-0 bg-gradient-to-t from-[#0a0510] via-[#0a0510]/80 to-transparent"></div>
       </div>
     )}
@@ -92,132 +84,42 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
     </div>
   </section>
 
-  <!-- Intro / Why It Matters -->
-  <section class="py-12 md:py-16 bg-[#0a0510]">
-    <div class="container px-4 mx-auto max-w-4xl">
-      {destination.intro && (
-        <p class="text-xl text-gray-300 leading-relaxed mb-8 italic border-l-3 border-purple-500 pl-6">
+  <!-- Intro -->
+  {destination.intro && (
+    <section class="pt-12 md:pt-16 bg-[#0a0510]">
+      <div class="container px-4 mx-auto max-w-6xl">
+        <p class="text-xl text-gray-300 leading-relaxed italic border-l-3 border-purple-500 pl-6 max-w-4xl">
           {destination.intro}
         </p>
-      )}
-
-      {/* YouTube embed */}
-      {destination.youtubeId && (
-        <div class="mb-10 rounded-lg overflow-hidden aspect-video">
-          <iframe
-            src={`https://www.youtube.com/embed/${destination.youtubeId}`}
-            title={`${destination.name} video`}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy"
-            class="w-full h-full"
-          ></iframe>
-        </div>
-      )}
-
-      <div class="text-gray-300 text-lg leading-relaxed">
-        <h2 class="text-2xl font-bold text-white mb-4">Why It Matters</h2>
-        <p>{destination.whyItMatters}</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Tours (high placement for conversions) -->
-  {tours.length > 0 && (
-    <section class="py-12 md:py-16 bg-[#0f0a1a] border-t border-white/5">
-      <div class="container px-4 mx-auto max-w-6xl">
-        <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Featured Tours</h2>
-
-        {/* Hero tour - large card */}
-        {heroTour && (
-          <a
-            href={heroTour.viatorUrl}
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            class="group block mb-8 rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 md:flex"
-          >
-            <div class="md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
-              <img
-                src={heroTour.image}
-                alt={heroTour.title}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                width="720"
-                height="480"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="p-6 md:w-3/5 flex flex-col justify-center">
-              <span class="text-xs text-yellow-400 font-medium uppercase tracking-wider mb-2">Top Pick</span>
-              <h3 class="text-xl md:text-2xl font-bold text-white group-hover:text-purple-400 transition-colors mb-3">
-                {heroTour.title}
-              </h3>
-              <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
-                <span class="text-yellow-400">★ {heroTour.rating}</span>
-                <span>({heroTour.reviews.toLocaleString()} reviews)</span>
-                {heroTour.duration && <span>{heroTour.duration}</span>}
-              </div>
-              <div class="flex items-center gap-4">
-                <span class="text-2xl font-bold text-white">From {heroTour.price}</span>
-                <span class="px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-semibold group-hover:bg-purple-500 transition-colors">
-                  View Tour →
-                </span>
-              </div>
-            </div>
-          </a>
-        )}
-
-        {/* Other tours - grid */}
-        {otherTours.length > 0 && (
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherTours.map((tour: any) => (
-              <a
-                href={tour.viatorUrl}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
-              >
-                <div class="aspect-video overflow-hidden">
-                  <img
-                    src={tour.image}
-                    alt={tour.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    width="720"
-                    height="480"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div class="p-4">
-                  <span class="text-xs text-purple-400 uppercase tracking-wider">
-                    {tour.tier === 'budget' ? '💰 Best Value' : tour.tier === 'premium' ? '✨ Premium' : '🔄 Alternative'}
-                  </span>
-                  <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors mt-1 mb-2">
-                    {tour.title}
-                  </h3>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-400">
-                      <span class="text-yellow-400">★ {tour.rating}</span> ({tour.reviews.toLocaleString()})
-                    </span>
-                    <span class="text-white font-bold">From {tour.price}</span>
-                  </div>
-                  {tour.duration && <p class="text-xs text-gray-500 mt-1">{tour.duration}</p>}
-                </div>
-              </a>
-            ))}
-          </div>
-        )}
       </div>
     </section>
   )}
 
-  <!-- Two-column layout: Content + Sticky Sidebar (desktop) -->
-  <section class="py-12 md:py-16 bg-[#0f0a1a] border-t border-white/5" id="tours-section">
+  <!-- Main content with sticky sidebar -->
+  <section class="py-12 md:py-16 bg-[#0a0510]">
     <div class="container px-4 mx-auto max-w-6xl">
       <div class="lg:flex lg:gap-10">
 
-        {/* Main content column */}
+        <!-- Left column: video, text, articles, FAQ -->
         <div class="lg:w-2/3">
+
+          {/* YouTube embed */}
+          {destination.youtubeId && (
+            <div class="mb-10 rounded-lg overflow-hidden aspect-video">
+              <iframe
+                src={`https://www.youtube.com/embed/${destination.youtubeId}`}
+                title={`${destination.name} video`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy" class="w-full h-full"
+              ></iframe>
+            </div>
+          )}
+
+          {/* Why It Matters */}
+          <div class="text-gray-300 text-lg leading-relaxed mb-12">
+            <h2 class="text-2xl font-bold text-white mb-4">Why It Matters</h2>
+            <p>{destination.whyItMatters}</p>
+          </div>
 
           {/* Content Sections */}
           {destination.sections && destination.sections.length > 0 && (
@@ -237,21 +139,14 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
               <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Related Articles</h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {relatedArticles.map((article: any) => (
-                  <a
-                    href={`/articles/${article.slug}/`}
-                    class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
-                  >
+                  <a href={`/articles/${article.slug}/`}
+                    class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                     {article.featuredImage?.sourceUrl && (
                       <div class="aspect-video overflow-hidden">
-                        <img
-                          src={article.featuredImage.sourceUrl}
+                        <img src={article.featuredImage.sourceUrl}
                           alt={article.featuredImage.altText || article.title}
                           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          width="800"
-                          height="450"
-                          loading="lazy"
-                          decoding="async"
-                        />
+                          width="800" height="450" loading="lazy" decoding="async" />
                       </div>
                     )}
                     <div class="p-4">
@@ -290,30 +185,19 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
 
         </div>
 
-        {/* Sticky sidebar — desktop only */}
+        <!-- Sticky sidebar: tour CTAs (desktop only) -->
         {tours.length > 0 && (
           <aside class="hidden lg:block lg:w-1/3">
             <div class="sticky top-8 space-y-4">
               <h3 class="text-lg font-bold text-white mb-2">Book a Tour</h3>
 
-              {/* Hero tour — compact card */}
               {heroTour && (
-                <a
-                  href={heroTour.viatorUrl}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
-                >
+                <a href={heroTour.viatorUrl} target="_blank" rel="noopener noreferrer nofollow"
+                  class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                   <div class="aspect-video overflow-hidden">
-                    <img
-                      src={heroTour.image}
-                      alt={heroTour.title}
+                    <img src={heroTour.image} alt={heroTour.title}
                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      width="720"
-                      height="480"
-                      loading="lazy"
-                      decoding="async"
-                    />
+                      width="720" height="480" loading="lazy" decoding="async" />
                   </div>
                   <div class="p-4">
                     <span class="text-xs text-yellow-400 font-medium uppercase tracking-wider">Top Pick</span>
@@ -335,14 +219,9 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
                 </a>
               )}
 
-              {/* Budget pick */}
               {otherTours.filter((t: any) => t.tier === 'budget').slice(0, 1).map((tour: any) => (
-                <a
-                  href={tour.viatorUrl}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  class="group block rounded-lg p-4 bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
-                >
+                <a href={tour.viatorUrl} target="_blank" rel="noopener noreferrer nofollow"
+                  class="group block rounded-lg p-4 bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                   <span class="text-xs text-emerald-400 font-medium uppercase tracking-wider">Best Value</span>
                   <h4 class="text-white font-semibold group-hover:text-purple-400 transition-colors mt-1 mb-2 text-sm leading-snug">
                     {tour.title}
@@ -356,14 +235,9 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
                 </a>
               ))}
 
-              {/* Premium pick */}
               {otherTours.filter((t: any) => t.tier === 'premium').slice(0, 1).map((tour: any) => (
-                <a
-                  href={tour.viatorUrl}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  class="group block rounded-lg p-4 bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
-                >
+                <a href={tour.viatorUrl} target="_blank" rel="noopener noreferrer nofollow"
+                  class="group block rounded-lg p-4 bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                   <span class="text-xs text-purple-400 font-medium uppercase tracking-wider">Premium</span>
                   <h4 class="text-white font-semibold group-hover:text-purple-400 transition-colors mt-1 mb-2 text-sm leading-snug">
                     {tour.title}
@@ -377,12 +251,8 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
                 </a>
               ))}
 
-              {/* See all tours link */}
-              <a
-                href="#tours-section"
-                class="block text-center text-sm text-purple-400 hover:text-purple-300 transition-colors py-2"
-              >
-                See all {tours.length} tours ↑
+              <a href="#all-tours" class="block text-center text-sm text-purple-400 hover:text-purple-300 transition-colors py-2">
+                See all {tours.length} tours ↓
               </a>
             </div>
           </aside>
@@ -392,6 +262,73 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
     </div>
   </section>
 
+  <!-- All Tours (full width) -->
+  {tours.length > 0 && (
+    <section class="py-12 md:py-16 bg-[#0f0a1a] border-t border-white/5" id="all-tours">
+      <div class="container px-4 mx-auto max-w-6xl">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">All Tours</h2>
+
+        {heroTour && (
+          <a href={heroTour.viatorUrl} target="_blank" rel="noopener noreferrer nofollow"
+            class="group block mb-8 rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 md:flex">
+            <div class="md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
+              <img src={heroTour.image} alt={heroTour.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                width="720" height="480" loading="lazy" decoding="async" />
+            </div>
+            <div class="p-6 md:w-3/5 flex flex-col justify-center">
+              <span class="text-xs text-yellow-400 font-medium uppercase tracking-wider mb-2">Top Pick</span>
+              <h3 class="text-xl md:text-2xl font-bold text-white group-hover:text-purple-400 transition-colors mb-3">
+                {heroTour.title}
+              </h3>
+              <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                <span class="text-yellow-400">★ {heroTour.rating}</span>
+                <span>({heroTour.reviews.toLocaleString()} reviews)</span>
+                {heroTour.duration && <span>{heroTour.duration}</span>}
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="text-2xl font-bold text-white">From {heroTour.price}</span>
+                <span class="px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-semibold group-hover:bg-purple-500 transition-colors">
+                  View Tour →
+                </span>
+              </div>
+            </div>
+          </a>
+        )}
+
+        {otherTours.length > 0 && (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {otherTours.map((tour: any) => (
+              <a href={tour.viatorUrl} target="_blank" rel="noopener noreferrer nofollow"
+                class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
+                <div class="aspect-video overflow-hidden">
+                  <img src={tour.image} alt={tour.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    width="720" height="480" loading="lazy" decoding="async" />
+                </div>
+                <div class="p-4">
+                  <span class="text-xs text-purple-400 uppercase tracking-wider">
+                    {tour.tier === 'budget' ? '💰 Best Value' : tour.tier === 'premium' ? '✨ Premium' : '🔄 Alternative'}
+                  </span>
+                  <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors mt-1 mb-2">
+                    {tour.title}
+                  </h3>
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="text-gray-400">
+                      <span class="text-yellow-400">★ {tour.rating}</span> ({tour.reviews.toLocaleString()})
+                    </span>
+                    <span class="text-white font-bold">From {tour.price}</span>
+                  </div>
+                  {tour.duration && <p class="text-xs text-gray-500 mt-1">{tour.duration}</p>}
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  )}
+
   <!-- Related Destinations -->
   {destination.relatedDestinations?.length > 0 && (
     <section class="py-12 md:py-16 bg-[#0f0a1a] border-t border-white/5">
@@ -399,10 +336,8 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
         <h2 class="text-2xl font-bold text-white mb-6">Explore More Destinations</h2>
         <div class="flex flex-wrap gap-3">
           {destination.relatedDestinations.map((rd: any) => (
-            <a
-              href={`/destinations/${rd.slug}/`}
-              class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:border-purple-500/50 hover:text-purple-400 transition-all"
-            >
+            <a href={`/destinations/${rd.slug}/`}
+              class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:border-purple-500/50 hover:text-purple-400 transition-all">
               {rd.name}
             </a>
           ))}
@@ -418,12 +353,8 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
         <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Sources & Further Reading</h3>
         <div class="flex flex-wrap gap-4">
           {destination.authoritativeSources.map((src: any) => (
-            <a
-              href={src.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-sm text-purple-400 hover:text-purple-300 underline underline-offset-2 transition-colors"
-            >
+            <a href={src.url} target="_blank" rel="noopener noreferrer"
+              class="text-sm text-purple-400 hover:text-purple-300 underline underline-offset-2 transition-colors">
               {src.name} ({src.type})
             </a>
           ))}
