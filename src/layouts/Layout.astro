@@ -101,30 +101,27 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`
 </head>
 <body class="min-h-screen flex flex-col" style="background-color: #0a0510;">
   <!-- Header -->
-  <header class="sticky top-0 z-50 backdrop-blur border-b" style="background-color: rgba(15, 10, 26, 0.95); border-color: #3d2a4d;">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="flex items-center justify-between h-16">
+  <header class="sticky top-0 z-50 w-full border-b" style="background-color: #0f0a1a; border-color: #3d2a4d;">
+    <div class="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-14">
         <!-- Logo -->
         <a href="/" class="flex-shrink-0">
-          <img loading="eager" decoding="async" src="/images/header-logo.webp" alt="Cursed Tours" class="h-14 md:h-16 w-auto" width="1213" height="717" />
+          <img loading="eager" decoding="async" src="/images/header-logo.webp" alt="Cursed Tours" class="h-10 w-auto" width="1199" height="629" />
         </a>
         
         <!-- Navigation -->
-        <nav class="hidden md:flex items-center gap-6">
-          <a href="/new-orleans-ghost-tours/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">New Orleans</a>
-          <a href="/savannah-ghost-tours/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Savannah</a>
-          <a href="/salem-ghost-tours/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Salem</a>
-          <a href="/charleston-ghost-tours/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Charleston</a>
-          <a href="/st-augustine-ghost-tours/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">St. Augustine</a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="/new-orleans-ghost-tours/" class="text-sm font-medium tracking-wide uppercase transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#e9d5ff'" onmouseout="this.style.color='#a89bb8'">New Orleans</a>
+          <a href="/savannah-ghost-tours/" class="text-sm font-medium tracking-wide uppercase transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#e9d5ff'" onmouseout="this.style.color='#a89bb8'">Savannah</a>
+          <a href="/salem-ghost-tours/" class="text-sm font-medium tracking-wide uppercase transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#e9d5ff'" onmouseout="this.style.color='#a89bb8'">Salem</a>
+          <a href="/charleston-ghost-tours/" class="text-sm font-medium tracking-wide uppercase transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#e9d5ff'" onmouseout="this.style.color='#a89bb8'">Charleston</a>
+          <a href="/st-augustine-ghost-tours/" class="text-sm font-medium tracking-wide uppercase transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#e9d5ff'" onmouseout="this.style.color='#a89bb8'">St. Augustine</a>
         </nav>
         
         <!-- Mobile menu button -->
         <button id="mobile-menu-btn" class="md:hidden p-2" style="color: #a89bb8;" aria-label="Menu" aria-expanded="false">
-          <!-- Hamburger icon -->
           <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
-          <!-- Close icon -->
           <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
@@ -132,7 +129,7 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`
       </div>
 
       <!-- Mobile menu panel -->
-      <nav id="mobile-menu" class="hidden md:hidden border-t pb-4 overflow-y-auto" style="border-color: #3d2a4d; max-height: calc(100vh - 4rem);">
+      <nav id="mobile-menu" class="hidden md:hidden border-t pb-4 overflow-y-auto" style="border-color: #3d2a4d; background-color: #0f0a1a; max-height: calc(100vh - 3.5rem);">
         <div class="flex flex-col pt-2">
 
           <!-- Cities accordion -->

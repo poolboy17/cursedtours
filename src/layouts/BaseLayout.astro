@@ -72,17 +72,17 @@ const fullTitle = title.includes('Cursed Tours') ? title : `${title} | Cursed To
   </head>
 
   <body class="bg-dark-950 text-dark-100 min-h-screen flex flex-col">
-    <header class="sticky top-0 z-50 border-b" style="background-color: rgba(15, 10, 26, 0.97); border-color: #3d2a4d; backdrop-filter: blur(8px);">
-      <nav class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+    <header class="sticky top-0 z-50 w-full border-b" style="background-color: #0f0a1a; border-color: #3d2a4d;">
+      <nav class="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-14">
         <a href="/" class="flex-shrink-0">
-          <img src="/images/header-logo.webp" alt="Cursed Tours" class="h-14 md:h-16 w-auto" width="1213" height="717" loading="eager" decoding="async" />
+          <img src="/images/header-logo.webp" alt="Cursed Tours" class="h-10 w-auto" width="1199" height="629" loading="eager" decoding="async" />
         </a>
-        <div class="hidden md:flex items-center gap-6">
-          <a href="/destinations/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Destinations</a>
-          <a href="/experiences/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Experiences</a>
-          <a href="/articles/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Articles</a>
-          <a href="/guides/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Guides</a>
-          <a href="/find-tours/" class="text-sm font-medium transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a89bb8'">Find Tours</a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="/destinations/" class="text-sm font-medium tracking-wide uppercase transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#e9d5ff'" onmouseout="this.style.color='#a89bb8'">Destinations</a>
+          <a href="/experiences/" class="text-sm font-medium tracking-wide uppercase transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#e9d5ff'" onmouseout="this.style.color='#a89bb8'">Experiences</a>
+          <a href="/articles/" class="text-sm font-medium tracking-wide uppercase transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#e9d5ff'" onmouseout="this.style.color='#a89bb8'">Articles</a>
+          <a href="/guides/" class="text-sm font-medium tracking-wide uppercase transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#e9d5ff'" onmouseout="this.style.color='#a89bb8'">Guides</a>
+          <a href="/find-tours/" class="text-sm font-medium tracking-wide uppercase transition-colors" style="color: #a89bb8;" onmouseover="this.style.color='#e9d5ff'" onmouseout="this.style.color='#a89bb8'">Find Tours</a>
         </div>
         <button
           id="mobile-menu-btn"
@@ -99,12 +99,12 @@ const fullTitle = title.includes('Cursed Tours') ? title : `${title} | Cursed To
           </svg>
         </button>
       </nav>
-      <div id="mobile-menu" class="hidden md:hidden border-t px-4 pb-4 space-y-2" style="border-color: #3d2a4d;">
-        <a href="/destinations/" class="block py-2 text-sm" style="color: #a89bb8;">Destinations</a>
-        <a href="/experiences/" class="block py-2 text-sm" style="color: #a89bb8;">Experiences</a>
-        <a href="/articles/" class="block py-2 text-sm" style="color: #a89bb8;">Articles</a>
-        <a href="/guides/" class="block py-2 text-sm" style="color: #a89bb8;">Guides</a>
-        <a href="/find-tours/" class="block py-2 text-sm" style="color: #a89bb8;">Find Tours</a>
+      <div id="mobile-menu" class="hidden md:hidden border-t px-6 pb-4 pt-2 space-y-1" style="border-color: #3d2a4d; background-color: #0f0a1a;">
+        <a href="/destinations/" class="block py-2.5 text-sm font-medium tracking-wide uppercase" style="color: #a89bb8;">Destinations</a>
+        <a href="/experiences/" class="block py-2.5 text-sm font-medium tracking-wide uppercase" style="color: #a89bb8;">Experiences</a>
+        <a href="/articles/" class="block py-2.5 text-sm font-medium tracking-wide uppercase" style="color: #a89bb8;">Articles</a>
+        <a href="/guides/" class="block py-2.5 text-sm font-medium tracking-wide uppercase" style="color: #a89bb8;">Guides</a>
+        <a href="/find-tours/" class="block py-2.5 text-sm font-medium tracking-wide uppercase" style="color: #a89bb8;">Find Tours</a>
       </div>
     </header>
 
