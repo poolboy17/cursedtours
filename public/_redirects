@@ -1,5 +1,0 @@
-# 301 old WordPress query-string URLs to clean canonical
-# Fixes "Alternate page with proper canonical tag" in GSC
-/ p=:id https://cursedtours.com/ 301!
-/ page_id=:id https://cursedtours.com/ 301!
-/ cb=:id https://cursedtours.com/ 301!
