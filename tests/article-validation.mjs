@@ -31,6 +31,7 @@ const VALID_CATEGORIES = new Set([
   'vampire-culture', 'salem-witch-trials-history',
   'tower-of-london-history', 'american-prison-history',
   'gettysburg-civil-war',
+  'pop-culture-dark-history',
 ]);
 
 // ── Test runner ──

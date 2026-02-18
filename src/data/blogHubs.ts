@@ -200,6 +200,39 @@ export const BLOG_HUBS: Record<string, BlogHubData> = {
       },
     ],
   },
+
+  'pop-culture': {
+    slug: 'pop-culture',
+    name: 'Pop Culture & Dark History',
+    tagline: 'The real stories behind horror movies, urban legends, and true crime',
+    metaDescription: 'Explore the true stories behind haunted movies, real-life horror inspirations, urban legends, and the dark history that pop culture can\'t stop retelling.',
+    intro: 'Every great horror film, true crime podcast, and urban legend starts with something real. The Conjuring franchise draws from documented case files. The Texas Chain Saw Massacre was inspired by a Wisconsin grave robber. Dracula borrowed a real prince\'s name. This is where pop culture meets primary sources—the documented history behind the stories that keep us up at night.',
+    categorySlug: 'pop-culture-dark-history',
+    relatedDestinations: [],
+    relatedCityHubs: [
+      { name: 'New Orleans Ghost Tours', slug: 'new-orleans' },
+      { name: 'Salem Ghost Tours', slug: 'salem' },
+      { name: 'London Ghost Tours', slug: 'london' },
+    ],
+    relatedBlogHubs: [
+      { name: 'Vampire Culture', slug: 'vampire-culture' },
+      { name: 'American Prison History', slug: 'prison-history' },
+    ],
+    faq: [
+      {
+        question: 'What horror movies are based on true stories?',
+        answer: 'Many iconic horror films draw from real events. The Exorcist was inspired by a 1949 exorcism case in Maryland. The Conjuring series is based on cases investigated by Ed and Lorraine Warren. The Texas Chain Saw Massacre drew inspiration from Wisconsin killer Ed Gein, who also inspired Psycho and Silence of the Lambs.',
+      },
+      {
+        question: 'Are haunted house movies based on real places?',
+        answer: 'Several are. The Amityville Horror is based on the DeFeo murders and the Lutz family\'s claims about 112 Ocean Avenue. The Conjuring\'s farmhouse in Harrisville, Rhode Island is a real property. The Enfield Poltergeist case inspired multiple films including The Conjuring 2.',
+      },
+      {
+        question: 'What is the connection between true crime and ghost tours?',
+        answer: 'Ghost tours often cover the same locations and events that true crime examines—murder sites, former prisons, places where violent deaths occurred. The difference is framing: true crime focuses on forensics and motive, while ghost tours layer in folklore and community memory that grew up around the same events.',
+      },
+    ],
+  },
 };
 
 /** Get all blog hub slugs for static path generation */

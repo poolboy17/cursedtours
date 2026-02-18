@@ -228,6 +228,13 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
     type: 'blog',
     hubPage: '/blog/gettysburg/',
   },
+  'pop-culture-dark-history': {
+    slug: 'pop-culture-dark-history',
+    name: 'Pop Culture & Dark History',
+    description: 'Where horror meets history—the real stories behind haunted movies, true crime legends, urban legends, and the places that inspired them.',
+    type: 'blog',
+    hubPage: '/blog/pop-culture/',
+  },
 };
 
 let _cache: Article[] | null = null;
