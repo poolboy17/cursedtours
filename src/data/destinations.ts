@@ -719,6 +719,10 @@ export const DESTINATIONS: Record<string, DestinationData> = {
 		name: 'Salem Witch Trials',
 		descriptor: 'Where mass hysteria condemned the innocent',
 		intro: 'In 1692, accusations of witchcraft tore through Salem Village, leading to the execution of twenty people and the imprisonment of hundreds more.',
+		heroImage: {
+			src: '/images/heroes/salem-hero.webp',
+			alt: 'Salem witch trial courtroom illustration',
+		},
 		featuredTours: [
 			{
 				productCode: '378991P1',

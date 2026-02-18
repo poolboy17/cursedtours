@@ -59,29 +59,33 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
 
   <!-- Hero -->
-  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+  <section class="relative overflow-hidden bg-[#0a0510]" style="min-height: clamp(400px, 55vh, 580px);">
     {destination.heroImage && (
-      <div class="absolute inset-0">
-        <img src={destination.heroImage.src} alt={destination.heroImage.alt}
-          class="w-full h-full object-cover opacity-40" width="1200" height="675" />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0510] via-[#0a0510]/80 to-transparent"></div>
+      <div class="absolute pointer-events-none z-[1]" style="top: -20px; right: -5%; width: 75%; max-width: 900px; height: calc(100% + 20px);">
+        <img src={destination.heroImage.src} alt="" aria-hidden="true"
+          class="w-full h-full object-contain" style="object-position: right center;"
+          loading="eager" decoding="async" width="1536" height="1024" />
       </div>
     )}
-    <div class="container relative z-10 px-4 mx-auto max-w-6xl">
-      <nav class="mb-6 text-sm">
-        <ol class="flex items-center gap-2 text-[#a89bb8]">
-          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
-          <li class="text-gray-600">/</li>
-          <li><a href="/destinations/" class="hover:text-purple-400 transition-colors">Destinations</a></li>
-          <li class="text-gray-600">/</li>
-          <li class="text-gray-300 font-medium">{destination.name}</li>
-        </ol>
-      </nav>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3">{destination.name}</h1>
+    <div class="relative z-10 flex items-end" style="min-height: clamp(400px, 55vh, 580px);">
+      <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-9 md:pb-11 lg:pb-13">
+        <div class="max-w-xl">
+          <nav class="mb-4 text-sm">
+            <ol class="flex items-center gap-2 text-[#7a6e8c]">
+              <li><a href="/" class="text-[#8a7e9c] hover:text-purple-400 transition-colors">Home</a></li>
+              <li class="text-[#4a3f5a]">/</li>
+              <li><a href="/destinations/" class="text-[#8a7e9c] hover:text-purple-400 transition-colors">Destinations</a></li>
+              <li class="text-[#4a3f5a]">/</li>
+              <li class="text-[#a89bb8] font-medium">{destination.name}</li>
+            </ol>
+          </nav>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-white mb-4" style="font-family: 'Cinzel', serif;">{destination.name}</h1>
       {destination.subtitle && (
         <p class="text-lg md:text-xl text-purple-400 font-medium mb-4">{destination.subtitle}</p>
       )}
-      <p class="text-xl text-[#a89bb8] max-w-3xl">{destination.descriptor}</p>
+      <p class="text-base sm:text-lg leading-relaxed mb-5 max-w-lg" style="color: #d1c4e9;">{destination.descriptor}</p>
+        </div>
+      </div>
     </div>
   </section>
 
