@@ -1,0 +1,74 @@
+---
+/**
+ * Mobile-only tour cards section. Shown below content on small screens
+ * where the sticky sidebar is hidden.
+ */
+import type { FeaturedTour } from '../data/destinations'
+
+interface Props {
+  tours: FeaturedTour[]
+  className?: string
+}
+
+const { tours, className = '' } = Astro.props
+const heroTour = tours.find(t => t.tier === 'hero')
+const otherTours = tours.filter(t => t.tier !== 'hero')
+---
+
+<section class:list={["py-12 md:py-16 bg-[#0f0a1a] border-t border-white/5 lg:hidden", className]} id="all-tours">
+  <div class="container px-4 mx-auto max-w-6xl">
+    <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Book a Ghost Tour</h2>
+
+    {heroTour && (
+      <a href={heroTour.viatorUrl} target="_blank"
+        rel="noopener noreferrer nofollow"
+        class="group block mb-6 rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 md:flex">
+        <div class="md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
+          <img src={heroTour.image} alt={heroTour.title}
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            width="720" height="480" loading="lazy" decoding="async" />
+        </div>
+        <div class="p-6 md:w-3/5 flex flex-col justify-center">
+          <span class="text-xs text-yellow-400 font-medium uppercase tracking-wider mb-2">Top Pick</span>
+          <h3 class="text-xl md:text-2xl font-bold text-white group-hover:text-purple-400 transition-colors mb-3">
+            {heroTour.title}
+          </h3>
+          <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+            <span class="text-yellow-400">★ {heroTour.rating}</span>
+            <span>({heroTour.reviews.toLocaleString()} reviews)</span>
+            {heroTour.duration && <span>· {heroTour.duration}</span>}
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-2xl font-bold text-white">From {heroTour.price}</span>
+            <span class="px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-semibold group-hover:bg-purple-500 transition-colors">
+              View Tour →
+            </span>
+          </div>
+        </div>
+      </a>
+    )}
+
+    {otherTours.length > 0 && (
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {otherTours.map((tour) => (
+          <a href={tour.viatorUrl} target="_blank"
+            rel="noopener noreferrer nofollow"
+            class="group block rounded-lg p-4 bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
+            <span class:list={["text-xs font-medium uppercase tracking-wider", tour.tier === 'budget' ? 'text-emerald-400' : 'text-purple-400']}>
+              {tour.tier === 'budget' ? 'Best Value' : 'Premium'}
+            </span>
+            <h4 class="text-white font-semibold group-hover:text-purple-400 transition-colors mt-1 mb-2 leading-snug">
+              {tour.title}
+            </h4>
+            <div class="flex items-center justify-between text-sm">
+              <div class="text-gray-400">
+                <span class="text-yellow-400">★ {tour.rating}</span> ({tour.reviews.toLocaleString()})
+              </div>
+              <span class="text-white font-bold">From {tour.price}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
