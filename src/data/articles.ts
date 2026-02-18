@@ -29,11 +29,11 @@ export interface CategoryInfo {
   slug: string;
   name: string;
   description: string;
-  /** Category type: 'city' links to a city hub, 'blog' links to a blog hub */
+  /** Routing label for URL generation — NOT a hierarchy indicator. All hubs are Tier 1. */
   type: 'city' | 'blog';
-  /** URL of the parent page (city hub or destination page) */
+  /** URL of the parent Tier 1 pillar page this category routes to */
   hubPage?: string;
-  /** City key for city-type categories */
+  /** City key for city-type categories (used in sitemap generation) */
   city?: string;
   count?: number;
 }

@@ -36,11 +36,12 @@ export const GET: APIRoute = async () => {
   const urls = [
     entry('/', '1.0', 'weekly'),
     entry('/articles/', '0.8', 'weekly'),
-    entry('/destinations/', '0.7', 'monthly'),
+    entry('/destinations/', '0.8', 'monthly'),
+    // All Tier 1 pillar pages get equal priority
     ...cityHubs.map(c => entry(`/${c}-ghost-tours/`, '0.9', 'monthly')),
-    ...destinations.map(d => entry(`/destinations/${d}/`, '0.8', 'monthly')),
+    ...destinations.map(d => entry(`/destinations/${d}/`, '0.9', 'monthly')),
     entry('/blog/', '0.7', 'weekly'),
-    ...blogHubs.map(b => entry(`/blog/${b}/`, '0.8', 'monthly')),
+    ...blogHubs.map(b => entry(`/blog/${b}/`, '0.9', 'monthly')),
     entry('/experiences/', '0.6', 'monthly'),
     ...experiences.map(e => entry(`/experiences/${e}/`, '0.6', 'monthly')),
     ...articles.map(a => entry(`/articles/${a.slug}/`, '0.7', 'weekly')),
