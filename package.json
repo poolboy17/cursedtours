@@ -7,15 +7,27 @@
     "build": "astro build",
     "preview": "astro preview",
     "test:hubs": "node tests/hub-audit.mjs",
-    "test": "astro build && node tests/hub-audit.mjs"
+    "test:articles": "node tests/article-validation.mjs",
+    "test:tours": "node tests/tour-validation.mjs",
+    "test:build": "node tests/build-validation.mjs",
+    "test:content": "node tests/article-validation.mjs && node tests/tour-validation.mjs",
+    "test": "node tests/article-validation.mjs && node tests/tour-validation.mjs && node tests/build-validation.mjs",
+    "test:fix": "node tests/auto-fix.mjs --dry-run",
+    "test:fix-apply": "node tests/auto-fix.mjs --apply"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.16.18"
   },
   "devDependencies": {
+    "@typescript-eslint/parser": "^8.56.0",
     "autoprefixer": "^10.4.16",
+    "eslint": "^10.0.0",
+    "eslint-plugin-astro": "^1.6.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
     "shared-test-utils": "file:../shared-test-utils",
-    "tailwindcss": "^3.4.0"
+    "tailwindcss": "^3.4.0",
+    "typescript-eslint": "^8.56.0"
   }
 }
