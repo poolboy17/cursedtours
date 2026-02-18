@@ -2,30 +2,38 @@
 import Layout from '../layouts/Layout.astro';
 import { getAllArticles } from '../data/articles';
 
-const recentArticles = getAllArticles().slice(0, 6);
+const recentArticles = getAllArticles().slice(0, 4);
 
-const usCities = [
-  { name: 'New Orleans', slug: 'new-orleans-ghost-tours', image: '/images/city-hubs/new-orleans.webp', tagline: 'Voodoo, vampires & French Quarter hauntings' },
-  { name: 'Savannah', slug: 'savannah-ghost-tours', image: '/images/city-hubs/savannah.webp', tagline: 'Colonial ghosts & moss-draped cemeteries' },
-  { name: 'Salem', slug: 'salem-ghost-tours', image: '/images/city-hubs/salem.webp', tagline: 'Witch trial history & maritime hauntings' },
-  { name: 'Charleston', slug: 'charleston-ghost-tours', image: '/images/city-hubs/charleston.webp', tagline: 'Civil War spirits & Lowcountry legends' },
-  { name: 'Boston', slug: 'boston-ghost-tours', image: '/images/city-hubs/boston.webp', tagline: 'Revolutionary ghosts & colonial graveyards' },
-  { name: 'Chicago', slug: 'chicago-ghost-tours', image: '/images/city-hubs/chicago.webp', tagline: 'Gangster ghosts & Great Fire hauntings' },
-  { name: 'St. Augustine', slug: 'st-augustine-ghost-tours', image: '/images/city-hubs/st-augustine.webp', tagline: "America's oldest city & 450 years of ghosts" },
-  { name: 'New York', slug: 'new-york-ghost-tours', image: '/images/city-hubs/new-york.webp', tagline: 'Greenwich Village spirits & Gilded Age murders' },
-  { name: 'San Antonio', slug: 'san-antonio-ghost-tours', image: '/images/city-hubs/san-antonio.webp', tagline: 'Alamo ghosts & Spanish mission hauntings' },
-  { name: 'Washington DC', slug: 'washington-dc-ghost-tours', image: '/images/city-hubs/washington-dc.webp', tagline: 'White House ghosts & Capitol Hill hauntings' },
-  { name: 'Nashville', slug: 'nashville-ghost-tours', image: '/images/city-hubs/nashville.webp', tagline: 'Ryman phantoms & Printers Alley spirits' },
-  { name: 'Austin', slug: 'austin-ghost-tours', image: '/images/city-hubs/austin.webp', tagline: 'Servant Girl Annihilator & Driskill Hotel' },
-  { name: 'Denver', slug: 'denver-ghost-tours', image: '/images/city-hubs/denver.webp', tagline: 'Cheesman Park graves & frontier-era ghosts' },
+const featuredCities = [
+  { name: 'New Orleans', slug: 'new-orleans-ghost-tours', image: '/images/city-hubs/new-orleans.webp', tagline: 'Voodoo, vampires & French Quarter hauntings', tours: '12+ tours' },
+  { name: 'Savannah', slug: 'savannah-ghost-tours', image: '/images/city-hubs/savannah.webp', tagline: 'Colonial ghosts & moss-draped cemeteries', tours: '10+ tours' },
+  { name: 'Salem', slug: 'salem-ghost-tours', image: '/images/city-hubs/salem.webp', tagline: 'Witch trial history & maritime hauntings', tours: '8+ tours' },
+  { name: 'Edinburgh', slug: 'edinburgh-ghost-tours', image: '/images/city-hubs/edinburgh.webp', tagline: 'Underground vaults & bodysnatchers', tours: '10+ tours' },
+  { name: 'London', slug: 'london-ghost-tours', image: '/images/city-hubs/london.webp', tagline: 'Jack the Ripper & Tower of London spirits', tours: '15+ tours' },
+  { name: 'Charleston', slug: 'charleston-ghost-tours', image: '/images/city-hubs/charleston.webp', tagline: 'Civil War spirits & Lowcountry legends', tours: '8+ tours' },
 ];
 
-const intlCities = [
-  { name: 'Edinburgh', slug: 'edinburgh-ghost-tours', image: '/images/city-hubs/edinburgh.webp', tagline: 'Underground vaults & bodysnatchers' },
-  { name: 'London', slug: 'london-ghost-tours', image: '/images/city-hubs/london.webp', tagline: 'Jack the Ripper & Tower of London spirits' },
-  { name: 'Dublin', slug: 'dublin-ghost-tours', image: '/images/city-hubs/dublin.webp', tagline: 'Viking ghosts & Kilmainham Gaol hauntings' },
-  { name: 'Rome', slug: 'rome-ghost-tours', image: '/images/city-hubs/rome.webp', tagline: 'Colosseum spirits & catacomb hauntings' },
-  { name: 'Paris', slug: 'paris-ghost-tours', image: '/images/city-hubs/paris.webp', tagline: 'Catacombs, guillotine ghosts & Pere Lachaise' },
+const moreCities = [
+  { name: 'Boston', slug: 'boston-ghost-tours' },
+  { name: 'Chicago', slug: 'chicago-ghost-tours' },
+  { name: 'St. Augustine', slug: 'st-augustine-ghost-tours' },
+  { name: 'New York', slug: 'new-york-ghost-tours' },
+  { name: 'San Antonio', slug: 'san-antonio-ghost-tours' },
+  { name: 'Washington DC', slug: 'washington-dc-ghost-tours' },
+  { name: 'Nashville', slug: 'nashville-ghost-tours' },
+  { name: 'Austin', slug: 'austin-ghost-tours' },
+  { name: 'Denver', slug: 'denver-ghost-tours' },
+  { name: 'Key West', slug: 'key-west-ghost-tours' },
+  { name: 'Dublin', slug: 'dublin-ghost-tours' },
+  { name: 'Rome', slug: 'rome-ghost-tours' },
+  { name: 'Paris', slug: 'paris-ghost-tours' },
+];
+
+const experiences = [
+  { name: 'Walking Tours', slug: '/experiences/walking-tours/', icon: 'M13 10V3L4 14h7v7l9-11h-7z', description: 'Guided walks through historic haunted districts' },
+  { name: 'Cemetery Tours', slug: '/experiences/cemetery-tours/', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4', description: 'Centuries of stories beneath the headstones' },
+  { name: 'Paranormal Investigations', slug: '/experiences/paranormal-investigations/', icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z', description: 'EMF readers, spirit boxes & hands-on evidence' },
+  { name: 'Pub Crawls', slug: '/experiences/pub-crawls/', icon: 'M12 8c-2.21 0-4 .895-4 2s1.79 2 4 2 4-.895 4-2-1.79-2-4-2zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z', description: 'Spirits of the liquid and spectral variety' },
 ];
 
 const faqs = [
@@ -91,7 +99,6 @@ const organizationLd = {
   "logo": "https://cursedtours.com/images/logo.png",
 };
 ---
-
 <Layout
   title="Ghost Tours & Haunted Experiences Worldwide | Cursed Tours"
   description="Find ghost tours in 18+ haunted cities worldwide. Walking tours, cemetery visits, pub crawls, and paranormal investigations grounded in real history."
@@ -104,331 +111,338 @@ const organizationLd = {
   <script type="application/ld+json" set:html={JSON.stringify(organizationLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
 
-  <!-- Hero Section -->
-  <section class="relative py-6 lg:py-10">
-    <div class="container px-4 mx-auto max-w-7xl">
-      <div class="flex flex-col gap-6 md:flex-row md:items-center md:gap-8 lg:gap-12">
-        <div class="w-full md:w-2/5 lg:w-[45%]">
-          <div class="space-y-4 rounded-3xl p-5 sm:p-8 shadow-lg backdrop-blur-lg" style="background: rgba(26, 16, 37, 0.6);">
-            <div class="flex flex-wrap gap-2">
-              <span class="inline-flex rounded-full px-3 py-1.5 text-xs font-semibold text-white shadow-sm sm:text-sm" style="background-color: #7c3aed;">
-                Ghost Tours & Haunted Experiences
-              </span>
-            </div>
-            <h1 class="text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl xl:text-5xl text-white" style="font-family: 'Cinzel', serif;">
-              Ghost Tours Worldwide
-            </h1>
-            <p class="text-base leading-relaxed sm:text-lg lg:text-xl" style="color: #c8bdd8;">
-              Haunted history, real stories, and unforgettable tours in the world's most haunted cities.
-            </p>
+  <!-- ═══════════════════════════════════════════
+       HERO — Full-bleed cinematic hero
+       ═══════════════════════════════════════════ -->
+  <section class="relative overflow-hidden" style="min-height: clamp(480px, 75vh, 720px);">
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img
+        src="/images/homepage-hero.webp"
+        alt="Ghostly figure in a haunted house during a ghost tour"
+        class="w-full h-full object-cover"
+        loading="eager"
+        decoding="async"
+        width="1536" height="1024"
+      />
+      <!-- Gradient overlays for text readability -->
+      <div class="absolute inset-0" style="background: linear-gradient(to top, #0a0510 0%, rgba(10,5,16,0.85) 30%, rgba(10,5,16,0.4) 60%, rgba(10,5,16,0.2) 100%);"></div>
+      <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(10,5,16,0.6) 0%, transparent 60%);"></div>
+    </div>
+
+    <!-- Hero content -->
+    <div class="relative z-10 flex items-end h-full" style="min-height: clamp(480px, 75vh, 720px);">
+      <div class="container px-4 mx-auto max-w-7xl pb-12 md:pb-16 lg:pb-20">
+        <div class="max-w-2xl">
+          <p class="text-sm font-semibold tracking-[0.2em] uppercase mb-4" style="color: #a855f7;">
+            18 Cities &middot; 170+ Articles &middot; History-First Tours
+          </p>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-white mb-5" style="font-family: 'Cinzel', serif;">
+            The Dark History<br class="hidden sm:block" /> Behind the Hauntings
+          </h1>
+          <p class="text-base sm:text-lg lg:text-xl leading-relaxed mb-8 max-w-xl" style="color: #d1c4e9;">
+            Documented tragedies, real locations, expert guides. Ghost tours that teach you more history than most textbooks.
+          </p>
+          <div class="flex flex-wrap gap-3">
             <a
               href="#cities"
-              class="inline-flex items-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-white transition-colors sm:text-lg"
-              style="background-color: #7c3aed;"
+              class="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:scale-[1.02]"
+              style="background: linear-gradient(135deg, #7c3aed, #a855f7);"
             >
-              Browse Cities
+              Explore Cities
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <a
+              href="/articles/"
+              class="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold transition-all duration-200"
+              style="color: #e8e0f0; border: 1px solid rgba(168,155,184,0.3); background: rgba(255,255,255,0.05); backdrop-filter: blur(8px);"
+            >
+              Read the Research
             </a>
           </div>
         </div>
-        <div class="w-full md:w-3/5 lg:w-[55%]">
-          <div class="relative aspect-[16/12] sm:aspect-[16/9] md:aspect-[16/14] lg:aspect-[16/10] overflow-hidden rounded-3xl">
-            <img
-              src="/images/homepage-hero.webp"
-              alt="Ghostly figure in a haunted house during a ghost tour"
-              class="absolute inset-0 w-full h-full object-cover"
-              loading="eager"
-              decoding="async"
-             width="1536" height="1024" >
-          </div>
-        </div>
       </div>
     </div>
   </section>
-
-  <!-- Trust Indicators -->
-  <section class="py-8 border-b" style="border-color: #3d2a4d;">
+  <!-- ═══════════════════════════════════════════
+       EDITORIAL — Single compelling narrative block
+       ═══════════════════════════════════════════ -->
+  <section class="py-16 md:py-24">
     <div class="container px-4 mx-auto max-w-7xl">
-      <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <li class="flex items-start gap-3">
-          <svg class="h-6 w-6 flex-shrink-0" style="color: #a89bb8;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/>
-          </svg>
-          <div>
-            <p class="text-sm font-semibold text-white">History-First Tours</p>
-            <p class="mt-1 text-sm" style="color: #7a6b8a;">Every tour grounded in documented events, not fictional scares.</p>
-          </div>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="h-6 w-6 flex-shrink-0" style="color: #a89bb8;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59"/>
-          </svg>
-          <div>
-            <p class="text-sm font-semibold text-white">Instant Booking</p>
-            <p class="mt-1 text-sm" style="color: #7a6b8a;">Secure checkout with immediate confirmation.</p>
-          </div>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="h-6 w-6 flex-shrink-0" style="color: #a89bb8;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/>
-          </svg>
-          <div>
-            <p class="text-sm font-semibold text-white">Small Group Sizes</p>
-            <p class="mt-1 text-sm" style="color: #7a6b8a;">Intimate experiences with expert local guides.</p>
-          </div>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="h-6 w-6 flex-shrink-0" style="color: #a89bb8;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-          <div>
-            <p class="text-sm font-semibold text-white">Transparent Pricing</p>
-            <p class="mt-1 text-sm" style="color: #7a6b8a;">No hidden fees. See what you pay before you book.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Editorial Section 1: What Makes a Ghost Tour Worth Taking -->
-  <section class="py-12 md:py-16">
-    <div class="container px-4 mx-auto max-w-7xl">
-      <div class="flex flex-col gap-8 md:flex-row md:items-center md:gap-12">
-        <div class="w-full md:w-1/2">
-          <div class="aspect-[4/3] overflow-hidden rounded-2xl">
-            <img decoding="async" src="/images/draculas-castle-banner.webp" alt="Haunted castle at dusk shrouded in mist" class="w-full h-full object-cover" loading="lazy" width="1536" height="1024" >
-          </div>
-        </div>
-        <div class="w-full md:w-1/2">
-          <h2 class="text-xl font-semibold sm:text-2xl md:text-3xl text-white mb-4" style="font-family: 'Cinzel', serif;">
-            What Makes a Ghost Tour Worth Taking
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <!-- Text column -->
+        <div class="lg:col-span-5 order-2 lg:order-1">
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style="color: #a855f7;">Why These Tours Matter</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6" style="font-family: 'Cinzel', serif; line-height: 1.2;">
+            History You Won't Find in Textbooks
           </h2>
-          <div class="text-base leading-relaxed space-y-4" style="color: #c8bdd8;">
+          <div class="space-y-4 text-base leading-relaxed" style="color: #c8bdd8;">
             <p>
-              A ghost tour is not a haunted house. The best ghost tours are walking histories of real places where documented tragedies occurred&#8212;guided by someone who knows the local archives, not just the legends. You walk the same streets where yellow fever killed thousands in <a href="/new-orleans-ghost-tours/" class="text-purple-400 hover:text-purple-300 transition-colors">New Orleans</a>, stand outside the jail cells where accused witches awaited trial in <a href="/salem-ghost-tours/" class="text-purple-400 hover:text-purple-300 transition-colors">Salem</a>, or descend into the underground vaults where Edinburgh's poorest were sealed alive beneath the city.
+              The best ghost tours are walking histories of real places where documented tragedies occurred. You stand where yellow fever killed thousands in <a href="/new-orleans-ghost-tours/" class="underline decoration-purple-500/40 hover:decoration-purple-400 transition-colors" style="color: #d8b4fe;">New Orleans</a>, outside the cells where accused witches awaited trial in <a href="/salem-ghost-tours/" class="underline decoration-purple-500/40 hover:decoration-purple-400 transition-colors" style="color: #d8b4fe;">Salem</a>, or descend into underground vaults where <a href="/edinburgh-ghost-tours/" class="underline decoration-purple-500/40 hover:decoration-purple-400 transition-colors" style="color: #d8b4fe;">Edinburgh</a>'s plague victims were sealed alive.
             </p>
             <p>
-              They come in many forms: <a href="/experiences/walking-tours/" class="text-purple-400 hover:text-purple-300 transition-colors">walking tours</a> through historic districts, <a href="/experiences/cemetery-tours/" class="text-purple-400 hover:text-purple-300 transition-colors">cemetery tours</a> with centuries of stories beneath the headstones, <a href="/experiences/pub-crawls/" class="text-purple-400 hover:text-purple-300 transition-colors">pub crawls</a> through haunted bars, and <a href="/experiences/paranormal-investigations/" class="text-purple-400 hover:text-purple-300 transition-colors">paranormal investigations</a> with EMF readers and spirit boxes.
+              Every tour we feature is selected for historical accuracy, verified reviews, and guides who cite specific dates and documented events rather than generic ghost stories.
             </p>
+          </div>
+          <!-- Inline stats -->
+          <div class="grid grid-cols-3 gap-4 mt-8 pt-8" style="border-top: 1px solid #3d2a4d;">
+            <div>
+              <p class="text-2xl font-bold text-white">18+</p>
+              <p class="text-xs mt-1" style="color: #7a6b8a;">Haunted cities</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-white">170+</p>
+              <p class="text-xs mt-1" style="color: #7a6b8a;">Researched articles</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-white">57</p>
+              <p class="text-xs mt-1" style="color: #7a6b8a;">Curated tours</p>
+            </div>
+          </div>
+        </div>
+        <!-- Image column — stacked duo -->
+        <div class="lg:col-span-7 order-1 lg:order-2">
+          <div class="grid grid-cols-12 gap-3">
+            <div class="col-span-7 aspect-[3/4] overflow-hidden rounded-2xl">
+              <img decoding="async" src="/images/draculas-castle-banner.webp" alt="Haunted castle at dusk shrouded in mist" class="w-full h-full object-cover" loading="lazy" width="1536" height="1024" />
+            </div>
+            <div class="col-span-5 flex flex-col gap-3">
+              <div class="flex-1 overflow-hidden rounded-2xl">
+                <img decoding="async" src="/images/cities/savannah.webp" alt="Savannah's historic Chippewa Square" class="w-full h-full object-cover" loading="lazy" width="1200" height="792" />
+              </div>
+              <div class="flex-1 overflow-hidden rounded-2xl">
+                <img decoding="async" src="/images/cities/edinburgh.webp" alt="Edinburgh skyline at dusk" class="w-full h-full object-cover" loading="lazy" width="1200" height="800" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Editorial Section 2: The World's Most Haunted Cities -->
-  <section class="py-12 md:py-16 border-t" style="border-color: #3d2a4d;">
+  <!-- ═══════════════════════════════════════════
+       FEATURED CITIES — Visual hierarchy with large + small cards
+       ═══════════════════════════════════════════ -->
+  <section class="py-16 md:py-24" id="cities" style="background: linear-gradient(180deg, rgba(15,10,26,0) 0%, rgba(15,10,26,0.8) 50%, rgba(15,10,26,0) 100%);">
     <div class="container px-4 mx-auto max-w-7xl">
-      <div class="flex flex-col gap-8 md:flex-row-reverse md:items-center md:gap-12">
-        <div class="w-full md:w-1/2">
-          <div class="aspect-[4/3] overflow-hidden rounded-2xl">
-            <img decoding="async" src="/images/cities/savannah.webp" alt="Savannah's historic Chippewa Square with Spanish moss and live oaks" class="w-full h-full object-cover" loading="lazy" width="1200" height="792" >
-          </div>
-        </div>
-        <div class="w-full md:w-1/2">
-          <h2 class="text-xl font-semibold sm:text-2xl md:text-3xl text-white mb-4" style="font-family: 'Cinzel', serif;">
-            The World's Most Haunted Cities
-          </h2>
-          <div class="text-base leading-relaxed space-y-4" style="color: #c8bdd8;">
-            <p>
-              Hauntings concentrate where history was violent. <a href="/savannah-ghost-tours/" class="text-purple-400 hover:text-purple-300 transition-colors">Savannah</a>'s entire historic district sits on top of colonial-era burial grounds with over 10,000 undisturbed graves. <a href="/charleston-ghost-tours/" class="text-purple-400 hover:text-purple-300 transition-colors">Charleston</a>'s Old City Jail held Civil War prisoners, pirates, and enslaved people for over a century. <a href="/london-ghost-tours/" class="text-purple-400 hover:text-purple-300 transition-colors">London</a>'s hauntings span two millennia.
-            </p>
-            <p>
-              <a href="/edinburgh-ghost-tours/" class="text-purple-400 hover:text-purple-300 transition-colors">Edinburgh</a>'s underground vaults trapped plague victims in sealed chambers beneath the Royal Mile. <a href="/paris-ghost-tours/" class="text-purple-400 hover:text-purple-300 transition-colors">Paris</a>'s catacombs hold the bones of six million. <a href="/chicago-ghost-tours/" class="text-purple-400 hover:text-purple-300 transition-colors">Chicago</a>'s Great Fire of 1871 killed 300, and <a href="/boston-ghost-tours/" class="text-purple-400 hover:text-purple-300 transition-colors">Boston</a>'s colonial graveyards hold massacre victims in mass graves.
-            </p>
-          </div>
-        </div>
+      <div class="text-center mb-12">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style="color: #a855f7;">Ghost Tour Cities</p>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white" style="font-family: 'Cinzel', serif;">
+          Choose Your Haunted City
+        </h2>
+        <p class="mt-3 text-base max-w-2xl mx-auto" style="color: #7a6b8a;">
+          From colonial graveyards to medieval dungeons — each city has centuries of documented dark history waiting.
+        </p>
       </div>
-    </div>
-  </section>
 
-  <!-- Editorial Section 3: How We Curate -->
-  <section class="py-12 md:py-16 border-t" style="border-color: #3d2a4d;">
-    <div class="container px-4 mx-auto max-w-7xl">
-      <div class="flex flex-col gap-8 md:flex-row md:items-center md:gap-12">
-        <div class="w-full md:w-1/2">
-          <div class="aspect-[4/3] overflow-hidden rounded-2xl">
-            <img decoding="async" src="/images/cities/edinburgh.webp" alt="Edinburgh skyline at dusk with the Balmoral Clock Tower" class="w-full h-full object-cover" loading="lazy" width="1200" height="800" >
-          </div>
-        </div>
-        <div class="w-full md:w-1/2">
-          <h2 class="text-xl font-semibold sm:text-2xl md:text-3xl text-white mb-4" style="font-family: 'Cinzel', serif;">
-            How We Curate Our Tours
-          </h2>
-          <div class="text-base leading-relaxed space-y-4" style="color: #c8bdd8;">
-            <p>
-              Every tour is selected for historical accuracy and traveler satisfaction. We partner with Viator to offer tours backed by thousands of verified reviews, and we prioritize guides who cite specific dates and documented events rather than generic ghost stories. A good ghost tour leaves you knowing more about a city's real history than most residents. A bad one is just a costume walk with a flashlight.
-            </p>
-            <p>
-              Whether you're a skeptic, a couple planning an evening out, or a family with kids, there's a tour format that fits.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Cities Grid -->
-  <section class="py-12 border-t" style="border-color: #3d2a4d;" id="cities">
-    <div class="container px-4 mx-auto max-w-7xl">
-      <div class="mb-8">
-        <h2 class="text-xl font-semibold sm:text-2xl md:text-3xl text-white" style="font-family: 'Cinzel', serif;">United States</h2>
-        <p class="mt-2 text-base" style="color: #7a6b8a;">Ghost tours across America's most haunted cities</p>
-      </div>
-      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:gap-6">
-        {usCities.map((city) => (
-          <a href={`/${city.slug}/`} class="group relative block aspect-[4/3] overflow-hidden rounded-2xl">
-            <img decoding="async" src={city.image} alt={`Ghost tours in ${city.name}`} class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" width="800" height="533" loading="lazy">
-            <div class="pointer-events-none absolute inset-0 rounded-2xl" style="background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.18), rgba(0,0,0,0.05));"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
-              <h3 class="text-sm font-semibold text-white sm:text-base lg:text-lg" style="text-shadow: 0 2px 6px rgba(0,0,0,0.6);">{city.name}</h3>
-              <p class="text-xs mt-0.5 hidden sm:block" style="color: #d1d5db; text-shadow: 0 1px 4px rgba(0,0,0,0.8);">{city.tagline}</p>
+      <!-- Featured 6 — Large cards with detail -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 mb-8">
+        {featuredCities.map((city) => (
+          <a href={`/${city.slug}/`} class="group relative block overflow-hidden rounded-2xl" style="aspect-ratio: 4/3;">
+            <img decoding="async" src={city.image} alt={`Ghost tours in ${city.name}`} class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" width="800" height="533" loading="lazy" />
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.05) 100%);"></div>
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: linear-gradient(to top, rgba(124,58,237,0.3) 0%, transparent 50%);"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-5">
+              <div class="flex items-center gap-2 mb-1.5">
+                <h3 class="text-lg sm:text-xl font-bold text-white" style="text-shadow: 0 2px 8px rgba(0,0,0,0.6);">{city.name}</h3>
+                <span class="text-xs px-2 py-0.5 rounded-full font-medium" style="background: rgba(168,85,247,0.25); color: #d8b4fe;">{city.tours}</span>
+              </div>
+              <p class="text-sm" style="color: #d1d5db; text-shadow: 0 1px 4px rgba(0,0,0,0.8);">{city.tagline}</p>
             </div>
           </a>
         ))}
       </div>
 
-      <div class="mt-12 mb-8">
-        <h2 class="text-xl font-semibold sm:text-2xl md:text-3xl text-white" style="font-family: 'Cinzel', serif;">International</h2>
-        <p class="mt-2 text-base" style="color: #7a6b8a;">Haunted cities across Europe</p>
-      </div>
-      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:gap-6">
-        {intlCities.map((city) => (
-          <a href={`/${city.slug}/`} class="group relative block aspect-[4/3] overflow-hidden rounded-2xl">
-            <img decoding="async" src={city.image} alt={`Ghost tours in ${city.name}`} class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" width="800" height="533" loading="lazy">
-            <div class="pointer-events-none absolute inset-0 rounded-2xl" style="background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.18), rgba(0,0,0,0.05));"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
-              <h3 class="text-sm font-semibold text-white sm:text-base lg:text-lg" style="text-shadow: 0 2px 6px rgba(0,0,0,0.6);">{city.name}</h3>
-              <p class="text-xs mt-0.5 hidden sm:block" style="color: #d1d5db; text-shadow: 0 1px 4px rgba(0,0,0,0.8);">{city.tagline}</p>
-            </div>
+      <!-- Remaining cities — compact pill links -->
+      <div class="flex flex-wrap justify-center gap-2">
+        {moreCities.map((city) => (
+          <a
+            href={`/${city.slug}/`}
+            class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
+            style="color: #c8bdd8; border: 1px solid #3d2a4d; background: rgba(26,16,37,0.5);"
+            onmouseover="this.style.borderColor='#7c3aed';this.style.color='#e9d5ff';this.style.background='rgba(124,58,237,0.1)'"
+            onmouseout="this.style.borderColor='#3d2a4d';this.style.color='#c8bdd8';this.style.background='rgba(26,16,37,0.5)'"
+          >
+            {city.name}
+            <svg class="w-3.5 h-3.5 ml-1.5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </a>
         ))}
       </div>
     </div>
   </section>
-
-  <!-- Featured Destinations -->
-  <section class="py-12">
+  <!-- ═══════════════════════════════════════════
+       EXPERIENCES — Clean icon + text cards
+       ═══════════════════════════════════════════ -->
+  <section class="py-16 md:py-24">
     <div class="container px-4 mx-auto max-w-7xl">
-      <div class="mb-10">
-        <h2 class="text-xl font-semibold sm:text-2xl md:text-3xl text-white" style="font-family: 'Cinzel', serif;">Iconic Haunted Destinations</h2>
-        <p class="mt-2 text-base" style="color: #7a6b8a;">Legendary landmarks with centuries of documented hauntings</p>
-      </div>
-      <div class="flex flex-col gap-4 lg:gap-6">
-        <a href="/destinations/draculas-castle/" class="group block">
-          <div class="relative overflow-hidden rounded-2xl min-h-[200px] md:h-48" style="box-shadow: inset 0 0 80px rgba(0,0,0,0.4);">
-            <img decoding="async" src="/images/draculas-castle-banner.webp" alt="Bran Castle in Transylvania" class="absolute inset-0 w-full h-full object-cover" loading="lazy" width="1536" height="1024" >
-            <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(0,0,0,0.95), rgba(0,0,0,0.6), rgba(0,0,0,0.2));"></div>
-            <div class="relative z-10 h-full flex items-center p-6 md:p-8">
-              <div class="max-w-lg">
-                <h3 class="text-xl md:text-3xl font-bold text-white mb-1">Dracula's Castle</h3>
-                <p class="text-sm md:text-base mb-4" style="color: #d1d5db;">Where the Dracula legend began&#8212;Bran Castle in the Carpathian Mountains.</p>
-                <span class="inline-flex items-center gap-2 text-sm font-semibold" style="color: #ef4444;">Explore the Castle <span>&rarr;</span></span>
-              </div>
-            </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-4">
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style="color: #a855f7;">Tour Types</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4" style="font-family: 'Cinzel', serif; line-height: 1.2;">
+            Find Your Kind of Tour
+          </h2>
+          <p class="text-base leading-relaxed" style="color: #7a6b8a;">
+            Whether you're a skeptic, a history buff, or someone who just wants a great evening out — there's a format that fits.
+          </p>
+          <a href="/experiences/" class="inline-flex items-center gap-2 mt-6 text-sm font-semibold transition-colors" style="color: #a855f7;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a855f7'">
+            View all experiences <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+        <div class="lg:col-span-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {experiences.map((exp) => (
+              <a href={exp.slug} class="group flex gap-4 p-5 rounded-xl transition-all duration-200" style="border: 1px solid #3d2a4d; background: rgba(26,16,37,0.4);" onmouseover="this.style.borderColor='#4a3560';this.style.background='rgba(36,20,48,0.7)'" onmouseout="this.style.borderColor='#3d2a4d';this.style.background='rgba(26,16,37,0.4)'">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(168,85,247,0.12);">
+                  <svg class="w-5 h-5" style="color: #a855f7;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={exp.icon} />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-sm font-semibold text-white group-hover:text-purple-300 transition-colors">{exp.name}</h3>
+                  <p class="text-sm mt-1" style="color: #7a6b8a;">{exp.description}</p>
+                </div>
+              </a>
+            ))}
           </div>
-        </a>
-        <a href="/destinations/salem-witch-trials/" class="group block">
-          <div class="relative overflow-hidden rounded-2xl min-h-[200px] md:h-48" style="box-shadow: inset 0 0 80px rgba(0,0,0,0.4);">
-            <img decoding="async" src="/images/banners/salem-witch-trials.webp" alt="Salem Witch Trials historic graveyard" class="absolute inset-0 w-full h-full object-cover" loading="lazy" width="1536" height="1024" >
-            <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(0,0,0,0.95), rgba(0,0,0,0.6), rgba(0,0,0,0.2));"></div>
-            <div class="relative z-10 h-full flex items-center p-6 md:p-8">
-              <div class="max-w-lg">
-                <h3 class="text-xl md:text-3xl font-bold text-white mb-1">Salem Witch Trials</h3>
-                <p class="text-sm md:text-base mb-4" style="color: #d1d5db;">The 1692 trials that executed 20 innocent people and gripped colonial Massachusetts.</p>
-                <span class="inline-flex items-center gap-2 text-sm font-semibold" style="color: #f59e0b;">Explore Salem <span>&rarr;</span></span>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="/destinations/tower-of-london/" class="group block">
-          <div class="relative overflow-hidden rounded-2xl min-h-[200px] md:h-48" style="box-shadow: inset 0 0 80px rgba(0,0,0,0.4);">
-            <img decoding="async" src="/images/banners/tower-of-london.png" alt="Tower of London" class="absolute inset-0 w-full h-full object-cover" loading="lazy" width="1536" height="1024" >
-            <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(0,0,0,0.95), rgba(0,0,0,0.6), rgba(0,0,0,0.2));"></div>
-            <div class="relative z-10 h-full flex items-center p-6 md:p-8">
-              <div class="max-w-lg">
-                <h3 class="text-xl md:text-3xl font-bold text-white mb-1">Tower of London</h3>
-                <p class="text-sm md:text-base mb-4" style="color: #d1d5db;">Nearly 1,000 years of executions, imprisonment, and royal ghosts.</p>
-                <span class="inline-flex items-center gap-2 text-sm font-semibold" style="color: #ef4444;">Explore the Tower <span>&rarr;</span></span>
-              </div>
-            </div>
-          </div>
-        </a>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- Latest Articles -->
-  <section class="py-12 border-t" style="border-color: #3d2a4d;">
+  <!-- ═══════════════════════════════════════════
+       DESTINATIONS — Feature banners
+       ═══════════════════════════════════════════ -->
+  <section class="py-16 md:py-24" style="background: linear-gradient(180deg, rgba(15,10,26,0) 0%, rgba(15,10,26,0.6) 50%, rgba(15,10,26,0) 100%);">
     <div class="container px-4 mx-auto max-w-7xl">
-      <div class="mb-10 flex items-end justify-between">
+      <div class="text-center mb-12">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style="color: #a855f7;">Deep Dives</p>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white" style="font-family: 'Cinzel', serif;">
+          Iconic Haunted Destinations
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5">
+        <!-- Dracula's Castle -->
+        <a href="/destinations/draculas-castle/" class="group relative block overflow-hidden rounded-2xl" style="aspect-ratio: 3/4;">
+          <img decoding="async" src="/images/draculas-castle-banner.webp" alt="Bran Castle in Transylvania" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" width="1536" height="1024" />
+          <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <h3 class="text-xl font-bold text-white mb-1">Dracula's Castle</h3>
+            <p class="text-sm mb-3" style="color: #d1d5db;">Where the Dracula legend began — Bran Castle in the Carpathian Mountains.</p>
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold" style="color: #ef4444;">Explore <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </a>
+
+        <!-- Salem Witch Trials -->
+        <a href="/destinations/salem-witch-trials/" class="group relative block overflow-hidden rounded-2xl" style="aspect-ratio: 3/4;">
+          <img decoding="async" src="/images/banners/salem-witch-trials.webp" alt="Salem Witch Trials historic graveyard" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" width="1536" height="1024" />
+          <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <h3 class="text-xl font-bold text-white mb-1">Salem Witch Trials</h3>
+            <p class="text-sm mb-3" style="color: #d1d5db;">The 1692 trials that executed 20 innocent people and gripped colonial Massachusetts.</p>
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold" style="color: #f59e0b;">Explore <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </a>
+
+        <!-- Tower of London -->
+        <a href="/destinations/tower-of-london/" class="group relative block overflow-hidden rounded-2xl" style="aspect-ratio: 3/4;">
+          <img decoding="async" src="/images/banners/tower-of-london.png" alt="Tower of London" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" width="1536" height="1024" />
+          <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <h3 class="text-xl font-bold text-white mb-1">Tower of London</h3>
+            <p class="text-sm mb-3" style="color: #d1d5db;">Nearly 1,000 years of executions, imprisonment, and royal ghosts.</p>
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold" style="color: #ef4444;">Explore <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </a>
+      </div>
+
+      <!-- More destinations link row -->
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <a href="/destinations/eastern-state-penitentiary/" class="inline-flex items-center px-4 py-2 rounded-full text-sm transition-all duration-200" style="color: #c8bdd8; border: 1px solid #3d2a4d;" onmouseover="this.style.borderColor='#7c3aed';this.style.color='#e9d5ff'" onmouseout="this.style.borderColor='#3d2a4d';this.style.color='#c8bdd8'">Eastern State Penitentiary</a>
+        <a href="/destinations/gettysburg/" class="inline-flex items-center px-4 py-2 rounded-full text-sm transition-all duration-200" style="color: #c8bdd8; border: 1px solid #3d2a4d;" onmouseover="this.style.borderColor='#7c3aed';this.style.color='#e9d5ff'" onmouseout="this.style.borderColor='#3d2a4d';this.style.color='#c8bdd8'">Gettysburg Battlefield</a>
+        <a href="/destinations/alcatraz/" class="inline-flex items-center px-4 py-2 rounded-full text-sm transition-all duration-200" style="color: #c8bdd8; border: 1px solid #3d2a4d;" onmouseover="this.style.borderColor='#7c3aed';this.style.color='#e9d5ff'" onmouseout="this.style.borderColor='#3d2a4d';this.style.color='#c8bdd8'">Alcatraz Island</a>
+        <a href="/destinations/port-arthur/" class="inline-flex items-center px-4 py-2 rounded-full text-sm transition-all duration-200" style="color: #c8bdd8; border: 1px solid #3d2a4d;" onmouseover="this.style.borderColor='#7c3aed';this.style.color='#e9d5ff'" onmouseout="this.style.borderColor='#3d2a4d';this.style.color='#c8bdd8'">Port Arthur</a>
+        <a href="/destinations/" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200" style="color: #a855f7; border: 1px solid #7c3aed;" onmouseover="this.style.background='rgba(124,58,237,0.1)'" onmouseout="this.style.background='transparent'">All destinations &rarr;</a>
+      </div>
+    </div>
+  </section>
+  <!-- ═══════════════════════════════════════════
+       LATEST ARTICLES — Featured + compact list
+       ═══════════════════════════════════════════ -->
+  <section class="py-16 md:py-24">
+    <div class="container px-4 mx-auto max-w-7xl">
+      <div class="flex items-end justify-between mb-10">
         <div>
-          <h2 class="text-xl font-semibold sm:text-2xl md:text-3xl text-white" style="font-family: 'Cinzel', serif;">Latest Articles</h2>
-          <p class="mt-2 text-base" style="color: #7a6b8a;">Researched history and practical ghost tour guides</p>
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style="color: #a855f7;">From the Archive</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white" style="font-family: 'Cinzel', serif;">
+            Latest Research
+          </h2>
         </div>
-        <a href="/articles/" class="text-sm text-purple-400 hover:text-purple-300 transition-colors hidden sm:block">View all articles &rarr;</a>
+        <a href="/articles/" class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold transition-colors" style="color: #a855f7;" onmouseover="this.style.color='#c084fc'" onmouseout="this.style.color='#a855f7'">
+          All articles <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {recentArticles.map((article) => (
-          <a href={`/articles/${article.slug}/`} class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
-            {article.featuredImage?.sourceUrl && (
-              <div class="aspect-video overflow-hidden">
-                <img decoding="async" src={article.featuredImage.sourceUrl} alt={article.featuredImage.altText || article.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" width="400" height="225" loading="lazy" />
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Featured article (large) -->
+        {recentArticles[0] && (
+          <a href={`/articles/${recentArticles[0].slug}/`} class="lg:col-span-7 group block overflow-hidden rounded-2xl" style="border: 1px solid #3d2a4d; background: rgba(26,16,37,0.4);">
+            {recentArticles[0].featuredImage?.sourceUrl && (
+              <div class="aspect-[16/9] overflow-hidden">
+                <img decoding="async" src={recentArticles[0].featuredImage.sourceUrl} alt={recentArticles[0].featuredImage.altText || recentArticles[0].title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="800" height="450" loading="lazy" />
               </div>
             )}
-            <div class="p-4">
-              <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors line-clamp-2 mb-2">{article.title}</h3>
-              <p class="text-sm text-gray-400 line-clamp-2">{article.excerpt}</p>
-              <span class="block mt-3 text-xs text-gray-500">{article.readingTime || Math.ceil(article.content.split(/\s+/).length / 250)} min read</span>
+            <div class="p-6">
+              <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-purple-300 transition-colors mb-2">{recentArticles[0].title}</h3>
+              <p class="text-sm leading-relaxed" style="color: #7a6b8a;">{recentArticles[0].excerpt}</p>
+              <p class="mt-4 text-xs font-medium" style="color: #a855f7;">{recentArticles[0].readingTime || Math.ceil(recentArticles[0].content.split(/\s+/).length / 250)} min read</p>
             </div>
           </a>
-        ))}
+        )}
+
+        <!-- Remaining articles (compact stack) -->
+        <div class="lg:col-span-5 flex flex-col gap-4">
+          {recentArticles.slice(1).map((article) => (
+            <a href={`/articles/${article.slug}/`} class="group flex gap-4 p-4 rounded-xl transition-all duration-200" style="border: 1px solid #3d2a4d; background: rgba(26,16,37,0.4);" onmouseover="this.style.borderColor='#4a3560'" onmouseout="this.style.borderColor='#3d2a4d'">
+              {article.featuredImage?.sourceUrl && (
+                <div class="flex-shrink-0 w-24 h-24 overflow-hidden rounded-lg">
+                  <img decoding="async" src={article.featuredImage.sourceUrl} alt={article.featuredImage.altText || article.title} class="w-full h-full object-cover" width="200" height="200" loading="lazy" />
+                </div>
+              )}
+              <div class="flex-1 min-w-0">
+                <h3 class="text-sm font-semibold text-white group-hover:text-purple-300 transition-colors line-clamp-2 mb-1">{article.title}</h3>
+                <p class="text-xs line-clamp-2 mb-2" style="color: #7a6b8a;">{article.excerpt}</p>
+                <p class="text-xs" style="color: #a855f7;">{article.readingTime || Math.ceil(article.content.split(/\s+/).length / 250)} min read</p>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
+
       <div class="mt-6 text-center sm:hidden">
-        <a href="/articles/" class="text-sm text-purple-400 hover:text-purple-300 transition-colors">View all articles &rarr;</a>
+        <a href="/articles/" class="text-sm font-medium" style="color: #a855f7;">View all articles &rarr;</a>
       </div>
     </div>
   </section>
-
-  <!-- More Destinations -->
-  <section class="py-12 border-t" style="border-color: #3d2a4d;">
-    <div class="container px-4 mx-auto max-w-7xl">
-      <div class="mb-10">
-        <h2 class="text-xl font-semibold sm:text-2xl md:text-3xl text-white" style="font-family: 'Cinzel', serif;">More Haunted Landmarks</h2>
-        <p class="mt-2 text-base" style="color: #7a6b8a;">Individual sites with extraordinary histories of tragedy and hauntings</p>
+  <!-- ═══════════════════════════════════════════
+       FAQ — Clean accordion
+       ═══════════════════════════════════════════ -->
+  <section class="py-16 md:py-24" style="background: linear-gradient(180deg, rgba(15,10,26,0) 0%, rgba(15,10,26,0.6) 50%, rgba(15,10,26,0) 100%);">
+    <div class="container px-4 mx-auto max-w-3xl">
+      <div class="text-center mb-10">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style="color: #a855f7;">Common Questions</p>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white" style="font-family: 'Cinzel', serif;">
+          Frequently Asked Questions
+        </h2>
       </div>
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-        <a href="/destinations/eastern-state-penitentiary/" class="group rounded-xl p-5 transition-all duration-200" style="border: 1px solid #3d2a4d; background: rgba(26, 16, 37, 0.5);">
-          <h3 class="text-base font-semibold text-white sm:text-lg group-hover:text-purple-300">Eastern State Penitentiary</h3>
-          <p class="mt-2 text-sm leading-relaxed" style="color: #7a6b8a;">Philadelphia's infamous abandoned prison, where solitary confinement drove inmates to madness.</p>
-        </a>
-        <a href="/destinations/gettysburg/" class="group rounded-xl p-5 transition-all duration-200" style="border: 1px solid #3d2a4d; background: rgba(26, 16, 37, 0.5);">
-          <h3 class="text-base font-semibold text-white sm:text-lg group-hover:text-purple-300">Gettysburg Battlefield</h3>
-          <p class="mt-2 text-sm leading-relaxed" style="color: #7a6b8a;">Where 50,000 soldiers fell in three days of brutal Civil War combat.</p>
-        </a>
-        <a href="/destinations/port-arthur/" class="group rounded-xl p-5 transition-all duration-200" style="border: 1px solid #3d2a4d; background: rgba(26, 16, 37, 0.5);">
-          <h3 class="text-base font-semibold text-white sm:text-lg group-hover:text-purple-300">Port Arthur</h3>
-          <p class="mt-2 text-sm leading-relaxed" style="color: #7a6b8a;">Tasmania's brutal penal colony, now Australia's most haunted historic site.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="py-12 border-t" style="border-color: #3d2a4d;">
-    <div class="container px-4 mx-auto max-w-4xl">
-      <h2 class="text-xl font-semibold sm:text-2xl md:text-3xl text-white mb-8" style="font-family: 'Cinzel', serif;">
-        Frequently Asked Questions
-      </h2>
-      <div class="space-y-4">
+      <div class="space-y-3">
         {faqs.map((faq) => (
-          <details class="group rounded-lg border" style="border-color: #3d2a4d; background: rgba(26, 16, 37, 0.3);">
-            <summary class="flex cursor-pointer items-center justify-between p-4 sm:p-5 text-white font-medium text-sm sm:text-base">
+          <details class="group rounded-xl" style="border: 1px solid #3d2a4d; background: rgba(26,16,37,0.3);">
+            <summary class="flex cursor-pointer items-center justify-between p-5 text-white font-medium text-sm sm:text-base select-none">
               {faq.question}
-              <svg class="h-5 w-5 flex-shrink-0 transition-transform group-open:rotate-180" style="color: #a89bb8;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="h-5 w-5 flex-shrink-0 ml-4 transition-transform duration-200 group-open:rotate-180" style="color: #7a6b8a;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
               </svg>
             </summary>
-            <div class="px-4 pb-4 sm:px-5 sm:pb-5 text-sm sm:text-base leading-relaxed" style="color: #c8bdd8;">
+            <div class="px-5 pb-5 text-sm leading-relaxed" style="color: #c8bdd8;">
               {faq.answer}
             </div>
           </details>
