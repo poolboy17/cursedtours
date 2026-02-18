@@ -61,18 +61,31 @@ const faqs = [
     ]
   })} />
 
-  <section class="relative py-16 md:py-24 overflow-hidden bg-[#0a0510]">
-    <div class="container relative z-10 px-4 mx-auto max-w-7xl">
-      <nav class="mb-6 text-sm">
-        <ol class="flex items-center gap-2 text-[#a89bb8]">
-          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
-          <li class="text-gray-600">/</li>
-          <li class="text-gray-300 font-medium">Boston Ghost Tours</li>
-        </ol>
-      </nav>
-      <div class="text-center mb-8">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Boston Ghost Tours</h1>
-        <p class="text-xl md:text-2xl text-[#a89bb8] italic">"Revolution, Ruin, and the Restless Dead"</p>
+  <section class="relative overflow-hidden bg-[#0a0510]" style="min-height: clamp(400px, 55vh, 580px);">
+    <div class="absolute pointer-events-none z-[1]" style="top: -20px; right: -5%; width: 75%; max-width: 900px; height: calc(100% + 20px);">
+      <img src="/images/heroes/boston-hero.webp" alt="" aria-hidden="true" class="w-full h-full object-contain" style="object-position: right center;" loading="eager" decoding="async" width="1536" height="1024" />
+    </div>
+    <div class="relative z-10 flex items-end" style="min-height: clamp(400px, 55vh, 580px);">
+      <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-9 md:pb-11 lg:pb-13">
+        <div class="max-w-xl">
+          <nav class="mb-4 text-sm">
+            <ol class="flex items-center gap-2 text-[#7a6e8c]">
+              <li><a href="/" class="text-[#8a7e9c] hover:text-purple-400 transition-colors">Home</a></li>
+              <li class="text-[#4a3f5a]">/</li>
+              <li class="text-[#a89bb8] font-medium">Boston Ghost Tours</li>
+            </ol>
+          </nav>
+          <p class="text-sm font-semibold tracking-[0.2em] uppercase mb-4" style="color: #a855f7;">14 Tours &middot; 10 Articles</p>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-white mb-4" style="font-family: 'Cinzel', serif;">Boston Ghost Tours</h1>
+          <p class="text-base sm:text-lg leading-relaxed mb-5 max-w-lg" style="color: #d1c4e9;">Revolution, massacre, and restless colonial dead — the Freedom Trail's darkest chapters told after dark.</p>
+          <div class="flex items-center flex-wrap gap-3 text-sm" style="color: #8a7e9c;">
+            <span>From <strong class="text-[#c4b5fd] font-semibold">$30</strong></span>
+            <span class="w-1 h-1 rounded-full bg-purple-500/40"></span>
+            <span>Walking &middot; Evening &middot; Historical</span>
+            <span class="w-1 h-1 rounded-full bg-purple-500/40"></span>
+            <span>Freedom Trail & Beyond</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
