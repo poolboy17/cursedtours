@@ -410,6 +410,15 @@ export const DESTINATIONS: Record<string, DestinationData> = {
 		name: 'Tower of London',
 		descriptor: 'Nine centuries of royal power, imprisonment, and execution',
 		intro: "The Tower of London has served as fortress, palace, and prison—a place where England's monarchs displayed their power through spectacle and violence.",
+		heroImage: {
+			src: '/images/destinations/tower-of-london.webp',
+			alt: 'The Tower of London illuminated at night from across the River Thames',
+		},
+		relatedArticleSlugs: [
+			'tower-of-london-ghost-stories',
+			'tower-of-london-famous-prisoners',
+			'tower-of-london-ravens-legend',
+		],
 		featuredTours: [
 			{
 				productCode: '278452P2',
