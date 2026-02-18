@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getAllBlogHubs } from '../../data/blogHubs';
+import { getArticlesByCategory } from '../../data/articles';
+
+const hubs = getAllBlogHubs();
+---
+
+<Layout
+  title="Blog | Cursed Tours"
+  description="Deep-dive articles on vampire culture, the Salem witch trials, Tower of London history, American prison history, and Civil War battlefields."
+  canonical="https://cursedtours.com/blog/"
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Blog",
+    "description": "Topic hubs exploring the history, folklore, and dark stories behind the world's most haunted places.",
+    "url": "https://cursedtours.com/blog/",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cursedtours.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://cursedtours.com/blog/" },
+      ]
+    }
+  })} />
+
+  <!-- Hero -->
+  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+    <div class="container relative z-10 px-4 mx-auto max-w-6xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8]">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li class="text-gray-300 font-medium">Blog</li>
+        </ol>
+      </nav>
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Blog</h1>
+        <p class="text-xl text-[#a89bb8] max-w-2xl mx-auto">
+          Deep dives into the history, folklore, and dark stories behind the world's most haunted places.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hub Cards -->
+  <section class="py-12 md:py-16 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-6xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {hubs.map(hub => {
+          const articleCount = getArticlesByCategory(hub.categorySlug).length;
+          return (
+            <a
+              href={`/blog/${hub.slug}/`}
+              class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 p-6"
+            >
+              <h2 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors mb-2">
+                {hub.name}
+              </h2>
+              <p class="text-sm text-[#a89bb8] italic mb-3">{hub.tagline}</p>
+              <p class="text-gray-400 text-sm line-clamp-3 mb-4">{hub.intro}</p>
+              <span class="text-xs text-gray-500">
+                {articleCount} article{articleCount !== 1 ? 's' : ''}
+              </span>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

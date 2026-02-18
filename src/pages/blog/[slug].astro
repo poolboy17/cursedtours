@@ -1,0 +1,282 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { BLOG_HUBS } from '../../data/blogHubs';
+import { getArticlesByCategory } from '../../data/articles';
+
+export async function getStaticPaths() {
+  return Object.values(BLOG_HUBS).map(hub => ({
+    params: { slug: hub.slug },
+    props: { hub },
+  }));
+}
+
+const { hub } = Astro.props;
+const articles = getArticlesByCategory(hub.categorySlug);
+
+// Sort: pillars first (by word count desc), then clusters by date
+articles.sort((a, b) => {
+  const aIsPillar = a.wordCount && a.wordCount > 2000;
+  const bIsPillar = b.wordCount && b.wordCount > 2000;
+  if (aIsPillar && !bIsPillar) return -1;
+  if (!aIsPillar && bIsPillar) return 1;
+  return new Date(b.date).getTime() - new Date(a.date).getTime();
+});
+
+const featured = articles[0];
+const rest = articles.slice(1);
+
+const faqLd = hub.faq.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": hub.faq.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+  }))
+} : null;
+
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cursedtours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://cursedtours.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": hub.name, "item": `https://cursedtours.com/blog/${hub.slug}/` },
+  ]
+};
+
+const collectionLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": hub.name,
+  "description": hub.metaDescription,
+  "url": `https://cursedtours.com/blog/${hub.slug}/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": articles.map((a, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": a.title,
+      "url": `https://cursedtours.com/articles/${a.slug}/`,
+    })),
+  },
+};
+---
+
+<Layout
+  title={`${hub.name} | Cursed Tours`}
+  description={hub.metaDescription}
+  canonical={`https://cursedtours.com/blog/${hub.slug}/`}
+>
+  {faqLd && <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />}
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(collectionLd)} />
+
+  <!-- Hero -->
+  <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
+    <div class="container relative z-10 px-4 mx-auto max-w-6xl">
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center gap-2 text-[#a89bb8]">
+          <li><a href="/" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li class="text-gray-600">/</li>
+          <li><a href="/blog/" class="hover:text-purple-400 transition-colors">Blog</a></li>
+          <li class="text-gray-600">/</li>
+          <li class="text-gray-300 font-medium">{hub.name}</li>
+        </ol>
+      </nav>
+      <div class="text-center mb-4">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          {hub.name}
+        </h1>
+        <p class="text-xl md:text-2xl text-[#a89bb8] italic">
+          {hub.tagline}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-12 md:py-16 bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <p class="text-xl text-gray-300 leading-relaxed border-l-3 border-purple-500 pl-6">
+        {hub.intro}
+      </p>
+      <p class="mt-6 text-sm text-gray-500">
+        {articles.length} article{articles.length !== 1 ? 's' : ''} in this collection
+      </p>
+    </div>
+  </section>
+
+  <!-- Articles -->
+  <section class="py-12 md:py-16 bg-[#0f0a1a] border-t border-white/5">
+    <div class="container px-4 mx-auto max-w-6xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Articles</h2>
+
+      {articles.length === 0 && (
+        <p class="text-gray-400 text-lg">Articles coming soon. This hub is under construction.</p>
+      )}
+
+      {/* Featured article — large card */}
+      {featured && (
+        <a
+          href={`/articles/${featured.slug}/`}
+          class="group block mb-8 rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 md:flex"
+        >
+          {featured.featuredImage?.sourceUrl && (
+            <div class="md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
+              <img
+                src={featured.featuredImage.sourceUrl}
+                alt={featured.featuredImage.altText || featured.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                width="800"
+                height="450"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          )}
+          <div class="p-6 md:w-3/5 flex flex-col justify-center">
+            <span class="text-xs text-purple-400 font-medium uppercase tracking-wider mb-2">Featured</span>
+            <h3 class="text-xl md:text-2xl font-bold text-white group-hover:text-purple-400 transition-colors mb-3">
+              {featured.title}
+            </h3>
+            <p class="text-gray-400 line-clamp-3">{featured.excerpt}</p>
+            <span class="mt-4 text-sm text-gray-500">
+              {featured.readingTime || Math.ceil((featured.wordCount || 0) / 250)} min read
+            </span>
+          </div>
+        </a>
+      )}
+
+      {/* Remaining articles — grid */}
+      {rest.length > 0 && (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {rest.map((article) => (
+            <a
+              href={`/articles/${article.slug}/`}
+              class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
+            >
+              {article.featuredImage?.sourceUrl && (
+                <div class="aspect-video overflow-hidden">
+                  <img
+                    src={article.featuredImage.sourceUrl}
+                    alt={article.featuredImage.altText || article.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    width="400"
+                    height="225"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              )}
+              <div class="p-4">
+                <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors line-clamp-2 mb-2">
+                  {article.title}
+                </h3>
+                <p class="text-sm text-gray-400 line-clamp-2">{article.excerpt}</p>
+                <span class="block mt-3 text-xs text-gray-500">
+                  {article.readingTime || Math.ceil((article.wordCount || 0) / 250)} min read
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Explore: Destination Hubs -->
+  {hub.relatedDestinations.length > 0 && (
+    <section class="py-12 md:py-16 bg-[#0a0510] border-t border-white/5">
+      <div class="container px-4 mx-auto max-w-4xl">
+        <h2 class="text-2xl font-bold text-white mb-4">Explore the Destination</h2>
+        <p class="text-gray-400 mb-6">Ready to visit? These destination pages have curated tours, practical info, and visitor guides.</p>
+        <div class="flex flex-wrap gap-3">
+          {hub.relatedDestinations.map(rd => (
+            <a
+              href={`/destinations/${rd.slug}/`}
+              class="px-5 py-3 rounded-lg bg-purple-600/20 border border-purple-500/30 text-purple-300 hover:bg-purple-600/30 hover:border-purple-500/50 transition-all font-medium"
+            >
+              {rd.name} →
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Related City Hubs -->
+  {hub.relatedCityHubs.length > 0 && (
+    <section class="py-8 bg-[#0a0510]">
+      <div class="container px-4 mx-auto max-w-4xl">
+        <h3 class="text-lg font-semibold text-white mb-4">Ghost Tours in These Cities</h3>
+        <div class="flex flex-wrap gap-3">
+          {hub.relatedCityHubs.map(ch => (
+            <a
+              href={`/${ch.slug}-ghost-tours/`}
+              class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:border-purple-500/50 hover:text-purple-400 transition-all"
+            >
+              {ch.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Related Blog Hubs -->
+  {hub.relatedBlogHubs.length > 0 && (
+    <section class="py-8 bg-[#0a0510]">
+      <div class="container px-4 mx-auto max-w-4xl">
+        <h3 class="text-lg font-semibold text-white mb-4">Related Topics</h3>
+        <div class="flex flex-wrap gap-3">
+          {hub.relatedBlogHubs.map(bh => (
+            <a
+              href={`/blog/${bh.slug}/`}
+              class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:border-purple-500/50 hover:text-purple-400 transition-all"
+            >
+              {bh.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ -->
+  {hub.faq.length > 0 && (
+    <section class="py-12 md:py-16 bg-[#0f0a1a] border-t border-white/5">
+      <div class="container px-4 mx-auto max-w-4xl">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+        <div class="space-y-6">
+          {hub.faq.map(item => (
+            <details class="group bg-white/5 border border-white/10 rounded-lg overflow-hidden">
+              <summary class="flex items-center justify-between p-5 cursor-pointer text-white font-medium hover:text-purple-400 transition-colors">
+                {item.question}
+                <span class="text-gray-500 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <div class="px-5 pb-5 text-gray-400 leading-relaxed">
+                {item.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
