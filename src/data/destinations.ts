@@ -70,6 +70,10 @@ export const DESTINATIONS: Record<string, DestinationData> = {
 		name: 'Eastern State Penitentiary',
 		descriptor: "Philadelphia's infamous abandoned prison, where solitary confinement drove inmates mad",
 		intro: "Eastern State Penitentiary stands as a crumbling monument to America's experiment in isolation—a prison designed to reform through silence that instead created a factory of madness.",
+		heroImage: {
+			src: '/images/heroes/eastern-state-hero.webp',
+			alt: 'Eastern State Penitentiary dark corridor',
+		},
 		featuredTours: [
 			{
 				productCode: '6263P11',
@@ -181,6 +185,10 @@ export const DESTINATIONS: Record<string, DestinationData> = {
 		name: 'Gettysburg Battlefield',
 		descriptor: 'Where 50,000 soldiers fell in three days of brutal Civil War combat',
 		intro: "The fields and ridges around Gettysburg, Pennsylvania witnessed the bloodiest battle ever fought on American soil—a three-day nightmare that left 50,000 men dead, wounded, or missing.",
+		heroImage: {
+			src: '/images/heroes/gettysburg-hero.webp',
+			alt: 'Gettysburg battlefield cannon',
+		},
 		featuredTours: [
 			{
 				productCode: '308362P7',
@@ -299,6 +307,10 @@ export const DESTINATIONS: Record<string, DestinationData> = {
 		name: 'Alcatraz Island',
 		descriptor: "America's most infamous federal penitentiary",
 		intro: "Alcatraz Island rises from San Francisco Bay, its cellhouse a monument to federal punishment and failed escapes.",
+		heroImage: {
+			src: '/images/heroes/alcatraz-hero.webp',
+			alt: 'Alcatraz prison recreation yard',
+		},
 		featuredTours: [
 			{
 				productCode: '7103P16',
@@ -417,8 +429,8 @@ export const DESTINATIONS: Record<string, DestinationData> = {
 		descriptor: 'Nine centuries of royal power, imprisonment, and execution',
 		intro: "The Tower of London has served as fortress, palace, and prison—a place where England's monarchs displayed their power through spectacle and violence.",
 		heroImage: {
-			src: '/images/destinations/tower-of-london.webp',
-			alt: 'The Tower of London illuminated at night from across the River Thames',
+			src: '/images/heroes/tower-of-london-hero.webp',
+			alt: 'The Tower of London at night from across the Thames',
 		},
 		relatedArticleSlugs: [
 			'tower-of-london-ghost-stories',
@@ -543,6 +555,10 @@ export const DESTINATIONS: Record<string, DestinationData> = {
 		subtitle: 'Bran Castle, Transylvania',
 		descriptor: "The Transylvanian fortress where Bram Stoker set literature's most famous vampire — and where centuries of real dark history lurk behind the legend",
 		intro: "When Bram Stoker imagined a remote castle perched above a Transylvanian mountain pass, he created the most iconic setting in horror literature. Bran Castle — the real fortress that inspired Dracula's lair — stands at the border between myth and history, where the brutal legacy of Vlad the Impaler collides with the Gothic imagination that made this place famous worldwide.",
+		heroImage: {
+			src: '/images/heroes/draculas-castle-hero.webp',
+			alt: 'Gothic castle in mountains',
+		},
 		heroImage: {
 			src: '/images/destinations/draculas-castle.webp',
 			alt: "Bran Castle perched on a cliff in the Transylvanian mountains at dusk",
@@ -846,6 +862,10 @@ export const DESTINATIONS: Record<string, DestinationData> = {
 		name: 'Port Arthur',
 		descriptor: "Tasmania's brutal penal colony, now Australia's most haunted historic site",
 		intro: "On Tasmania's remote Tasman Peninsula, Port Arthur stands as Australia's most intact convict site—and its darkest reminder of the transportation era.",
+		heroImage: {
+			src: '/images/heroes/port-arthur-hero.webp',
+			alt: 'Port Arthur prison ruins Tasmania',
+		},
 		featuredTours: [
 			{
 				productCode: '276771P12',
