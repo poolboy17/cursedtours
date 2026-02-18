@@ -13,22 +13,30 @@ Ghost tour discovery platform built with Astro. Static site, zero runtime depend
 ## Architecture: Hub-and-Spoke SEO Model
 
 The site uses a **hub-and-spoke** content model for SEO:
-- **Hub pages** (`src/pages/{city}-ghost-tours.astro`) — long-form city guides
-- **Spoke pages** (`src/data/articles/{slug}.json`) — individual articles linked from hubs
-- **Blog hubs** (`src/data/blogHubs.ts`) — topic hubs (Salem, Vampire, Prison, etc.)
+
+### Tier 1: Pillar Pages (hubs)
+All pillar pages sit at the same level in the SEO hierarchy. They anchor topic clusters and pass authority to their spoke articles.
+
+- **City hubs** (`src/pages/{city}-ghost-tours.astro`) — organize by geography (e.g. New Orleans, Salem)
+- **Destination hubs** (`src/pages/destinations/[slug].astro`) — organize by landmark (e.g. Alcatraz, Tower of London)
+- **Blog hubs** (`src/data/blogHubs.ts`) — organize by topic (e.g. Salem Witch Trials, Vampire lore)
+
+### Tier 2: Spoke Articles
+- **Article pages** (`src/data/articles/{slug}.json`) — individual articles linked from Tier 1 hubs
 - **Target**: 10 spoke articles per hub
 
 ### Content Inventory (216 pages)
 
-| Type              | Count |
-|-------------------|-------|
-| City hub pages    | 15    |
-| Blog hub pages    | 5     |
-| Article spokes    | 170   |
-| Destination pages | 7     |
-| Experience pages  | 6     |
-| Utility pages     | 5     |
-| Sitemap + robots  | 2     |
+| Type                      | Count |
+|---------------------------|-------|
+| Tier 1 pillar pages       | 27    |
+| ├─ City hubs              | 15    |
+| ├─ Destination hubs       | 7     |
+| └─ Blog/topic hubs        | 5     |
+| Tier 2 spoke articles     | 170   |
+| Experience pages           | 6     |
+| Utility pages              | 5     |
+| Sitemap + robots           | 2     |
 
 ### Key Data Files
 
@@ -36,7 +44,7 @@ The site uses a **hub-and-spoke** content model for SEO:
 |------|---------|
 | `src/data/articles.ts` | CATEGORIES definition (single source of truth for city→hub mappings) |
 | `src/data/blogHubs.ts` | Blog hub configuration (Salem, Vampire, Tower of London, etc.) |
-| `src/data/destinations.ts` | Destination page data |
+| `src/data/destinations.ts` | Destination hub page data (Tier 1, parallel to city hubs) |
 | `src/data/articles/*.json` | Individual article content (170 files) |
 | `public/images/articles/*.webp` | Hero images for articles |
 
@@ -155,6 +163,14 @@ The script:
 4. Stage the hub: `git add src/pages/{city}-ghost-tours.astro`
 5. Stage data files: `git add -f src/data/articles.ts`
 6. Commit and push
+
+### New Destination Hub Page
+
+1. Add destination data to `src/data/destinations.ts` (include `heroImage` and `relatedArticleSlugs`)
+2. Create at least 3 spoke articles (target: 5-10)
+3. Add hero image at `public/images/destinations/{slug}.webp`
+4. Stage: `git add -f src/data/destinations.ts`
+5. Commit and push (dynamic `[slug].astro` template handles rendering)
 
 ### New Blog Hub
 

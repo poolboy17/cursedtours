@@ -1,6 +1,12 @@
 /**
- * Destination Archive Page Data
- * Central configuration for all destination pillar pages
+ * Destination Pillar Page Data
+ * 
+ * Destinations are Tier 1 pages — they sit parallel to city hub pages
+ * in the site's hub-spoke architecture. Both serve as pillar pages
+ * anchoring their own clusters of spoke articles.
+ * 
+ * City hubs: /[city]-ghost-tours/ → organize by geography
+ * Destinations: /destinations/[slug]/ → organize by landmark
  */
 
 export interface FeaturedTour {
