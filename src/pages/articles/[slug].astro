@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getAllArticles, getRelatedArticles, CATEGORIES } from '../../data/articles';
+import { CITY_TOURS } from '../../data/cityTours';
 
 export async function getStaticPaths() {
   const articles = getAllArticles();
@@ -14,6 +15,12 @@ const { article } = Astro.props;
 const related = getRelatedArticles(article, 4);
 const category = article.categories[0];
 const categoryInfo = CATEGORIES[category?.slug];
+
+// Get city tours for sidebar CTA
+const cityKey = categoryInfo?.city;
+const cityTours = cityKey ? CITY_TOURS[cityKey] : undefined;
+const heroTour = cityTours?.find(t => t.tier === 'hero');
+const budgetTour = cityTours?.find(t => t.tier === 'budget');
 const publishDate = new Date(article.date).toLocaleDateString('en-US', {
   year: 'numeric', month: 'long', day: 'numeric'
 });
@@ -144,10 +151,94 @@ const breadcrumbLd = {
     </div>
   </section>
 
-  <!-- Article Content -->
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-purple-600 to-purple-400 z-[60] transition-[width] duration-150 ease-out" style="width: 0%"></div>
+
+  <!-- Article Content + Sidebar -->
   <article class="py-12 md:py-16 bg-[#0a0510]">
-    <div class="container px-4 mx-auto max-w-4xl">
-      <div class="article-content text-gray-300 text-lg leading-relaxed" set:html={article.content} />
+    <div class="container px-4 mx-auto max-w-6xl">
+      <div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+        <!-- Main content column -->
+        <div class="article-content text-gray-300 text-lg leading-relaxed max-w-none" set:html={article.content} />
+
+        <!-- Sticky sidebar (desktop only) -->
+        <aside class="hidden lg:block mt-2">
+          <div class="sticky top-20 space-y-6">
+
+            <!-- Table of Contents -->
+            <nav id="toc-sidebar" class="rounded-lg border border-white/10 bg-white/[0.03] p-5">
+              <h3 class="text-sm font-semibold text-purple-400 uppercase tracking-wider mb-3">Contents</h3>
+              <ul id="toc-list" class="space-y-2 text-sm">
+                <!-- Populated by JS -->
+              </ul>
+            </nav>
+
+            <!-- Tour CTA (if city article) -->
+            {heroTour && (
+              <a href={heroTour.viatorUrl} target="_blank" rel="noopener noreferrer nofollow"
+                class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
+                <div class="aspect-video overflow-hidden">
+                  <img src={heroTour.image} alt={heroTour.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    width="400" height="225" loading="lazy" decoding="async" />
+                </div>
+                <div class="p-4">
+                  <span class="text-xs text-yellow-400 font-medium uppercase tracking-wider">Top Tour</span>
+                  <h4 class="text-white font-semibold group-hover:text-purple-400 transition-colors mt-1 mb-2 text-sm leading-snug">
+                    {heroTour.title}
+                  </h4>
+                  <div class="flex items-center gap-2 text-xs text-gray-400 mb-3">
+                    <span class="text-yellow-400">★ {heroTour.rating}</span>
+                    <span>({heroTour.reviews.toLocaleString()})</span>
+                    {heroTour.duration && <span>· {heroTour.duration}</span>}
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-base font-bold text-white">From {heroTour.price}</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-purple-600 text-white text-xs font-semibold group-hover:bg-purple-500 transition-colors">
+                      View Tour →
+                    </span>
+                  </div>
+                </div>
+              </a>
+            )}
+
+            {budgetTour && (
+              <a href={budgetTour.viatorUrl} target="_blank" rel="noopener noreferrer nofollow"
+                class="group block rounded-lg p-4 bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
+                <span class="text-xs text-emerald-400 font-medium uppercase tracking-wider">Best Value</span>
+                <h4 class="text-white font-semibold group-hover:text-purple-400 transition-colors mt-1 mb-2 text-sm leading-snug">
+                  {budgetTour.title}
+                </h4>
+                <div class="flex items-center justify-between">
+                  <div class="text-xs text-gray-400">
+                    <span class="text-yellow-400">★ {budgetTour.rating}</span> ({budgetTour.reviews.toLocaleString()})
+                  </div>
+                  <span class="text-white font-bold text-sm">From {budgetTour.price}</span>
+                </div>
+              </a>
+            )}
+
+            <!-- Related Articles -->
+            {related.length > 0 && (
+              <div class="rounded-lg border border-white/10 bg-white/[0.03] p-5">
+                <h3 class="text-sm font-semibold text-purple-400 uppercase tracking-wider mb-3">Related</h3>
+                <ul class="space-y-3">
+                  {related.slice(0, 4).map((r) => (
+                    <li>
+                      <a href={`/articles/${r.slug}/`}
+                        class="text-sm text-gray-300 hover:text-purple-400 transition-colors leading-snug block">
+                        {r.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+          </div>
+        </aside>
+      </div>
     </div>
   </article>
 
@@ -201,29 +292,96 @@ const breadcrumbLd = {
   )}
 </Layout>
 
+<script>
+  // --- Reading progress bar ---
+  const progressBar = document.getElementById('reading-progress');
+  if (progressBar) {
+    window.addEventListener('scroll', () => {
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = docH > 0 ? Math.min(100, (window.scrollY / docH) * 100) + '%' : '0%';
+    }, { passive: true });
+  }
+
+  // --- Auto-generate TOC from H2s ---
+  const tocList = document.getElementById('toc-list');
+  const articleBody = document.querySelector('.article-content');
+  if (tocList && articleBody) {
+    const headings = articleBody.querySelectorAll('h2');
+    headings.forEach((h, i) => {
+      const id = h.id || 'section-' + i;
+      h.id = id;
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = h.textContent || '';
+      a.className = 'toc-link block text-gray-400 hover:text-purple-400 transition-colors py-0.5 border-l-2 border-transparent pl-3 leading-snug';
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+
+    // Active highlighting via IntersectionObserver
+    const tocLinks = tocList.querySelectorAll('.toc-link');
+    if (headings.length > 0 && tocLinks.length > 0) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(l => {
+              l.classList.remove('text-purple-400', 'border-purple-500');
+              l.classList.add('text-gray-400', 'border-transparent');
+            });
+            const active = tocList.querySelector(`a[href="#${entry.target.id}"]`);
+            if (active) {
+              active.classList.remove('text-gray-400', 'border-transparent');
+              active.classList.add('text-purple-400', 'border-purple-500');
+            }
+          }
+        });
+      }, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
+      headings.forEach(h => obs.observe(h));
+    }
+
+    // Hide TOC if fewer than 3 headings
+    const tocNav = document.getElementById('toc-sidebar');
+    if (headings.length < 3 && tocNav) tocNav.style.display = 'none';
+  }
+</script>
+
 <style is:global>
+  /* ── H2 Section Bands ─────────────────────────────────────────── */
   .article-content h2 {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #fff;
-    margin-top: 2.5rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
     line-height: 1.3;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(88, 28, 135, 0.08));
+    border-left: 3px solid #7c3aed;
+  }
+
+  .article-content h2:nth-of-type(even) {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(67, 56, 202, 0.06));
+    border-left-color: #8b5cf6;
   }
 
   .article-content h3 {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: #e2d9f0;
     margin-top: 2rem;
     margin-bottom: 0.75rem;
     line-height: 1.4;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
   }
 
   .article-content p {
     margin-bottom: 1.25rem;
   }
 
+  /* ── Links ─────────────────────────────────────────────────────── */
   .article-content a {
     color: #a78bfa;
     text-decoration: underline;
@@ -236,10 +394,14 @@ const breadcrumbLd = {
     text-decoration-color: #a78bfa;
   }
 
+  /* ── Lists ─────────────────────────────────────────────────────── */
   .article-content ul,
   .article-content ol {
-    margin-bottom: 1.25rem;
-    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem 1rem 2.5rem;
+    background: rgba(139, 92, 246, 0.04);
+    border-radius: 8px;
+    border: 1px solid rgba(139, 92, 246, 0.1);
   }
 
   .article-content li {
@@ -250,21 +412,87 @@ const breadcrumbLd = {
     list-style-type: disc;
   }
 
+  .article-content ul li::marker {
+    color: #7c3aed;
+  }
+
   .article-content ol li {
     list-style-type: decimal;
   }
 
-  .article-content hr {
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 2.5rem 0;
+  .article-content ol li::marker {
+    color: #7c3aed;
+    font-weight: 600;
   }
 
+  /* ── Blockquotes ───────────────────────────────────────────────── */
+  .article-content blockquote {
+    position: relative;
+    border-left: 4px solid #7c3aed;
+    padding: 1.25rem 1.5rem 1.25rem 1.5rem;
+    margin: 2rem 0;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(88, 28, 135, 0.04));
+    border-radius: 0 8px 8px 0;
+    color: #c4b5d9;
+    font-style: italic;
+  }
+
+  .article-content blockquote::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.15rem;
+    left: 0.75rem;
+    font-size: 3rem;
+    color: rgba(139, 92, 246, 0.3);
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+
+  /* ── Tables ────────────────────────────────────────────────────── */
+  .article-content table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 2rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    font-size: 0.95rem;
+  }
+
+  .article-content thead th {
+    background: rgba(124, 58, 237, 0.25);
+    color: #e9d5ff;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  .article-content tbody td {
+    padding: 0.65rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #d1d5db;
+  }
+
+  .article-content tbody tr:nth-child(even) {
+    background: rgba(139, 92, 246, 0.04);
+  }
+
+  .article-content tbody tr:hover {
+    background: rgba(139, 92, 246, 0.08);
+  }
+
+  /* ── Images ────────────────────────────────────────────────────── */
   .article-content img {
     border-radius: 8px;
     width: 100%;
     height: auto;
     margin: 1.5rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .article-content figure {
@@ -273,19 +501,27 @@ const breadcrumbLd = {
 
   .article-content figcaption {
     text-align: center;
-    font-size: 0.9em;
+    font-size: 0.85em;
     color: #888;
     margin-top: 0.5em;
   }
 
-  .article-content blockquote {
-    border-left: 3px solid #7c3aed;
-    padding-left: 1.25rem;
-    margin: 1.5rem 0;
-    color: #b8a9cc;
-    font-style: italic;
+  /* ── HR ─────────────────────────────────────────────────────────── */
+  .article-content hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(139, 92, 246, 0.4), transparent);
+    margin: 2.5rem 0;
   }
 
+  /* ── Strong/Bold highlight ─────────────────────────────────────── */
+  .article-content strong {
+    color: #f3f0ff;
+    background: linear-gradient(to bottom, transparent 60%, rgba(124, 58, 237, 0.15) 60%);
+    padding: 0 2px;
+  }
+
+  /* ── Utility ───────────────────────────────────────────────────── */
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
