@@ -1,0 +1,49 @@
+---
+/**
+ * CdnImage — routes any image URL through Netlify Image CDN.
+ * Drop-in replacement for <img>. Pass the same props.
+ */
+import { cdnImage, cdnSrcset } from '../utils/cdn-image';
+
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  widths?: number[];
+  sizes?: string;
+  loading?: 'lazy' | 'eager';
+  decoding?: 'async' | 'sync' | 'auto';
+  class?: string;
+  [key: string]: any;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  widths = [320, 480, 640, 800],
+  sizes = '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw',
+  loading = 'lazy',
+  decoding = 'async',
+  class: className,
+  ...rest
+} = Astro.props;
+
+const cdnSrc = cdnImage(src, widths[widths.length - 1]);
+const srcsetStr = cdnSrcset(src, widths);
+---
+
+<img
+  src={cdnSrc}
+  srcset={srcsetStr}
+  sizes={sizes}
+  alt={alt}
+  width={width}
+  height={height}
+  loading={loading}
+  decoding={decoding}
+  class={className}
+  {...rest}
+/>

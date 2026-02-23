@@ -32,6 +32,7 @@ const faqs = [
     answer: 'October is peak season, but tours operate year-round. Summer evening tours offer comfortable walking weather, while winter tours through the city\'s underground passages provide shelter from the cold and an especially atmospheric experience.'
   },
 ];
+import CdnImage from '../components/CdnImage.astro';
 ---
 
 <Layout
@@ -64,7 +65,7 @@ const faqs = [
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">
     <div class="absolute pointer-events-none z-[1] opacity-40 sm:opacity-80 md:opacity-100 w-[60%] sm:w-[70%] md:w-[75%] max-w-[900px] h-full right-[-10%] sm:right-[-5%] top-0">
-      <img src="/images/heroes/chicago-hero.webp" alt="" aria-hidden="true" class="w-full h-full object-contain" style="object-position: right center;" loading="eager" decoding="async" width="1536" height="1337" />
+      <CdnImage src="/images/heroes/chicago-hero.webp" alt="" width={1536} height={1337} loading="eager" class="w-full h-full object-contain" decoding="async" />
     </div>
     <div class="relative z-10 flex items-end md:min-h-[55vh]">
       <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-8 pb-10 sm:pt-10 sm:pb-12 md:pt-0 md:pb-14">
@@ -323,7 +324,7 @@ const faqs = [
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <a href="/articles/bachelors-grove-cemetery-chicago/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img decoding="async" src="/images/articles/bachelors-grove-cemetery-chicago.webp" alt="Bachelor's Grove: Most Haunted Cemetery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
+              <CdnImage src="/images/articles/bachelors-grove-cemetery-chicago.webp" alt="Bachelor's Grove: Most Haunted Cemetery" width={1792} height={1024} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -333,7 +334,7 @@ const faqs = [
           </a>
           <a href="/articles/chicago-gangster-ghosts/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img decoding="async" src="/images/articles/chicago-gangster-ghosts.webp" alt="Chicago Gangster Ghosts: Capone & Dillinger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
+              <CdnImage src="/images/articles/chicago-gangster-ghosts.webp" alt="Chicago Gangster Ghosts: Capone & Dillinger" width={1792} height={1024} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -343,7 +344,7 @@ const faqs = [
           </a>
           <a href="/articles/chicagos-most-haunted-bars/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img decoding="async" src="/images/articles/chicagos-most-haunted-bars.webp" alt="Chicago's Most Haunted Bars and Taverns" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
+              <CdnImage src="/images/articles/chicagos-most-haunted-bars.webp" alt="Chicago's Most Haunted Bars and Taverns" width={1792} height={1024} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -353,7 +354,7 @@ const faqs = [
           </a>
           <a href="/articles/congress-plaza-hotel-haunted-history/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img decoding="async" src="/images/articles/congress-plaza-hotel-haunted-history.webp" alt="Congress Plaza Hotel: Haunted History" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
+              <CdnImage src="/images/articles/congress-plaza-hotel-haunted-history.webp" alt="Congress Plaza Hotel: Haunted History" width={1792} height={1024} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -363,7 +364,7 @@ const faqs = [
           </a>
           <a href="/articles/eastland-disaster-chicago/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img decoding="async" src="/images/articles/eastland-disaster-chicago.webp" alt="The Eastland Disaster: Chicago's Deadliest Day" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
+              <CdnImage src="/images/articles/eastland-disaster-chicago.webp" alt="The Eastland Disaster: Chicago's Deadliest Day" width={1792} height={1024} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -373,7 +374,7 @@ const faqs = [
           </a>
           <a href="/articles/great-chicago-fire-ghosts/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img decoding="async" src="/images/articles/great-chicago-fire-ghosts.webp" alt="The Great Chicago Fire: Ghosts of 1871" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
+              <CdnImage src="/images/articles/great-chicago-fire-ghosts.webp" alt="The Great Chicago Fire: Ghosts of 1871" width={1792} height={1024} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -383,7 +384,7 @@ const faqs = [
           </a>
           <a href="/articles/hh-holmes-murder-castle-chicago/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img decoding="async" src="/images/articles/hh-holmes-murder-castle-chicago.webp" alt="H.H. Holmes and the Murder Castle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
+              <CdnImage src="/images/articles/hh-holmes-murder-castle-chicago.webp" alt="H.H. Holmes and the Murder Castle" width={1792} height={1024} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -393,7 +394,7 @@ const faqs = [
           </a>
           <a href="/articles/iroquois-theatre-fire-chicago/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img decoding="async" src="/images/articles/iroquois-theatre-fire-chicago.webp" alt="The Iroquois Theatre Fire of 1903" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
+              <CdnImage src="/images/articles/iroquois-theatre-fire-chicago.webp" alt="The Iroquois Theatre Fire of 1903" width={1792} height={1024} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -403,7 +404,7 @@ const faqs = [
           </a>
           <a href="/articles/most-haunted-places-in-chicago/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img decoding="async" src="/images/articles/most-haunted-places-in-chicago.webp" alt="Chicago's Most Haunted Places" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
+              <CdnImage src="/images/articles/most-haunted-places-in-chicago.webp" alt="Chicago's Most Haunted Places" width={1792} height={1024} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -413,7 +414,7 @@ const faqs = [
           </a>
           <a href="/articles/resurrection-mary-chicagos-most-famous-ghost/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img decoding="async" src="/images/articles/resurrection-mary-chicagos-most-famous-ghost.webp" alt="Resurrection Mary: Chicago's Most Famous Ghost" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"  width="1792" height="1024" />
+              <CdnImage src="/images/articles/resurrection-mary-chicagos-most-famous-ghost.webp" alt="Resurrection Mary: Chicago's Most Famous Ghost" width={1792} height={1024} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>

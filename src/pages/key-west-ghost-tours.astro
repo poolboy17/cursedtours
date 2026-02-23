@@ -35,6 +35,7 @@ const faqs = [
     answer: 'October is peak season for paranormal tourism, with Fantasy Fest adding to the atmosphere. But ghost tours run year-round, and the summer months offer smaller crowds and longer twilight hours.'
   }
 ];
+import CdnImage from '../components/CdnImage.astro';
 ---
 <Layout 
   title="Key West Ghost Tours: Haunted History of Bone Island | Cursed Tours"
@@ -65,7 +66,7 @@ const faqs = [
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">
     <div class="absolute pointer-events-none z-[1] opacity-40 sm:opacity-80 md:opacity-100 w-[60%] sm:w-[70%] md:w-[75%] max-w-[900px] h-full right-[-10%] sm:right-[-5%] top-0">
-      <img src="/images/heroes/key-west-hero.webp" alt="" aria-hidden="true" class="w-full h-full object-contain" style="object-position: right center;" loading="eager" decoding="async" width="1536" height="1024" />
+      <CdnImage src="/images/heroes/key-west-hero.webp" alt="" width={1536} height={1024} loading="eager" class="w-full h-full object-contain" decoding="async" />
     </div>
     <div class="relative z-10 flex items-end md:min-h-[55vh]">
       <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-8 pb-10 sm:pt-10 sm:pb-12 md:pt-0 md:pb-14">

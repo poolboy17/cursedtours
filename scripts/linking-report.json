@@ -1,0 +1,164 @@
+{
+  "timestamp": "2026-02-22T12:00:03.696Z",
+  "dryRun": true,
+  "stats": {
+    "totalArticles": 170,
+    "totalPages": 214,
+    "categories": 25
+  },
+  "hubSpokeIssues": [],
+  "orphanIssues": [
+    {
+      "type": "ORPHAN_LOW_INBOUND",
+      "article": "best-horror-movies-based-on-true-stories",
+      "inboundCount": 1,
+      "sources": [
+        "/articles/cursed-horror-films-poltergeist-omen/"
+      ],
+      "message": "Article has only 1 inbound internal link",
+      "fixable": false
+    },
+    {
+      "type": "ORPHAN_LOW_INBOUND",
+      "article": "civil-war-ghost-stories-south",
+      "inboundCount": 1,
+      "sources": [
+        "/articles/gettysburg-ghost-stories-battlefield/"
+      ],
+      "message": "Article has only 1 inbound internal link",
+      "fixable": false
+    },
+    {
+      "type": "ORPHAN_LOW_INBOUND",
+      "article": "cursed-horror-films-poltergeist-omen",
+      "inboundCount": 1,
+      "sources": [
+        "/articles/best-horror-movies-based-on-true-stories/"
+      ],
+      "message": "Article has only 1 inbound internal link",
+      "fixable": false
+    },
+    {
+      "type": "ORPHAN_LOW_INBOUND",
+      "article": "ed-gein-real-killer-psycho-leatherface",
+      "inboundCount": 1,
+      "sources": [
+        "/articles/best-horror-movies-based-on-true-stories/"
+      ],
+      "message": "Article has only 1 inbound internal link",
+      "fixable": false
+    },
+    {
+      "type": "ORPHAN_LOW_INBOUND",
+      "article": "frankenstein-origin-story-lake-geneva",
+      "inboundCount": 1,
+      "sources": [
+        "/articles/dracula-novel-historical-analysis/"
+      ],
+      "message": "Article has only 1 inbound internal link",
+      "fixable": false
+    },
+    {
+      "type": "ORPHAN_LOW_INBOUND",
+      "article": "gettysburg-address-lincoln-legacy",
+      "inboundCount": 1,
+      "sources": [
+        "/articles/battle-of-gettysburg-complete-guide/"
+      ],
+      "message": "Article has only 1 inbound internal link",
+      "fixable": false
+    },
+    {
+      "type": "ORPHAN_LOW_INBOUND",
+      "article": "hocus-pocus-filming-locations-salem",
+      "inboundCount": 1,
+      "sources": [
+        "/articles/the-salem-witch-trials-causes-consequences-and-lasting-legacy/"
+      ],
+      "message": "Article has only 1 inbound internal link",
+      "fixable": false
+    },
+    {
+      "type": "ORPHAN_LOW_INBOUND",
+      "article": "lizzie-borden-true-crime-ghost-tours",
+      "inboundCount": 1,
+      "sources": [
+        "/articles/real-haunted-hotels-you-can-stay-in/"
+      ],
+      "message": "Article has only 1 inbound internal link",
+      "fixable": false
+    },
+    {
+      "type": "ORPHAN_LOW_INBOUND",
+      "article": "picketts-charge-gettysburg",
+      "inboundCount": 1,
+      "sources": [
+        "/articles/battle-of-gettysburg-complete-guide/"
+      ],
+      "message": "Article has only 1 inbound internal link",
+      "fixable": false
+    },
+    {
+      "type": "ORPHAN_LOW_INBOUND",
+      "article": "real-haunted-hotels-you-can-stay-in",
+      "inboundCount": 1,
+      "sources": [
+        "/articles/why-do-people-believe-in-ghosts/"
+      ],
+      "message": "Article has only 1 inbound internal link",
+      "fixable": false
+    },
+    {
+      "type": "ORPHAN_LOW_INBOUND",
+      "article": "real-haunted-houses-paranormal-investigations",
+      "inboundCount": 1,
+      "sources": [
+        "/articles/why-do-people-believe-in-ghosts/"
+      ],
+      "message": "Article has only 1 inbound internal link",
+      "fixable": false
+    },
+    {
+      "type": "ORPHAN_LOW_INBOUND",
+      "article": "real-mkultra-experiments-stranger-things",
+      "inboundCount": 1,
+      "sources": [
+        "/articles/best-horror-movies-based-on-true-stories/"
+      ],
+      "message": "Article has only 1 inbound internal link",
+      "fixable": false
+    },
+    {
+      "type": "ORPHAN_LOW_INBOUND",
+      "article": "rosemarys-baby-the-dakota-nyc",
+      "inboundCount": 1,
+      "sources": [
+        "/articles/cursed-horror-films-poltergeist-omen/"
+      ],
+      "message": "Article has only 1 inbound internal link",
+      "fixable": false
+    },
+    {
+      "type": "ORPHAN_LOW_INBOUND",
+      "article": "sleepy-hollow-washington-irving-tarrytown",
+      "inboundCount": 1,
+      "sources": [
+        "/articles/stephen-king-real-maine-haunted-places/"
+      ],
+      "message": "Article has only 1 inbound internal link",
+      "fixable": false
+    },
+    {
+      "type": "ORPHAN_LOW_INBOUND",
+      "article": "stephen-king-real-maine-haunted-places",
+      "inboundCount": 1,
+      "sources": [
+        "/articles/sleepy-hollow-washington-irving-tarrytown/"
+      ],
+      "message": "Article has only 1 inbound internal link",
+      "fixable": false
+    }
+  ],
+  "crossLinkOpportunities": 6,
+  "fixes": []
+}

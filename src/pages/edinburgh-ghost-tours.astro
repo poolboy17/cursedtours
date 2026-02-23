@@ -32,6 +32,7 @@ const faqs = [
     answer: 'Tours operate year-round, but October and late autumn provide the most atmospheric conditions with early darkness and frequent mist. The Edinburgh Festival in August offers expanded tour options. Winter tours through the vaults are particularly intense due to cold, damp conditions underground.'
   },
 ];
+import CdnImage from '../components/CdnImage.astro';
 ---
 
 <Layout
@@ -65,7 +66,7 @@ const faqs = [
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">
     <div class="absolute pointer-events-none z-[1] opacity-40 sm:opacity-80 md:opacity-100 w-[60%] sm:w-[70%] md:w-[75%] max-w-[900px] h-full right-[-10%] sm:right-[-5%] top-0">
-      <img src="/images/heroes/edinburgh-hero.webp" alt="" aria-hidden="true" class="w-full h-full object-contain" style="object-position: right center;" loading="eager" decoding="async" width="1536" height="1024" />
+      <CdnImage src="/images/heroes/edinburgh-hero.webp" alt="" width={1536} height={1024} loading="eager" class="w-full h-full object-contain" decoding="async" />
     </div>
     <div class="relative z-10 flex items-end md:min-h-[55vh]">
       <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-8 pb-10 sm:pt-10 sm:pb-12 md:pt-0 md:pb-14">
@@ -277,7 +278,7 @@ const faqs = [
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <a href="/articles/edinburgh-body-snatchers-burke-hare/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img decoding="async" src="/images/articles/edinburgh-body-snatchers-burke-hare.webp" alt="Edinburgh Body Snatchers Burke Hare" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy"  width="1792" height="1024" />
+              <CdnImage src="/images/articles/edinburgh-body-snatchers-burke-hare.webp" alt="Edinburgh Body Snatchers Burke Hare" width={1792} height={1024} loading="lazy" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" decoding="async" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -287,7 +288,7 @@ const faqs = [
           </a>
           <a href="/articles/edinburgh-castle-ghosts-legends/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img decoding="async" src="/images/articles/edinburgh-castle-ghosts-legends.webp" alt="Edinburgh Castle Ghosts Legends" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy"  width="1792" height="1024" />
+              <CdnImage src="/images/articles/edinburgh-castle-ghosts-legends.webp" alt="Edinburgh Castle Ghosts Legends" width={1792} height={1024} loading="lazy" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" decoding="async" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -297,7 +298,7 @@ const faqs = [
           </a>
           <a href="/articles/edinburgh-underground-vaults-history/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img decoding="async" src="/images/articles/edinburgh-underground-vaults-history.webp" alt="Edinburgh Underground Vaults History" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy"  width="1792" height="1024" />
+              <CdnImage src="/images/articles/edinburgh-underground-vaults-history.webp" alt="Edinburgh Underground Vaults History" width={1792} height={1024} loading="lazy" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" decoding="async" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -307,7 +308,7 @@ const faqs = [
           </a>
           <a href="/articles/greyfriars-kirkyard-edinburgh-haunted/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img decoding="async" src="/images/articles/greyfriars-kirkyard-edinburgh-haunted.webp" alt="Greyfriars Kirkyard Edinburgh Haunted" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy"  width="1792" height="1024" />
+              <CdnImage src="/images/articles/greyfriars-kirkyard-edinburgh-haunted.webp" alt="Greyfriars Kirkyard Edinburgh Haunted" width={1792} height={1024} loading="lazy" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" decoding="async" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
@@ -317,7 +318,7 @@ const faqs = [
           </a>
           <a href="/articles/most-haunted-places-in-edinburgh/" class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
             <div class="aspect-video overflow-hidden">
-              <img decoding="async" src="/images/articles/most-haunted-places-in-edinburgh.webp" alt="Most Haunted Places In Edinburgh" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy"  width="1792" height="1024" />
+              <CdnImage src="/images/articles/most-haunted-places-in-edinburgh.webp" alt="Most Haunted Places In Edinburgh" width={1792} height={1024} loading="lazy" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" decoding="async" />
             </div>
             <div class="p-4">
               <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>

@@ -25,6 +25,7 @@ const {
 const siteUrl = 'https://cursedtours.com';
 const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
 const fullTitle = title.includes('Cursed Tours') ? title : `${title} | Cursed Tours`;
+import CdnImage from '../components/CdnImage.astro';
 ---
 
 <!doctype html>
@@ -80,7 +81,7 @@ const fullTitle = title.includes('Cursed Tours') ? title : `${title} | Cursed To
     <header class="sticky top-0 z-50 w-full border-b" style="background-color: #0f0a1a; border-color: #3d2a4d;">
       <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-14">
         <a href="/" class="flex items-center gap-3 flex-shrink-0 group">
-          <img src="/images/header-logo-icon.webp" alt="" class="h-8 w-auto" loading="eager" decoding="async" aria-hidden="true" />
+          <CdnImage src="/images/header-logo-icon.webp" alt="" loading="eager" class="h-8 w-auto" decoding="async" />
           <span class="whitespace-nowrap text-sm sm:text-base font-semibold tracking-widest uppercase transition-colors" style="font-family: 'Cinzel', serif; color: #e8e0f0; letter-spacing: 0.15em;">Cursed Tours</span>
         </a>
         <div class="hidden md:flex items-center gap-6 lg:gap-8">

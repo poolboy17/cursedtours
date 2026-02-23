@@ -13,6 +13,7 @@ interface Props {
 const { tours, className = '' } = Astro.props
 const heroTour = tours.find(t => t.tier === 'hero')
 const otherTours = tours.filter(t => t.tier !== 'hero')
+import CdnImage from '../components/CdnImage.astro';
 ---
 
 <section class:list={["py-12 md:py-16 bg-[#0f0a1a] border-t border-white/5 lg:hidden", className]} id="all-tours">
@@ -24,9 +25,7 @@ const otherTours = tours.filter(t => t.tier !== 'hero')
         rel="noopener noreferrer nofollow"
         class="group block mb-6 rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 md:flex">
         <div class="md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
-          <img src={heroTour.image} alt={heroTour.title}
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            width="720" height="480" loading="lazy" decoding="async" />
+          <CdnImage src={heroTour.image} alt={heroTour.title} width={720} height={480} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
         </div>
         <div class="p-6 md:w-3/5 flex flex-col justify-center">
           <span class="text-xs text-yellow-400 font-medium uppercase tracking-wider mb-2">Top Pick</span>
