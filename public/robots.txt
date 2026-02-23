@@ -2,3 +2,94 @@ User-agent: *
 Allow: /
 
 Sitemap: https://cursedtours.com/sitemap.xml
+
+# Block WordPress legacy paths
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-json/
+Disallow: /xmlrpc.php
+
+# Block old WordPress tour listings (350+ junk URLs eating crawl budget)
+Disallow: /tour/
+Disallow: /find-tours/
+
+# Block WordPress tag and category pages
+Disallow: /tag/
+Disallow: /category/
+
+# Block WordPress pagination
+Disallow: /page/
+
+# Block WordPress date archives
+Disallow: /2025/
+
+# Block WordPress author pages
+Disallow: /author/
+
+# Block WordPress feed URLs
+Disallow: /feed/
+Disallow: /comments/feed/
+Disallow: */feed/
+
+# Block WordPress parameter URLs
+Disallow: /*?p=
+Disallow: /*?cb=
+Disallow: /*?page=
+Disallow: /*?LSCWP_CTRL=
+Disallow: /*?query-
+Disallow: /*?s=
+
+# Block WordPress search template
+Disallow: /search/
+
+# Block old WordPress blog posts (slug patterns without /articles/ prefix)
+# These are numbered duplicate slugs from the old WP site
+Disallow: /dark-histories-of-haunted-estates
+Disallow: /haunted-hospital-exploration-safety-tips
+Disallow: /urban-explorers-abandoned-mental-institutions
+Disallow: /famous-derelict-psychiatric-hospital-hauntings
+Disallow: /haunted-castle-overnight-stay-experiences
+Disallow: /haunted-historic-estates-with-tours
+Disallow: /most-haunted-castles-in-europe
+Disallow: /famous-ghost-sightings-in-castles
+Disallow: /abandoned-asylum-ghost-tour-locations
+Disallow: /personal-eyewitness-encounters
+Disallow: /firsthand-eyewitness-encounters
+Disallow: /firsthand-ghost-evidence
+Disallow: /overnight-ghost-hunts
+Disallow: /eerie-abandoned-mansions
+Disallow: /haunted-battlefields-around-the-world
+Disallow: /ghostly-theaters-and-opera-houses
+Disallow: /debunked-myths-and-paranormal-hoaxes
+Disallow: /cursed-objects-and-the-museums-that-keep-them
+Disallow: /famous-cemeteries-with-ghostly-reputations
+Disallow: /lakeside-inns-with-ghostly-lore
+Disallow: /europes-creepiest-castles-catacombs
+Disallow: /haunted-pub-crawls-and-nightlife-tours
+Disallow: /city-ghost-walks-worth-taking
+Disallow: /city-haunts-with-chilling-stories
+Disallow: /paranormal-hotspots-in-national-parks
+Disallow: /castles-with-dark-legends
+Disallow: /haunted-bridges-and-tunnels-worth-visiting
+Disallow: /virtual-and-augmented-reality-ghost-experiences
+Disallow: /how-to-capture-paranormal-evidence
+Disallow: /hotels-with-paranormal-guests
+Disallow: /churches-and-monasteries-with-paranormal-lore
+Disallow: /multi-stop-paranormal-bus-tours
+Disallow: /modern-cities-with-surprising-haunting-histories
+Disallow: /luxury-resorts-with-a-dark-history
+Disallow: /haunted-hostels-and-budget-stays
+Disallow: /paranormal-cruises-and-sea-voyages
+Disallow: /lighthouses-with-eerie-legends
+Disallow: /ghost-stories-across-latin-america
+Disallow: /abandoned-asylums-and-hospitals
+Disallow: /cultural-folklore-from-around-the-world
+Disallow: /haunted-places-in-north-america
+Disallow: /modern-paranormal-investigation-techniques
+Disallow: /paranormal-investigations-abandoned-hospital-sites
+Disallow: /ghosts-in-popular-culture-and-media
+Disallow: /famous-ghost-hunters-and-their-stories
+Disallow: /cultural-folklore/
+Disallow: /historical-legends/
+Disallow: /paranormal-investigation/
