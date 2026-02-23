@@ -4,7 +4,7 @@
 
 # Image optimization
 [images]
-  remote_images = ["https://wp\\.cursedtours\\.com/.*", "https://i0\\.wp\\.com/.*"]
+  remote_images = ["https://wp\\.cursedtours\\.com/.*", "https://i0\\.wp\\.com/.*", "https://media-cdn\\.tripadvisor\\.com/.*", "https://images\\.unsplash\\.com/.*"]
 
 [[headers]]
   for = "/images/*"
