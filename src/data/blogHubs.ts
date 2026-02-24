@@ -179,7 +179,7 @@ export const BLOG_HUBS: Record<string, BlogHubData> = {
     intro: 'In three days of July 1863, roughly 165,000 soldiers fought across the fields and ridges around a small Pennsylvania town. When it was over, more than 50,000 were dead, wounded, or missing. Gettysburg became the turning point of the Civil War and, eventually, the most ghost-storied battlefield in America. The history is more compelling than the hauntings.',
     categorySlug: 'gettysburg-civil-war',
     relatedDestinations: [
-      { name: 'Gettysburg Battlefield', slug: 'gettysburg-battlefield' },
+      { name: 'Gettysburg Battlefield', slug: 'gettysburg' },
     ],
     relatedCityHubs: [
       { name: 'Savannah Ghost Tours', slug: 'savannah' },
