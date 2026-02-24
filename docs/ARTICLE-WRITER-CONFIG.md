@@ -83,6 +83,16 @@ Every article is a single JSON file in `src/data/articles/{slug}.json`.
 }
 ```
 
+### Field notes
+- `id`: Use 0 for new articles — the build system does not rely on this field
+- `pageType`: Use `"hub-spoke"` for articles in a defined cluster, `"unassigned"` otherwise.
+  ~70% of existing articles are `"unassigned"` — set it properly for new content.
+- `articleType`: Use `"spoke"` (standard article in a cluster), `"pillar"` (deep authority
+  piece, 2000-4000 words), or `"long-form"` (extended narrative). Optional for legacy
+  articles but REQUIRED for all new content.
+- `wordCount` and `readingTime`: Calculate after writing. ~44% of existing articles are
+  missing these — always include them in new content.
+
 ### Content field format
 The `content` field is an HTML string. Use only these elements:
 - `<h2>` — main sections (4-8 per article)
