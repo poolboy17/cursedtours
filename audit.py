@@ -1,189 +1,404 @@
-#!/usr/bin/env python3
-"""SEO Quality Control Audit for CursedTours.com Astro build."""
-import os, re, json, sys
-from collections import defaultdict
+"""
+SemanticPipe Audit Script v1.1
+Run: python D:/dev/projects/cursedtours/audit.py
+Output: console scorecard + D:/dev/projects/cursedtours/AUDIT-REPORT.md
 
-dist = os.path.join(os.path.dirname(__file__), 'dist')
-if not os.path.isdir(dist):
-    print("ERROR: No dist/ directory found. Run `npx astro build` first.")
-    sys.exit(1)
+LAYER 1 — Structural: field presence, linking, formatting
+LAYER 2 — Semantic signals: entity density, data points, source refs, heading breadth
+Google decides quality. We measure what we can.
+"""
 
-issues = defaultdict(list)
-stats = defaultdict(lambda: {'pass': 0, 'warn': 0, 'fail': 0})
+import json
+import os
+import re
+from datetime import datetime
+from html.parser import HTMLParser
+from pathlib import Path
+from collections import Counter
 
-def extract(html, pattern, group=1):
-    m = re.search(pattern, html, re.DOTALL | re.IGNORECASE)
-    return m.group(group).strip() if m else None
+ARTICLES_DIR = Path(r"D:\dev\projects\cursedtours\src\data\articles")
+REPORT_PATH = Path(r"D:\dev\projects\cursedtours\AUDIT-REPORT.md")
 
-def extract_all(html, pattern):
-    return re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
+BANNED_PHRASES = [
+    "journey", "unlock", "game-changer", "dive in", "explore the depths",
+    "delve", "realm", "furthermore", "in conclusion", "nestled",
+    "it's important to note", "in today's world", "it should be noted",
+    "needless to say", "as we all know", "without further ado",
+    "spine-tingling", "bone-chilling", "hair-raising", "reportedly haunted"
+]
+MOJIBAKE = ["Ã©", "Ã¨", "Ã¢", "\u00e2\u0080\u0099", "\u00e2\u0080\u009c", "\u00e2\u0080\u0094"]
 
-def check(page, category, passed, msg):
-    if passed:
-        stats[category]['pass'] += 1
-    else:
-        level = 'FAIL' if 'FAIL' in msg or 'Missing' in msg else 'WARN'
-        stats[category]['fail' if level == 'FAIL' else 'warn'] += 1
-        issues[page].append(f"[{level}] {msg}")
 
-def classify_page(path):
-    """Classify page type. Order matters — more specific paths first."""
-    if path == '/':
-        return 'homepage'
-    if path.startswith('/articles/category/'):
-        return 'category'
-    if path.startswith('/articles/') and path != '/articles/':
-        return 'article'
-    if path.startswith('/destinations/') and path != '/destinations/':
-        return 'destination'
-    if path.startswith('/experiences/') and path != '/experiences/':
-        return 'experience'
-    if '-ghost-tours/' in path:
-        return 'city-hub'
-    return 'utility'
+# --- Helpers ---
 
-def get_schemas(html):
-    schemas = extract_all(html, r'<script\s+type="application/ld\+json"[^>]*>([^<]+)</script>')
-    types = []
-    for s in schemas:
+class HTMLText(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.parts = []
+    def handle_data(self, d):
+        self.parts.append(d)
+    def get(self):
+        return " ".join(self.parts)
+
+def strip_html(h):
+    p = HTMLText(); p.feed(h); return p.get()
+
+def count_tag(content, tag):
+    return len(re.findall(rf"<{tag}[^>]*>", content))
+
+def get_h2_texts(content):
+    return re.findall(r"<h2[^>]*>(.*?)</h2>", content, re.DOTALL)
+
+def get_links(content, before_hr=False):
+    src = content.split("<hr")[0] if before_hr else content
+    return re.findall(r'href="(/[^"]*)"', src)
+
+def has_continue_reading(c):
+    return "Continue Reading" in c
+
+
+# --- Semantic signal extractors ---
+
+def count_years(text):
+    """Count 4-digit year mentions (1400-2030)."""
+    return len(set(re.findall(r'\b(1[4-9]\d{2}|20[0-2]\d)\b', text)))
+
+def count_numbers(text):
+    """Count specific numeric data points (not years). Dollars, percents, measurements."""
+    dollars = re.findall(r'\$[\d,]+', text)
+    percents = re.findall(r'\d+\s*%', text)
+    measurements = re.findall(r'\b\d+[\d,]*\s*(?:feet|ft|miles|km|meters|pounds|lbs|acres|tons|gallons|hours|minutes|days|months|years old|people|prisoners|soldiers|victims|deaths|executions|arrests)\b', text, re.I)
+    plain_numbers = re.findall(r'\b\d{2,6}\b', text)
+    # Deduplicate roughly
+    return len(dollars) + len(percents) + len(measurements) + max(0, len(plain_numbers) - len(dollars) - len(percents) - len(measurements))
+
+def count_named_entities(text):
+    """Heuristic: count capitalized multi-word phrases (likely proper nouns).
+    Not NLP-grade but catches 'Salem Village', 'Governor William Phips', etc."""
+    # Match 2-5 consecutive capitalized words (not at sentence start after period)
+    caps = re.findall(r'(?<![.!?]\s)(?<!\A)([A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,4})', text)
+    # Filter out common false positives
+    stoppers = {"Continue Reading", "Explore The", "Read More"}
+    return len([c for c in set(caps) if c not in stoppers])
+
+def count_source_references(text):
+    """Count mentions of primary sources: books, archives, records, newspapers, studies."""
+    patterns = [
+        r'\b(?:according to|cited in|published in|recorded in|documented in)\b',
+        r'\b(?:court records?|trial records?|archives?|manuscript|testimony|deposition)\b',
+        r'\b(?:newspaper|journal|gazette|chronicle|report(?:ed)?)\b',
+        r'\b(?:historian|researcher|scholar|professor|archaeologist|author)\b',
+        r'\b(?:memoir|autobiography|biography|diary|letter)\b',
+    ]
+    total = 0
+    for p in patterns:
+        total += len(re.findall(p, text, re.I))
+    return total
+
+def heading_breadth(h2_texts):
+    """How diverse are the H2 topics? Count unique content words across headings."""
+    stop = {"the","a","an","of","in","to","and","for","on","at","by","from","with","is","was","are","were","how","why","what","who","its","this","that"}
+    words = []
+    for h in h2_texts:
+        clean = strip_html(h).lower()
+        words.extend([w for w in re.findall(r'[a-z]+', clean) if w not in stop and len(w) > 2])
+    return len(set(words))
+
+
+# --- Per-article audit ---
+
+def audit(filepath):
+    with open(filepath, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    slug = data.get("slug", "")
+    content = data.get("content", "")
+    plain = strip_html(content)
+    words = plain.split()
+    wc = len(words)
+    r = {"slug": slug, "modified": data.get("modified",""), "wc_actual": wc,
+         "passes": [], "fails": [], "warnings": [], "semantic": {}}
+
+    # --- LAYER 1: Structural ---
+    title = data.get("title","")
+    excerpt = data.get("excerpt","")
+
+    # Field checks
+    if len(title) <= 60: r["passes"].append("title_len")
+    else: r["fails"].append(f"title_len:{len(title)}")
+
+    if len(excerpt) <= 155: r["passes"].append("excerpt_len")
+    else: r["fails"].append(f"excerpt_len:{len(excerpt)}")
+
+    if data.get("wordCount",0) > 0: r["passes"].append("wordCount")
+    else: r["fails"].append("wordCount_missing")
+
+    if data.get("readingTime"): r["passes"].append("readingTime")
+    else: r["fails"].append("readingTime_missing")
+
+    if data.get("articleType"): r["passes"].append("articleType")
+    else: r["warnings"].append("articleType_missing")
+
+    pt = data.get("pageType","")
+    if pt and pt != "unassigned": r["passes"].append("pageType")
+    else: r["warnings"].append(f"pageType:{pt or 'missing'}")
+
+
+    # Structure
+    h2s = count_tag(content, "h2")
+    if 4 <= h2s <= 8: r["passes"].append(f"h2s:{h2s}")
+    elif h2s > 0: r["warnings"].append(f"h2s:{h2s}")
+    else: r["fails"].append("h2s:0")
+
+    if not count_tag(content, "h1"): r["passes"].append("no_h1")
+    else: r["fails"].append("h1_in_body")
+
+    if has_continue_reading(content): r["passes"].append("footer")
+    else: r["fails"].append("no_footer")
+
+    # Links
+    body_links = get_links(content, before_hr=True)
+    hub_links = [l for l in body_links if l.startswith("/blog/")]
+
+    if len(body_links) >= 3: r["passes"].append(f"links:{len(body_links)}")
+    else: r["fails"].append(f"links:{len(body_links)}")
+
+    if hub_links: r["passes"].append("hub_link")
+    else: r["fails"].append("no_hub_link")
+
+    # Quality
+    banned = [p for p in BANNED_PHRASES if p.lower() in plain.lower()]
+    if not banned: r["passes"].append("no_banned")
+    else: r["fails"].append(f"banned:{banned}")
+
+    moji = [m for m in MOJIBAKE if m in content]
+    if not moji: r["passes"].append("no_mojibake")
+    else: r["fails"].append(f"mojibake:{moji}")
+
+    if wc >= 1000: r["passes"].append(f"wc:{wc}")
+    elif wc >= 500: r["warnings"].append(f"wc_low:{wc}")
+    else: r["fails"].append(f"wc_thin:{wc}")
+
+
+    # --- LAYER 2: Semantic signals ---
+    h2_texts = get_h2_texts(content)
+    years = count_years(plain)
+    nums = count_numbers(plain)
+    entities = count_named_entities(plain)
+    sources = count_source_references(plain)
+    breadth = heading_breadth(h2_texts)
+    per_k = lambda v: round(v / max(wc,1) * 1000, 1)
+
+    sem = {
+        "years": years,
+        "data_points": nums,
+        "named_entities": entities,
+        "source_refs": sources,
+        "h2_breadth": breadth,
+        "entities_per_1k": per_k(entities),
+        "data_per_1k": per_k(nums),
+    }
+    r["semantic"] = sem
+
+    # Semantic thresholds (flags, not hard fails)
+    if entities >= 5: r["passes"].append(f"entities:{entities}")
+    else: r["warnings"].append(f"entities_low:{entities}")
+
+    if years >= 3: r["passes"].append(f"years:{years}")
+    else: r["warnings"].append(f"years_low:{years}")
+
+    if sources >= 1: r["passes"].append(f"sources:{sources}")
+    else: r["warnings"].append("no_source_refs")
+
+    if breadth >= 8: r["passes"].append(f"breadth:{breadth}")
+    else: r["warnings"].append(f"breadth_low:{breadth}")
+
+    return r
+
+
+# --- Cross-link validation ---
+
+def validate_links(results):
+    slugs = {fp.stem for fp in ARTICLES_DIR.glob("*.json")}
+    urls = {f"/articles/{s}/" for s in slugs}
+    broken = {}
+    for r in results:
+        with open(ARTICLES_DIR / f"{r['slug']}.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+        links = [l for l in get_links(data.get("content","")) if l.startswith("/articles/")]
+        bad = [l for l in links if l not in urls]
+        if bad:
+            broken[r["slug"]] = bad
+    return broken
+
+
+# --- Main ---
+
+def main():
+    articles = sorted(ARTICLES_DIR.glob("*.json"))
+    total = len(articles)
+    print(f"\n{'='*60}")
+    print(f"  SemanticPipe Audit v1.1 — {total} articles")
+    print(f"  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(f"{'='*60}\n")
+
+    results = []
+    for fp in articles:
         try:
-            d = json.loads(s)
-            types.append(d.get('@type', 'unknown'))
-        except:
-            pass
-    return types
+            results.append(audit(fp))
+        except Exception as e:
+            print(f"  ERROR: {fp.name} — {e}")
 
-def validate_page(filepath, html):
-    rel = filepath[len(dist):]
-    if rel.endswith('/index.html'):
-        rel = rel[:-len('index.html')]
-    if not rel:
-        rel = '/'
 
-    page_type = classify_page(rel)
-    schema_types = get_schemas(html)
-    text_only = re.sub(r'<[^>]+>', ' ', html)
-    word_count = len(re.sub(r'\s+', ' ', text_only).split())
-    internal_links = len(re.findall(r'href="\/[^"]*"', html))
-    h1s = extract_all(html, r'<h1[^>]*>([^<]+)</h1>')
-    h2s = extract_all(html, r'<h2[^>]*>([^<]+)</h2>')
+    perfect = [r for r in results if not r["fails"]]
+    failing = [r for r in results if r["fails"]]
+    recent = [r for r in results if r["modified"] >= "2026-02-24"]
+    broken = validate_links(results)
 
-    # === UNIVERSAL CHECKS ===
-    title = extract(html, r'<title>([^<]+)</title>')
-    check(rel, page_type, title and len(title) > 10, f"Missing or short <title>")
-    check(rel, page_type, title and len(title) <= 65, f"WARN: Title too long ({len(title) if title else 0} chars)")
-    check(rel, page_type, title and 'Cursed Tours' in (title or ''), f"WARN: Title missing brand")
+    # Structural dimension counts
+    def dim(key):
+        return sum(1 for r in results if any(p.startswith(key) for p in r["passes"]))
 
-    desc = extract(html, r'<meta\s+name="description"\s+content="([^"]*)"')
-    check(rel, page_type, desc and len(desc) > 50, f"Missing or short meta description")
-    check(rel, page_type, desc and len(desc) <= 160, f"WARN: Meta description too long ({len(desc) if desc else 0} chars)")
+    # Semantic aggregates
+    sem_keys = ["years","data_points","named_entities","source_refs","h2_breadth","entities_per_1k","data_per_1k"]
+    sem_avgs = {}
+    for k in sem_keys:
+        vals = [r["semantic"][k] for r in results]
+        sem_avgs[k] = round(sum(vals)/len(vals), 1) if vals else 0
 
-    canonical = extract(html, r'<link\s+rel="canonical"\s+href="([^"]*)"')
-    check(rel, page_type, canonical, f"FAIL: Missing canonical URL")
-    check(rel, page_type, canonical and 'cursedtours.com' in (canonical or ''), f"FAIL: Canonical not cursedtours.com")
-
-    check(rel, page_type, len(h1s) == 1, f"{'FAIL: No H1' if len(h1s) == 0 else f'WARN: {len(h1s)} H1 tags'}")
-    og_title = extract(html, r'<meta\s+property="og:title"\s+content="([^"]*)"')
-    check(rel, page_type, og_title, f"WARN: Missing og:title")
-
-    # === PAGE-TYPE SPECIFIC ===
-    if page_type == 'city-hub':
-        check(rel, page_type, word_count >= 800, f"FAIL: Too thin ({word_count}w, need 800+)")
-        check(rel, page_type, len(h2s) >= 3, f"WARN: Need more H2s ({len(h2s)})")
-        check(rel, page_type, 'FAQPage' in schema_types, f"FAIL: Missing FAQPage JSON-LD")
-        check(rel, page_type, internal_links >= 5, f"WARN: Low internal links ({internal_links})")
-        check(rel, page_type, bool(re.search(r'Frequently Asked|FAQ', html, re.I)), f"WARN: No FAQ section")
-        check(rel, page_type, bool(re.search(r'Home.*/', html, re.I)), f"WARN: No breadcrumbs")
-
-    elif page_type == 'article':
-        check(rel, page_type, word_count >= 500, f"FAIL: Too thin ({word_count}w)")
-        check(rel, page_type, 'Article' in schema_types, f"FAIL: Missing Article JSON-LD")
-        check(rel, page_type, 'BreadcrumbList' in schema_types, f"WARN: Missing BreadcrumbList")
-        check(rel, page_type, bool(re.search(r'<time\s+datetime', html)), f"WARN: No <time> tag")
-        check(rel, page_type, bool(re.search(r'Related Articles', html)), f"WARN: No related articles")
-        check(rel, page_type, bool(re.search(r'min read', html)), f"WARN: No read time")
-
-    elif page_type == 'destination':
-        check(rel, page_type, 'FAQPage' in schema_types, f"FAIL: Missing FAQPage JSON-LD")
-        check(rel, page_type, 'TouristAttraction' in schema_types, f"FAIL: Missing TouristAttraction")
-        check(rel, page_type, 'BreadcrumbList' in schema_types, f"WARN: Missing BreadcrumbList")
-        check(rel, page_type, len(re.findall(r'viator\.com', html)) >= 1, f"WARN: No Viator links")
-        check(rel, page_type, bool(re.search(r'Frequently Asked|FAQ', html, re.I)), f"WARN: No FAQ section")
-
-    elif page_type == 'category':
-        check(rel, page_type, len(h2s) >= 1, f"WARN: Need H2")
-        check(rel, page_type, len(re.findall(r'href="/articles/[^"]+/"', html)) >= 3, f"WARN: Few article links")
-
-    elif page_type == 'experience':
-        check(rel, page_type, word_count >= 400, f"WARN: Thin ({word_count}w)")
-        check(rel, page_type, len(h2s) >= 2, f"WARN: Need more H2s")
-
-    elif page_type == 'homepage':
-        check(rel, page_type, internal_links >= 10, f"WARN: Low internal links ({internal_links})")
-        check(rel, page_type, word_count >= 300, f"WARN: Thin ({word_count}w)")
-
-    return page_type
-
-# === RUN ===
-type_counts = defaultdict(int)
-for root, dirs, files in os.walk(dist):
-    for f in files:
-        if not f.endswith('.html'):
-            continue
-        filepath = os.path.join(root, f)
-        with open(filepath, 'r', errors='ignore') as fh:
-            html = fh.read()
-        pt = validate_page(filepath, html)
-        type_counts[pt] += 1
-
-# === REPORT ===
-print()
-print("=" * 60)
-print("  SEO QUALITY CONTROL AUDIT — CursedTours.com")
-print("=" * 60)
-print()
-print(f"  {'Page Type':<15} {'Pages':>5}  {'Pass':>5}  {'Warn':>5}  {'Fail':>5}  {'Grade':>6}")
-print("  " + "-" * 53)
-
-total_pass = total_warn = total_fail = 0
-for pt in ['city-hub', 'article', 'destination', 'category', 'experience', 'homepage', 'utility']:
-    s = stats[pt]
-    total = s['pass'] + s['warn'] + s['fail']
-    if total == 0:
-        continue
-    pct = (s['pass'] / total * 100) if total else 0
-    grade = 'A' if pct >= 95 else 'B' if pct >= 85 else 'C' if pct >= 70 else 'D' if pct >= 50 else 'F'
-    print(f"  {pt:<15} {type_counts[pt]:>5}  {s['pass']:>5}  {s['warn']:>5}  {s['fail']:>5}  {grade:>5} ({pct:.0f}%)")
-    total_pass += s['pass']
-    total_warn += s['warn']
-    total_fail += s['fail']
-
-total_all = total_pass + total_warn + total_fail
-overall_pct = (total_pass / total_all * 100) if total_all else 0
-overall_grade = 'A' if overall_pct >= 95 else 'B' if overall_pct >= 85 else 'C' if overall_pct >= 70 else 'D'
-print("  " + "-" * 53)
-print(f"  {'TOTAL':<15} {sum(type_counts.values()):>5}  {total_pass:>5}  {total_warn:>5}  {total_fail:>5}  {overall_grade:>5} ({overall_pct:.0f}%)")
-
-fails = {p: [i for i in items if '[FAIL]' in i] for p, items in issues.items()}
-fails = {p: i for p, i in fails.items() if i}
-warns = {p: [i for i in items if '[WARN]' in i] for p, items in issues.items()}
-warns = {p: i for p, i in warns.items() if i}
-
-if fails:
+    # --- Console scorecard ---
+    print("STRUCTURAL SCORECARD")
+    print("-" * 50)
+    print(f"  Articles:              {total}")
+    print(f"  Perfect (0 fails):     {len(perfect)}/{total}")
+    print(f"  Recently modified:     {len(recent)} (since 2026-02-24)")
+    print(f"  Broken cross-links:    {len(broken)} articles")
     print()
-    print(f"  FAILURES ({sum(len(v) for v in fails.values())}):")
-    for page, items in sorted(fails.items()):
-        for item in items:
-            print(f"    {page:<48} {item}")
+    print(f"  title ≤60:             {dim('title_len')}/{total}")
+    print(f"  excerpt ≤155:          {dim('excerpt_len')}/{total}")
+    print(f"  wordCount present:     {dim('wordCount')}/{total}")
+    print(f"  readingTime present:   {dim('readingTime')}/{total}")
+    print(f"  H2s 4-8:              {dim('h2s')}/{total}")
+    print(f"  No H1 in body:         {dim('no_h1')}/{total}")
+    print(f"  Continue Reading:      {dim('footer')}/{total}")
+    print(f"  ≥3 body links:         {dim('links')}/{total}")
+    print(f"  Hub link present:      {dim('hub_link')}/{total}")
+    print(f"  No banned phrases:     {dim('no_banned')}/{total}")
+    print(f"  No mojibake:           {dim('no_mojibake')}/{total}")
+    print(f"  Word count ≥1000:      {dim('wc')}/{total}")
 
-if warns and '--verbose' in sys.argv:
-    print()
-    print(f"  WARNINGS ({sum(len(v) for v in warns.values())}):")
-    for page, items in sorted(warns.items()):
-        for item in items:
-            print(f"    {page:<48} {item}")
-elif warns:
-    print()
-    print(f"  {sum(len(v) for v in warns.values())} warnings (run with --verbose to see details)")
 
-print()
+    print()
+    print("SEMANTIC SIGNALS (averages across all articles)")
+    print("-" * 50)
+    print(f"  Unique years cited:    {sem_avgs['years']} avg")
+    print(f"  Data points:           {sem_avgs['data_points']} avg")
+    print(f"  Named entities:        {sem_avgs['named_entities']} avg")
+    print(f"  Entities per 1k words: {sem_avgs['entities_per_1k']} avg")
+    print(f"  Source references:     {sem_avgs['source_refs']} avg")
+    print(f"  H2 topic breadth:      {sem_avgs['h2_breadth']} avg unique terms")
+    print()
+    print(f"  Entities ≥5:           {dim('entities')}/{total}")
+    print(f"  Years ≥3:              {dim('years')}/{total}")
+    print(f"  Source refs ≥1:        {dim('sources')}/{total}")
+    print(f"  H2 breadth ≥8:         {dim('breadth')}/{total}")
+
+
+    # --- Write report ---
+    L = []
+    L.append("# SemanticPipe Audit Report v1.1")
+    L.append(f"**Date:** {datetime.now().strftime('%Y-%m-%d %H:%M')}  ")
+    L.append(f"**Articles:** {total} | **Perfect:** {len(perfect)} | **Failing:** {len(failing)}  ")
+    L.append(f"**Recently modified (≥2026-02-24):** {len(recent)}  ")
+    L.append(f"**Broken cross-links:** {len(broken)} articles")
+    L.append("")
+
+    # Structural table
+    L.append("## Structural Pass Rates")
+    L.append("")
+    L.append("| Check | Pass | Total | Rate |")
+    L.append("|-------|------|-------|------|")
+    checks = [
+        ("title ≤60", "title_len"), ("excerpt ≤155", "excerpt_len"),
+        ("wordCount", "wordCount"), ("readingTime", "readingTime"),
+        ("H2s 4-8", "h2s"), ("No H1", "no_h1"), ("Footer", "footer"),
+        ("≥3 body links", "links"), ("Hub link", "hub_link"),
+        ("No banned", "no_banned"), ("No mojibake", "no_mojibake"),
+        ("WC ≥1000", "wc"),
+    ]
+    for label, key in checks:
+        n = dim(key)
+        L.append(f"| {label} | {n} | {total} | {n*100//total}% |")
+
+    # Semantic table
+    L.append("")
+    L.append("## Semantic Signal Averages")
+    L.append("")
+    L.append("| Signal | Average | Threshold | Pass Rate |")
+    L.append("|--------|---------|-----------|-----------|")
+    sem_checks = [
+        ("Named entities", "named_entities", "entities", "≥5"),
+        ("Unique years", "years", "years", "≥3"),
+        ("Source references", "source_refs", "sources", "≥1"),
+        ("H2 breadth", "h2_breadth", "breadth", "≥8 terms"),
+    ]
+    for label, avg_key, pass_key, thresh in sem_checks:
+        n = dim(pass_key)
+        L.append(f"| {label} | {sem_avgs[avg_key]} | {thresh} | {n}/{total} ({n*100//total}%) |")
+
+    L.append(f"| Data points | {sem_avgs['data_points']} | info only | — |")
+    L.append(f"| Entities/1k words | {sem_avgs['entities_per_1k']} | info only | — |")
+
+
+    # Recently modified
+    L.append("")
+    L.append("## Recently Modified (≥2026-02-24)")
+    L.append("")
+    if recent:
+        for r in sorted(recent, key=lambda x: x["modified"], reverse=True):
+            L.append(f"- `{r['slug']}` — modified {r['modified']}")
+    else:
+        L.append("_None found._")
+
+    # Broken links
+    L.append("")
+    L.append("## Broken Internal Links")
+    L.append("")
+    if broken:
+        for slug, bads in sorted(broken.items()):
+            L.append(f"- **{slug}**: {', '.join(bads)}")
+    else:
+        L.append("_All article cross-links resolve._")
+
+    # Failures detail
+    L.append("")
+    L.append("## Articles with Failures")
+    L.append("")
+    for r in sorted(failing, key=lambda x: len(x["fails"]), reverse=True):
+        L.append(f"### `{r['slug']}` — {len(r['fails'])} fails")
+        for f in r["fails"]:
+            L.append(f"- ❌ {f}")
+        for w in r["warnings"]:
+            L.append(f"- ⚠️ {w}")
+        L.append("")
+
+    # Bottom 10 by semantic signals (thinnest articles)
+    L.append("## Thinnest Articles (lowest entity + source counts)")
+    L.append("")
+    L.append("| Article | Entities | Years | Sources | WC |")
+    L.append("|---------|----------|-------|---------|----|")
+    ranked = sorted(results, key=lambda x: x["semantic"]["named_entities"] + x["semantic"]["source_refs"])
+    for r in ranked[:10]:
+        s = r["semantic"]
+        L.append(f"| {r['slug']} | {s['named_entities']} | {s['years']} | {s['source_refs']} | {r['wc_actual']} |")
+
+    with open(REPORT_PATH, "w", encoding="utf-8") as f:
+        f.write("\n".join(L))
+
+    print()
+    print(f"Report: {REPORT_PATH}")
+    print()
+
+
+if __name__ == "__main__":
+    main()

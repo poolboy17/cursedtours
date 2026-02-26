@@ -185,11 +185,29 @@ Copy from design system (`D:\headless\astro-design-system\patterns\`):
 
 ## Phase 6: Content Generation
 
-**Read `references/writer-guide.md` now** for voice, structure, and linking rules.
+**Read `references/writer-guide.md` now** for voice, structure, linking rules, and **character encoding requirements**.
+
+**CRITICAL:** All article JSON files must be written with explicit `encoding='utf-8'` and `ensure_ascii=False`.
+Failure causes mojibake — garbled characters from UTF-8 bytes misread as Windows-1252. This was the
+root cause of ~50 corrupted articles in the cursedtours.com corpus. See writer-guide.md for details.
+
+**After writing each article, run the post-write validator:**
+```bash
+python scripts/validate_article.py {slug}
+```
+This catches encoding bugs, mojibake, banned phrases, and structural errors before they reach production.
+Use `--fix` to auto-repair mojibake. Never skip this step.
 
 ## Phase 7: Quality Control
 
 **Read `references/quality-checklist.md` now** for per-article and site-wide checks.
+
+The checklist uses a two-tier system aligned with SemanticPipe:
+- **BLOCK** = structural integrity (broken JSON, mojibake, thin content, broken links) — must pass
+- **WARN** = SEO best practices (title length, keyword placement, heading counts) — tracked, not enforced
+
+After generating articles, run SemanticPipe (`semanticpipe.py --all`) to auto-optimize metadata,
+fix mojibake, insert sibling links, compute semantic scores, and validate all BLOCK/WARN checks.
 
 ## Phase 8: Deploy
 

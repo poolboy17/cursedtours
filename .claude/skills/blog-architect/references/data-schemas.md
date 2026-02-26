@@ -31,6 +31,9 @@ export function getArticlesForHub(hubSlug: string): Article[] {
 ## Spoke Article Schema (`src/data/articles/*.json`)
 
 Each spoke is a standalone JSON file. Filename = `{slug}.json`.
+**CRITICAL:** All JSON files must be written as UTF-8 with explicit encoding.
+See writer-guide.md "Character Encoding" section. Use `encoding='utf-8'` +
+`ensure_ascii=False` on every read/write to prevent mojibake.
 
 ```json
 {
@@ -57,7 +60,16 @@ Each spoke is a standalone JSON file. Filename = `{slug}.json`.
   },
   "wordCount": 1366,
   "readingTime": 5,
-  "articleType": "standard"
+  "articleType": "standard",
+  "semanticScores": {
+    "entities": 12,
+    "years": 5,
+    "dataPoints": 8,
+    "namedPeople": 6,
+    "sourceRefs": 2,
+    "h2Breadth": 15,
+    "entityDensity": 8.8
+  }
 }
 ```
 
@@ -72,6 +84,7 @@ Each spoke is a standalone JSON file. Filename = `{slug}.json`.
 - `wordCount` — Actual word count excluding HTML tags.
 - `readingTime` — `Math.ceil(wordCount / 265)`.
 - `articleType` — `"standard"` (1,000-2,000 words) or `"comprehensive"` (2,000-3,500 words).
+- `semanticScores` — Computed by SemanticPipe. Tracks content richness: entities (named places/institutions), years cited, data points (dates/measurements/addresses), named people, source references, H2 topic breadth, and entity density per 1K words. These are INFO-tier signals — tracked, never enforced.
 
 ## Affiliate Product Data (`src/data/hubProducts.ts`)
 

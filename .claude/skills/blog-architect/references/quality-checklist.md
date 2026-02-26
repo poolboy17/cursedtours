@@ -4,15 +4,40 @@ Run before every deploy. No exceptions.
 
 ## Per-Article Checks
 
-1. **JSON validates** — `JSON.parse()` succeeds (malformed JSON breaks entire build)
-2. **Slug is unique** — No duplicate filenames in `src/data/articles/`
-3. **Hub label exists** — `categories[0].slug` matches a key in `HUB_LABELS`
-4. **Internal links resolve** — All `href` values point to pages that exist
-5. **Hub link present** — Spoke links back to parent hub in first 2-3 paragraphs
-6. **Cross-links present** — 2-4 sibling spoke links in body
-7. **Continue Reading** — End section has 3-5 links
-8. **Excerpt under 160 chars**
-9. **Word count accurate** — `readingTime = Math.ceil(wordCount / 265)`
+Checks are tiered. **BLOCK** = article cannot be saved/deployed. **WARN** = should fix but doesn't prevent save.
+
+### BLOCK — Must Pass (structural integrity)
+
+1. **B1 JSON validates** — `JSON.parse()` succeeds (malformed JSON breaks entire build)
+2. **B4 No H1 in body** — Template handles title; duplicate H1 = broken HTML structure
+3. **B6 Word count ≥1,000** — Thin content is genuinely penalized by search engines
+4. **B7 No banned phrases** — AI-sounding filler ("delve into", "tapestry of") harms E-E-A-T
+5. **B8 No mojibake** — Zero garbled characters (`â€"`, `â€™`, `Ã©`, etc.). See writer-guide.md encoding section
+6. **B10 No self-links** — Article must not link to itself
+7. **B11 No broken internal links** — All `/articles/{slug}/` links must resolve to real articles
+8. **B14 Featured image** — `featuredImage.sourceUrl` and `altText` both present
+
+### WARN — Should Fix (SEO best practices, tracked not enforced)
+
+9. **B2 Title ≤60 chars** — Google rewrites ~76% of titles; long titles get truncated, not penalized
+10. **B3 Excerpt ≤155 chars** — Google rewrites 60-70% of descriptions; optimize for clarity
+11. **B5 H2 count 4-8** — Editorial preference; semantic search rewards topic breadth, not heading count
+12. **B9 ≥3 body links** — Internal linking helps but 2 links shouldn't prevent saving
+13. **B12 Keyword in title** — Semantic search doesn't require exact match
+14. **B13 Keyword in first 100 words** — Topic coverage matters more than keyword placement
+15. **W1 wordCount field set** — Calculated field for rendering
+16. **W2 readingTime field set** — `Math.ceil(wordCount / 265)`
+17. **W3 articleType set** — "standard" or "pillar"
+18. **W4 pageType set** — "hub-spoke"
+19. **W5 Continue Reading footer** — End section with 3-5 links
+20. **W6 Hub link in body** — Spoke links back to parent hub
+21. **W7 ≥2 sibling links** — Cross-links to related spokes
+
+### Always Verify After Writing
+
+22. **Slug unique** — No duplicate filenames in `src/data/articles/`
+23. **Hub label exists** — `categories[0].slug` matches a key in `HUB_LABELS`
+24. **File encoding** — Written with `encoding='utf-8'` + `ensure_ascii=False`
 
 ## Per-Blog-Post Checks (if blog layer enabled)
 

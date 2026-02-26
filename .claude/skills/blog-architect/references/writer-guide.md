@@ -2,6 +2,31 @@
 
 Niche-agnostic content generation for spoke articles and blog posts. Voice, structure, and quality bar are consistent; only subject matter and affiliate context change per site.
 
+## CRITICAL: Character Encoding
+
+All article JSON files MUST be written as UTF-8 with explicit encoding declaration.
+Failure to do this causes **mojibake** — garbled characters where UTF-8 multi-byte
+sequences get misinterpreted as Windows-1252 (cp1252) code points.
+
+**When writing JSON files, ALWAYS use:**
+```python
+with open(filepath, 'w', encoding='utf-8') as f:
+    json.dump(article, f, ensure_ascii=False, indent=2)
+```
+
+**When reading JSON files, ALWAYS use:**
+```python
+with open(filepath, 'r', encoding='utf-8') as f:
+    article = json.load(f)
+```
+
+**Never:** rely on system default encoding, omit the `encoding` parameter, or
+use `ensure_ascii=True` (which escapes Unicode to `\uXXXX` sequences).
+
+**Verify after every write:** scan for mojibake patterns like `â€"` (should be `—`),
+`â€™` (should be `'`), `Ã©` (should be `é`). If any are found, the file was
+written with wrong encoding and must be regenerated.
+
 ## Voice & Tone (Universal)
 
 **Authoritative but not academic.** Subject-matter expert who is also a great storyteller. Specific dates, names, data points, sourced facts — in flowing narrative prose, not footnoted essays.
@@ -73,9 +98,52 @@ Niche-agnostic content generation for spoke articles and blog posts. Voice, stru
 4. Link back to blog pillar via breadcrumb or "More Guides"
 5. No single parent hub — children of blog pillar, not any hub
 
-## SEO Patterns
+## SEO Patterns (Updated for Semantic Search Era)
 
-- **Title**: Primary keyword natural. Formats: "{Subject}: {Angle}", "{Topic} — {Qualifier}"
-- **H2s**: Each readable as a search query
-- **Excerpt**: Under 160 chars, compelling, no clickbait
+- **Title**: ≤60 chars preferred. Primary keyword is a signal, not a hard requirement —
+  semantic search understands "Salem Witch Trial Legacy" covers "salem witch trials."
+  Google rewrites ~76% of title tags, so optimize for clarity and click appeal over exact keyword placement.
+- **H2s**: Each readable as a search query. Aim for 4-8, but content quality trumps heading count.
+  Semantic search rewards topical breadth (I6 score) over rigid heading counts.
+- **Excerpt**: ≤155 chars preferred. Google rewrites 60-70% of meta descriptions, so write for
+  human click-through, not character counting.
+- **First paragraph**: Answer the search intent directly. The primary keyword should appear
+  naturally but does not need to be forced into the first 100 words.
 - **Word count**: 1,000-2,000 standard; 2,000-3,500 comprehensive
+- **What matters most**: Entity density (named people, places, dates, data points),
+  topical authority (deep factual coverage), E-E-A-T signals (source citations,
+  experiential detail), and internal linking structure (hub-spoke architecture).
+
+## Post-Write Validation (MANDATORY)
+
+After writing any article JSON file, **immediately run the validator**:
+
+```bash
+python scripts/validate_article.py {slug}
+```
+
+This checks all BLOCK-tier rules (encoding, mojibake, banned phrases, broken links,
+featured image, word count, etc.). Exit code 0 = safe to deploy. Exit code 1 = fix required.
+
+**To auto-fix mojibake:**
+```bash
+python scripts/validate_article.py {slug} --fix
+```
+
+**To validate the entire corpus:**
+```bash
+python scripts/validate_article.py --all
+```
+
+**To validate recently modified articles (e.g. after a batch generation):**
+```bash
+python scripts/validate_article.py --recent 10
+```
+
+Never skip this step. The validator catches encoding bugs, mojibake, banned phrases,
+and structural errors that are invisible to the writer but break the production site.
+
+For full optimization (metadata, sibling links, semantic scores), run SemanticPipe after validation:
+```bash
+python semanticpipe.py --slugs {slug}
+```

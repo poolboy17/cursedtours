@@ -12,8 +12,8 @@
   "post_type": "post",
   "uri": "/articles/resurrection-mary-chicagos-most-famous-ghost/",
   "date": "2026-02-12 12:00:00",
-  "modified": "2026-02-24 14:00:00",
-  "pageType": "unassigned",
+  "modified": "2026-02-25 20:56:02",
+  "pageType": "hub-spoke",
   "categories": [
     {
       "id": 600,
@@ -22,7 +22,16 @@
       "description": "The dark history behind Chicago's hauntings—from the Great Fire and H.H. Holmes to Resurrection Mary, gangster ghosts, and the city's most haunted landmarks."
     }
   ],
-  "wordCount": 1310,
-  "readingTime": 4,
-  "articleType": "cluster"
+  "wordCount": 1152,
+  "readingTime": "5 min read",
+  "articleType": "cluster",
+  "semanticScores": {
+    "entities": 3,
+    "years": 10,
+    "dataPoints": 18,
+    "namedPeople": 26,
+    "sourceRefs": 3,
+    "h2Breadth": 10,
+    "entityDensity": 2.6
+  }
 }

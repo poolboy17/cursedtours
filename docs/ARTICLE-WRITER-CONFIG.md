@@ -1,5 +1,5 @@
 # CursedTours — Article Writer Config
-# Version: 1.0 | Created: 2026-02-24
+# Version: 1.1 | Created: 2026-02-24 | Updated: 2026-02-26
 #
 # USAGE: This is the writer config for cursedtours.com.
 # The Content Writer skill loads this file when generating articles for this site.
@@ -15,6 +15,7 @@
 **Revenue model:** Viator/GetYourGuide affiliate tours, display ads
 **Content directory:** `src/data/articles/`
 **File format:** JSON (see Section 3 for schema)
+**File encoding:** UTF-8 (no BOM). All JSON files MUST be written with explicit `encoding='utf-8'`.
 **URL pattern:** `/articles/{slug}/`
 
 ---
@@ -113,6 +114,33 @@ Every article must end with:
 <li><a href="/articles/{sibling-2}/">{Sibling 2 Title}</a></li></ul>
 ```
 
+### CRITICAL: Character encoding
+All article JSON files MUST be saved as UTF-8. This prevents mojibake — garbled
+characters caused by UTF-8 bytes being misread as Windows-1252 (cp1252).
+
+**Common mojibake symptoms (NEVER acceptable in output):**
+- `â€"` instead of `—` (em-dash)
+- `â€™` instead of `'` (curly apostrophe)
+- `â€œ` / `â€` instead of `"` / `"` (curly quotes)
+- `Ã©` instead of `é`, `Ã±` instead of `ñ`, `Ã­` instead of `í`
+
+**Root cause:** When a file write operation uses the system default encoding (often
+cp1252 on Windows) instead of explicit UTF-8, multi-byte UTF-8 characters get
+split into individual bytes and reinterpreted as cp1252 code points.
+
+**Prevention rules:**
+1. Always specify `encoding='utf-8'` when opening files for writing
+2. Always specify `encoding='utf-8'` when opening files for reading
+3. When using `json.dump()`, set `ensure_ascii=False` to preserve Unicode characters
+4. After writing, verify no mojibake sequences exist in the output file
+5. If using an API response, ensure the response is decoded as UTF-8 before writing
+
+**Example (correct):**
+```python
+with open(filepath, 'w', encoding='utf-8') as f:
+    json.dump(article, f, ensure_ascii=False, indent=2)
+```
+
 ### Calculated fields
 Set these based on the content:
 - `wordCount`: Count words in content field (strip HTML tags first)
@@ -149,12 +177,19 @@ Set these based on the content:
 - spine-tingling, bone-chilling, hair-raising (let readers feel it, don't tell them to)
 - reportedly haunted (either cite the specific claim or don't mention it)
 
-## SEO requirements
-- Title: ≤60 characters, primary keyword first or early
-- Excerpt: ≤155 characters, answers the search intent directly
-- H2 headings: Use keyword-relevant phrases, not clever puns
-- First 100 words: Must contain primary keyword naturally
-- First paragraph: Answer the core question. No throat-clearing.
+## SEO requirements (updated for semantic search era)
+- Title: ≤60 characters preferred (Google rewrites most titles anyway).
+  Keyword inclusion is a signal, not a requirement — semantic search understands
+  "Salem Witch Trial Legacy" covers "salem witch trials" without exact match.
+- Excerpt: ≤155 characters preferred, answers the search intent directly.
+  Google rewrites 60-70% of meta descriptions, so focus on clarity over character counting.
+- H2 headings: Use topic-relevant phrases that cover semantic breadth. Avoid
+  keyword-stuffing headings — search engines reward topical coverage, not repetition.
+- First paragraph: Answer the core question. No throat-clearing. The primary
+  keyword should appear naturally but does not need to be forced into the first 100 words.
+- **What matters most in 2026:** Entity density (named people, places, dates),
+  topical authority (deep, factual coverage), E-E-A-T signals (source citations,
+  experiential detail), and semantic score richness (I1-I7 in SemanticPipe).
 
 ---
 
@@ -210,37 +245,40 @@ Link to parent hub here.</p>
 
 Before outputting any article, verify ALL of these:
 
-### JSON validity
+### BLOCK — must pass or article cannot be saved
 - [ ] Valid JSON — no trailing commas, proper escaping in content field
 - [ ] All required fields present
 - [ ] slug matches filename (without .json extension)
+- [ ] No H1 tags in content (only H2/H3)
+- [ ] Word count ≥1,000
+- [ ] Zero banned phrases (see Section 4)
+- [ ] Zero mojibake — no `â€"`, `â€™`, `Ã©` or similar cp1252 artifacts
+- [ ] No self-links (article linking to its own URL)
+- [ ] No broken internal links (all /articles/{slug}/ links must resolve)
+- [ ] featuredImage with valid sourceUrl and altText
+
+### WARN — should fix but does not block saving
+- [ ] title ≤60 characters (Google rewrites ~76% of titles regardless)
+- [ ] excerpt ≤155 characters (Google rewrites ~60-70% of descriptions)
+- [ ] 4-8 H2 headings (editorial preference, not SEO gate)
+- [ ] ≥3 internal links in body (helpful but 2 links ≠ broken)
+- [ ] Primary keyword appears in title (semantic search ≠ exact match)
+- [ ] First 100 words contain primary keyword (topic coverage matters more)
+- [ ] wordCount and readingTime fields populated
+- [ ] articleType and pageType set
+- [ ] Continue Reading footer present
+- [ ] Hub link in body
+- [ ] ≥2 sibling links in body
+
+### Always verify
+- [ ] File saved as UTF-8 with `encoding='utf-8'` — verify NO mojibake
 - [ ] uri matches /articles/{slug}/
 - [ ] date and modified in correct format
-
-### SEO
-- [ ] title ≤60 characters
-- [ ] excerpt ≤155 characters
-- [ ] First 100 words contain primary keyword
-- [ ] 4-6 H2 headings with keyword-relevant text
-
-### Content quality
-- [ ] Word count 1,000-2,500 (standard) or 2,000-4,000 (pillar)
 - [ ] ≥5 data points (dates, numbers, measurements)
 - [ ] ≥3 named people
 - [ ] ≥1 primary source reference
-- [ ] Zero banned phrases
-- [ ] First paragraph answers search intent directly
-
-### Linking
-- [ ] ≥3 internal links in body (not counting Continue Reading)
-- [ ] Links to parent hub present
-- [ ] ≥2 sibling links present
-- [ ] Continue Reading footer with hub + 2 siblings
 - [ ] All link hrefs use relative paths starting with /
-- [ ] All linked pages actually exist (check against sitemap or article list)
-
-### Image
-- [ ] featuredImage.sourceUrl follows /images/articles/{slug}.webp pattern
+- [ ] All linked pages actually exist
 - [ ] altText is descriptive (not just the title repeated)
 
 ---
