@@ -203,9 +203,11 @@ def validate(filepath, fix=False, verbose=True):
     if broken:
         result['blocks'].append(f'B11: Broken links: {broken}')
     
-    # B14: Featured image
+    # B14: Featured image metadata
     fi = article.get('featuredImage', {})
-    if not (fi.get('sourceUrl') and fi.get('altText')):
+    fi_url = fi.get('sourceUrl', '')
+    fi_alt = fi.get('altText', '')
+    if not (fi_url and fi_alt):
         result['blocks'].append(f'B14: Missing featuredImage sourceUrl or altText')
     
     # --- WARN checks (tracked, not enforced) ---
@@ -222,7 +224,63 @@ def validate(filepath, fix=False, verbose=True):
     body_links = re.findall(r'href=["\'](?:/articles/|/blog/)', body)
     if len(body_links) < 3:
         result['warns'].append(f'B9: Only {len(body_links)} body links (prefer 3+)')
-    
+
+    # B12: Keyword in title (WARN)
+    title_lower = title.lower()
+    slug_words = set(slug.replace('-', ' ').split()) - {'the','a','an','in','of','and','or'}
+    if slug_words and sum(1 for w in slug_words if w in title_lower) < min(2, len(slug_words)):
+        result['warns'].append(f'B12: Primary keyword not in title')
+
+    # B13: Keyword in first 100 words (WARN)
+    first100 = ' '.join(plain.split()[:100]).lower()
+    if slug_words and sum(1 for w in slug_words if w in first100) < min(2, len(slug_words)):
+        result['warns'].append(f'B13: Primary keyword not in first 100 words')
+
+    # B14f: Featured image file exists (WARN)
+    if fi_url:
+        fi_disk = BASE_DIR / 'public' / fi_url.lstrip('/')
+        if not fi_disk.exists():
+            result['warns'].append(f'B14f: Image file missing: {fi_url}')
+
+    # W1-W5: Metadata completeness
+    if not article.get('wordCount'):
+        result['warns'].append('W1: wordCount missing')
+    if not article.get('readingTime'):
+        result['warns'].append('W2: readingTime missing')
+    if not article.get('articleType'):
+        result['warns'].append('W3: articleType missing')
+    if article.get('pageType') in (None, '', 'unassigned'):
+        result['warns'].append('W4: pageType missing or unassigned')
+    if '<hr' not in content or 'Continue Reading' not in content:
+        result['warns'].append('W5: Missing Continue Reading footer')
+
+    # W6: Hub link in body
+    cat_slug = article.get('categories', [{}])[0].get('slug', '')
+    hub_urls = [f'/blog/{cat_slug}/', f'/{cat_slug.replace("-haunted-history", "").replace("-voodoo-haunted-history", "")}-ghost-tours/']
+    if not any(u in body for u in hub_urls if u):
+        result['warns'].append('W6: No hub/tour link in body')
+
+    # W7: Sibling links (>=2 other same-category articles)
+    body_art_slugs = set(re.findall(r'href=["\'](?:/articles/([^"\']+?)/)["\']', body))
+    body_art_slugs.discard(slug)
+    if len(body_art_slugs) < 2:
+        result['warns'].append(f'W7: Only {len(body_art_slugs)} sibling links (prefer 2+)')
+
+    # --- INFO: Semantic scores (tracked, never enforced) ---
+    ss = article.get('semanticScores', {})
+    if ss:
+        result['info'] = {
+            'entities': ss.get('entities', 0),
+            'years': ss.get('years', 0),
+            'dataPoints': ss.get('dataPoints', 0),
+            'namedPeople': ss.get('namedPeople', 0),
+            'sourceRefs': ss.get('sourceRefs', 0),
+            'h2Breadth': ss.get('h2Breadth', 0),
+            'entityDensity': ss.get('entityDensity', 0),
+        }
+    else:
+        result['warns'].append('INFO: semanticScores not computed')
+
     return result
 
 # ============================================================
@@ -235,6 +293,7 @@ def main():
     parser.add_argument('--recent', type=int, default=0, help='Validate N most recently modified')
     parser.add_argument('--fix', action='store_true', help='Auto-fix mojibake')
     parser.add_argument('--quiet', action='store_true', help='Only show failures')
+    parser.add_argument('--info', action='store_true', help='Show INFO semantic scores')
     args = parser.parse_args()
     
     files = []
@@ -278,6 +337,12 @@ def main():
                 print(f'      WARN:  {w}')
             if r['fixed']:
                 print(f'      FIXED: mojibake auto-repaired and saved')
+            if args.info and r.get('info'):
+                scores = r['info']
+                print(f'      INFO:  entities={scores["entities"]} years={scores["years"]} '
+                      f'data={scores["dataPoints"]} people={scores["namedPeople"]} '
+                      f'sources={scores["sourceRefs"]} h2breadth={scores["h2Breadth"]} '
+                      f'density={scores["entityDensity"]}')
         
         total_blocks += len(r['blocks'])
         total_warns += len(r['warns'])
