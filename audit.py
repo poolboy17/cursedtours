@@ -159,11 +159,13 @@ def audit(filepath):
     # Links
     body_links = get_links(content, before_hr=True)
     hub_links = [l for l in body_links if l.startswith("/blog/")]
+    # City tour pages also serve as hubs (e.g. /key-west-ghost-tours/)
+    city_hub_links = [l for l in body_links if l.endswith("-ghost-tours/") or l.endswith("-ghost-tours")]
 
     if len(body_links) >= 3: r["passes"].append(f"links:{len(body_links)}")
     else: r["fails"].append(f"links:{len(body_links)}")
 
-    if hub_links: r["passes"].append("hub_link")
+    if hub_links or city_hub_links: r["passes"].append("hub_link")
     else: r["fails"].append("no_hub_link")
 
     # Quality
@@ -220,7 +222,11 @@ def audit(filepath):
 
 def validate_links(results):
     slugs = {fp.stem for fp in ARTICLES_DIR.glob("*.json")}
-    urls = {f"/articles/{s}/" for s in slugs}
+    # Accept both with and without trailing slash
+    urls = set()
+    for s in slugs:
+        urls.add(f"/articles/{s}/")
+        urls.add(f"/articles/{s}")
     broken = {}
     for r in results:
         with open(ARTICLES_DIR / f"{r['slug']}.json", "r", encoding="utf-8") as f:
