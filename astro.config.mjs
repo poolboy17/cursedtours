@@ -1,9 +1,11 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sentry from '@sentry/astro';
+import netlify from '@astrojs/netlify';
 
 export default defineConfig({
-  output: 'static',
+  output: 'hybrid',
+  adapter: netlify(),
   site: 'https://cursedtours.com',
   integrations: [
     tailwind(),
