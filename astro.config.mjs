@@ -4,7 +4,7 @@ import sentry from '@sentry/astro';
 import netlify from '@astrojs/netlify';
 
 export default defineConfig({
-  output: 'hybrid',
+  output: 'static',
   adapter: netlify(),
   site: 'https://cursedtours.com',
   integrations: [
