@@ -93,8 +93,8 @@ import CdnImage from '../../components/CdnImage.astro';
   ogImageWidth={article.featuredImage?.width}
   ogImageHeight={article.featuredImage?.height}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
 
   <!-- Hero -->
   <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">

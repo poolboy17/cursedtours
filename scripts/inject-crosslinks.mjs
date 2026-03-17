@@ -20,41 +20,89 @@ const DRY_RUN = process.argv.includes('--dry-run');
 function loadArticles() {
   const dir = join(ROOT, 'src/data/articles');
   return readdirSync(dir)
-    .filter(f => f.endsWith('.json'))
-    .map(f => {
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => {
       const data = JSON.parse(readFileSync(join(dir, f), 'utf-8'));
       return { ...data, _file: f };
     });
 }
 
 // ── Key-phrase extraction (same logic as audit script) ───────────────
-function extractKeyPhrases(title, slug) {
+function extractKeyPhrases(title) {
   const phrases = [];
   const segments = title.split(/[,:;&\-–—!?]+/);
   const connectors = /^(of|the|and|in|at|de|von|du|la|le|for|on|to|by|an|a)$/i;
   const notProperNouns = new Set([
-    'haunts','beneath','behind','years','death','after','before',
-    'inside','above','below','beyond','between','under','over',
-    'night','dark','blood','fire','lost','last','first','city',
-    'true','real','most','best','how','why','what','when','where',
-    'haunted','hidden','complete','famous','walking','guide','places',
-    'stories','legend','legends','ghosts','ghost','history','execution',
-    'shining','inspiration','causes','consequences','lasting','legacy',
+    'haunts',
+    'beneath',
+    'behind',
+    'years',
+    'death',
+    'after',
+    'before',
+    'inside',
+    'above',
+    'below',
+    'beyond',
+    'between',
+    'under',
+    'over',
+    'night',
+    'dark',
+    'blood',
+    'fire',
+    'lost',
+    'last',
+    'first',
+    'city',
+    'true',
+    'real',
+    'most',
+    'best',
+    'how',
+    'why',
+    'what',
+    'when',
+    'where',
+    'haunted',
+    'hidden',
+    'complete',
+    'famous',
+    'walking',
+    'guide',
+    'places',
+    'stories',
+    'legend',
+    'legends',
+    'ghosts',
+    'ghost',
+    'history',
+    'execution',
+    'shining',
+    'inspiration',
+    'causes',
+    'consequences',
+    'lasting',
+    'legacy',
   ]);
-  const stopW = new Set(['the','of','in','at','and','a','an','to','for','on','by']);
+  const stopW = new Set(['the', 'of', 'in', 'at', 'and', 'a', 'an', 'to', 'for', 'on', 'by']);
 
   for (const seg of segments) {
     const words = seg.trim().split(/\s+/);
     let current = [];
     for (const w of words) {
-      if (/^[A-Z]/.test(w)) { current.push(w); }
-      else if (connectors.test(w) && current.length > 0) { current.push(w); }
-      else {
+      if (/^[A-Z]/.test(w)) {
+        current.push(w);
+      } else if (connectors.test(w) && current.length > 0) {
+        current.push(w);
+      } else {
         if (current.length >= 2) {
           while (current.length && connectors.test(current[current.length - 1])) current.pop();
           if (current.length >= 2) {
             const phrase = current.join(' ').toLowerCase();
-            const meaningful = phrase.split(/\s+/).filter(w2 => !stopW.has(w2) && !notProperNouns.has(w2.replace(/[''s]+$/i, '')));
+            const meaningful = phrase
+              .split(/\s+/)
+              .filter((w2) => !stopW.has(w2) && !notProperNouns.has(w2.replace(/[''s]+$/i, '')));
             if (meaningful.length >= 2 && phrase.length >= 10) phrases.push(phrase);
           }
         }
@@ -65,7 +113,9 @@ function extractKeyPhrases(title, slug) {
       while (current.length && connectors.test(current[current.length - 1])) current.pop();
       if (current.length >= 2) {
         const phrase = current.join(' ').toLowerCase();
-        const meaningful = phrase.split(/\s+/).filter(w2 => !stopW.has(w2) && !notProperNouns.has(w2.replace(/[''s]+$/i, '')));
+        const meaningful = phrase
+          .split(/\s+/)
+          .filter((w2) => !stopW.has(w2) && !notProperNouns.has(w2.replace(/[''s]+$/i, '')));
         if (meaningful.length >= 2 && phrase.length >= 10) phrases.push(phrase);
       }
     }
@@ -87,13 +137,13 @@ function extractInternalLinks(html) {
 // ── Find cross-link opportunities (same logic as audit) ──────────────
 function findOpportunities(articles) {
   const opportunities = [];
-  const stopWords = new Set(['the','of','in','at','and','a','an','to','for','on','by']);
+  const stopWords = new Set(['the', 'of', 'in', 'at', 'and', 'a', 'an', 'to', 'for', 'on', 'by']);
 
   // Build phrase→article mapping
   const phraseMap = new Map();
   for (const a of articles) {
     const url = `/articles/${a.slug}/`;
-    const phrases = extractKeyPhrases(a.title, a.slug);
+    const phrases = extractKeyPhrases(a.title);
     for (const phrase of phrases) {
       if (!phraseMap.has(phrase)) phraseMap.set(phrase, []);
       phraseMap.get(phrase).push({ slug: a.slug, title: a.title, url });
@@ -109,7 +159,7 @@ function findOpportunities(articles) {
         if (kwLower.length < 6) continue;
         if (!phraseMap.has(kwLower)) phraseMap.set(kwLower, []);
         const existing = phraseMap.get(kwLower);
-        if (!existing.some(e => e.slug === a.slug)) {
+        if (!existing.some((e) => e.slug === a.slug)) {
           existing.push({ slug: a.slug, title: a.title, url });
         }
       }
@@ -125,11 +175,11 @@ function findOpportunities(articles) {
     for (const [phrase, targets] of phraseMap) {
       if (phrase.length < 10) continue;
 
-      const isProperPhrase = targets.some(t => {
+      const isProperPhrase = targets.some((t) => {
         const words = phrase.split(' ');
-        const meaningfulWords = words.filter(w => !stopWords.has(w));
+        const meaningfulWords = words.filter((w) => !stopWords.has(w));
         if (meaningfulWords.length < 2) return false;
-        const capCount = meaningfulWords.filter(w => {
+        const capCount = meaningfulWords.filter((w) => {
           const idx = t.title.toLowerCase().indexOf(w);
           return idx >= 0 && /[A-Z]/.test(t.title.charAt(idx));
         }).length;
@@ -160,7 +210,7 @@ function findOpportunities(articles) {
 }
 
 // ── Inject a single cross-link into article HTML ─────────────────────
-function injectLink(html, keyword, targetUrl, targetTitle) {
+function injectLink(html, keyword, targetUrl) {
   // Find the FIRST occurrence of the keyword that is NOT inside an <a> tag
   // Strategy: split on anchor tags, process only non-anchor segments
   const parts = html.split(/(<a[^>]*>[\s\S]*?<\/a>)/gi);
@@ -242,7 +292,7 @@ function main() {
         continue;
       }
 
-      const result = injectLink(content, opp.keyword, opp.targetUrl, opp.targetTitle);
+      const result = injectLink(content, opp.keyword, opp.targetUrl);
       if (result) {
         content = result;
         modified = true;
@@ -254,7 +304,9 @@ function main() {
         });
         console.log(`  ✓ "${sourceSlug}" → "${opp.keyword}" → /articles/${opp.targetSlug}/`);
       } else {
-        console.log(`  ✗ "${sourceSlug}": could not find safe injection point for "${opp.keyword}"`);
+        console.log(
+          `  ✗ "${sourceSlug}": could not find safe injection point for "${opp.keyword}"`
+        );
         skipped++;
       }
     }

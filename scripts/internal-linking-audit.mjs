@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Internal Linking Audit & Auto-Fix for Cursed Tours
- * 
+ *
  * Runs daily to:
  * 1. Map the full site link graph
  * 2. Check hub→spoke and spoke→hub integrity
@@ -14,19 +14,18 @@
  *   node scripts/internal-linking-audit.mjs --dry-run # audit only, no changes
  */
 
-import { readFileSync, readdirSync, writeFileSync, existsSync } from 'fs';
+import { existsSync, readFileSync, readdirSync, writeFileSync } from 'fs';
 import { join, resolve } from 'path';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const DRY_RUN = process.argv.includes('--dry-run');
-const VERBOSE = process.argv.includes('--verbose');
 
 // ── 1. Load all data ─────────────────────────────────────────────────
 function loadArticles() {
   const dir = join(ROOT, 'src/data/articles');
   return readdirSync(dir)
-    .filter(f => f.endsWith('.json'))
-    .map(f => {
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => {
       const data = JSON.parse(readFileSync(join(dir, f), 'utf-8'));
       return { ...data, _file: f };
     });
@@ -39,7 +38,8 @@ function loadCategories() {
   const catBlock = src.match(/export const CATEGORIES[^{]*(\{[\s\S]*?\n\};)/);
   if (!catBlock) return cats;
   // Simple regex extraction of category entries
-  const entryRe = /'([^']+)':\s*\{[^}]*slug:\s*'([^']+)'[^}]*type:\s*'([^']+)'[^}]*(?:hubPage:\s*'([^']+)')?[^}]*(?:city:\s*'([^']+)')?/g;
+  const entryRe =
+    /'([^']+)':\s*\{[^}]*slug:\s*'([^']+)'[^}]*type:\s*'([^']+)'[^}]*(?:hubPage:\s*'([^']+)')?[^}]*(?:city:\s*'([^']+)')?/g;
   let m;
   while ((m = entryRe.exec(catBlock[1])) !== null) {
     cats[m[1]] = { slug: m[2], type: m[3], hubPage: m[4] || null, city: m[5] || null };
@@ -95,15 +95,16 @@ function extractInternalLinks(html) {
 }
 
 // Build list of all known internal URLs
-function buildSiteMap(articles, categories, destinations) {
+function buildSiteMap(articles, destinations) {
   const pages = new Map(); // url → { type, slug, title }
 
   // Homepage
   pages.set('/', { type: 'home', slug: 'home', title: 'Home' });
 
   // City hub pages
-  const cityHubFiles = readdirSync(join(ROOT, 'src/pages'))
-    .filter(f => f.endsWith('-ghost-tours.astro'));
+  const cityHubFiles = readdirSync(join(ROOT, 'src/pages')).filter((f) =>
+    f.endsWith('-ghost-tours.astro')
+  );
   for (const f of cityHubFiles) {
     const slug = f.replace('.astro', '');
     pages.set(`/${slug}/`, { type: 'city-hub', slug, title: slug });
@@ -115,8 +116,9 @@ function buildSiteMap(articles, categories, destinations) {
   }
 
   // Experience pages
-  const expFiles = readdirSync(join(ROOT, 'src/pages/experiences'))
-    .filter(f => f.endsWith('.astro') && f !== 'index.astro' && !f.startsWith('['));
+  const expFiles = readdirSync(join(ROOT, 'src/pages/experiences')).filter(
+    (f) => f.endsWith('.astro') && f !== 'index.astro' && !f.startsWith('[')
+  );
   for (const f of expFiles) {
     const slug = f.replace('.astro', '');
     pages.set(`/experiences/${slug}/`, { type: 'experience', slug, title: slug });
@@ -136,7 +138,14 @@ function buildSiteMap(articles, categories, destinations) {
   }
 
   // Utility pages
-  for (const slug of ['contact', 'terms', 'privacy-policy', 'editorial-policy', 'about', 'articles']) {
+  for (const slug of [
+    'contact',
+    'terms',
+    'privacy-policy',
+    'editorial-policy',
+    'about',
+    'articles',
+  ]) {
     if (existsSync(join(ROOT, `src/pages/${slug}.astro`))) {
       pages.set(`/${slug}/`, { type: 'utility', slug, title: slug });
     }
@@ -176,13 +185,17 @@ function buildLinkGraph(articles, siteMap) {
 }
 
 // ── 4. Hub-Spoke Integrity Checks ────────────────────────────────────
-function checkHubSpoke(articles, categories, blogHubs) {
+function checkHubSpoke(articles, categories) {
   const issues = [];
 
   for (const article of articles) {
     const cat = article.categories?.[0];
     if (!cat) {
-      issues.push({ type: 'NO_CATEGORY', article: article.slug, message: 'Article has no category assigned' });
+      issues.push({
+        type: 'NO_CATEGORY',
+        article: article.slug,
+        message: 'Article has no category assigned',
+      });
       continue;
     }
 
@@ -192,12 +205,11 @@ function checkHubSpoke(articles, categories, blogHubs) {
     const hubPage = catInfo.hubPage;
     if (!hubPage) continue;
 
-    const articleUrl = `/articles/${article.slug}/`;
     const links = extractInternalLinks(article.content || '');
 
     // Check spoke→hub: does the article link back to its hub?
     const normalizedHub = hubPage.replace(/\/$/, '') + '/';
-    const linksToHub = [...links].some(l => l === normalizedHub);
+    const linksToHub = [...links].some((l) => l === normalizedHub);
 
     if (!linksToHub) {
       issues.push({
@@ -215,7 +227,7 @@ function checkHubSpoke(articles, categories, blogHubs) {
 }
 
 // ── 5. Cross-Linking Opportunities ───────────────────────────────────
-function extractKeyPhrases(title, slug) {
+function extractKeyPhrases(title) {
   // Extract meaningful proper nouns and phrases from article titles
   // These are the terms other articles might mention without linking
   const phrases = [];
@@ -225,13 +237,57 @@ function extractKeyPhrases(title, slug) {
   const segments = title.split(/[,:;&\-–—!?]+/);
   const connectors = /^(of|the|and|in|at|de|von|du|la|le|for|on|to|by|an|a)$/i;
   const notProperNouns = new Set([
-    'haunts', 'beneath', 'behind', 'years', 'death', 'after', 'before',
-    'inside', 'above', 'below', 'beyond', 'between', 'under', 'over',
-    'night', 'dark', 'blood', 'fire', 'lost', 'last', 'first', 'city',
-    'true', 'real', 'most', 'best', 'how', 'why', 'what', 'when', 'where',
-    'haunted', 'hidden', 'complete', 'famous', 'walking', 'guide', 'places',
-    'stories', 'legend', 'legends', 'ghosts', 'ghost', 'history', 'execution',
-    'shining', 'inspiration', 'causes', 'consequences', 'lasting', 'legacy',
+    'haunts',
+    'beneath',
+    'behind',
+    'years',
+    'death',
+    'after',
+    'before',
+    'inside',
+    'above',
+    'below',
+    'beyond',
+    'between',
+    'under',
+    'over',
+    'night',
+    'dark',
+    'blood',
+    'fire',
+    'lost',
+    'last',
+    'first',
+    'city',
+    'true',
+    'real',
+    'most',
+    'best',
+    'how',
+    'why',
+    'what',
+    'when',
+    'where',
+    'haunted',
+    'hidden',
+    'complete',
+    'famous',
+    'walking',
+    'guide',
+    'places',
+    'stories',
+    'legend',
+    'legends',
+    'ghosts',
+    'ghost',
+    'history',
+    'execution',
+    'shining',
+    'inspiration',
+    'causes',
+    'consequences',
+    'lasting',
+    'legacy',
   ]);
   const stopW = new Set(['the', 'of', 'in', 'at', 'and', 'a', 'an', 'to', 'for', 'on', 'by']);
 
@@ -239,7 +295,6 @@ function extractKeyPhrases(title, slug) {
     const words = seg.trim().split(/\s+/);
     let current = [];
     for (const w of words) {
-      const clean = w.replace(/[''s]+$/i, '');
       if (/^[A-Z]/.test(w)) {
         current.push(w);
       } else if (connectors.test(w) && current.length > 0) {
@@ -249,7 +304,9 @@ function extractKeyPhrases(title, slug) {
           while (current.length && connectors.test(current[current.length - 1])) current.pop();
           if (current.length >= 2) {
             const phrase = current.join(' ').toLowerCase();
-            const meaningful = phrase.split(/\s+/).filter(w2 => !stopW.has(w2) && !notProperNouns.has(w2.replace(/[''s]+$/i, '')));
+            const meaningful = phrase
+              .split(/\s+/)
+              .filter((w2) => !stopW.has(w2) && !notProperNouns.has(w2.replace(/[''s]+$/i, '')));
             if (meaningful.length >= 2 && phrase.length >= 10) phrases.push(phrase);
           }
         }
@@ -260,40 +317,26 @@ function extractKeyPhrases(title, slug) {
       while (current.length && connectors.test(current[current.length - 1])) current.pop();
       if (current.length >= 2) {
         const phrase = current.join(' ').toLowerCase();
-        const meaningful = phrase.split(/\s+/).filter(w2 => !stopW.has(w2) && !notProperNouns.has(w2.replace(/[''s]+$/i, '')));
+        const meaningful = phrase
+          .split(/\s+/)
+          .filter((w2) => !stopW.has(w2) && !notProperNouns.has(w2.replace(/[''s]+$/i, '')));
         if (meaningful.length >= 2 && phrase.length >= 10) phrases.push(phrase);
       }
     }
   }
-
-  // Single notable proper nouns (from slug, filtering generic words)
-  const genericWords = new Set([
-    'history', 'haunted', 'ghost', 'stories', 'complete', 'guide', 'true',
-    'story', 'most', 'places', 'dark', 'tours', 'best', 'real', 'famous',
-    'what', 'expect', 'culture', 'legends', 'legend', 'mystery', 'hidden',
-    'american', 'chicago', 'london', 'boston', 'austin', 'denver', 'dublin',
-    'nashville', 'charleston', 'savannah', 'edinburgh', 'paris', 'rome',
-    'orleans', 'antonio', 'augustine', 'york', 'washington',
-    'walking', 'evidence', 'archive', 'paranormal', 'investigations',
-    'building', 'hotel', 'house', 'church', 'castle', 'cemetery', 'prison',
-    'museum', 'mansion', 'graveyard', 'military', 'hospital', 'lighthouse',
-    'interview', 'phantom', 'folklore', 'believe', 'accused', 'solitary',
-    'locations', 'filming', 'gangster', 'eastern', 'western', 'northern',
-    'southern', 'prisons', 'historical', 'colonial', 'civil', 'bodies',
-  ]);
   // Don't use single slug words — too many false positives
 
   return [...new Set(phrases)];
 }
 
-function findCrossLinkOpportunities(articles, siteMap) {
+function findCrossLinkOpportunities(articles) {
   const issues = [];
 
   // Build phrase→article mapping
   const phraseMap = new Map(); // phrase → { slug, title, url }
   for (const a of articles) {
     const url = `/articles/${a.slug}/`;
-    const phrases = extractKeyPhrases(a.title, a.slug);
+    const phrases = extractKeyPhrases(a.title);
     for (const phrase of phrases) {
       if (!phraseMap.has(phrase)) phraseMap.set(phrase, []);
       phraseMap.get(phrase).push({ slug: a.slug, title: a.title, url });
@@ -309,7 +352,7 @@ function findCrossLinkOpportunities(articles, siteMap) {
         if (kwLower.length < 6) continue;
         if (!phraseMap.has(kwLower)) phraseMap.set(kwLower, []);
         const existing = phraseMap.get(kwLower);
-        if (!existing.some(e => e.slug === a.slug)) {
+        if (!existing.some((e) => e.slug === a.slug)) {
           existing.push({ slug: a.slug, title: a.title, url });
         }
       }
@@ -327,12 +370,24 @@ function findCrossLinkOpportunities(articles, siteMap) {
       if (phrase.length < 10) continue;
       // Only match phrases where EVERY word (except articles/prepositions) is
       // capitalized in the original title — i.e. it's a proper noun phrase
-      const stopWords = new Set(['the', 'of', 'in', 'at', 'and', 'a', 'an', 'to', 'for', 'on', 'by']);
-      const isProperPhrase = targets.some(t => {
+      const stopWords = new Set([
+        'the',
+        'of',
+        'in',
+        'at',
+        'and',
+        'a',
+        'an',
+        'to',
+        'for',
+        'on',
+        'by',
+      ]);
+      const isProperPhrase = targets.some((t) => {
         const words = phrase.split(' ');
-        const meaningfulWords = words.filter(w => !stopWords.has(w));
+        const meaningfulWords = words.filter((w) => !stopWords.has(w));
         if (meaningfulWords.length < 2) return false;
-        const capCount = meaningfulWords.filter(w => {
+        const capCount = meaningfulWords.filter((w) => {
           const idx = t.title.toLowerCase().indexOf(w);
           return idx >= 0 && /[A-Z]/.test(t.title.charAt(idx));
         }).length;
@@ -398,10 +453,10 @@ function findOrphans(articles, inboundMap) {
 // ── 7. Auto-Fix: Insert missing hub links ────────────────────────────
 function autoFixHubLinks(articles, issues, categories) {
   const fixes = [];
-  const spokeIssues = issues.filter(i => i.type === 'SPOKE_MISSING_HUB_LINK' && i.fixable);
+  const spokeIssues = issues.filter((i) => i.type === 'SPOKE_MISSING_HUB_LINK' && i.fixable);
 
   for (const issue of spokeIssues) {
-    const article = articles.find(a => a.slug === issue.article);
+    const article = articles.find((a) => a.slug === issue.article);
     if (!article) continue;
 
     const catInfo = categories[issue.category];
@@ -409,8 +464,8 @@ function autoFixHubLinks(articles, issues, categories) {
 
     const hubUrl = issue.hub;
     const hubName = catInfo.city
-      ? `${catInfo.city.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())} Ghost Tours`
-      : issue.category.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      ? `${catInfo.city.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())} Ghost Tours`
+      : issue.category.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
     // Strategy: Add hub link to the "Continue Reading" section if it exists,
     // otherwise append a Continue Reading section at the end
@@ -458,46 +513,50 @@ function main() {
   const destinations = loadDestinations();
   const blogHubs = loadBlogHubs();
 
-  console.log(`Loaded: ${articles.length} articles, ${Object.keys(categories).length} categories, ${Object.keys(destinations).length} destinations, ${Object.keys(blogHubs).length} blog hubs\n`);
+  console.log(
+    `Loaded: ${articles.length} articles, ${Object.keys(categories).length} categories, ${Object.keys(destinations).length} destinations, ${Object.keys(blogHubs).length} blog hubs\n`
+  );
 
   // Build site map and link graph
-  const siteMap = buildSiteMap(articles, categories, destinations);
+  const siteMap = buildSiteMap(articles, destinations);
   const { outbound, inbound } = buildLinkGraph(articles, siteMap);
 
   console.log(`Site map: ${siteMap.size} total pages`);
-  console.log(`Link graph: ${[...outbound.values()].reduce((s, v) => s + v.size, 0)} outbound links tracked\n`);
+  console.log(
+    `Link graph: ${[...outbound.values()].reduce((s, v) => s + v.size, 0)} outbound links tracked\n`
+  );
 
   // Run checks
-  const hubSpokeIssues = checkHubSpoke(articles, categories, blogHubs);
-  const crossLinkIssues = findCrossLinkOpportunities(articles, siteMap);
+  const hubSpokeIssues = checkHubSpoke(articles, categories);
+  const crossLinkIssues = findCrossLinkOpportunities(articles);
   const orphanIssues = findOrphans(articles, inbound);
 
   // Report hub-spoke issues
   console.log('─── Hub-Spoke Integrity ─────────────────────────────');
-  const spokeIssues = hubSpokeIssues.filter(i => i.type === 'SPOKE_MISSING_HUB_LINK');
-  const noCatIssues = hubSpokeIssues.filter(i => i.type === 'NO_CATEGORY');
+  const spokeIssues = hubSpokeIssues.filter((i) => i.type === 'SPOKE_MISSING_HUB_LINK');
+  const noCatIssues = hubSpokeIssues.filter((i) => i.type === 'NO_CATEGORY');
   if (noCatIssues.length) {
     console.log(`\n⚠  ${noCatIssues.length} articles with no category:`);
-    noCatIssues.forEach(i => console.log(`   - ${i.article}`));
+    noCatIssues.forEach((i) => console.log(`   - ${i.article}`));
   }
   if (spokeIssues.length) {
     console.log(`\n✗  ${spokeIssues.length} articles missing link to their hub:`);
-    spokeIssues.forEach(i => console.log(`   - ${i.article} → should link to ${i.hub}`));
+    spokeIssues.forEach((i) => console.log(`   - ${i.article} → should link to ${i.hub}`));
   } else {
     console.log('\n✓  All articles link back to their hub page');
   }
 
   // Report orphans
   console.log('\n─── Orphan Detection ───────────────────────────────');
-  const zeroInbound = orphanIssues.filter(i => i.type === 'ORPHAN_ZERO_INBOUND');
-  const lowInbound = orphanIssues.filter(i => i.type === 'ORPHAN_LOW_INBOUND');
+  const zeroInbound = orphanIssues.filter((i) => i.type === 'ORPHAN_ZERO_INBOUND');
+  const lowInbound = orphanIssues.filter((i) => i.type === 'ORPHAN_LOW_INBOUND');
   if (zeroInbound.length) {
     console.log(`\n✗  ${zeroInbound.length} articles with ZERO inbound links (orphans):`);
-    zeroInbound.forEach(i => console.log(`   - ${i.article}`));
+    zeroInbound.forEach((i) => console.log(`   - ${i.article}`));
   }
   if (lowInbound.length) {
     console.log(`\n⚠  ${lowInbound.length} articles with only 1 inbound link:`);
-    lowInbound.forEach(i => console.log(`   - ${i.article} ← from ${i.sources[0]}`));
+    lowInbound.forEach((i) => console.log(`   - ${i.article} ← from ${i.sources[0]}`));
   }
   if (!zeroInbound.length && !lowInbound.length) {
     console.log('\n✓  No orphan articles detected');
@@ -508,16 +567,18 @@ function main() {
   if (crossLinkIssues.length) {
     // Dedupe by article+target pair, keep first
     const seen = new Set();
-    const deduped = crossLinkIssues.filter(i => {
+    const deduped = crossLinkIssues.filter((i) => {
       const key = `${i.article}→${i.target}`;
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
     });
     console.log(`\n${deduped.length} total opportunities found (showing top 20):`);
-    deduped.slice(0, 20).forEach(i =>
-      console.log(`   - "${i.article}" mentions "${i.keyword}" → link to /articles/${i.target}/`)
-    );
+    deduped
+      .slice(0, 20)
+      .forEach((i) =>
+        console.log(`   - "${i.article}" mentions "${i.keyword}" → link to /articles/${i.target}/`)
+      );
   } else {
     console.log('\n✓  No obvious cross-linking opportunities found');
   }
@@ -527,7 +588,7 @@ function main() {
   const fixes = autoFixHubLinks(articles, hubSpokeIssues, categories);
   if (fixes.length) {
     console.log(`\n${DRY_RUN ? 'Would fix' : 'Fixed'} ${fixes.length} missing hub links:`);
-    fixes.forEach(f => console.log(`   - ${f.article} → ${f.hub} (${f.action})`));
+    fixes.forEach((f) => console.log(`   - ${f.article} → ${f.hub} (${f.action})`));
   } else {
     console.log('\n✓  No auto-fixes needed');
   }
@@ -535,7 +596,9 @@ function main() {
   // Summary
   const totalIssues = hubSpokeIssues.length + orphanIssues.length;
   console.log('\n═══════════════════════════════════════════════════════');
-  console.log(` Summary: ${totalIssues} issues, ${crossLinkIssues.length} cross-link opportunities, ${fixes.length} auto-fixes`);
+  console.log(
+    ` Summary: ${totalIssues} issues, ${crossLinkIssues.length} cross-link opportunities, ${fixes.length} auto-fixes`
+  );
   console.log('═══════════════════════════════════════════════════════\n');
 
   // Write report to file

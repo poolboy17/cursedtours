@@ -16,20 +16,21 @@
     "test:fix-apply": "node tests/auto-fix.mjs --apply"
   },
   "dependencies": {
-    "@astrojs/netlify": "^6.0.0",
+    "@astrojs/netlify": "^5.5.4",
     "@astrojs/rss": "^4.0.0",
     "@astrojs/tailwind": "^5.1.0",
     "@sentry/astro": "^10.42.0",
-    "astro": "^4.16.18"
+    "astro": "^4.16.18",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.8",
     "@typescript-eslint/parser": "^8.56.0",
     "autoprefixer": "^10.4.16",
     "eslint": "^10.0.0",
     "eslint-plugin-astro": "^1.6.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
-    "shared-test-utils": "file:../shared-test-utils",
     "tailwindcss": "^3.4.0",
     "typescript-eslint": "^8.56.0"
   }

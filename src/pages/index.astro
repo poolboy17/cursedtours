@@ -108,9 +108,9 @@ import CdnImage from '../components/CdnImage.astro';
   ogImageWidth={1792}
   ogImageHeight={1024}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(websiteLd)} />
-  <script type="application/ld+json" set:html={JSON.stringify(organizationLd)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteLd)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationLd)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqLd)} />
 
   <!-- ═══════════════════════════════════════════
        HERO — Full-bleed cinematic hero

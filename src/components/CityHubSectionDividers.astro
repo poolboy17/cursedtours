@@ -1,0 +1,16 @@
+---
+interface Props {
+  count?: number;
+}
+
+const { count = 0 } = Astro.props as Props;
+const dividers = Array.from({ length: Math.max(0, count) });
+---
+
+{dividers.length > 0 && (
+  <div class="space-y-6 py-10" aria-hidden="true">
+    {dividers.map(() => (
+      <div class="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-40"></div>
+    ))}
+  </div>
+)}

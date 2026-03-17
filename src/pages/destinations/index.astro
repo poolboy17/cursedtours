@@ -1,6 +1,6 @@
 ---
-import Layout from '../../layouts/Layout.astro';
 import { DESTINATIONS } from '../../data/destinations';
+import Layout from '../../layouts/Layout.astro';
 
 const destinations = Object.values(DESTINATIONS);
 ---
@@ -10,7 +10,7 @@ const destinations = Object.values(DESTINATIONS);
   description="Explore the world's most haunted destinations—from Alcatraz and Eastern State Penitentiary to Dracula's Castle and the Tower of London."
   canonical="https://cursedtours.com/destinations/"
 >
-  <script type="application/ld+json" set:html={JSON.stringify({
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Haunted Destinations & Dark History",

@@ -10,8 +10,8 @@
  * (Requires a prior `npm run build`)
  */
 
-import { readFileSync, readdirSync, existsSync, statSync } from 'fs';
-import { join, dirname } from 'path';
+import { existsSync, readFileSync, readdirSync, statSync } from 'fs';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -20,18 +20,26 @@ const DIST = join(ROOT, 'dist');
 
 // ── Config ──
 const MIN_EXPECTED_PAGES = 200; // Alert if page count drops below this
-const REQUIRED_PAGES = [
-  'index.html',
-  'articles/index.html',
-  'sitemap.xml',
-];
+const REQUIRED_PAGES = ['index.html', 'articles/index.html', 'sitemap.xml'];
 const REQUIRED_HUB_CITIES = [
-  'salem-ghost-tours', 'new-orleans-ghost-tours', 'savannah-ghost-tours',
-  'charleston-ghost-tours', 'boston-ghost-tours', 'chicago-ghost-tours',
-  'edinburgh-ghost-tours', 'london-ghost-tours', 'new-york-ghost-tours',
-  'st-augustine-ghost-tours', 'san-antonio-ghost-tours', 'key-west-ghost-tours',
-  'rome-ghost-tours', 'paris-ghost-tours', 'dublin-ghost-tours',
-  'washington-dc-ghost-tours', 'nashville-ghost-tours', 'austin-ghost-tours',
+  'salem-ghost-tours',
+  'new-orleans-ghost-tours',
+  'savannah-ghost-tours',
+  'charleston-ghost-tours',
+  'boston-ghost-tours',
+  'chicago-ghost-tours',
+  'edinburgh-ghost-tours',
+  'london-ghost-tours',
+  'new-york-ghost-tours',
+  'st-augustine-ghost-tours',
+  'san-antonio-ghost-tours',
+  'key-west-ghost-tours',
+  'rome-ghost-tours',
+  'paris-ghost-tours',
+  'dublin-ghost-tours',
+  'washington-dc-ghost-tours',
+  'nashville-ghost-tours',
+  'austin-ghost-tours',
   'denver-ghost-tours',
 ];
 
@@ -42,9 +50,17 @@ let warn = 0;
 const errors = [];
 const warnings = [];
 
-function ok(msg) { pass++; }
-function bad(msg) { fail++; errors.push(`  ✗ ${msg}`); }
-function notice(msg) { warn++; warnings.push(`  ⚠ ${msg}`); }
+function ok() {
+  pass++;
+}
+function bad(msg) {
+  fail++;
+  errors.push(`  ✗ ${msg}`);
+}
+function notice(msg) {
+  warn++;
+  warnings.push(`  ⚠ ${msg}`);
+}
 
 console.log(`\n  CursedTours Build Output Validation`);
 console.log(`  ───────────────────────────────────\n`);
@@ -73,7 +89,9 @@ console.log(`  Found ${htmlFiles.length} HTML pages in dist/\n`);
 
 // Page count check
 if (htmlFiles.length < MIN_EXPECTED_PAGES) {
-  bad(`Only ${htmlFiles.length} pages built (expected ≥${MIN_EXPECTED_PAGES}) — possible build regression`);
+  bad(
+    `Only ${htmlFiles.length} pages built (expected ≥${MIN_EXPECTED_PAGES}) — possible build regression`
+  );
 } else {
   ok(`Page count: ${htmlFiles.length}`);
 }
@@ -147,13 +165,13 @@ console.log(`  Pages: ${htmlFiles.length} | Hubs: ${REQUIRED_HUB_CITIES.length}\
 
 if (errors.length) {
   console.log('  ERRORS:');
-  errors.forEach(e => console.log(e));
+  errors.forEach((e) => console.log(e));
   console.log('');
 }
 
 if (warnings.length) {
   console.log('  WARNINGS:');
-  warnings.forEach(w => console.log(w));
+  warnings.forEach((w) => console.log(w));
   console.log('');
 }
 

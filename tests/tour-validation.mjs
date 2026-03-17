@@ -10,7 +10,7 @@
  */
 
 import { readFileSync } from 'fs';
-import { join, dirname } from 'path';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -20,7 +20,6 @@ const ROOT = join(__dirname, '..');
 const EXPECTED_PID = 'P00166886';
 const EXPECTED_MCID = '42383';
 const REQUIRED_TIERS = new Set(['hero', 'budget', 'premium']);
-const TOUR_REQUIRED_FIELDS = ['productCode', 'title', 'image', 'price', 'rating', 'reviews', 'tier', 'viatorUrl'];
 
 // ── Test runner ──
 let pass = 0;
@@ -29,9 +28,17 @@ let warn = 0;
 const errors = [];
 const warnings = [];
 
-function ok(msg) { pass++; }
-function bad(msg) { fail++; errors.push(`  ✗ ${msg}`); }
-function notice(msg) { warn++; warnings.push(`  ⚠ ${msg}`); }
+function ok() {
+  pass++;
+}
+function bad(msg) {
+  fail++;
+  errors.push(`  ✗ ${msg}`);
+}
+function notice(msg) {
+  warn++;
+  warnings.push(`  ⚠ ${msg}`);
+}
 
 console.log(`\n  CursedTours Tour & Affiliate Validation`);
 console.log(`  ────────────────────────────────────────\n`);
@@ -58,7 +65,9 @@ if (!affMatch) {
 }
 
 // Extract all Viator URLs from the file (handles both template literals and plain strings)
-const viatorUrls = [...cityToursRaw.matchAll(/viatorUrl:\s*[`'"](https:\/\/www\.viator\.com[^`'"]*)[`'"]/g)];
+const viatorUrls = [
+  ...cityToursRaw.matchAll(/viatorUrl:\s*[`'"](https:\/\/www\.viator\.com[^`'"]*)[`'"]/g),
+];
 console.log(`  Found ${viatorUrls.length} Viator URLs in cityTours.ts`);
 
 // Resolve the AFF variable for URL checking
@@ -102,22 +111,24 @@ console.log(`  Found ${cityKeys.length} cities in CITY_TOURS\n`);
 // For tier validation, extract tier values per city
 for (const city of cityKeys) {
   // Find all tier values for this city's block
-  const cityStart = cityToursRaw.indexOf(`'${city}'`) !== -1
-    ? cityToursRaw.indexOf(`'${city}'`)
-    : cityToursRaw.indexOf(`"${city}"`);
+  const cityStart =
+    cityToursRaw.indexOf(`'${city}'`) !== -1
+      ? cityToursRaw.indexOf(`'${city}'`)
+      : cityToursRaw.indexOf(`"${city}"`);
 
   if (cityStart === -1) continue;
 
   // Get text from city key to next city key or end
   const nextCityIdx = cityKeys.indexOf(city) + 1;
-  const endIdx = nextCityIdx < cityKeys.length
-    ? (cityToursRaw.indexOf(`'${cityKeys[nextCityIdx]}'`) !== -1
+  const endIdx =
+    nextCityIdx < cityKeys.length
+      ? cityToursRaw.indexOf(`'${cityKeys[nextCityIdx]}'`) !== -1
         ? cityToursRaw.indexOf(`'${cityKeys[nextCityIdx]}'`)
-        : cityToursRaw.indexOf(`"${cityKeys[nextCityIdx]}"`))
-    : cityToursRaw.length;
+        : cityToursRaw.indexOf(`"${cityKeys[nextCityIdx]}"`)
+      : cityToursRaw.length;
 
   const cityBlock = cityToursRaw.slice(cityStart, endIdx);
-  const tierMatches = [...cityBlock.matchAll(/tier:\s*['"]([^'"]+)['"]/g)].map(t => t[1]);
+  const tierMatches = [...cityBlock.matchAll(/tier:\s*['"]([^'"]+)['"]/g)].map((t) => t[1]);
 
   // Check 3 tours per city
   if (tierMatches.length !== 3) {
@@ -137,10 +148,8 @@ for (const city of cityKeys) {
   }
 
   // Check for required fields in each tour object
-  const productCodes = [...cityBlock.matchAll(/productCode:\s*['"]([^'"]+)['"]/g)].map(p => p[1]);
-  const titles = [...cityBlock.matchAll(/title:\s*['"]([^'"]+)['"]/g)].map(t => t[1]);
-  const prices = [...cityBlock.matchAll(/price:\s*['"]([^'"]+)['"]/g)].map(p => p[1]);
-  const ratings = [...cityBlock.matchAll(/rating:\s*([\d.]+)/g)].map(r => parseFloat(r[1]));
+  const prices = [...cityBlock.matchAll(/price:\s*['"]([^'"]+)['"]/g)].map((p) => p[1]);
+  const ratings = [...cityBlock.matchAll(/rating:\s*([\d.]+)/g)].map((r) => parseFloat(r[1]));
 
   // Rating sanity check
   for (const rating of ratings) {
@@ -162,13 +171,16 @@ const destPath = join(ROOT, 'src', 'data', 'destinations.ts');
 let destRaw;
 try {
   destRaw = readFileSync(destPath, 'utf-8');
-  const destViatorUrls = [...destRaw.matchAll(/viatorUrl:\s*[`'"](https:\/\/www\.viator\.com[^`'"]+)[`'"]/g)];
+  const destViatorUrls = [
+    ...destRaw.matchAll(/viatorUrl:\s*[`'"](https:\/\/www\.viator\.com[^`'"]+)[`'"]/g),
+  ];
 
   if (destViatorUrls.length > 0) {
     console.log(`  Found ${destViatorUrls.length} Viator URLs in destinations.ts`);
     for (const [, url] of destViatorUrls) {
       const hasTemplate = url.includes('${AFF}') || url.includes('${');
-      const hasDirect = url.includes(`pid=${EXPECTED_PID}`) && url.includes(`mcid=${EXPECTED_MCID}`);
+      const hasDirect =
+        url.includes(`pid=${EXPECTED_PID}`) && url.includes(`mcid=${EXPECTED_MCID}`);
       if (!hasTemplate && !hasDirect) {
         bad(`[destinations.ts] Missing affiliate params: ${url.slice(0, 80)}...`);
       } else {
@@ -189,13 +201,13 @@ console.log(`  Cities: ${cityKeys.length} | Viator URLs: ${viatorUrls.length}\n`
 
 if (errors.length) {
   console.log('  ERRORS:');
-  errors.forEach(e => console.log(e));
+  errors.forEach((e) => console.log(e));
   console.log('');
 }
 
 if (warnings.length) {
   console.log('  WARNINGS:');
-  warnings.forEach(w => console.log(w));
+  warnings.forEach((w) => console.log(w));
   console.log('');
 }
 

@@ -1,6 +1,6 @@
 ---
+import { CATEGORIES, getAllArticles, getArticlesByCategory } from '../../data/articles';
 import Layout from '../../layouts/Layout.astro';
-import { getAllArticles, getArticlesByCategory, CATEGORIES } from '../../data/articles';
 
 const allArticles = getAllArticles();
 
@@ -16,7 +16,7 @@ const categoryOrder = Object.keys(CATEGORIES).filter(
   description="In-depth articles on haunted history, the Salem witch trials, New Orleans voodoo, and city-specific ghost tour guides."
   canonical="https://cursedtours.com/articles/"
 >
-  <script type="application/ld+json" set:html={JSON.stringify({
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Ghost Tour Articles & Guides",

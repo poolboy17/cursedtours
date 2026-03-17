@@ -1,0 +1,32 @@
+---
+interface CategoryItem {
+  id: string;
+  icon?: string;
+  label: string;
+}
+
+interface Props {
+  categories: CategoryItem[];
+}
+
+const { categories = [] } = Astro.props as Props;
+---
+
+{categories.length > 0 && (
+  <nav class="mt-6" aria-label="Jump to tour sections">
+    <div class="flex flex-wrap gap-2">
+      {categories.map((category) => (
+        <a
+          href={`#${category.id}`}
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105"
+          style="border: 1px solid #3d2a4d; background: rgba(26,16,37,0.3); color: #c8bdd8;"
+          onmouseenter="this.style.borderColor='#a855f7';this.style.color='#fff'"
+          onmouseleave="this.style.borderColor='#3d2a4d';this.style.color='#c8bdd8'"
+        >
+          {category.icon && <span aria-hidden="true">{category.icon}</span>}
+          <span>{category.label}</span>
+        </a>
+      ))}
+    </div>
+  </nav>
+)}

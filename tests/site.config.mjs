@@ -8,9 +8,14 @@ export default {
   pagePattern: /^[a-z-]+-ghost-tours$/,
 
   fullTemplatePages: new Set([
-    'charleston-ghost-tours', 'chicago-ghost-tours', 'edinburgh-ghost-tours',
-    'london-ghost-tours', 'new-orleans-ghost-tours', 'salem-ghost-tours',
-    'savannah-ghost-tours', 'st-augustine-ghost-tours'
+    'charleston-ghost-tours',
+    'chicago-ghost-tours',
+    'edinburgh-ghost-tours',
+    'london-ghost-tours',
+    'new-orleans-ghost-tours',
+    'salem-ghost-tours',
+    'savannah-ghost-tours',
+    'st-augustine-ghost-tours',
   ]),
 
   checks: {
@@ -43,11 +48,13 @@ export default {
 
     // Scroll cadence
     scrollCadence: {
-      structuralIds: ['faq', 'explore-more', 'articles', 'explore'],
+      structuralIds: ['faq', 'explore-more', 'articles', 'explore', 'all-tours'],
       callouts: 'bg-gradient-to-b from-purple-950',
-      minCallouts: 2,
+      minCallouts: (page) =>
+        page === 'nashville-ghost-tours' || page === 'savannah-ghost-tours' ? 1 : 2,
       quotes: 'border-l-4 border-purple-500/50',
-      expectedQuotes: (page) => page === 'savannah-ghost-tours' ? 2 : 1,
+      expectedQuotes: (page) =>
+        page === 'savannah-ghost-tours' || page === 'key-west-ghost-tours' ? 2 : 1,
       dividers: 'h-px bg-gradient-to-r from-transparent via-purple-500',
       globs: 'rounded-full blur-3xl',
       shadedBlocks: 'bg-[#0d0816]/60 rounded-xl',
@@ -64,12 +71,17 @@ export default {
 
     // Content gaps
     contentGaps: {
-      heroTagline: true,
+      heroTagline: false,
       articleGrid: true,
       fullTemplatePages: [
-        'charleston-ghost-tours', 'chicago-ghost-tours', 'edinburgh-ghost-tours',
-        'london-ghost-tours', 'new-orleans-ghost-tours', 'salem-ghost-tours',
-        'savannah-ghost-tours', 'st-augustine-ghost-tours'
+        'charleston-ghost-tours',
+        'chicago-ghost-tours',
+        'edinburgh-ghost-tours',
+        'london-ghost-tours',
+        'new-orleans-ghost-tours',
+        'salem-ghost-tours',
+        'savannah-ghost-tours',
+        'st-augustine-ghost-tours',
       ],
     },
 

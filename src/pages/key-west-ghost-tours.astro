@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import TourSidebar from '../components/TourSidebar.astro';
 import MobileTourCards from '../components/MobileTourCards.astro';
+import CityHubCategoryNav from '../components/CityHubCategoryNav.astro';
+import CityHubSectionDividers from '../components/CityHubSectionDividers.astro';
 import { CITY_TOURS } from '../data/cityTours';
 
 const tours = CITY_TOURS['key-west'] || [];
@@ -43,7 +45,7 @@ import CdnImage from '../components/CdnImage.astro';
   canonical="https://cursedtours.com/key-west-ghost-tours/"
 >
   <!-- FAQ Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify({
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": faqs.map(f => ({
@@ -54,7 +56,7 @@ import CdnImage from '../components/CdnImage.astro';
   })} />
 
   <!-- BreadcrumbList Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify({
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
@@ -62,7 +64,6 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "Key West Ghost Tours", "item": "https://cursedtours.com/key-west-ghost-tours/" }
     ]
   })} />
-  <!-- Hero Section -->
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">
     <div class="absolute pointer-events-none z-[1] opacity-40 sm:opacity-80 md:opacity-100 w-[60%] sm:w-[70%] md:w-[75%] max-w-[900px] h-full right-[-10%] sm:right-[-5%] top-0">
@@ -88,6 +89,7 @@ import CdnImage from '../components/CdnImage.astro';
             <span class="w-1 h-1 rounded-full bg-purple-500/40"></span>
             <span>Old Town</span>
           </div>
+          <CityHubCategoryNav categories={categories} />
         </div>
       </div>
     </div>
@@ -232,6 +234,9 @@ import CdnImage from '../components/CdnImage.astro';
       </div>
     </div>
   </section>
+
+  <CityHubSectionDividers count={categories.length} />
+
   <!-- Explore Key West Articles -->
   
         </div><!-- end lg:w-2/3 -->
@@ -325,10 +330,10 @@ import CdnImage from '../components/CdnImage.astro';
   </section>
 
   <!-- CTA Section -->
-  <section class="py-16 md:py-24">
+  <section id="explore-more" class="py-16 md:py-24">
     <div class="container px-4 mx-auto max-w-4xl text-center">
       <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style="color: #a855f7;">Keep Exploring</p>
-      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4" style="font-family: 'Cinzel', serif;">More Haunted Cities</h2>
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4" style="font-family: 'Cinzel', serif;">Explore More Haunted Cities</h2>
       <p class="text-base mb-8" style="color: #7a6b8a;">Discover ghost tours in other historic cities.</p>
       <div class="flex flex-wrap justify-center gap-2">
         <a href="/st-augustine-ghost-tours/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105" style="border: 1px solid #3d2a4d; background: rgba(26,16,37,0.3); color: #c8bdd8;" onmouseenter="this.style.borderColor='#a855f7';this.style.color='#fff'" onmouseleave="this.style.borderColor='#3d2a4d';this.style.color='#c8bdd8'">St. Augustine<svg class="w-3.5 h-3.5" style="color:#7a6b8a;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>

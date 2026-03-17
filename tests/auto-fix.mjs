@@ -20,8 +20,8 @@
  *   --apply    Actually write fixes to disk
  */
 
-import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'fs';
-import { join, dirname } from 'path';
+import { readdirSync, readFileSync, statSync, writeFileSync } from 'fs';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -34,18 +34,29 @@ const DRY_RUN = !args.includes('--apply');
 
 // ── Valid categories ──
 const VALID_CATEGORIES = [
-  'salem-witch-trials', 'new-orleans-voodoo-haunted-history',
-  'chicago-haunted-history', 'savannah-haunted-history',
-  'charleston-haunted-history', 'boston-haunted-history',
-  'edinburgh-haunted-history', 'london-haunted-history',
-  'new-york-haunted-history', 'st-augustine-haunted-history',
-  'san-antonio-haunted-history', 'rome-haunted-history',
-  'paris-haunted-history', 'dublin-haunted-history',
-  'washington-dc-haunted-history', 'nashville-haunted-history',
-  'austin-haunted-history', 'denver-haunted-history',
+  'salem-witch-trials',
+  'new-orleans-voodoo-haunted-history',
+  'chicago-haunted-history',
+  'savannah-haunted-history',
+  'charleston-haunted-history',
+  'boston-haunted-history',
+  'edinburgh-haunted-history',
+  'london-haunted-history',
+  'new-york-haunted-history',
+  'st-augustine-haunted-history',
+  'san-antonio-haunted-history',
+  'rome-haunted-history',
+  'paris-haunted-history',
+  'dublin-haunted-history',
+  'washington-dc-haunted-history',
+  'nashville-haunted-history',
+  'austin-haunted-history',
+  'denver-haunted-history',
   'key-west-haunted-history',
-  'vampire-culture', 'salem-witch-trials-history',
-  'tower-of-london-history', 'american-prison-history',
+  'vampire-culture',
+  'salem-witch-trials-history',
+  'tower-of-london-history',
+  'american-prison-history',
   'gettysburg-civil-war',
 ];
 
@@ -59,7 +70,7 @@ console.log(`  ─────────────────────�
 console.log(`  Mode: ${DRY_RUN ? 'DRY RUN (use --apply to write)' : '⚡ APPLYING FIXES'}\n`);
 
 // ── Load all articles + collect IDs ──
-const files = readdirSync(ARTICLES_DIR).filter(f => f.endsWith('.json'));
+const files = readdirSync(ARTICLES_DIR).filter((f) => f.endsWith('.json'));
 const usedIds = new Set();
 const articles = [];
 
@@ -83,22 +94,29 @@ function nextId() {
 
 // ── Levenshtein distance for category suggestion ──
 function levenshtein(a, b) {
-  const m = a.length, n = b.length;
+  const m = a.length,
+    n = b.length;
   const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
   for (let i = 0; i <= m; i++) dp[i][0] = i;
   for (let j = 0; j <= n; j++) dp[0][j] = j;
   for (let i = 1; i <= m; i++)
     for (let j = 1; j <= n; j++)
-      dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1] :
-        1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
+      dp[i][j] =
+        a[i - 1] === b[j - 1]
+          ? dp[i - 1][j - 1]
+          : 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
   return dp[m][n];
 }
 
 function suggestCategory(invalid) {
-  let best = null, bestDist = Infinity;
+  let best = null,
+    bestDist = Infinity;
   for (const cat of VALID_CATEGORIES) {
     const d = levenshtein(invalid, cat);
-    if (d < bestDist) { bestDist = d; best = cat; }
+    if (d < bestDist) {
+      bestDist = d;
+      best = cat;
+    }
   }
   return { suggestion: best, distance: bestDist };
 }
@@ -119,7 +137,6 @@ function trimExcerpt(text) {
 
 // ── Second pass: detect and fix ──
 const seenIds = new Set();
-const seenSlugs = new Set();
 
 for (const { file, data, path } of articles) {
   let modified = false;
@@ -138,7 +155,11 @@ for (const { file, data, path } of articles) {
   if (data.slug && data.slug !== expectedSlug) {
     const oldSlug = data.slug;
     data.slug = expectedSlug;
-    autoFixed.push({ file, fix: `Slug "${oldSlug}" → "${expectedSlug}" (match filename)`, tier: 1 });
+    autoFixed.push({
+      file,
+      fix: `Slug "${oldSlug}" → "${expectedSlug}" (match filename)`,
+      tier: 1,
+    });
     modified = true;
   }
 
@@ -174,7 +195,11 @@ for (const { file, data, path } of articles) {
   if (data.excerpt && data.excerpt.length > 160) {
     const oldLen = data.excerpt.length;
     data.excerpt = trimExcerpt(data.excerpt);
-    autoFixed.push({ file, fix: `Excerpt ${oldLen} → ${data.excerpt.length} chars (trimmed)`, tier: 1 });
+    autoFixed.push({
+      file,
+      fix: `Excerpt ${oldLen} → ${data.excerpt.length} chars (trimmed)`,
+      tier: 1,
+    });
     modified = true;
   }
 
@@ -187,12 +212,14 @@ for (const { file, data, path } of articles) {
         proposed.push({
           file,
           issue: `Unknown category "${catSlug}"`,
-          suggestion: distance <= 5
-            ? `Reassign to "${suggestion}" (distance: ${distance})`
-            : `Add "${catSlug}" as new category, or reassign manually`,
+          suggestion:
+            distance <= 5
+              ? `Reassign to "${suggestion}" (distance: ${distance})`
+              : `Add "${catSlug}" as new category, or reassign manually`,
           severity: 'error',
           autoFixable: distance <= 3,
-          proposedFix: distance <= 3 ? { field: 'categories', from: catSlug, to: suggestion } : null,
+          proposedFix:
+            distance <= 3 ? { field: 'categories', from: catSlug, to: suggestion } : null,
         });
       }
     }
@@ -244,8 +271,8 @@ const report = {
   summary: {
     articlesScanned: articles.length,
     autoFixed: autoFixed.length,
-    proposedFixes: proposed.filter(p => p.severity === 'error').length,
-    warnings: proposed.filter(p => p.severity === 'warning').length,
+    proposedFixes: proposed.filter((p) => p.severity === 'error').length,
+    warnings: proposed.filter((p) => p.severity === 'warning').length,
     filesModified,
   },
   tier1_autoFixed: autoFixed,
@@ -266,8 +293,8 @@ if (autoFixed.length > 0) {
   console.log('');
 }
 
-const tier2Errors = proposed.filter(p => p.severity === 'error');
-const tier2Warnings = proposed.filter(p => p.severity === 'warning');
+const tier2Errors = proposed.filter((p) => p.severity === 'error');
+const tier2Warnings = proposed.filter((p) => p.severity === 'warning');
 
 if (tier2Errors.length > 0) {
   console.log(`  TIER 2 — Needs Review (${tier2Errors.length} errors):`);
@@ -298,5 +325,7 @@ if (DRY_RUN && autoFixed.length > 0) {
 if (autoFixed.length === 0 && tier2Errors.length === 0) {
   console.log(`\n  ✓ No issues found — site is clean!\n`);
 } else {
-  console.log(`\n  ${autoFixed.length} auto-fixable | ${tier2Errors.length} need review | ${tier2Warnings.length} warnings\n`);
+  console.log(
+    `\n  ${autoFixed.length} auto-fixable | ${tier2Errors.length} need review | ${tier2Warnings.length} warnings\n`
+  );
 }

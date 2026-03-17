@@ -7,7 +7,7 @@
 import { readFileSync } from 'fs';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
-import { discoverPages, createRunner, createResults, printReport, getExitCode } from 'shared-test-utils';
+import { createResults, createRunner, discoverPages, getExitCode, printReport } from './shared-test-utils/index.mjs';
 import config from './site.config.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));

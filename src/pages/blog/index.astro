@@ -1,7 +1,7 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getAllBlogHubs } from '../../data/blogHubs';
 import { getArticlesByCategory } from '../../data/articles';
+import { getAllBlogHubs } from '../../data/blogHubs';
+import Layout from '../../layouts/Layout.astro';
 
 const hubs = getAllBlogHubs();
 ---
@@ -11,7 +11,7 @@ const hubs = getAllBlogHubs();
   description="Deep-dive articles on vampire culture, the Salem witch trials, Tower of London history, American prison history, and Civil War battlefields."
   canonical="https://cursedtours.com/blog/"
 >
-  <script type="application/ld+json" set:html={JSON.stringify({
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Blog",

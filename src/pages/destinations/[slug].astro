@@ -1,8 +1,9 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import CdnImage from '../../components/CdnImage.astro';
 import TourSidebar from '../../components/TourSidebar.astro';
-import { DESTINATIONS } from '../../data/destinations';
 import { getAllArticles } from '../../data/articles';
+import { DESTINATIONS } from '../../data/destinations';
+import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
   return Object.values(DESTINATIONS).map(dest => ({
@@ -47,7 +48,6 @@ const breadcrumbLd = {
 const tours = destination.featuredTours || [];
 const heroTour = tours.find((t: any) => t.tier === 'hero');
 const otherTours = tours.filter((t: any) => t.tier !== 'hero');
-import CdnImage from '../../components/CdnImage.astro';
 ---
 
 <Layout
@@ -55,9 +55,9 @@ import CdnImage from '../../components/CdnImage.astro';
   description={`${destination.descriptor}. Explore ghost tours and dark history at ${destination.name}.`}
   canonical={`https://cursedtours.com/destinations/${destination.slug}/`}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
-  <script type="application/ld+json" set:html={JSON.stringify(attractionLd)} />
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(attractionLd)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
 
   <!-- Hero -->
   <section class="relative overflow-hidden bg-[#0a0510]">
@@ -289,12 +289,12 @@ import CdnImage from '../../components/CdnImage.astro';
   )}
 
   <!-- Authoritative Sources -->
-  {destination.authoritativeSources?.length > 0 && (
+  {(destination.authoritativeSources?.length ?? 0) > 0 && (
     <section class="py-8 bg-[#0a0510] border-t border-white/5">
       <div class="container px-4 mx-auto max-w-4xl">
         <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Sources & Further Reading</h3>
         <div class="flex flex-wrap gap-4">
-          {destination.authoritativeSources.map((src: any) => (
+          {destination.authoritativeSources?.map((src: any) => (
             <a href={src.url} target="_blank" rel="noopener noreferrer"
               class="text-sm text-purple-400 hover:text-purple-300 underline underline-offset-2 transition-colors">
               {src.name} ({src.type})

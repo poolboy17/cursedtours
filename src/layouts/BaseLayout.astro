@@ -59,7 +59,7 @@ import CdnImage from '../components/CdnImage.astro';
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.removeAttribute('media')" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
 
     <!-- Favicon -->
@@ -73,9 +73,9 @@ import CdnImage from '../components/CdnImage.astro';
     {structuredData && (
       Array.isArray(structuredData)
         ? structuredData.map((sd) => (
-            <script type="application/ld+json" set:html={JSON.stringify(sd)} />
+            <script is:inline type="application/ld+json" set:html={JSON.stringify(sd)} />
           ))
-        : <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+        : <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     )}
   </head>
 

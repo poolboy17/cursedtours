@@ -7,8 +7,8 @@
  * Run: node tests/article-validation.mjs
  */
 
-import { readFileSync, readdirSync, existsSync } from 'fs';
-import { join, dirname } from 'path';
+import { existsSync, readFileSync, readdirSync } from 'fs';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -18,18 +18,29 @@ const IMAGES_DIR = join(ROOT, 'public', 'images', 'articles');
 
 // ── Valid categories (from src/data/articles.ts) ──
 const VALID_CATEGORIES = new Set([
-  'salem-witch-trials', 'new-orleans-voodoo-haunted-history',
-  'chicago-haunted-history', 'savannah-haunted-history',
-  'charleston-haunted-history', 'boston-haunted-history',
-  'edinburgh-haunted-history', 'london-haunted-history',
-  'new-york-haunted-history', 'st-augustine-haunted-history',
-  'san-antonio-haunted-history', 'rome-haunted-history',
-  'paris-haunted-history', 'dublin-haunted-history',
-  'washington-dc-haunted-history', 'nashville-haunted-history',
-  'austin-haunted-history', 'denver-haunted-history',
+  'salem-witch-trials',
+  'new-orleans-voodoo-haunted-history',
+  'chicago-haunted-history',
+  'savannah-haunted-history',
+  'charleston-haunted-history',
+  'boston-haunted-history',
+  'edinburgh-haunted-history',
+  'london-haunted-history',
+  'new-york-haunted-history',
+  'st-augustine-haunted-history',
+  'san-antonio-haunted-history',
+  'rome-haunted-history',
+  'paris-haunted-history',
+  'dublin-haunted-history',
+  'washington-dc-haunted-history',
+  'nashville-haunted-history',
+  'austin-haunted-history',
+  'denver-haunted-history',
   'key-west-haunted-history',
-  'vampire-culture', 'salem-witch-trials-history',
-  'tower-of-london-history', 'american-prison-history',
+  'vampire-culture',
+  'salem-witch-trials-history',
+  'tower-of-london-history',
+  'american-prison-history',
   'gettysburg-civil-war',
   'pop-culture-dark-history',
 ]);
@@ -41,12 +52,20 @@ let warn = 0;
 const errors = [];
 const warnings = [];
 
-function ok(test, file) { pass++; }
-function bad(msg, file) { fail++; errors.push(`  ✗ [${file}] ${msg}`); }
-function notice(msg, file) { warn++; warnings.push(`  ⚠ [${file}] ${msg}`); }
+function ok() {
+  pass++;
+}
+function bad(msg, file) {
+  fail++;
+  errors.push(`  ✗ [${file}] ${msg}`);
+}
+function notice(msg, file) {
+  warn++;
+  warnings.push(`  ⚠ [${file}] ${msg}`);
+}
 
 // ── Load all articles ──
-const files = readdirSync(ARTICLES_DIR).filter(f => f.endsWith('.json'));
+const files = readdirSync(ARTICLES_DIR).filter((f) => f.endsWith('.json'));
 console.log(`\n  CursedTours Article Validation`);
 console.log(`  ─────────────────────────────`);
 console.log(`  Found ${files.length} article JSON files\n`);
@@ -71,7 +90,18 @@ for (const file of files) {
   articles.push({ file, data, expectedSlug });
 
   // 2. REQUIRED FIELDS
-  const required = ['title', 'slug', 'id', 'status', 'uri', 'date', 'content', 'excerpt', 'categories', 'featuredImage'];
+  const required = [
+    'title',
+    'slug',
+    'id',
+    'status',
+    'uri',
+    'date',
+    'content',
+    'excerpt',
+    'categories',
+    'featuredImage',
+  ];
   for (const field of required) {
     if (data[field] === undefined || data[field] === null) {
       bad(`Missing required field: ${field}`, file);
@@ -132,13 +162,15 @@ for (const file of files) {
   // 8. EXCERPT LENGTH
   if (data.excerpt) {
     if (data.excerpt.length > 160) {
-      notice(`Excerpt is ${data.excerpt.length} chars (recommended ≤160 for meta description)`, file);
+      notice(
+        `Excerpt is ${data.excerpt.length} chars (recommended ≤160 for meta description)`,
+        file
+      );
     }
     if (data.excerpt.length < 50) {
       notice(`Excerpt is only ${data.excerpt.length} chars (may be too short)`, file);
     }
   }
-
 
   // 9. CONTENT QUALITY
   if (data.content) {
@@ -157,7 +189,10 @@ for (const file of files) {
       const expectedMax = Math.ceil(wordCount / 150);
       const stated = parseInt(data.readingTime);
       if (stated && (stated < expectedMin - 1 || stated > expectedMax + 1)) {
-        notice(`Reading time "${data.readingTime}" seems off for ${wordCount} words (expected ~${expectedMin}-${expectedMax} min)`, file);
+        notice(
+          `Reading time "${data.readingTime}" seems off for ${wordCount} words (expected ~${expectedMin}-${expectedMax} min)`,
+          file
+        );
       }
     }
 
@@ -171,9 +206,10 @@ for (const file of files) {
 
   // 10. FEATURED IMAGE
   if (data.featuredImage) {
-    const imgSrc = typeof data.featuredImage === 'string'
-      ? data.featuredImage
-      : (data.featuredImage.src || data.featuredImage.url || '');
+    const imgSrc =
+      typeof data.featuredImage === 'string'
+        ? data.featuredImage
+        : data.featuredImage.src || data.featuredImage.url || '';
     if (imgSrc) {
       const imgPath = imgSrc.startsWith('/')
         ? join(ROOT, 'public', imgSrc)
@@ -212,13 +248,13 @@ console.log(`  Articles: ${articles.length} loaded / ${files.length} total files
 
 if (errors.length) {
   console.log('  ERRORS:');
-  errors.forEach(e => console.log(e));
+  errors.forEach((e) => console.log(e));
   console.log('');
 }
 
 if (warnings.length) {
   console.log('  WARNINGS:');
-  warnings.forEach(w => console.log(w));
+  warnings.forEach((w) => console.log(w));
   console.log('');
 }
 

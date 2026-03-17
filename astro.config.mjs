@@ -1,7 +1,9 @@
-import { defineConfig } from 'astro/config';
+import netlify from '@astrojs/netlify';
 import tailwind from '@astrojs/tailwind';
 import sentry from '@sentry/astro';
-import netlify from '@astrojs/netlify';
+import { defineConfig } from 'astro/config';
+
+const sentryAuthToken = process.env.SENTRY_AUTH_TOKEN;
 
 export default defineConfig({
   output: 'static',
@@ -10,14 +12,18 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sentry({
-      dsn: 'https://b3e134275e613db9d8b3cc462f8c597e@o4508247438655488.ingest.us.sentry.io/4510983589068800',
-      org: 'none-4o0',
-      project: 'cursedtours',
-      authToken: process.env.SENTRY_AUTH_TOKEN,
-      sourceMapsUploadOptions: {
-        project: 'cursedtours',
-        authToken: process.env.SENTRY_AUTH_TOKEN,
-      },
+      telemetry: false,
+      ...(sentryAuthToken
+        ? {
+            org: 'none-4o0',
+            project: 'cursedtours',
+            authToken: sentryAuthToken,
+            sourceMapsUploadOptions: {
+              project: 'cursedtours',
+              authToken: sentryAuthToken,
+            },
+          }
+        : {}),
     }),
   ],
 });
