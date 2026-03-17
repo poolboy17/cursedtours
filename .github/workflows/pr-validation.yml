@@ -8,7 +8,10 @@ on:
       - 'public/**'
       - 'tests/**'
       - 'package.json'
+      - 'package-lock.json'
       - 'astro.config.*'
+      - 'tsconfig.json'
+      - '.github/workflows/pr-validation.yml'
 
 jobs:
   validate:
@@ -29,22 +32,30 @@ jobs:
         run: npx eslint src/ --max-warnings 50
         continue-on-error: true
 
+      - name: Astro & TypeScript checks
+        run: npx astro check
+
       - name: Article validation
-        run: node tests/article-validation.mjs
+        run: npm run test:articles
 
       - name: Tour & affiliate validation
-        run: node tests/tour-validation.mjs
+        run: npm run test:tours
 
       - name: Build site
         run: npm run build
 
       - name: Build output validation
-        run: node tests/build-validation.mjs
+        run: npm run test:build
+
+      - name: Hub audit
+        run: npm run test:hubs
 
       - name: Upload fix report
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: validation-errors
-          path: tests/fix-report.json
+          path: |
+            tests/fix-report.json
+            dist/
           retention-days: 7
