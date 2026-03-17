@@ -38,11 +38,42 @@ export interface CategoryInfo {
   count?: number;
 }
 
+type ArticleCategoryInput =
+  | string
+  | {
+      id?: number;
+      slug: string;
+      name: string;
+      description?: string;
+    };
+
+interface ArticleJson {
+  title: string;
+  slug: string;
+  content: string;
+  excerpt?: string;
+  date: string;
+  modified?: string;
+  featuredImage:
+    | string
+    | {
+        sourceUrl: string;
+        altText?: string;
+        width?: number;
+        height?: number;
+      };
+  categories: ArticleCategoryInput[];
+  wordCount?: number;
+  readingTime?: number;
+  keywords?: string[];
+}
+
 export const CATEGORIES: Record<string, CategoryInfo> = {
   'salem-witch-trials': {
     slug: 'salem-witch-trials',
     name: 'Salem Witch Trials',
-    description: 'In-depth articles exploring the history, causes, trials, and lasting legacy of the Salem Witch Trials of 1692.',
+    description:
+      'In-depth articles exploring the history, causes, trials, and lasting legacy of the Salem Witch Trials of 1692.',
     type: 'city',
     city: 'salem',
     hubPage: '/salem-ghost-tours/',
@@ -50,7 +81,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'new-orleans-voodoo-haunted-history': {
     slug: 'new-orleans-voodoo-haunted-history',
     name: 'New Orleans Voodoo & Haunted History',
-    description: 'The true stories behind New Orleans\' haunted reputation—from Voodoo queens and pirate ghosts to the city\'s most documented hauntings.',
+    description:
+      "The true stories behind New Orleans' haunted reputation—from Voodoo queens and pirate ghosts to the city's most documented hauntings.",
     type: 'city',
     city: 'new-orleans',
     hubPage: '/new-orleans-ghost-tours/',
@@ -58,7 +90,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'chicago-haunted-history': {
     slug: 'chicago-haunted-history',
     name: 'Chicago Haunted History',
-    description: 'The dark history behind Chicago\'s hauntings—from the Great Fire and H.H. Holmes to Resurrection Mary, gangster ghosts, and the city\'s most haunted landmarks.',
+    description:
+      "The dark history behind Chicago's hauntings—from the Great Fire and H.H. Holmes to Resurrection Mary, gangster ghosts, and the city's most haunted landmarks.",
     type: 'city',
     city: 'chicago',
     hubPage: '/chicago-ghost-tours/',
@@ -66,7 +99,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'savannah-haunted-history': {
     slug: 'savannah-haunted-history',
     name: 'Savannah Haunted History',
-    description: 'The haunted history of Savannah—from Bonaventure Cemetery and colonial-era ghosts to the most documented hauntings in America\'s most haunted city.',
+    description:
+      "The haunted history of Savannah—from Bonaventure Cemetery and colonial-era ghosts to the most documented hauntings in America's most haunted city.",
     type: 'city',
     city: 'savannah',
     hubPage: '/savannah-ghost-tours/',
@@ -74,7 +108,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'charleston-haunted-history': {
     slug: 'charleston-haunted-history',
     name: 'Charleston Haunted History',
-    description: 'Charleston\'s dark past—from the Old City Jail and Civil War ghosts to Lowcountry hoodoo, pirate legends, and the Holy City\'s most haunted landmarks.',
+    description:
+      "Charleston's dark past—from the Old City Jail and Civil War ghosts to Lowcountry hoodoo, pirate legends, and the Holy City's most haunted landmarks.",
     type: 'city',
     city: 'charleston',
     hubPage: '/charleston-ghost-tours/',
@@ -82,7 +117,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'boston-haunted-history': {
     slug: 'boston-haunted-history',
     name: 'Boston Haunted History',
-    description: 'Boston\'s haunted colonial past—from the Boston Massacre and revolutionary ghosts to the Boston Strangler, Copp\'s Hill, and New England\'s darkest history.',
+    description:
+      "Boston's haunted colonial past—from the Boston Massacre and revolutionary ghosts to the Boston Strangler, Copp's Hill, and New England's darkest history.",
     type: 'city',
     city: 'boston',
     hubPage: '/boston-ghost-tours/',
@@ -90,7 +126,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'edinburgh-haunted-history': {
     slug: 'edinburgh-haunted-history',
     name: 'Edinburgh Haunted History',
-    description: 'Edinburgh\'s haunted underground—from the Vaults and Mary King\'s Close to Burke & Hare, Greyfriars Kirkyard, and Scotland\'s darkest chapters.',
+    description:
+      "Edinburgh's haunted underground—from the Vaults and Mary King's Close to Burke & Hare, Greyfriars Kirkyard, and Scotland's darkest chapters.",
     type: 'city',
     city: 'edinburgh',
     hubPage: '/edinburgh-ghost-tours/',
@@ -98,7 +135,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'london-haunted-history': {
     slug: 'london-haunted-history',
     name: 'London Haunted History',
-    description: 'London\'s haunted history—from Jack the Ripper and the Tower of London to plague pits, Highgate Cemetery, and 2,000 years of documented ghosts.',
+    description:
+      "London's haunted history—from Jack the Ripper and the Tower of London to plague pits, Highgate Cemetery, and 2,000 years of documented ghosts.",
     type: 'city',
     city: 'london',
     hubPage: '/london-ghost-tours/',
@@ -106,7 +144,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'new-york-haunted-history': {
     slug: 'new-york-haunted-history',
     name: 'New York Haunted History',
-    description: 'New York City\'s haunted past—from the Five Points and Greenwich Village hauntings to Gilded Age murders, subway ghosts, and the Merchant\'s House Museum.',
+    description:
+      "New York City's haunted past—from the Five Points and Greenwich Village hauntings to Gilded Age murders, subway ghosts, and the Merchant's House Museum.",
     type: 'city',
     city: 'new-york',
     hubPage: '/new-york-ghost-tours/',
@@ -114,7 +153,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'st-augustine-haunted-history': {
     slug: 'st-augustine-haunted-history',
     name: 'St. Augustine Haunted History',
-    description: 'America\'s oldest city and its ghosts—from Castillo de San Marcos and the St. Augustine Lighthouse to Spanish colonial hauntings and 450 years of dark history.',
+    description:
+      "America's oldest city and its ghosts—from Castillo de San Marcos and the St. Augustine Lighthouse to Spanish colonial hauntings and 450 years of dark history.",
     type: 'city',
     city: 'st-augustine',
     hubPage: '/st-augustine-ghost-tours/',
@@ -122,7 +162,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'san-antonio-haunted-history': {
     slug: 'san-antonio-haunted-history',
     name: 'San Antonio Haunted History',
-    description: 'San Antonio\'s haunted past—from the ghosts of the Alamo and Spanish missions to the Menger Hotel, Railroad Tracks legend, and Tejano folklore.',
+    description:
+      "San Antonio's haunted past—from the ghosts of the Alamo and Spanish missions to the Menger Hotel, Railroad Tracks legend, and Tejano folklore.",
     type: 'city',
     city: 'san-antonio',
     hubPage: '/san-antonio-ghost-tours/',
@@ -130,7 +171,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'rome-haunted-history': {
     slug: 'rome-haunted-history',
     name: 'Rome Haunted History',
-    description: 'Rome\'s haunted history—from the Colosseum and catacombs to the Capuchin Crypt, Nero\'s ghost, and 2,700 years of documented hauntings in the Eternal City.',
+    description:
+      "Rome's haunted history—from the Colosseum and catacombs to the Capuchin Crypt, Nero's ghost, and 2,700 years of documented hauntings in the Eternal City.",
     type: 'city',
     city: 'rome',
     hubPage: '/rome-ghost-tours/',
@@ -138,7 +180,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'paris-haunted-history': {
     slug: 'paris-haunted-history',
     name: 'Paris Haunted History',
-    description: 'The dark side of Paris—from the Catacombs and Père Lachaise to French Revolution ghosts, the Phantom of the Opera, and the city\'s most haunted landmarks.',
+    description:
+      "The dark side of Paris—from the Catacombs and Père Lachaise to French Revolution ghosts, the Phantom of the Opera, and the city's most haunted landmarks.",
     type: 'city',
     city: 'paris',
     hubPage: '/paris-ghost-tours/',
@@ -146,7 +189,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'dublin-haunted-history': {
     slug: 'dublin-haunted-history',
     name: 'Dublin Haunted History',
-    description: 'Dublin\'s haunted history—from Kilmainham Gaol and the Hellfire Club to Viking Dublin, Bram Stoker\'s inspiration, and Ireland\'s most documented ghosts.',
+    description:
+      "Dublin's haunted history—from Kilmainham Gaol and the Hellfire Club to Viking Dublin, Bram Stoker's inspiration, and Ireland's most documented ghosts.",
     type: 'city',
     city: 'dublin',
     hubPage: '/dublin-ghost-tours/',
@@ -154,7 +198,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'washington-dc-haunted-history': {
     slug: 'washington-dc-haunted-history',
     name: 'Washington DC Haunted History',
-    description: 'The haunted capital—from Lincoln\'s ghost in the White House and Capitol Hill hauntings to Georgetown\'s Exorcist steps and the Octagon House.',
+    description:
+      "The haunted capital—from Lincoln's ghost in the White House and Capitol Hill hauntings to Georgetown's Exorcist steps and the Octagon House.",
     type: 'city',
     city: 'washington-dc',
     hubPage: '/washington-dc-ghost-tours/',
@@ -162,7 +207,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'nashville-haunted-history': {
     slug: 'nashville-haunted-history',
     name: 'Nashville Haunted History',
-    description: 'Nashville\'s haunted side—from the Ryman Auditorium and Printers Alley to the Bell Witch, Two Rivers Mansion, and Tennessee\'s darkest legends.',
+    description:
+      "Nashville's haunted side—from the Ryman Auditorium and Printers Alley to the Bell Witch, Two Rivers Mansion, and Tennessee's darkest legends.",
     type: 'city',
     city: 'nashville',
     hubPage: '/nashville-ghost-tours/',
@@ -170,7 +216,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'austin-haunted-history': {
     slug: 'austin-haunted-history',
     name: 'Austin Haunted History',
-    description: 'Austin\'s dark history—from the Driskill Hotel and Servant Girl Annihilator to Moonlight Towers, Littlefield House, and Sixth Street hauntings.',
+    description:
+      "Austin's dark history—from the Driskill Hotel and Servant Girl Annihilator to Moonlight Towers, Littlefield House, and Sixth Street hauntings.",
     type: 'city',
     city: 'austin',
     hubPage: '/austin-ghost-tours/',
@@ -178,7 +225,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'denver-haunted-history': {
     slug: 'denver-haunted-history',
     name: 'Denver Haunted History',
-    description: 'Denver\'s haunted history—from Cheesman Park\'s disturbed graves and the Brown Palace to Molly Brown House, the Lumber Baron Inn, and frontier-era ghosts.',
+    description:
+      "Denver's haunted history—from Cheesman Park's disturbed graves and the Brown Palace to Molly Brown House, the Lumber Baron Inn, and frontier-era ghosts.",
     type: 'city',
     city: 'denver',
     hubPage: '/denver-ghost-tours/',
@@ -186,7 +234,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'key-west-haunted-history': {
     slug: 'key-west-haunted-history',
     name: 'Key West Haunted History',
-    description: 'Key West\'s haunted history—from Robert the Doll and Fort East Martello to shipwreck legends, yellow fever epidemics, and the ghosts of Bone Island.',
+    description:
+      "Key West's haunted history—from Robert the Doll and Fort East Martello to shipwreck legends, yellow fever epidemics, and the ghosts of Bone Island.",
     type: 'city',
     city: 'key-west',
     hubPage: '/key-west-ghost-tours/',
@@ -196,7 +245,8 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'vampire-culture': {
     slug: 'vampire-culture',
     name: 'Vampire Culture',
-    description: 'Dracula, Bram Stoker, vampire folklore, and how pop culture from Twilight to Nosferatu keeps the legend alive.',
+    description:
+      'Dracula, Bram Stoker, vampire folklore, and how pop culture from Twilight to Nosferatu keeps the legend alive.',
     type: 'blog',
     hubPage: '/blog/vampire-culture/',
   },
@@ -217,21 +267,24 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
   'american-prison-history': {
     slug: 'american-prison-history',
     name: 'American Prison History',
-    description: 'From Eastern State to Alcatraz to Port Arthur—solitary confinement, famous inmates, daring escapes, and the haunted remains.',
+    description:
+      'From Eastern State to Alcatraz to Port Arthur—solitary confinement, famous inmates, daring escapes, and the haunted remains.',
     type: 'blog',
     hubPage: '/blog/prison-history/',
   },
   'gettysburg-civil-war': {
     slug: 'gettysburg-civil-war',
     name: 'Gettysburg & the Civil War',
-    description: 'The bloodiest battle of the Civil War—tactics, aftermath, ghosts, and why it still haunts.',
+    description:
+      'The bloodiest battle of the Civil War—tactics, aftermath, ghosts, and why it still haunts.',
     type: 'blog',
     hubPage: '/blog/gettysburg/',
   },
   'pop-culture-dark-history': {
     slug: 'pop-culture-dark-history',
     name: 'Pop Culture & Dark History',
-    description: 'Where horror meets history—the real stories behind haunted movies, true crime legends, urban legends, and the places that inspired them.',
+    description:
+      'Where horror meets history—the real stories behind haunted movies, true crime legends, urban legends, and the places that inspired them.',
     type: 'blog',
     hubPage: '/blog/pop-culture/',
   },
@@ -243,47 +296,57 @@ export function getAllArticles(): Article[] {
   if (_cache) return _cache;
 
   const dir = join(process.cwd(), 'src/data/articles');
-  const files = readdirSync(dir).filter(f => f.endsWith('.json'));
+  const files = readdirSync(dir).filter((f) => f.endsWith('.json'));
 
-  _cache = files.map(file => {
-    const raw = readFileSync(join(dir, file), 'utf-8');
-    const data = JSON.parse(raw);
-    const img = typeof data.featuredImage === 'string'
-      ? { sourceUrl: data.featuredImage, altText: data.title }
-      : data.featuredImage;
-    return {
-      title: data.title,
-      slug: data.slug,
-      content: data.content,
-      excerpt: data.excerpt || '',
-      date: data.date,
-      modified: data.modified,
-      featuredImage: img,
-      categories: data.categories.map((c: any) =>
-        typeof c === 'string' ? { id: 0, slug: c, name: c } : c
-      ),
-      wordCount: data.wordCount,
-      readingTime: data.readingTime,
-      keywords: data.keywords,
-    };
-  }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const articles: Article[] = files
+    .map((file) => {
+      const raw = readFileSync(join(dir, file), 'utf-8');
+      const data = JSON.parse(raw) as ArticleJson;
+      const img =
+        typeof data.featuredImage === 'string'
+          ? { sourceUrl: data.featuredImage, altText: data.title }
+          : {
+              sourceUrl: data.featuredImage.sourceUrl,
+              altText: data.featuredImage.altText ?? data.title,
+              width: data.featuredImage.width,
+              height: data.featuredImage.height,
+            };
+      return {
+        title: data.title,
+        slug: data.slug,
+        content: data.content,
+        excerpt: data.excerpt || '',
+        date: data.date,
+        modified: data.modified,
+        featuredImage: img,
+        categories: data.categories.map((c) =>
+          typeof c === 'string'
+            ? { id: 0, slug: c, name: c }
+            : { id: c.id ?? 0, slug: c.slug, name: c.name, description: c.description }
+        ),
+        wordCount: data.wordCount,
+        readingTime: data.readingTime,
+        keywords: data.keywords,
+      };
+    })
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-  return _cache;
+  _cache = articles;
+
+  return articles;
 }
 
 export function getArticlesByCategory(categorySlug: string): Article[] {
-  return getAllArticles().filter(a =>
-    a.categories.some(c => c.slug === categorySlug)
-  );
+  return getAllArticles().filter((a) => a.categories.some((c) => c.slug === categorySlug));
 }
 
 export function getArticle(slug: string): Article | undefined {
-  return getAllArticles().find(a => a.slug === slug);
+  return getAllArticles().find((a) => a.slug === slug);
 }
 
 export function getRelatedArticles(article: Article, limit = 4): Article[] {
-  const catSlugs = article.categories.map(c => c.slug);
+  const catSlugs = article.categories.map((c) => c.slug);
   return getAllArticles()
-    .filter(a => a.slug !== article.slug && a.categories.some(c => catSlugs.includes(c.slug)))
+    .filter((a) => a.slug !== article.slug && a.categories.some((c) => catSlugs.includes(c.slug)))
     .slice(0, limit);
 }

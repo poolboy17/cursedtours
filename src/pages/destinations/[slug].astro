@@ -1,7 +1,9 @@
 ---
 import CdnImage from '../../components/CdnImage.astro';
 import TourSidebar from '../../components/TourSidebar.astro';
+import type { Article } from '../../data/articles';
 import { getAllArticles } from '../../data/articles';
+import type { AuthoritativeSource, ContentSection, DestinationData, FeaturedTour } from '../../data/destinations';
 import { DESTINATIONS } from '../../data/destinations';
 import Layout from '../../layouts/Layout.astro';
 
@@ -12,17 +14,20 @@ export async function getStaticPaths() {
   }));
 }
 
-const { destination } = Astro.props;
+type DestinationFaq = DestinationData['faq'][number];
+type RelatedDestination = DestinationData['relatedDestinations'][number];
+
+const { destination } = Astro.props as { destination: DestinationData };
 
 const allArticles = getAllArticles();
 const relatedArticles = (destination.relatedArticleSlugs || [])
   .map((slug: string) => allArticles.find(a => a.slug === slug))
-  .filter(Boolean);
+  .filter((article): article is Article => Boolean(article));
 
 const faqLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": destination.faq.map((item: any) => ({
+  "mainEntity": destination.faq.map((item: DestinationFaq) => ({
     "@type": "Question",
     "name": item.question,
     "acceptedAnswer": { "@type": "Answer", "text": item.answer }
@@ -46,8 +51,8 @@ const breadcrumbLd = {
 };
 
 const tours = destination.featuredTours || [];
-const heroTour = tours.find((t: any) => t.tier === 'hero');
-const otherTours = tours.filter((t: any) => t.tier !== 'hero');
+const heroTour = tours.find((t: FeaturedTour) => t.tier === 'hero');
+const otherTours = tours.filter((t: FeaturedTour) => t.tier !== 'hero');
 ---
 
 <Layout
@@ -128,7 +133,7 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
           {/* Content Sections */}
           {destination.sections && destination.sections.length > 0 && (
             <div class="space-y-12 mb-16">
-              {destination.sections.map((section: any) => (
+              {destination.sections.map((section: ContentSection) => (
                 <div class="text-gray-300 text-lg leading-relaxed">
                   <h2 class="text-2xl font-bold text-white mb-4">{section.heading}</h2>
                   <p>{section.body}</p>
@@ -148,7 +153,7 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
             <div class="mb-16">
               <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Frequently Asked Questions</h2>
               <div class="space-y-4">
-                {destination.faq.map((item: any) => (
+                {destination.faq.map((item: DestinationFaq) => (
                   <details class="group bg-white/5 border border-white/10 rounded-lg overflow-hidden">
                     <summary class="flex items-center justify-between p-5 cursor-pointer text-white font-medium hover:text-purple-400 transition-colors">
                       {item.question}
@@ -168,7 +173,7 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
             <div class="mb-8">
               <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Related Articles</h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {relatedArticles.slice(0, 6).map((article: any) => (
+                {relatedArticles.slice(0, 6).map((article: Article) => (
                   <a href={`/articles/${article.slug}/`}
                     class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                     {article.featuredImage?.sourceUrl && (
@@ -242,7 +247,7 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
 
         {otherTours.length > 0 && (
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherTours.map((tour: any) => (
+            {otherTours.map((tour: FeaturedTour) => (
               <a href={tour.viatorUrl} target="_blank" rel="noopener noreferrer nofollow"
                 class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                 <div class="aspect-video overflow-hidden">
@@ -277,7 +282,7 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
       <div class="container px-4 mx-auto max-w-4xl">
         <h2 class="text-2xl font-bold text-white mb-6">Explore More Destinations</h2>
         <div class="flex flex-wrap gap-3">
-          {destination.relatedDestinations.map((rd: any) => (
+          {destination.relatedDestinations.map((rd: RelatedDestination) => (
             <a href={`/destinations/${rd.slug}/`}
               class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:border-purple-500/50 hover:text-purple-400 transition-all">
               {rd.name}
@@ -294,7 +299,7 @@ const otherTours = tours.filter((t: any) => t.tier !== 'hero');
       <div class="container px-4 mx-auto max-w-4xl">
         <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">Sources & Further Reading</h3>
         <div class="flex flex-wrap gap-4">
-          {destination.authoritativeSources?.map((src: any) => (
+          {destination.authoritativeSources?.map((src: AuthoritativeSource) => (
             <a href={src.url} target="_blank" rel="noopener noreferrer"
               class="text-sm text-purple-400 hover:text-purple-300 underline underline-offset-2 transition-colors">
               {src.name} ({src.type})

@@ -1,9 +1,17 @@
 import rss from '@astrojs/rss';
 import type { APIContext } from 'astro';
 
+interface RssArticleModule {
+  title: string;
+  date: string;
+  excerpt: string;
+  uri: string;
+  status?: string;
+}
+
 export async function GET(context: APIContext) {
   const articles = Object.values(
-    import.meta.glob('../data/articles/*.json', { eager: true }) as Record<string, any>
+    import.meta.glob('../data/articles/*.json', { eager: true }) as Record<string, RssArticleModule>
   )
     .filter((a) => a.status === 'publish')
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
