@@ -22,6 +22,12 @@
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://o4508247438655488.ingest.us.sentry.io; worker-src 'self' blob:;"
 
+# Prevent Google from indexing error pages
+[[headers]]
+  for = "/404.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
 # WP category pages → city hubs (301 passes link equity)
 [[redirects]]
   from = "/category/salem/"
@@ -123,8 +129,8 @@
   status = 301
   force = true
 
-# Catch-all 404
+# Signal "gone permanently" for legacy WP URLs — Google drops 410s in days vs months for 404s
 [[redirects]]
   from = "/*"
   to = "/404.html"
-  status = 404
+  status = 410
