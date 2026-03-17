@@ -292,6 +292,23 @@ export const CATEGORIES: Record<string, CategoryInfo> = {
 
 let _cache: Article[] | null = null;
 
+/**
+ * Date gate: returns true if the article's date is today or earlier.
+ * Used by getAllArticles() to exclude future-dated (drip-feed) articles
+ * from the build. A daily cron rebuild makes the next article appear.
+ */
+function isPublished(dateStr: string): boolean {
+  if (!dateStr) return false;
+  const pubDate = new Date(dateStr.replace(' ', 'T') + 'Z');
+  const today = new Date();
+  today.setUTCHours(23, 59, 59, 999);
+  return pubDate <= today;
+}
+
+/**
+ * Returns all articles with date <= today (date-gated for drip-feed).
+ * Future-dated articles are excluded from routes, sitemap, and RSS.
+ */
 export function getAllArticles(): Article[] {
   if (_cache) return _cache;
 
@@ -331,9 +348,51 @@ export function getAllArticles(): Article[] {
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-  _cache = articles;
+  // Date gate: exclude future-dated articles (drip-feed)
+  _cache = articles.filter((a) => isPublished(a.date));
 
-  return articles;
+  return _cache;
+}
+
+/**
+ * Returns ALL articles regardless of date — for audit/pipeline tools only.
+ * Do NOT use this in page generation, sitemap, or RSS.
+ */
+export function getAllArticlesUnfiltered(): Article[] {
+  const dir = join(process.cwd(), 'src/data/articles');
+  const files = readdirSync(dir).filter((f) => f.endsWith('.json'));
+  return files
+    .map((file) => {
+      const raw = readFileSync(join(dir, file), 'utf-8');
+      const data = JSON.parse(raw) as ArticleJson;
+      const img =
+        typeof data.featuredImage === 'string'
+          ? { sourceUrl: data.featuredImage, altText: data.title }
+          : {
+              sourceUrl: data.featuredImage.sourceUrl,
+              altText: data.featuredImage.altText ?? data.title,
+              width: data.featuredImage.width,
+              height: data.featuredImage.height,
+            };
+      return {
+        title: data.title,
+        slug: data.slug,
+        content: data.content,
+        excerpt: data.excerpt || '',
+        date: data.date,
+        modified: data.modified,
+        featuredImage: img,
+        categories: data.categories.map((c) =>
+          typeof c === 'string'
+            ? { id: 0, slug: c, name: c }
+            : { id: c.id ?? 0, slug: c.slug, name: c.name, description: c.description }
+        ),
+        wordCount: data.wordCount,
+        readingTime: data.readingTime,
+        keywords: data.keywords,
+      };
+    })
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export function getArticlesByCategory(categorySlug: string): Article[] {
