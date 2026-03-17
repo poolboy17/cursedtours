@@ -41,6 +41,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="Austin Ghost Tours: Driskill & Dark History | Cursed Tours"
   description="Discover Austin's haunted side—ghost tours of the Driskill Hotel, Sixth Street saloons, and the Texas State Capitol's dark history."
   canonical="https://cursedtours.com/austin-ghost-tours/"
+  ogImage="/images/heroes/austin-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -63,6 +64,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "Austin Ghost Tours", "item": "https://cursedtours.com/austin-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Austin Ghost Tours",
+  "description": "Ghost tours exploring Austin's haunted history, from the Servant Girl Annihilator to the haunted Driskill Hotel.",
+  "url": "https://cursedtours.com/austin-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/austin-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Austin",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 30.2672,
+    "longitude": -97.7431
+  },
+  "priceRange": "$25 – $45",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">

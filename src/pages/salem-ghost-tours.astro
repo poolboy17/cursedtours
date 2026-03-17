@@ -41,6 +41,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="Salem Ghost Tours: Witch Trials & Hauntings | Cursed Tours"
   description="Explore ghost tours in Salem, Massachusetts. Walk the streets where the 1692 witch trials unfolded and discover New England's darkest chapter."
   canonical="https://cursedtours.com/salem-ghost-tours/"
+  ogImage="/images/heroes/salem-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -63,6 +64,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "Salem Ghost Tours", "item": "https://cursedtours.com/salem-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Salem Ghost Tours",
+  "description": "Salem ghost tours covering the 1692 witch trials, the Witch House, Proctor's Ledge, and the city's enduring haunted legacy.",
+  "url": "https://cursedtours.com/salem-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/salem-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Salem",
+    "addressRegion": "MA",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 42.5195,
+    "longitude": -70.8967
+  },
+  "priceRange": "$20 – $45",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">

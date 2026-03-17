@@ -41,6 +41,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="Savannah Ghost Tours: America's Most Haunted | Cursed Tours"
   description="Explore ghost tours in Savannah, Georgia. Discover why this moss-draped city built over its dead is considered America's most haunted destination."
   canonical="https://cursedtours.com/savannah-ghost-tours/"
+  ogImage="/images/heroes/savannah-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -63,6 +64,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "Savannah Ghost Tours", "item": "https://cursedtours.com/savannah-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Savannah Ghost Tours",
+  "description": "Savannah ghost tours through Bonaventure Cemetery, the Pirates' House, Forsyth Park, and America's most haunted city.",
+  "url": "https://cursedtours.com/savannah-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/savannah-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Savannah",
+    "addressRegion": "GA",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 32.0835,
+    "longitude": -81.0998
+  },
+  "priceRange": "$28 – $55",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">

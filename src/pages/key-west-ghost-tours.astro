@@ -43,6 +43,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="Key West Ghost Tours: Haunted History of Bone Island | Cursed Tours"
   description="Explore ghost tours in Key West. Discover the haunted history of Bone Island—from Robert the Doll and shipwreck legends to yellow fever cemeteries and Old Town hauntings."
   canonical="https://cursedtours.com/key-west-ghost-tours/"
+  ogImage="/images/heroes/key-west-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -64,6 +65,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "Key West Ghost Tours", "item": "https://cursedtours.com/key-west-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Key West Ghost Tours",
+  "description": "Key West ghost tours covering Robert the Doll, the East Martello Museum, and the island's pirate and shipwreck history.",
+  "url": "https://cursedtours.com/key-west-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/key-west-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Key West",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 24.5551,
+    "longitude": -81.78
+  },
+  "priceRange": "$25 – $45",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">
     <div class="absolute pointer-events-none z-[1] opacity-40 sm:opacity-80 md:opacity-100 w-[60%] sm:w-[70%] md:w-[75%] max-w-[900px] h-full right-[-10%] sm:right-[-5%] top-0">

@@ -41,6 +41,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="Boston Ghost Tours: Colonial Hauntings | Cursed Tours"
   description="Explore Boston's haunted history through ghost tours covering colonial burial grounds, Revolutionary War sites, and the city's most documented hauntings."
   canonical="https://cursedtours.com/boston-ghost-tours/"
+  ogImage="/images/heroes/boston-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -63,6 +64,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "Boston Ghost Tours", "item": "https://cursedtours.com/boston-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Boston Ghost Tours",
+  "description": "Ghost tours through Boston's colonial haunted history, from Copp's Hill Burying Ground to the haunted Freedom Trail.",
+  "url": "https://cursedtours.com/boston-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/boston-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Boston",
+    "addressRegion": "MA",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 42.3601,
+    "longitude": -71.0589
+  },
+  "priceRange": "$28 – $50",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <section class="relative overflow-hidden bg-[#0a0510]">
     <div class="absolute pointer-events-none z-[1] opacity-40 sm:opacity-80 md:opacity-100 w-[60%] sm:w-[70%] md:w-[75%] max-w-[900px] h-full right-[-10%] sm:right-[-5%] top-0">

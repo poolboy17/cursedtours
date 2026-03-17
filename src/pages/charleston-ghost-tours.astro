@@ -41,6 +41,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="Charleston Ghost Tours: Haunted Holy City | Cursed Tours"
   description="Explore ghost tours in Charleston, South Carolina. Discover the haunted history hiding behind the Holy City's elegant antebellum facades."
   canonical="https://cursedtours.com/charleston-ghost-tours/"
+  ogImage="/images/heroes/charleston-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -63,6 +64,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "Charleston Ghost Tours", "item": "https://cursedtours.com/charleston-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Charleston Ghost Tours",
+  "description": "Ghost tours through Charleston's antebellum haunted history, Civil War spirits, and the legendary Old City Jail.",
+  "url": "https://cursedtours.com/charleston-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/charleston-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Charleston",
+    "addressRegion": "SC",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 32.7765,
+    "longitude": -79.9311
+  },
+  "priceRange": "$28 – $55",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">

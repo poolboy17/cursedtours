@@ -11,7 +11,9 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
+        "npm:@astrojs/check@~0.9.6",
         "npm:@astrojs/tailwind@^5.1.0",
+        "npm:@sentry/astro@^10.42.0",
         "npm:@typescript-eslint/parser@^8.56.0",
         "npm:astro@^4.16.18",
         "npm:autoprefixer@^10.4.16",
@@ -20,7 +22,8 @@
         "npm:prettier-plugin-astro@~0.14.1",
         "npm:prettier@^3.8.1",
         "npm:tailwindcss@^3.4.0",
-        "npm:typescript-eslint@^8.56.0"
+        "npm:typescript-eslint@^8.56.0",
+        "npm:typescript@^5.9.3"
       ]
     }
   }

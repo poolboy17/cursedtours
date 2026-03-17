@@ -41,6 +41,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="Chicago Ghost Tours: Gangsters, Ghosts & Fire | Cursed Tours"
   description="Explore Chicago's haunted history through ghost tours covering the Great Fire, H.H. Holmes, Resurrection Mary, and Prohibition-era gangster hauntings."
   canonical="https://cursedtours.com/chicago-ghost-tours/"
+  ogImage="/images/heroes/chicago-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -63,6 +64,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "Chicago Ghost Tours", "item": "https://cursedtours.com/chicago-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Chicago Ghost Tours",
+  "description": "Chicago ghost tours covering H.H. Holmes, Resurrection Mary, the Eastland disaster, and the city's most haunted locations.",
+  "url": "https://cursedtours.com/chicago-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/chicago-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Chicago",
+    "addressRegion": "IL",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.8781,
+    "longitude": -87.6298
+  },
+  "priceRange": "$30 – $55",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">

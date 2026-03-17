@@ -44,6 +44,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="New Orleans Ghost Tours: Haunted History Guide | Cursed Tours"
   description="Explore ghost tours in New Orleans. Discover haunted history, cemetery tours, vampire legends, and how to experience America's legendary haunted city."
   canonical="https://cursedtours.com/new-orleans-ghost-tours/"
+  ogImage="/images/heroes/new-orleans-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -66,6 +67,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "New Orleans Ghost Tours", "item": "https://cursedtours.com/new-orleans-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "New Orleans Ghost Tours",
+  "description": "New Orleans ghost tours through the French Quarter, the LaLaurie Mansion, St. Louis Cemetery, and the city's voodoo history.",
+  "url": "https://cursedtours.com/new-orleans-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/new-orleans-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "New Orleans",
+    "addressRegion": "LA",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 29.9511,
+    "longitude": -90.0715
+  },
+  "priceRange": "$28 – $65",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">

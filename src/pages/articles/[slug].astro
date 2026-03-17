@@ -43,11 +43,18 @@ const jsonLd = {
   ...(article.wordCount && { "wordCount": article.wordCount }),
   ...(categoryInfo && { "articleSection": categoryInfo.name }),
   ...(article.keywords?.length && { "keywords": article.keywords }),
-  "author": {
-    "@type": "Organization",
-    "name": "Cursed Tours",
-    "url": "https://cursedtours.com"
-  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Cursed Tours Editorial Team",
+      "url": "https://cursedtours.com/about/"
+    },
+    {
+      "@type": "Organization",
+      "name": "Cursed Tours",
+      "url": "https://cursedtours.com"
+    }
+  ],
   "publisher": {
     "@type": "Organization",
     "name": "Cursed Tours",

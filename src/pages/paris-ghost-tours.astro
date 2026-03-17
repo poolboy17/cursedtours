@@ -41,6 +41,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="Paris Ghost Tours: Catacombs & Revolution | Cursed Tours"
   description="Paris ghost tours through the Catacombs, Père Lachaise, Revolution execution sites, and the Phantom's opera house."
   canonical="https://cursedtours.com/paris-ghost-tours/"
+  ogImage="/images/heroes/paris-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -63,6 +64,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "Paris Ghost Tours", "item": "https://cursedtours.com/paris-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Paris Ghost Tours",
+  "description": "Paris ghost tours through the Catacombs, Père Lachaise Cemetery, and the haunted sites of the French Revolution.",
+  "url": "https://cursedtours.com/paris-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/paris-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Paris",
+    "addressRegion": "Île-de-France",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.8566,
+    "longitude": 2.3522
+  },
+  "priceRange": "$25 – $55",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">

@@ -41,6 +41,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="Rome Ghost Tours: Catacombs & Ancient Ghosts | Cursed Tours"
   description="Explore Rome's haunted history through ghost tours covering the Colosseum, ancient catacombs, bone churches, and millennia of documented hauntings."
   canonical="https://cursedtours.com/rome-ghost-tours/"
+  ogImage="/images/heroes/rome-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -63,6 +64,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "Rome Ghost Tours", "item": "https://cursedtours.com/rome-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Rome Ghost Tours",
+  "description": "Rome ghost tours through the Colosseum, Castel Sant'Angelo, the underground catacombs, and 2,000 years of haunted history.",
+  "url": "https://cursedtours.com/rome-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/rome-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rome",
+    "addressRegion": "Lazio",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.9028,
+    "longitude": 12.4964
+  },
+  "priceRange": "$28 – $55",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">

@@ -6,9 +6,10 @@ interface Props {
   ogImage?: string;
   ogImageWidth?: number;
   ogImageHeight?: number;
+  noindex?: boolean;
 }
 
-const { title, description = "Explore ghost tours across America's most haunted cities.", canonical, ogImage = '/images/og-homepage.webp', ogImageWidth = 1200, ogImageHeight = 630 } = Astro.props;
+const { title, description = "Explore ghost tours across America's most haunted cities.", canonical, ogImage = '/images/og-homepage.webp', ogImageWidth = 1200, ogImageHeight = 630, noindex = false } = Astro.props;
 const siteUrl = 'https://cursedtours.com';
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 import CdnImage from '../components/CdnImage.astro';
@@ -23,7 +24,9 @@ import CdnImage from '../components/CdnImage.astro';
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <title>{title}</title>
   <meta name="description" content={description}>
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
   {canonical && <link rel="canonical" href={canonical} />}
+  <link rel="alternate" type="application/rss+xml" title="Cursed Tours RSS Feed" href="https://cursedtours.com/rss.xml" />
   
   <!-- Open Graph -->
   <meta property="og:title" content={title}>

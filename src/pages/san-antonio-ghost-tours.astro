@@ -41,6 +41,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="San Antonio Ghost Tours: Alamo & River Walk | Cursed Tours"
   description="San Antonio ghost tours covering the Alamo, Spanish missions, the River Walk, and centuries of hauntings in Texas's most haunted city."
   canonical="https://cursedtours.com/san-antonio-ghost-tours/"
+  ogImage="/images/heroes/san-antonio-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -63,6 +64,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "San Antonio Ghost Tours", "item": "https://cursedtours.com/san-antonio-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "San Antonio Ghost Tours",
+  "description": "San Antonio ghost tours through the Alamo, the haunted Railroad Tracks, Menger Hotel, and the city's Spanish colonial dark history.",
+  "url": "https://cursedtours.com/san-antonio-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/san-antonio-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Antonio",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 29.4241,
+    "longitude": -98.4936
+  },
+  "priceRange": "$25 – $45",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">

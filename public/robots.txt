@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://cursedtours.com/sitemap.xml
+Feed: https://cursedtours.com/rss.xml
 
 # Block WordPress legacy paths
 Disallow: /wp-admin/

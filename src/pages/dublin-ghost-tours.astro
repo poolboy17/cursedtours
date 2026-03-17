@@ -41,6 +41,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="Dublin Ghost Tours: Crypts, Gaols & Hauntings | Cursed Tours"
   description="Explore Dublin's haunted history through ghost tours covering medieval crypts, Kilmainham Gaol, Bram Stoker's Dublin, and centuries of rebellion and plague."
   canonical="https://cursedtours.com/dublin-ghost-tours/"
+  ogImage="/images/heroes/dublin-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -63,6 +64,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "Dublin Ghost Tours", "item": "https://cursedtours.com/dublin-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Dublin Ghost Tours",
+  "description": "Dublin ghost tours through haunted Georgian streets, Kilmainham Gaol, and the dark folklore of the Hellfire Club.",
+  "url": "https://cursedtours.com/dublin-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/dublin-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dublin",
+    "addressRegion": "Leinster",
+    "addressCountry": "IE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 53.3498,
+    "longitude": -6.2603
+  },
+  "priceRange": "$25 – $50",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">

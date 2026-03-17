@@ -41,6 +41,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="Denver Ghost Tours: Mining Ghosts & Wild West | Cursed Tours"
   description="Denver ghost tours through Cheesman Park's buried cemetery, the Brown Palace Hotel, LoDo saloons, and Colorado's frontier ghosts."
   canonical="https://cursedtours.com/denver-ghost-tours/"
+  ogImage="/images/heroes/denver-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -63,6 +64,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "Denver Ghost Tours", "item": "https://cursedtours.com/denver-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Denver Ghost Tours",
+  "description": "Denver ghost tours exploring the Mile High City's haunted saloons, Cheesman Park cemetery history, and Gold Rush spirits.",
+  "url": "https://cursedtours.com/denver-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/denver-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Denver",
+    "addressRegion": "CO",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 39.7392,
+    "longitude": -104.9903
+  },
+  "priceRange": "$25 – $45",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">

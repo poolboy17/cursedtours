@@ -41,6 +41,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="London Ghost Tours: Jack the Ripper & Beyond | Cursed Tours"
   description="Explore London's haunted history through ghost tours covering Jack the Ripper, the Tower of London, plague pits, and centuries of documented hauntings."
   canonical="https://cursedtours.com/london-ghost-tours/"
+  ogImage="/images/heroes/london-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -63,6 +64,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "London Ghost Tours", "item": "https://cursedtours.com/london-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "London Ghost Tours",
+  "description": "London ghost tours through the Tower of London, Whitechapel Jack the Ripper sites, and the city's most haunted pubs.",
+  "url": "https://cursedtours.com/london-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/london-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "London",
+    "addressRegion": "England",
+    "addressCountry": "GB"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 51.5074,
+    "longitude": -0.1278
+  },
+  "priceRange": "$25 – $55",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <!-- Hero Section -->
   <!-- Hero Section -->

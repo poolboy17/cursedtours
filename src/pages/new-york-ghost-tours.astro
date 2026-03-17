@@ -41,6 +41,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="New York Ghost Tours: Dark History & Hauntings | Cursed Tours"
   description="New York ghost tours through Greenwich Village, colonial burial grounds, Prohibition-era speakeasies, and the city's darkest chapters."
   canonical="https://cursedtours.com/new-york-ghost-tours/"
+  ogImage="/images/heroes/new-york-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -63,6 +64,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "New York Ghost Tours", "item": "https://cursedtours.com/new-york-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "New York Ghost Tours",
+  "description": "New York City ghost tours through Greenwich Village, the Dakota building, abandoned subway stations, and the city's most haunted neighborhoods.",
+  "url": "https://cursedtours.com/new-york-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/new-york-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.7128,
+    "longitude": -74.006
+  },
+  "priceRange": "$30 – $60",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">

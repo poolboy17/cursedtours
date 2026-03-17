@@ -41,6 +41,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="St. Augustine Ghost Tours: Oldest City Ghosts | Cursed Tours"
   description="Explore ghost tours in St. Augustine, Florida. Experience 450 years of documented hauntings in the nation's oldest European settlement."
   canonical="https://cursedtours.com/st-augustine-ghost-tours/"
+  ogImage="/images/heroes/st-augustine-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -63,6 +64,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "St. Augustine Ghost Tours", "item": "https://cursedtours.com/st-augustine-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "St. Augustine Ghost Tours",
+  "description": "St. Augustine ghost tours through America's oldest city — 450 years of documented hauntings, the Spanish Military Hospital, and the St. Augustine Lighthouse.",
+  "url": "https://cursedtours.com/st-augustine-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/st-augustine-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "St. Augustine",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 29.8943,
+    "longitude": -81.3145
+  },
+  "priceRange": "$25 – $45",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">

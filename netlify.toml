@@ -22,3 +22,109 @@
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://o4508247438655488.ingest.us.sentry.io; worker-src 'self' blob:;"
 
+# WP category pages → city hubs (301 passes link equity)
+[[redirects]]
+  from = "/category/salem/"
+  to = "/salem-ghost-tours/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/category/charleston/"
+  to = "/charleston-ghost-tours/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/category/rome/"
+  to = "/rome-ghost-tours/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/category/savannah/"
+  to = "/savannah-ghost-tours/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/category/paris/"
+  to = "/paris-ghost-tours/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/category/edinburgh/"
+  to = "/edinburgh-ghost-tours/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/category/london/"
+  to = "/london-ghost-tours/"
+  status = 301
+  force = true
+
+# WP slug redirects → canonical equivalents
+
+# Individual Chicago tour pages → Chicago hub
+[[redirects]]
+  from = "/chicago-haunted-ghost-tour-gps-self-guided-walking-tour/"
+  to = "/chicago-ghost-tours/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/chicago-architecture-and-ghost-tour/"
+  to = "/chicago-ghost-tours/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ghosts-of-chicago-family-friendly-ghost-tour/"
+  to = "/chicago-ghost-tours/"
+  status = 301
+  force = true
+
+# Old WP utility pages
+[[redirects]]
+  from = "/affiliate-disclosure/"
+  to = "/editorial-policy/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cookie-policy/"
+  to = "/privacy-policy/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tours/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tours/*"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms-of-service/"
+  to = "/terms/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact-us/"
+  to = "/contact/"
+  status = 301
+  force = true
+
+# Catch-all 404
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

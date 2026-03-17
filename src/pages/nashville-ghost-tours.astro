@@ -40,6 +40,7 @@ import CdnImage from '../components/CdnImage.astro';
   title="Nashville Ghost Tours: Civil War & Honky-Tonks | Cursed Tours"
   description="Nashville ghost tours covering the Ryman Auditorium, Civil War battlefields, Printers Alley, and Tennessee's most haunted locations."
   canonical="https://cursedtours.com/nashville-ghost-tours/"
+  ogImage="/images/heroes/nashville-hero.webp"
 >
   <!-- FAQ Schema -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -62,6 +63,30 @@ import CdnImage from '../components/CdnImage.astro';
       { "@type": "ListItem", "position": 2, "name": "Nashville Ghost Tours", "item": "https://cursedtours.com/nashville-ghost-tours/" }
     ]
   })} />
+  <!-- TouristAttraction Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Nashville Ghost Tours",
+  "description": "Nashville ghost tours through the haunted Ryman Auditorium, Civil War battlefields, and the city's most spirited honky-tonks.",
+  "url": "https://cursedtours.com/nashville-ghost-tours/",
+  "image": "https://cursedtours.com/images/heroes/nashville-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Nashville",
+    "addressRegion": "TN",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 36.1627,
+    "longitude": -86.7816
+  },
+  "priceRange": "$28 – $45",
+  "touristType": "History enthusiasts, paranormal investigators",
+  "isAccessibleForFree": false
+})} />
+
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-[#0a0510]">

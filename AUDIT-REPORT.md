@@ -1,6 +1,6 @@
 # SemanticPipe Audit Report v1.1
-**Date:** 2026-03-02 11:41  
-**Articles:** 171 | **Perfect:** 167 | **Failing:** 4  
+**Date:** 2026-03-05 08:46  
+**Articles:** 171 | **Perfect:** 171 | **Failing:** 0  
 **Recently modified (≥2026-02-24):** 171  
 **Broken cross-links:** 0 articles
 
@@ -15,9 +15,9 @@
 | H2s 4-8 | 148 | 171 | 86% |
 | No H1 | 171 | 171 | 100% |
 | Footer | 171 | 171 | 100% |
-| ≥3 body links | 168 | 171 | 98% |
+| ≥3 body links | 171 | 171 | 100% |
 | Hub link | 171 | 171 | 100% |
-| No banned | 170 | 171 | 99% |
+| No banned | 171 | 171 | 100% |
 | No mojibake | 171 | 171 | 100% |
 | WC ≥1000 | 171 | 171 | 100% |
 
@@ -212,18 +212,6 @@ _All article cross-links resolve._
 
 ## Articles with Failures
 
-### `bachelors-grove-cemetery-chicago` — 1 fails
-- ❌ links:2
-
-### `chicagos-most-haunted-bars` — 1 fails
-- ❌ links:2
-
-### `eastland-disaster-chicago` — 1 fails
-- ❌ links:2
-
-### `most-haunted-places-in-austin` — 1 fails
-- ❌ banned:['unlock']
-
 ## Thinnest Articles (lowest entity + source counts)
 
 | Article | Entities | Years | Sources | WC |
@@ -234,7 +222,7 @@ _All article cross-links resolve._
 | eastern-state-paranormal-investigations | 17 | 4 | 10 | 1077 |
 | angola-prison-louisiana-history | 28 | 11 | 0 | 1242 |
 | san-antonio-railroad-ghost-tracks | 14 | 4 | 14 | 1870 |
-| bachelors-grove-cemetery-chicago | 22 | 7 | 7 | 1295 |
+| bachelors-grove-cemetery-chicago | 22 | 7 | 7 | 1296 |
 | famous-alcatraz-escape-1962 | 24 | 8 | 5 | 1338 |
 | hh-holmes-murder-castle-chicago | 28 | 10 | 1 | 1276 |
 | port-arthur-convict-history | 26 | 10 | 4 | 1494 |
