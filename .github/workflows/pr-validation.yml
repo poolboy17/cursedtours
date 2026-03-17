@@ -1,6 +1,7 @@
 name: PR Validation Gate
 
 on:
+  workflow_dispatch:
   pull_request:
     branches: [main]
     paths:
@@ -28,9 +29,8 @@ jobs:
       - name: Install dependencies
         run: npm ci --include=dev
 
-      - name: Lint check
-        run: npx eslint src/ --max-warnings 50
-        continue-on-error: true
+      - name: Lint source and tests
+        run: npx eslint src/ tests/
 
       - name: Astro & TypeScript checks
         run: npx astro check
