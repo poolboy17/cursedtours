@@ -20,6 +20,17 @@ const ROOT = join(__dirname, '..');
 const EXPECTED_PID = 'P00166886';
 const EXPECTED_MCID = '42383';
 const REQUIRED_TIERS = new Set(['hero', 'budget', 'premium']);
+const VALID_TIERS = new Set(['hero', 'budget', 'premium', 'alternative']);
+const TOUR_REQUIRED_FIELDS = [
+  'productCode',
+  'title',
+  'image',
+  'price',
+  'rating',
+  'reviews',
+  'tier',
+  'viatorUrl',
+];
 
 // ── Test runner ──
 let pass = 0;
@@ -31,13 +42,62 @@ const warnings = [];
 function ok() {
   pass++;
 }
+
 function bad(msg) {
   fail++;
   errors.push(`  ✗ ${msg}`);
 }
+
 function notice(msg) {
   warn++;
   warnings.push(`  ⚠ ${msg}`);
+}
+
+function extractTourObjects(block) {
+  return [...block.matchAll(/\{[\s\S]*?\n\s*\}/g)].map((match) => match[0]);
+}
+
+function hasField(objectText, field) {
+  return new RegExp(`\\b${field}\\s*:`, 'm').test(objectText);
+}
+
+function extractStringField(objectText, field) {
+  const match = objectText.match(
+    new RegExp(`${field}\\s*:\\s*['"\\x60]([^'"\\x60]+)['"\\x60]`, 'm')
+  );
+  return match ? match[1] : null;
+}
+
+function extractCodeFromViatorUrl(url) {
+  const match = url.match(/\/d[^/?#]+-([^/?#]+)(?:\?|$)/);
+  return match ? match[1] : null;
+}
+
+function validateTierCoverage(tiers, label, { exactCount = null, minCount = null } = {}) {
+  if (exactCount !== null) {
+    if (tiers.length !== exactCount) {
+      bad(`[${label}] Has ${tiers.length} tours (expected ${exactCount})`);
+    } else {
+      ok(`${label} has ${exactCount} tours`);
+    }
+  }
+
+  if (minCount !== null) {
+    if (tiers.length < minCount) {
+      bad(`[${label}] Has ${tiers.length} tours (expected at least ${minCount})`);
+    } else {
+      ok(`${label} has ${tiers.length} tours`);
+    }
+  }
+
+  const tierSet = new Set(tiers);
+  for (const tier of REQUIRED_TIERS) {
+    if (!tierSet.has(tier)) {
+      bad(`[${label}] Missing "${tier}" tier tour`);
+    } else {
+      ok(`${label} has ${tier} tier`);
+    }
+  }
 }
 
 console.log(`\n  CursedTours Tour & Affiliate Validation`);
@@ -50,75 +110,122 @@ const cityToursRaw = readFileSync(join(ROOT, 'src', 'data', 'cityTours.ts'), 'ut
 const affMatch = cityToursRaw.match(/const AFF\s*=\s*['"`]([^'"`]+)['"`]/);
 if (!affMatch) {
   bad('Could not find AFF constant in cityTours.ts');
-} else {
-  const affValue = affMatch[1];
-  if (!affValue.includes(`pid=${EXPECTED_PID}`)) {
-    bad(`AFF constant has wrong pid: "${affValue}" (expected pid=${EXPECTED_PID})`);
+}
+
+const affResolved = affMatch ? affMatch[1] : '';
+
+if (affMatch) {
+  if (!affResolved.includes(`pid=${EXPECTED_PID}`)) {
+    bad(`AFF constant has wrong pid: "${affResolved}" (expected pid=${EXPECTED_PID})`);
   } else {
     ok('AFF pid correct');
   }
-  if (!affValue.includes(`mcid=${EXPECTED_MCID}`)) {
-    bad(`AFF constant has wrong mcid: "${affValue}" (expected mcid=${EXPECTED_MCID})`);
+
+  if (!affResolved.includes(`mcid=${EXPECTED_MCID}`)) {
+    bad(`AFF constant has wrong mcid: "${affResolved}" (expected mcid=${EXPECTED_MCID})`);
   } else {
     ok('AFF mcid correct');
   }
 }
 
-// Extract all Viator URLs from the file (handles both template literals and plain strings)
+function validateViatorUrl(url, label, expectedProductCode) {
+  const resolved = url.replace(/\$\{AFF\}/g, affResolved);
+  const hasAffTemplate = url.includes('${AFF}');
+
+  if (!hasAffTemplate && !resolved.includes(`pid=${EXPECTED_PID}`)) {
+    bad(`[${label}] Missing affiliate pid in URL: ${url.slice(0, 80)}...`);
+  } else {
+    ok(`${label} affiliate pid`);
+  }
+
+  if (!hasAffTemplate && !resolved.includes(`mcid=${EXPECTED_MCID}`)) {
+    bad(`[${label}] Missing affiliate mcid in URL: ${url.slice(0, 80)}...`);
+  } else {
+    ok(`${label} affiliate mcid`);
+  }
+
+  if (!url.includes('viator.com/tours/')) {
+    bad(`[${label}] URL missing /tours/ path: ${url.slice(0, 80)}...`);
+  } else {
+    ok(`${label} URL path`);
+  }
+
+  if (!url.includes('?')) {
+    bad(`[${label}] URL missing ? before params: ${url.slice(0, 80)}...`);
+  } else {
+    ok(`${label} query separator`);
+  }
+
+  const urlProductCode = extractCodeFromViatorUrl(url);
+  if (!urlProductCode) {
+    bad(`[${label}] Could not extract product code from URL: ${url.slice(0, 80)}...`);
+  } else if (expectedProductCode && urlProductCode !== expectedProductCode) {
+    bad(
+      `[${label}] productCode "${expectedProductCode}" does not match URL code "${urlProductCode}"`
+    );
+  } else {
+    ok(`${label} product code matches URL`);
+  }
+}
+
+function validateTourObject(objectText, label) {
+  for (const field of TOUR_REQUIRED_FIELDS) {
+    if (!hasField(objectText, field)) {
+      bad(`[${label}] Missing required field: ${field}`);
+    } else {
+      ok(`${label} has ${field}`);
+    }
+  }
+
+  const tier = extractStringField(objectText, 'tier');
+  if (tier && !VALID_TIERS.has(tier)) {
+    bad(`[${label}] Invalid tier: "${tier}"`);
+  }
+
+  const price = extractStringField(objectText, 'price');
+  if (price && !/^\$\d+(?:\.\d{2})?$/.test(price) && price !== 'Self-guided') {
+    notice(`[${label}] Unusual price format: "${price}" (expected $XX or Self-guided)`);
+  }
+
+  const rating = Number.parseFloat(extractStringField(objectText, 'rating') ?? '');
+  if (!Number.isNaN(rating) && (rating < 1 || rating > 5)) {
+    bad(`[${label}] Invalid rating: ${rating} (should be 1-5)`);
+  }
+
+  const productCode = extractStringField(objectText, 'productCode');
+  const viatorUrl = extractStringField(objectText, 'viatorUrl');
+  if (productCode && viatorUrl) {
+    validateViatorUrl(viatorUrl, label, productCode);
+  }
+}
+
 const viatorUrls = [
   ...cityToursRaw.matchAll(/viatorUrl:\s*[`'"](https:\/\/www\.viator\.com[^`'"]*)[`'"]/g),
 ];
 console.log(`  Found ${viatorUrls.length} Viator URLs in cityTours.ts`);
-
-// Resolve the AFF variable for URL checking
-const affResolved = affMatch ? affMatch[1] : '';
-
 for (const [, url] of viatorUrls) {
-  // Resolve template literal ${AFF} to actual value for checking
-  const resolved = url.replace(/\$\{AFF\}/g, affResolved);
-
-  // Check affiliate params present (either directly or via ${AFF} template)
-  const hasAffTemplate = url.includes('${AFF}');
-  if (!hasAffTemplate && !resolved.includes(`pid=${EXPECTED_PID}`)) {
-    bad(`Missing affiliate params in URL: ${url.slice(0, 80)}...`);
-  } else {
-    ok('Affiliate params in URL');
-  }
-
-  // Check URL format: should contain /tours/ path
-  if (!url.includes('viator.com/tours/')) {
-    bad(`URL missing /tours/ path: ${url.slice(0, 80)}...`);
-  } else {
-    ok('URL has /tours/ path');
-  }
-
-  // Check URL has query separator before affiliate params
-  if (!url.includes('?')) {
-    bad(`URL missing ? before params: ${url.slice(0, 80)}...`);
-  }
+  validateViatorUrl(url, 'cityTours.ts raw URL');
 }
 
 // ── Parse city blocks to check tour completeness ──
-// Match each city key and its tours array
 const cityBlockPattern = /['"]([a-z-]+)['"]\s*:\s*\[/g;
 const cityKeys = [];
-let m;
-while ((m = cityBlockPattern.exec(cityToursRaw)) !== null) {
-  cityKeys.push(m[1]);
+let cityMatch;
+while ((cityMatch = cityBlockPattern.exec(cityToursRaw)) !== null) {
+  cityKeys.push(cityMatch[1]);
 }
 console.log(`  Found ${cityKeys.length} cities in CITY_TOURS\n`);
 
-// For tier validation, extract tier values per city
 for (const city of cityKeys) {
-  // Find all tier values for this city's block
   const cityStart =
     cityToursRaw.indexOf(`'${city}'`) !== -1
       ? cityToursRaw.indexOf(`'${city}'`)
       : cityToursRaw.indexOf(`"${city}"`);
 
-  if (cityStart === -1) continue;
+  if (cityStart === -1) {
+    continue;
+  }
 
-  // Get text from city key to next city key or end
   const nextCityIdx = cityKeys.indexOf(city) + 1;
   const endIdx =
     nextCityIdx < cityKeys.length
@@ -128,67 +235,42 @@ for (const city of cityKeys) {
       : cityToursRaw.length;
 
   const cityBlock = cityToursRaw.slice(cityStart, endIdx);
-  const tierMatches = [...cityBlock.matchAll(/tier:\s*['"]([^'"]+)['"]/g)].map((t) => t[1]);
+  const tourObjects = extractTourObjects(cityBlock);
+  const tiers = tourObjects
+    .map((objectText) => extractStringField(objectText, 'tier'))
+    .filter(Boolean);
 
-  // Check 3 tours per city
-  if (tierMatches.length !== 3) {
-    bad(`[${city}] Has ${tierMatches.length} tours (expected 3)`);
-  } else {
-    ok(`${city} has 3 tours`);
-  }
-
-  // Check all required tiers present
-  const tierSet = new Set(tierMatches);
-  for (const tier of REQUIRED_TIERS) {
-    if (!tierSet.has(tier)) {
-      bad(`[${city}] Missing "${tier}" tier tour`);
-    } else {
-      ok(`${city} has ${tier} tier`);
-    }
-  }
-
-  // Check for required fields in each tour object
-  const prices = [...cityBlock.matchAll(/price:\s*['"]([^'"]+)['"]/g)].map((p) => p[1]);
-  const ratings = [...cityBlock.matchAll(/rating:\s*([\d.]+)/g)].map((r) => parseFloat(r[1]));
-
-  // Rating sanity check
-  for (const rating of ratings) {
-    if (rating < 1 || rating > 5) {
-      bad(`[${city}] Invalid rating: ${rating} (should be 1-5)`);
-    }
-  }
-
-  // Price format check
-  for (const price of prices) {
-    if (!/^\$\d+$/.test(price)) {
-      notice(`[${city}] Unusual price format: "${price}" (expected $XX)`);
-    }
-  }
+  validateTierCoverage(tiers, city, { exactCount: 3 });
+  tourObjects.forEach((objectText, index) => {
+    validateTourObject(objectText, `${city} tour ${index + 1}`);
+  });
 }
 
-// ── Also check destinations.ts for affiliate links ──
+// ── Also validate destination featured tours ──
 const destPath = join(ROOT, 'src', 'data', 'destinations.ts');
-let destRaw;
 try {
-  destRaw = readFileSync(destPath, 'utf-8');
-  const destViatorUrls = [
-    ...destRaw.matchAll(/viatorUrl:\s*[`'"](https:\/\/www\.viator\.com[^`'"]+)[`'"]/g),
+  const destRaw = readFileSync(destPath, 'utf-8');
+  const featuredTourBlocks = [
+    ...destRaw.matchAll(
+      /slug:\s*'([^']+)'[\s\S]*?featuredTours:\s*\[([\s\S]*?)\],\s*\n\s*whyItMatters:/g
+    ),
   ];
 
-  if (destViatorUrls.length > 0) {
-    console.log(`  Found ${destViatorUrls.length} Viator URLs in destinations.ts`);
-    for (const [, url] of destViatorUrls) {
-      const hasTemplate = url.includes('${AFF}') || url.includes('${');
-      const hasDirect =
-        url.includes(`pid=${EXPECTED_PID}`) && url.includes(`mcid=${EXPECTED_MCID}`);
-      if (!hasTemplate && !hasDirect) {
-        bad(`[destinations.ts] Missing affiliate params: ${url.slice(0, 80)}...`);
-      } else {
-        ok('destinations.ts affiliate params');
-      }
+  if (featuredTourBlocks.length > 0) {
+    console.log(`  Found ${featuredTourBlocks.length} destination featuredTours blocks`);
+    for (const [, slug, block] of featuredTourBlocks) {
+      const tourObjects = extractTourObjects(block);
+      const tiers = tourObjects
+        .map((objectText) => extractStringField(objectText, 'tier'))
+        .filter(Boolean);
+
+      validateTierCoverage(tiers, `destination:${slug}`, { minCount: 3 });
+      tourObjects.forEach((objectText, index) => {
+        validateTourObject(objectText, `destination:${slug} tour ${index + 1}`);
+      });
     }
   } else {
-    console.log(`  No Viator URLs found in destinations.ts (uses cityTours imports)`);
+    console.log('  No featuredTours blocks found in destinations.ts');
   }
 } catch {
   notice('Could not read destinations.ts');
