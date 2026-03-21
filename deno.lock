@@ -11,7 +11,10 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
-        "npm:@astrojs/check@~0.9.6",
+        "npm:@astrojs/check@~0.9.8",
+        "npm:@astrojs/netlify@^5.5.4",
+        "npm:@astrojs/rss@4",
+        "npm:@astrojs/sitemap@^3.7.1",
         "npm:@astrojs/tailwind@^5.1.0",
         "npm:@sentry/astro@^10.42.0",
         "npm:@typescript-eslint/parser@^8.56.0",
