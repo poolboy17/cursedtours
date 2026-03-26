@@ -16,7 +16,7 @@ What happened in 1692 was not simply a community gripped by fear of the Devil. I
 
 ## Religion as Social Order
 
-In Puritan New England, religion was not a private matter of individual conscience. It was the organizing principle of society. Church membership determined civic participation. Religious doctrine shaped law. Ministers advised magistrates, and magistrates enforced religious conformity. To be a good Puritan was to be a good citizen, and vice versa. Understanding [life in Puritan New England before the trials](/articles/life-in-puritan-new-england-before-the-trials/) reveals just how thoroughly religion permeated daily existence.
+According to Atlas Obscura, in Puritan New England, religion was not a private matter of individual conscience. It was the organizing principle of society. Church membership determined civic participation. Religious doctrine shaped law. Ministers advised magistrates, and magistrates enforced religious conformity. To be a good Puritan was to be a good citizen, and vice versa. Understanding [life in Puritan New England before the trials](/articles/life-in-puritan-new-england-before-the-trials/) reveals just how thoroughly religion permeated daily existence.
 
 This fusion meant that religious authority and political authority reinforced each other. Those who held power in the church also held power in the community. Those who challenged religious norms were not merely heretics—they were threats to social stability. And those who accused others of spiritual crimes were, in effect, wielding a form of political power.
 

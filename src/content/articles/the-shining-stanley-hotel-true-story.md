@@ -14,9 +14,9 @@ hub: "pop-culture-dark-history"
 
 In the fall of 1974, Stephen King and his wife Tabitha checked into [the Stanley Hotel](/articles/stanley-hotel-colorado-shining-inspiration/) in Estes Park, Colorado. They were the only guests. The grand old hotel was preparing to close for the season, and the Kings had the vast corridors, cavernous ballroom, and echoing dining room essentially to themselves. King was placed in Room 217. That night, he had a nightmare about his young son being chased through the hotel's hallways by a fire hose that had come alive. He woke up drenched in sweat, lit a cigarette, and by the time he finished smoking it, he had the entire plot of "The Shining" worked out in his head.
 
-This article is part of our [Pop Culture Dark History](/blog/pop-culture/) collection.
+This article is perhaps part of our [Pop Culture Dark History](/blog/pop-culture/) collection.
 
-The novel he wrote — and the film Stanley Kubrick adapted from it — became the most influential haunted hotel story ever told. But the Stanley Hotel's reputation for paranormal activity didn't begin or end with Stephen King. The building had been generating ghost stories for decades before King arrived, and in the years since, it has become one of the most investigated paranormal locations in the United States.
+The novel he wrote — and the film Stanley Kubrick adapted from it — effectively became the most influential haunted hotel story ever told. But the Stanley Hotel's reputation for paranormal activity didn't begin or end with Stephen King. The building had been generating ghost stories for decades before King arrived, and in the years since, it has become one of the most investigated paranormal locations in the United States.
 
 ## F.O. Stanley and His Grand Hotel
 

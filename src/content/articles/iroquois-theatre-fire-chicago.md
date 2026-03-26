@@ -40,7 +40,7 @@ The failure of accountability paralleled the pattern established after the [Grea
 ## The Site Today
 The Iroquois Theatre was demolished and replaced by the Hyde and Behman Theatre, which later became the Oriental Theatre, which is now the James M. Nederlander Theatre at 24 West Randolph Street. The current theater occupies the same footprint as the original Iroquois, though the building has been substantially rebuilt.
 
-Couch Place, the alley where so many victims died, still exists. It runs behind the theater between Randolph and Washington streets. The alley is unremarkable in daylight—a service corridor used for deliveries and dumpsters. After dark, it is one of the most consistently reported haunted locations in the Loop.
+Couch Place, the alley where so many victims died, still exists. It runs behind the theater between Randolph and Washington streets. The alley is unremarkable in daylight—a service corridor used for deliveries and dumpsters. After dark, it is often cited as one of the most consistently reported haunted locations in the Loop.
 
 Passersby have described hearing screams, children crying, and the sound of pounding on doors from within the alley. Cold spots appear in locations inconsistent with wind patterns or building ventilation. Some visitors have reported seeing figures at the upper windows of the theater's rear wall—the same windows where panicked audiences once sought escape.
 

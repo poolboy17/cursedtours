@@ -18,7 +18,7 @@ This article is part of our [Vampire Culture](/blog/vampire-culture/) collection
 
 Eggers' approach to historical filmmaking treats the past not as a backdrop but as a psychological environment. In The Witch, he used only building techniques and materials available in 1630s New England. In The Lighthouse, he shot on 35mm film with orthochromatic-style filtration to replicate the tonal range of 19th-century photography. For Nosferatu, he applied this same obsessiveness to the visual language of German Expressionism and the folk traditions of Carpathian vampire belief.
 
-The result was a film that looked like nothing else in contemporary horror — not a period recreation but a sustained attempt to inhabit the psychological space of early 19th-century Central Europe, where rationalism and superstition coexisted without clear boundaries. Eggers was not remaking Murnau's 1922 film so much as returning to the same source material — [Eastern European vampire folklore](/articles/vampire-folklore-eastern-europe/) — and approaching it with tools Murnau did not have.
+The result was arguably a film that looked like nothing else in contemporary horror — not a period recreation but a sustained attempt to inhabit the psychological space of early 19th-century Central Europe, where rationalism and superstition coexisted without clear boundaries. Eggers was not remaking Murnau's 1922 film so much as returning to the same source material — [Eastern European vampire folklore](/articles/vampire-folklore-eastern-europe/) — and approaching it with tools Murnau did not have.
 
 ## Filming Across Central Europe
 

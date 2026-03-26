@@ -48,7 +48,7 @@ The site's haunted reputation began in earnest during the 19th century itself. D
 
 ## The 1996 Tragedy and Its Legacy
 
-On April 28, 1996, a gunman opened fire at the Broad Arrow Cafe at Port Arthur, killing 35 people and wounding 23 others in what remains Australia's deadliest mass shooting. The attack, committed by a 28-year-old Hobart man, targeted tourists visiting the historic site on a Sunday afternoon. Victims ranged in age from three to 72. The shooting lasted approximately 15 minutes before the gunman fled to a nearby guesthouse, where he was captured the following morning after a standoff.
+On April 28, 1996, a gunman opened fire at the Broad Arrow Cafe at Port Arthur, killing 35 people and wounding 23 others in what arguably remains Australia's deadliest mass shooting. The attack, committed by a 28-year-old Hobart man, targeted tourists visiting the historic site on a Sunday afternoon. Victims ranged in age from three to 72. The shooting lasted approximately 15 minutes before the gunman fled to a nearby guesthouse, where he was captured the following morning after a standoff.
 
 The massacre prompted the Australian government to enact sweeping gun reform within weeks. The National Firearms Agreement, brokered by Prime Minister John Howard, banned semi-automatic and automatic weapons, established a national firearms registry, and funded a mandatory buyback program that collected over 650,000 weapons. Australia has not experienced a comparable mass shooting since. The speed and comprehensiveness of the legislative response remains unique among nations that have experienced similar tragedies.
 

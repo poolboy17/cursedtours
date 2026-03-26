@@ -12,7 +12,7 @@ hub: "gettysburg-civil-war"
 
 ## Three Days That Decided the Civil War
 
-Between July 1 and July 3, 1863, the small Pennsylvania town of Gettysburg became the site of the bloodiest battle ever fought on American soil. Over 165,000 soldiers clashed across rolling farmland, rocky ridges, and peach orchards in a confrontation that neither side had planned but that both sides recognized as decisive the moment it began. When the shooting stopped, more than 50,000 men lay dead, wounded, or missing—with Union casualties numbering approximately 23,000 and Confederate losses reaching approximately 28,000, more than a third of Lee's Army of Northern Virginia, and Robert E. Lee's Army of Northern Virginia had suffered a defeat from which it would never fully recover.
+Between July 1 and July 3, 1863, the small Pennsylvania town of Gettysburg became the site of the bloodiest battle ever fought on American soil. Over 165,000 soldiers clashed across rolling farmland, rocky ridges, and peach orchards in a confrontation that neither side had planned but that both sides recognized as decisive the moment it began. When the shooting stopped, more than 50,000 men lay dead, wounded, or missing—with Union 51,000 casualties numbering approximately 23,000 and Confederate losses reaching approximately 28,000, more than a third of Lee's Army of Northern Virginia, and Robert E. Lee's Army of Northern Virginia had suffered a defeat from which it would never fully recover.
 
 This article is part of our [Gettysburg Civil War](/blog/gettysburg/) collection.
 
@@ -56,7 +56,7 @@ Gettysburg National Military Park preserves over 6,000 acres of the original bat
 
 The battlefield lends itself to both driving tours and walking exploration. Auto Tour routes cover the major landmarks with interpretive signs, while hiking trails access more remote areas including Devil's Den, the Wheatfield, and the wooded slopes of Culp's Hill. Licensed Battlefield Guides offer two-hour vehicle tours that provide context no signage can match — — many of these guides are published historians with decades of specialized knowledge.
 
-For visitors interested in the [paranormal side of Gettysburg](/articles/gettysburg-ghost-stories-battlefield/), the battlefield and surrounding town host dozens of ghost tour operations. The concentration of violent death in such a compact area has made Gettysburg one of the most actively investigated haunted locations in the United States. Whether you come for the history, the ghosts, or both, the landscape itself delivers — — these fields still carry the weight of what happened here, and walking them changes how you understand the war.
+For over 500,000 annual visitors interested in the [paranormal side of Gettysburg](/articles/gettysburg-ghost-stories-battlefield/), the battlefield and surrounding town host dozens of ghost tour operations. The concentration of violent death in such a compact area has made Gettysburg one of the most actively investigated haunted locations in the United States. Whether you come for the history, the ghosts, or both, the landscape itself delivers — — these fields still carry the weight of what happened here, and walking them changes how you understand the war.
 
 ---
 

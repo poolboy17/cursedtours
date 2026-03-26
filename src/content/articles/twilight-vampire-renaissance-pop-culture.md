@@ -38,7 +38,7 @@ The renaissance had economic dimensions beyond entertainment. Hot Topic devoted 
 
 ## Why Vampires, Why Then
 
-The vampire renaissance coincided with several cultural currents that made the undead particularly resonant. The post-9/11 period produced widespread anxiety about threats that were invisible, omnipresent, and embedded within ordinary life — precisely the qualities that define the vampire as a literary figure. The 2008 financial crisis heightened interest in stories about ancient, wealthy beings who accumulated power over centuries while ordinary people struggled. The vampire as a metaphor for predatory capitalism was not new, but it gained fresh relevance.
+The vampire renaissance coincided with several cultural currents that made the undead particularly resonant. The post-9/11 period reportedly produced widespread anxiety about threats that were invisible, omnipresent, and embedded within ordinary life — precisely the qualities that define the vampire as a literary figure. The 2008 financial crisis heightened interest in stories about ancient, wealthy beings who accumulated power over centuries while ordinary people struggled. The vampire as a metaphor for predatory capitalism was not new, but it gained fresh relevance.
 
 The rise of social media and the attention economy created conditions where the vampire's defining characteristics — eternal youth, physical perfection, the ability to compel others — mapped onto emerging cultural aspirations. The vampire did not age, did not gain weight, did not lose relevance. In a culture increasingly organized around self-presentation and the projection of an idealized self, the vampire offered a fantasy of permanent optimization.
 
