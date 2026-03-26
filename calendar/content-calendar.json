@@ -1,0 +1,112 @@
+{
+  "site": "cursedtours",
+  "defaultBatchSize": 3,
+  "lastUpdated": "2026-03-26",
+  "articles": [
+    {
+      "slug": "most-haunted-pubs-in-austin",
+      "hub": "austin",
+      "keyword": "haunted pubs austin",
+      "status": "scheduled",
+      "scheduledWeek": "2026-W14"
+    },
+    {
+      "slug": "history-of-the-driskill-hotel-ghosts",
+      "hub": "austin",
+      "keyword": "driskill hotel ghosts austin",
+      "status": "scheduled",
+      "scheduledWeek": "2026-W14"
+    },
+    {
+      "slug": "boston-harbor-ghost-legends",
+      "hub": "boston",
+      "keyword": "boston harbor ghosts",
+      "status": "scheduled",
+      "scheduledWeek": "2026-W14"
+    },
+    {
+      "slug": "charleston-plantation-ghost-stories",
+      "hub": "charleston",
+      "keyword": "haunted plantations charleston",
+      "status": "scheduled",
+      "scheduledWeek": "2026-W15"
+    },
+    {
+      "slug": "denver-stanley-hotel-connection",
+      "hub": "denver",
+      "keyword": "stanley hotel denver ghost tours",
+      "status": "scheduled",
+      "scheduledWeek": "2026-W15"
+    },
+    {
+      "slug": "dublin-literary-ghosts-yeats-stoker",
+      "hub": "dublin",
+      "keyword": "dublin literary ghost history",
+      "status": "scheduled",
+      "scheduledWeek": "2026-W15"
+    },
+    {
+      "slug": "edinburgh-greyfriars-kirkyard-ghosts",
+      "hub": "edinburgh",
+      "keyword": "greyfriars kirkyard edinburgh ghosts",
+      "status": "scheduled",
+      "scheduledWeek": "2026-W16"
+    },
+    {
+      "slug": "nashville-ryman-auditorium-ghost-stories",
+      "hub": "nashville",
+      "keyword": "ryman auditorium haunted nashville",
+      "status": "scheduled",
+      "scheduledWeek": "2026-W16"
+    },
+    {
+      "slug": "new-york-chelsea-hotel-haunted-history",
+      "hub": "new-york",
+      "keyword": "chelsea hotel ghosts new york",
+      "status": "scheduled",
+      "scheduledWeek": "2026-W16"
+    },
+    {
+      "slug": "paris-pere-lachaise-ghost-legends",
+      "hub": "paris",
+      "keyword": "pere lachaise cemetery ghosts paris",
+      "status": "scheduled",
+      "scheduledWeek": "2026-W17"
+    },
+    {
+      "slug": "rome-colosseum-gladiator-ghosts",
+      "hub": "rome",
+      "keyword": "colosseum ghosts rome",
+      "status": "scheduled",
+      "scheduledWeek": "2026-W17"
+    },
+    {
+      "slug": "san-antonio-alamo-battle-ghosts",
+      "hub": "san-antonio",
+      "keyword": "alamo ghosts san antonio history",
+      "status": "scheduled",
+      "scheduledWeek": "2026-W17"
+    },
+    {
+      "slug": "savannah-forsyth-park-ghost-stories",
+      "hub": "savannah",
+      "keyword": "forsyth park savannah haunted",
+      "status": "scheduled",
+      "scheduledWeek": "2026-W18"
+    },
+    {
+      "slug": "st-augustine-lighthouse-haunted-history",
+      "hub": "st-augustine",
+      "keyword": "st augustine lighthouse ghosts",
+      "status": "scheduled",
+      "scheduledWeek": "2026-W18"
+    },
+    {
+      "slug": "washington-dc-white-house-ghost-stories",
+      "hub": "washington-dc",
+      "keyword": "white house ghosts washington dc",
+      "status": "scheduled",
+      "scheduledWeek": "2026-W18"
+    }
+  ]
+}
