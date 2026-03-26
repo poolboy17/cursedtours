@@ -1,0 +1,61 @@
+---
+title: "The Eastland Disaster: Chicago's Deadliest Day"
+date: 2026-02-12
+excerpt: "The SS Eastland capsized in the Chicago River in 1915, killing 844 people. The aftermath still haunts the city."
+category: "Chicago Haunted History"
+categorySlug: "chicago-haunted-history"
+coverImage: "/images/articles/eastland-disaster-chicago.webp"
+coverAlt: "The Eastland Disaster: Chicago's Deadliest Day"
+author: "Cursed Tours"
+hub: "chicago-haunted-history"
+---
+
+On the morning of July 24, 1915, the SS Eastland sat docked at the Clark Street bridge on the Chicago River (at the corner of Clark and Wacker Drive), loading passengers for a Western Electric company picnic to Michigan City, Indiana. The ship never left the dock. At approximately 7:28 a.m., with over 2,500 passengers aboard, the Eastland rolled onto its port side in water approximately 20 feet deep. Within minutes, 844 people were dead—drowned, crushed, or suffocated in a disaster that remains the deadliest maritime disaster in Great Lakes history and the largest loss of life from a single shipwreck on the Great Lakes.
+
+The Eastland Disaster killed more passengers relative to capacity than the Titanic. It happened not in the open ocean but in a river, within sight of downtown Chicago, in water shallow enough to stand in. And yet, within a generation, the city had largely forgotten it. The dead, however, did not forget.
+
+## The Morning of July 24
+
+Western Electric's Hawthorne Works in Cicero employed thousands of workers, mostly Czech, Polish, and other Eastern European immigrants. The annual company picnic was the social event of the year. Five chartered ships were scheduled to carry approximately 7,000 employees and their families across Lake Michigan to Michigan City. The Eastland, a passenger steamer built in 1903 by Fore River Shipbuilding Company and nicknamed the "Speed Queen of the Great Lakes," had a known history of stability problems. It had nearly capsized on several previous occasions, and naval engineers had raised concerns about its top-heaviness. Over the years, the ship had undergone various modifications that worsened its balance. Ironically, the addition of new lifeboats and safety equipment—mandated by law following the Titanic disaster in 1912—added weight to the upper decks and made the vessel even less stable. Despite these accumulating concerns, the ship was certified for passenger service.
+
+Passengers began boarding around 6:30 a.m. Families crowded the upper decks, children running to the railings for a view of the river. By 7:00 a.m., the ship had developed a noticeable list to port. Water began entering through lower openings. The crew attempted to stabilize the vessel by adjusting ballast tanks, but the ship continued to roll.
+
+At 7:28 a.m., the Eastland rolled completely onto its side. Passengers on the upper decks were thrown into the river. Those below deck were trapped as water flooded the interior. The screaming lasted only a few minutes before it stopped.
+
+## 844 Dead
+The death toll was staggering. Entire families were wiped out. Twenty-two families from the same neighborhood in Cicero lost every member—entire households erased in the minutes after the ship capsized. The demographics of the victims reveal the scope of the tragedy: approximately 690 of the 844 dead were women and children; nearly 70 percent of the dead were under the age of 25. The youngest victim was an infant. Many victims were teenage girls—Western Electric employed large numbers of young women in its assembly operations. The dead were predominantly working-class immigrants: Czech, Polish, and other Eastern European families who saw the company picnic as a rare leisure opportunity.
+
+Rescue efforts began immediately but were hampered by the chaos. The ship lay on its side in the river, its hull protruding above the waterline. Rescuers cut holes in the exposed hull with acetylene torches, pulling survivors from air pockets inside. Others dove into the murky river, retrieving bodies from the submerged compartments.
+
+The temporary morgue was established at the 2nd Regiment Armory (also known as the Second Regiment Armory) at 1058 West Washington Boulevard, approximately six blocks west of the disaster site. Hundreds of bodies were laid in rows on the armory floor for identification by family members. Families filed past the dead for days, searching for their relatives. The scenes of identification—parents recognizing children, husbands identifying wives—were described by witnesses as the most harrowing aspect of the disaster.
+
+## The Armory: Harpo Studios
+
+The 2nd Regiment Armory where the dead were laid out eventually became Harpo Studios, the production facility for The Oprah Winfrey Show from 1988 to 2015. Employees at the studio reported unexplained phenomena throughout its decades of operation.
+
+The reports were consistent and came from multiple independent sources: the sound of children laughing or crying in empty corridors, doors that opened and closed on their own, cold spots that appeared without ventilation explanations, footsteps in unoccupied areas, and a pervasive sense of being watched in certain sections of the building. Security guards on overnight shifts were particularly vocal about experiences they could not explain.
+
+The connection between the building's use as a temporary morgue—where 844 bodies were displayed for identification—and the reported phenomena was well known within the Harpo Studios staff. Whether the experiences reflected genuine paranormal activity or the psychological weight of working in a space with such history is an open question. What is not debatable is that dozens of employees, across years of operation, independently reported similar experiences.
+
+## The Disaster Site Today
+The Clark Street bridge where the Eastland capsized still spans the Chicago River. A small memorial plaque on the south side of the bridge marks the location, though many Chicagoans and tourists pass it without noticing. The river itself shows no trace of what happened—the current flows, tour boats pass, and the city's architecture rises on both sides as if nothing occurred.
+
+Reports of unusual phenomena at the disaster site are less frequent than at the armory but not absent. River cruise operators have reported electronic equipment malfunctions near the Clark Street bridge that do not occur elsewhere on their routes. Pedestrians have described hearing sounds—crying, splashing, voices—that seem to come from the water on still nights. These reports are anecdotal and impossible to verify, but they are consistent with the pattern of phenomena reported at other Chicago disaster sites.
+
+The Eastland itself was raised from the Chicago River on August 14, 1915, exactly three weeks after capsizing. The damaged vessel sat in drydock at the St. Louis Dock Company for years. In 1917 (two years after the disaster), it was sold to the U.S. Navy, which stripped it of its passenger accommodations and converted it into a patrol gunboat. The ship was renamed USS Wilmette and served in military capacity during World War I and beyond, as if its past—and the 844 lives it had claimed—could be erased through conversion and bureaucratic renaming. The USS Wilmette operated until 1946, finally being scrapped in 1947. Some maintain that the spirits of those who drowned never left the river, regardless of what became of the vessel that killed them.
+
+## Why Chicago Forgot
+
+The Eastland Disaster is sometimes called "the forgotten tragedy" because it never achieved the cultural resonance of the Great Fire or the [St. Valentine's Day Massacre](/articles/chicago-gangster-ghosts/). Several factors contributed to this amnesia. The victims were predominantly working-class immigrants, not the city's elite. The disaster occurred just as World War I was consuming public attention. And the city's response—cleanup, legal proceedings, move on—followed the same pattern established after the Great Fire.
+
+The forgetting is itself a kind of haunting. A city that lost 844 people in a single morning, in its own river, and then allowed the event to fade from collective memory has created exactly the conditions that ghost stories are designed to address. The dead insist on being remembered. If the living will not do it through monuments and memorials, then perhaps they will do it through cold spots in corridors, sounds from the water, and the persistent unease of places where something terrible happened and was never adequately mourned.
+
+[Chicago's haunted landscape](/articles/most-haunted-places-in-chicago/) is built on disasters that the city preferred to build over rather than memorialize. The Eastland Disaster is the most extreme example: the deadliest single incident in the city's history, reduced to a small plaque on a bridge that most people walk past without pausing.
+
+For more on this topic, see [Chicago ghost tours](/chicago-ghost-tours/).
+
+---
+
+### Continue Reading
+
+- [Explore the Chicago Haunted History Hub](/chicago-ghost-tours/)- [Chicago's Most Haunted Bars and Taverns](/articles/chicagos-most-haunted-bars)- [The Great Chicago Fire: Ghosts of 1871](/articles/great-chicago-fire-ghosts)- [Chicago Gangster Ghosts: Capone & Dillinger](/articles/chicago-gangster-ghosts)- [Resurrection Mary: Chicago's Most Famous Ghost](/articles/resurrection-mary-chicagos-most-famous-ghost)

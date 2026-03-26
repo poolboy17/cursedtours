@@ -1,0 +1,58 @@
+---
+title: "Congress Plaza Hotel: Haunted History"
+date: 2026-02-12
+excerpt: "Open since 1893, the Congress Plaza Hotel on Michigan Avenue has accumulated over a century of ghost stories—from sealed-off ballrooms to Room 441."
+category: "Chicago Haunted History"
+categorySlug: "chicago-haunted-history"
+coverImage: "/images/articles/congress-plaza-hotel-haunted-history.webp"
+coverAlt: "Congress Plaza Hotel: Haunted History"
+author: "Cursed Tours"
+hub: "chicago-haunted-history"
+---
+
+The Congress Plaza Hotel at 520 South Michigan Avenue has been in continuous operation since 1893, when it opened to accommodate visitors to the World's Columbian Exposition. Designed by architect Clinton J. Warren, the hotel opened on June 2, 1893, and in the 131 years since, it has hosted presidents, gangsters, literary figures, and—according to staff and guests—a considerable population of the dead.
+
+The Congress is not merely a hotel with a few ghost stories. It is a building where paranormal reports span its entire history, from multiple independent sources, across every floor and wing. It has been investigated by numerous paranormal research teams and has been featured in several television programs about haunted locations. More importantly, it has generated consistent reports from guests and employees who had no knowledge of the building's reputation before their experiences.
+
+## A Hotel Built on History
+
+The Congress was designed by Clinton J. Warren and opened as the Auditorium Annex, serving as an extension to architects Dankmar Adler and Louis Sullivan's landmark Auditorium Building next door. It was rechristened the Congress Hotel in 1908 and has undergone numerous expansions and renovations since. The hotel's construction coincided with the height of Chicago's Gilded Age architecture boom.
+
+The hotel's guest list reads as a history of American power. Presidents Grover Cleveland, William McKinley, Theodore Roosevelt, William Howard Taft, and Woodrow Wilson all stayed at the Congress. Roosevelt announced his break from the Republican Party in the hotel's Florentine Room—a declaration that some paranormal investigators claim he now eternally relives. Al Capone maintained a suite on the eighth floor. Babe Ruth was a frequent guest. And in Room 209 on the second floor, a guest whose identity was never established reportedly took their own life—one of several such incidents in the hotel's history. The Congress's documented death toll includes Captain Louis Ostheim, a Spanish-American War veteran who served with the U.S. Army, who died by suicide on April 8, 1900, the eve of his wedding—an act marked by the presence of two wedding rings found in his room. Ostheim was allegedly engaged to be married to a woman whose name remains unrecorded in hotel records. His spirit, known as "the Shadow Man," has been reported by security guards and guests throughout the building since the early 1900s, often described as a shadowy figure that glides through corridors on the second and third floors.
+
+The Congress has also been the site of significant labor disputes. In 2003, members of UNITE HERE Local 1 led hotel workers on strike in a dispute that lasted over a decade, leaving entire floors of the hotel unstaffed and unoccupied for years. These dark, empty corridors—furnished but abandoned—created an environment that even skeptics acknowledge is unsettling. Beyond Ostheim, the hotel's documented death toll includes an unnamed elevator operator who fell 70 feet to his death in 1904 from a malfunctioning cable, James Kennedy who shot himself in Room 209 in 1910, a guest who died from poisoning in the 1920s, and numerous suicides and murders across its 131-year history. Each death adds a layer to the Congress's paranormal reputation—not all tied to specific hauntings, but contributing to an atmosphere heavy with accumulated tragedy that spans from the hotel's opening in 1893 through the 21st century.
+
+## Room 441 and the Fourth Floor
+Room 441, on the fourth floor, generates the most frequent and consistent reports. Guests have described being touched by unseen hands while sleeping, hearing whispered conversations in empty rooms, finding their belongings rearranged after leaving the room briefly, and experiencing a pervasive sense of being watched that intensifies after dark. A woman's figure—her identity unknown—is most frequently reported in this room, often seen standing or hovering over guests' beds or moving the covers as if adjusting bedding. The fourth floor houses several rooms sealed due to the intensity and consistency of paranormal reports, making it one of the most actively haunted sections of the hotel.
+
+The room's reputation is well enough established that some guests specifically request it, while others refuse to stay on the fourth floor at all. Hotel staff have confirmed that Room 441 generates more complaints about unusual experiences than any other room in the building, though they are careful to note that the room is fully functional and safe.
+
+What actually happened in Room 441 to generate its reputation is unclear. Unlike locations associated with specific historical events—a murder, a suicide, a disaster—the room's haunting lacks a clear origin story. This is actually more common in haunted hotel reports than the public imagines: many of the most actively reported rooms have no documented history of violence or death. The phenomena simply occur, consistently, without a satisfying narrative explanation.
+
+## The Gold Room
+
+The Gold Room, a once-grand ballroom on the hotel's lower levels, has been sealed off from public access for decades. The room's closure has varied explanations depending on the source—structural concerns, renovation plans, or simply lack of demand for a ballroom of that size in the modern hotel era. Staff who enter the Gold Room for maintenance report experiences that are consistent and specific: the sound of orchestra music in a room with no sound system, cold drafts in a sealed interior space with no ventilation, the strong sensation of a crowd in an empty room, and visual phenomena including shadows that move independently of any light source. Some visitors report the distinct feeling of dancing couples moving through the sealed space.
+
+The Gold Room's inaccessibility contributes to its mystique but also makes it difficult to investigate systematically. The few paranormal teams that have been granted access report elevated electromagnetic readings and temperature anomalies consistent with—but not proof of—paranormal activity.
+
+## The Eighth Floor and the Twelfth Floor Tragedy
+
+Al Capone's connection to the Congress is well documented. He maintained rooms on the eighth floor during the height of his power in the late 1920s. The suite allowed him a view of Grant Park and Lake Michigan while keeping him above the street-level chaos of his operations.
+
+Reports of cigar smoke on the eighth floor—in rooms where smoking has been prohibited for years—are among the most distinctive phenomena at the Congress. Capone was inseparable from his cigars, and the olfactory nature of these reports gives them a specificity unusual in haunted location claims. Staff members have independently reported the smell, typically in the corridor outside the rooms Capone is known to have occupied.
+
+The twelfth floor is haunted by one of the Congress's most tragic stories: the Langer family tragedy of August 4, 1939. Adele Langer arrived at the hotel with her two sons, six-year-old Karel and four-year-old Jan, fleeing Nazi-occupied Czechoslovakia. Overwhelmed by despair after her husband Josef failed to arrive and unable to find work in a depression-era economy, Adele threw both children from a twelfth-floor window before leaping to her own death. The event was covered by Chicago Tribune reporters and represents one of the darkest moments in the hotel's history. The ghost of young Karel is believed to haunt this floor; a security guard named John reported multiple encounters with the boy's spirit before it reportedly faded away. This tragedy represents one of the Congress's most poignant hauntings—not a malevolent presence, but a lingering sorrow that guests and staff continue to sense decades later, with some visitors reporting the sounds of children playing on floors where no children are present.
+
+## Other Phenomena and Named Spirits
+
+Beyond the specific hotspots, the Congress generates a broad range of reports across its entire footprint. Guests have reported hearing children running in empty hallways, seeing figures in period clothing who vanish when approached, and experiencing elevator malfunctions where the car stops at floors that were not selected—particularly floors associated with reported activity. One of the most identifiable spirits is known as Peg Leg Johnny, a male vagrant ghost seen throughout the building who is recognized by his distinctive peg-leg and who reportedly pranks guests by snapping off lights and making electronics malfunction. Another named entity is a retired judge who frequented the hotel in life and who allegedly continues to interact with the living after death, famously flipping television channels in guest rooms—a manifestation so consistent that staff members have come to expect it in certain locations.
+
+The [hotel's position](/articles/most-haunted-places-in-chicago/) within Chicago's haunted landscape is unique. Unlike [Bachelor's Grove](/articles/bachelors-grove-cemetery-chicago/) or [Resurrection Cemetery](/articles/resurrection-mary-chicagos-most-famous-ghost/), the Congress is accessible to anyone willing to book a room. The ghosts, if they exist, share the building with paying guests, housekeeping staff, and maintenance workers—an arrangement that has produced a steady stream of reports for over a century.
+
+For visitors exploring [Chicago's haunted history](/chicago-ghost-tours/), the Congress offers something that most ghost tour stops cannot: the opportunity to spend the night in a location with documented paranormal reports, in a room where previous guests have described their own experiences, and to determine for yourself whether the Congress Plaza Hotel is merely old—or genuinely haunted.
+
+---
+
+### Continue Reading
+
+- [Explore the Chicago Haunted History Hub](/chicago-ghost-tours/)- [Chicago's Most Haunted Bars and Taverns](/articles/chicagos-most-haunted-bars)- [H.H. Holmes and the Murder Castle](/articles/hh-holmes-murder-castle-chicago)- [The Iroquois Theatre Fire of 1903](/articles/iroquois-theatre-fire-chicago)- [The Eastland Disaster: Chicago's Deadliest Day](/articles/eastland-disaster-chicago)

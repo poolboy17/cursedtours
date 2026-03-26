@@ -1,0 +1,71 @@
+---
+title: "Lizzie Borden: True Crime, Ghost Tours, and America's Most"
+date: 2026-02-15
+excerpt: "The complete story of the Lizzie Borden murders — the evidence, the trial, the acquittal, and how 92 Second Street became one of America's most visited."
+category: "Pop Culture & Dark History"
+categorySlug: "pop-culture-dark-history"
+coverImage: "/images/articles/lizzie-borden-true-crime-ghost-tours.webp"
+coverAlt: "Lizzie Borden: True Crime, Ghost Tours, and America's Most Famous Unsolved Murders"
+author: "Cursed Tours"
+hub: "pop-culture-dark-history"
+---
+
+## Forty Whacks and a Century of Questions
+
+On the morning of August 4, 1892, Andrew Jackson Borden (age 70) and his wife Abigail Durfee Van Borland Borden (age 65) were found hacked to death in their home at 92 Second Street in Fall River, Massachusetts. Andrew had been struck eleven times with a hatchet while sleeping on a sofa in the sitting room. Abby had been struck nineteen times in an upstairs bedroom roughly ninety minutes earlier, between 9:00 and 9:30 AM. The only suspect charged was Andrew's thirty-two-year-old daughter Lizzie, and the trial that followed became the most sensational murder case of the nineteenth century. She was acquitted. No one else was ever charged. And 130 years later, the case remains one of the most debated unsolved crimes in American history.
+
+This article is part of our [Pop Culture Dark History](/blog/pop-culture/) collection.
+
+## The Borden Household
+
+Understanding the murders requires understanding the family. Andrew Borden was one of the wealthiest men in Fall River, with a fortune estimated at over $300,000 — roughly $10 million in today's dollars — built through banking, real estate, and a youthful career as an undertaker. Despite his wealth, Andrew was legendarily frugal. The family home on Second Street had no indoor plumbing until shortly before the murders, a peculiarity that embarrassed his daughters in a city where families of far lesser means enjoyed modern conveniences.
+
+Lizzie Borden Andrew (age 32 at time of murders) and her older sister Emma Borden Lenoir (age 42) resented their stepmother Abigail Durfee Gray Borden, whom Andrew had married on June 6, 1865. The tension centered on money and property — when Andrew transferred a rental property to Abby's relatives, the sisters demanded and received an equivalent gift, but the incident poisoned family relations permanently. In June 1892 (two months before the murders), Lizzie attempted to purchase prussic acid (hydrogen cyanide) from Smith's Pharmacy in Fall River, was refused, and in early August the family suffered a bout of severe food poisoning that some historians believe was a deliberate poisoning attempt by one of the household members.
+
+## The Day of the Murders
+
+The timeline of August 4 is the crux of every argument about Lizzie's guilt or innocence. Andrew left the house around 9:00 AM to conduct business downtown. The maid, Bridget Sullivan, was washing windows outside. Abby went upstairs to make a bed in the guest room. At some point between 9:00 and 9:30, someone entered that guest room and killed Abby with repeated hatchet blows to the back of her head.
+
+Andrew returned home around 10:30 AM, lay down on the sitting room sofa, and was killed in the same manner while he slept. Lizzie claimed to have been in the barn loft during the time of Andrew's murder, searching for lead sinkers for a fishing trip. The barn was a separate structure behind the house, and police later testified that the loft showed no signs of recent disturbance — no footprints in the thick dust on the floor.
+
+The physical evidence was problematic for the prosecution. No blood-soaked clothing was found, though Lizzie was seen burning a dress in the kitchen stove three days after the murders — an act she explained as disposing of a garment stained with paint. The murder weapon was never conclusively identified, though a handleless hatchet head found in the basement became a focus of intense forensic debate. No blood trail connected any suspect to both crime scenes. For related history, see our [the amityville horror: separating truth from](/articles/amityville-horror-true-story-house/).
+
+## The Trial
+
+Lizzie Borden's trial in June 1893 was a media circus that presaged the tabloid sensationalism of the twentieth century. Newspapers sent teams of reporters to New Bedford, where the trial was held, and daily dispatches reached audiences across the country. The case was sensational for reasons beyond the violence — a respectable, churchgoing woman from a prominent family accused of patricide was simply unprecedented in Gilded Age America.
+
+The defense benefited from several crucial rulings. Lizzie's inquest testimony — in which she gave contradictory accounts of her movements — was excluded. Her attempt to buy poison was excluded. The trial took place in June 1893 in nearby New Bedford, Massachusetts. The jury, composed entirely of men in an era when women were assumed to be incapable of such violence, deliberated for roughly ninety minutes on June 20, 1893 before returning a verdict of not guilty.
+
+The acquittal did not restore Lizzie's reputation. Fall River society largely shunned her for the rest of her life. She and Emma purchased a large house on French Street in the wealthy section of town — a house Lizzie named "Maplecroft" — and lived in relative isolation until Emma moved out in 1905 after a mysterious falling-out. Lizzie died in 1927. Emma died nine days later.
+
+## The Case for Guilt
+
+Most modern crime writers and forensic analysts who have examined the case conclude that Lizzie was almost certainly the killer. The circumstantial evidence is overwhelming. She was the only person in the house during the window when Andrew was killed. Her alibi — spending twenty minutes in a sweltering barn loft in August — was contradicted by physical evidence. She had motive, she had opportunity, she attempted to purchase poison days before the murders, and she destroyed a dress shortly after them.
+
+The question of how she committed the murders without being covered in blood has been addressed by several researchers who note that the attack pattern — standing behind or above the victim and striking downward — would direct blood splatter away from the attacker. The brief gap between murders (roughly ninety minutes) allowed time to clean up and change clothing. For related history, see our [the best horror movies based on](/articles/best-horror-movies-based-on-true-stories/).
+
+## Alternative Theories
+
+The acquittal opened the door to alternative suspects that researchers have debated for over a century. Bridget Sullivan, the maid, had opportunity but no apparent motive. Andrew's illegitimate son William — whose existence is disputed — appears in some theories as a disgruntled heir. Dr. Seabury Bowen, the family physician who was first on the scene, has been proposed as a suspect in conjunction with Lizzie.
+
+The most persistent alternative theory involves Lizzie's uncle John Morse, who had been staying at the house and whose alibi for the morning of the murders was suspiciously detailed and precise — he could account for his movements almost minute by minute, which experienced investigators considered a hallmark of a rehearsed story.
+
+## 92 Second Street Today
+
+The Borden house operates today as the Lizzie Borden Bed and Breakfast Museum, offering overnight stays in rooms where the murders occurred. Guests can sleep in the room where Abby was killed or on a reproduction of the sofa where Andrew died. The house has been restored to its 1892 appearance using photographs from the crime scene investigation, creating an experience that blurs the line between historical tourism and macabre entertainment.
+
+The bed and breakfast hosts ghost tours, murder mystery dinners, and paranormal investigation events throughout the year. Staff and guests report a range of unexplained phenomena — footsteps on empty stairs, doors opening and closing on their own, cold spots concentrated in the rooms where the murders occurred, and apparitions of a woman in Victorian-era clothing. Whether these reports reflect genuine paranormal activity or the overactive imaginations of guests sleeping in a murder house is left to individual judgment.
+
+Fall River itself offers additional Borden-related sites, including the Oak Grove Cemetery where the Borden family is buried and the Fall River Historical Society, which houses the largest collection of Borden case artifacts and documents. The city's relationship with its most famous case is complicated — some residents embrace the tourism, others wish the city were known for something other than a 130-year-old double murder.
+
+## The Enduring Fascination
+
+The Lizzie Borden case endures because it contains everything that makes true crime compelling — wealth, family dysfunction, extreme violence, a flawed investigation, a controversial acquittal, and a mystery that may never be definitively solved. The famous children's rhyme — which gets the number of blows wrong — embedded the case in American folk culture before the twentieth century even began. Television adaptations, films, an opera, a ballet, and countless books have kept the case in public consciousness for over thirteen decades.
+
+The deeper appeal may be what the case reveals about the society that produced it. Like other [urban legends based on true crime](/articles/urban-legends-that-turned-out-to-be-true/), the Lizzie Borden case continues to capture attention because it documents a real tragedy. A woman who almost certainly killed her parents was acquitted because the jury couldn't reconcile the evidence with their assumptions about what women were capable of doing. That collision between evidence and cultural expectation — between what happened and what people were willing to believe — resonates with every subsequent true crime case where the obvious suspect walks free because the truth is simply too uncomfortable to accept.
+
+---
+
+### Continue Reading
+
+- [Explore the Pop Culture Dark History Hub](/blog/pop-culture/)- [The Conjuring House: The True Story Behind the Film](/articles/the-conjuring-house-true-story)- [Hocus Pocus Filming Locations in Salem, Massachusetts](/articles/hocus-pocus-filming-locations-salem)- [Rosemary's Baby & The Dakota: NYC's Cursed Address](/articles/rosemarys-baby-the-dakota-nyc)- [Real Haunted Hotels You Can Actually Stay In](/articles/real-haunted-hotels-you-can-stay-in)

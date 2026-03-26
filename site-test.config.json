@@ -1,0 +1,26 @@
+{
+  "siteName": "Cursed Tours",
+  "siteUrl": "https://cursedtours.com",
+  "contentDir": "src/content",
+  "articleDir": "src/content/articles",
+  "minArticles": 150,
+  "requiredFrontmatter": ["title", "date", "excerpt", "coverImage", "category", "hub"],
+  "requiredFiles": [
+    "CLAUDE.md",
+    "netlify.toml"
+  ],
+  "customTests": [
+    {
+      "type": "fileContains",
+      "name": "Static output mode",
+      "path": "astro.config.mjs",
+      "contains": "static"
+    },
+    {
+      "type": "fileContains",
+      "name": "Netlify build command defined",
+      "path": "netlify.toml",
+      "contains": "command"
+    }
+  ]
+}
