@@ -1,26 +1,29 @@
 {
   "site": "cursedtours",
-  "batch": "pipeline-test",
+  "batch": "pipeline-test-v2",
   "lastUpdated": "2026-03-26",
+  "note": "Built from actual hub gap analysis — no duplicates",
   "articles": [
     {
-      "slug": "driskill-hotel-austin-ghost-stories",
+      "slug": "moon-river-brewing-savannah-ghosts",
+      "hub": "savannah",
+      "keyword": "moon river brewing company savannah haunted",
+      "status": "scheduled",
+      "gapReason": "savannah hub has no pub/bar angle — 5 spokes, room for 3"
+    },
+    {
+      "slug": "austin-haunted-pub-crawl-guide",
       "hub": "austin",
-      "keyword": "driskill hotel austin ghosts",
-      "status": "skipped-duplicate",
-      "notes": "Existing article: driskill-hotel-austin-haunted-history covers same topic. Would cannibalize."
+      "keyword": "haunted pubs austin texas",
+      "status": "scheduled",
+      "gapReason": "austin hub has no pub/bar angle — 5 spokes, room for 3"
     },
     {
-      "slug": "boston-strangler-haunted-locations",
-      "hub": "boston",
-      "keyword": "boston strangler haunted locations",
-      "status": "scheduled"
-    },
-    {
-      "slug": "charleston-old-jail-haunted-history",
-      "hub": "charleston",
-      "keyword": "charleston old jail haunted history",
-      "status": "scheduled"
+      "slug": "denver-molly-brown-house-ghost-stories",
+      "hub": "denver",
+      "keyword": "molly brown house denver haunted",
+      "status": "scheduled",
+      "gapReason": "denver hub has no museum angle — 5 spokes, room for 3"
     }
   ]
 }
