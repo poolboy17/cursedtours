@@ -8,6 +8,13 @@ coverImage: "/images/articles/arlington-cemetery-ghost-stories-dc.webp"
 coverAlt: "Arlington Cemetery: Ghost Stories from America's Most Sacred Ground"
 author: "Cursed Tours"
 hub: "washington-dc-haunted-history"
+hubSlug: washington-dc
+hubUrl: /washington-dc-ghost-tours/
+relatedArticles:
+  - capitol-building-dc-haunted-history
+  - georgetown-exorcist-house-history
+  - most-haunted-places-in-washington-dc
+  - white-house-ghost-stories-lincoln
 ---
 
 Arlington National Cemetery holds 400,000 graves across 639 acres. Guards, staff, and visitors have reported encounters they cannot explain.

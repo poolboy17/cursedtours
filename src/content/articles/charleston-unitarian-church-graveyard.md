@@ -8,6 +8,13 @@ coverImage: "/images/articles/charleston-unitarian-church-graveyard.webp"
 coverAlt: "The Unitarian Church Graveyard: Charleston's Forgotten Dead"
 author: "Cursed Tours"
 hub: "charleston-haunted-history"
+hubSlug: charleston
+hubUrl: /charleston-ghost-tours/
+relatedArticles:
+  - charleston-civil-war-ghost-stories
+  - charleston-old-city-jail-haunted-history
+  - charleston-pirate-ghosts-legends
+  - most-haunted-places-in-charleston
 ---
 
 Overgrown and atmospheric, the Unitarian Church Graveyard is Charleston's most photogenic haunted spot — and one of its least visited.

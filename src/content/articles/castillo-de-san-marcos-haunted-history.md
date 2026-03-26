@@ -8,6 +8,13 @@ coverImage: "/images/articles/castillo-de-san-marcos-haunted-history.webp"
 coverAlt: "Castillo de San Marcos: 350 Years of Ghosts in America's Oldest Fort"
 author: "Cursed Tours"
 hub: "st-augustine-haunted-history"
+hubSlug: st-augustine
+hubUrl: /st-augustine-ghost-tours/
+relatedArticles:
+  - most-haunted-places-in-st-augustine
+  - spanish-military-hospital-st-augustine
+  - st-augustine-lighthouse-ghost-stories
+  - st-augustine-oldest-city-dark-history
 ---
 
 Built by the Spanish in 1672 using coquina shell, the Castillo has survived sieges, served as a prison, and accumulated centuries of ghost stories.

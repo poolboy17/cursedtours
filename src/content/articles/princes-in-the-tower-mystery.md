@@ -8,6 +8,13 @@ coverImage: "/images/articles/princes-in-the-tower-mystery.webp"
 coverAlt: "The Princes in the Tower: England's Greatest Cold Case"
 author: "Cursed Tours"
 hub: "tower-of-london-history"
+hubSlug: london
+hubUrl: /london-ghost-tours/
+relatedArticles:
+  - anne-boleyn-execution-tower
+  - haunted-pubs-of-london
+  - jack-the-ripper-london-walking-guide
+  - london-plague-pits-hidden-history
 ---
 
 ## Two Boys Enter the Tower

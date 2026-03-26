@@ -8,6 +8,13 @@ coverImage: "/images/articles/nashville-ryman-auditorium-ghosts.webp"
 coverAlt: "The Ryman Auditorium: Ghosts of the Mother Church"
 author: "Cursed Tours"
 hub: "nashville-haunted-history"
+hubSlug: nashville
+hubUrl: /nashville-ghost-tours/
+relatedArticles:
+  - bell-witch-tennessee-legend
+  - hermitage-hotel-nashville-haunted
+  - most-haunted-places-in-nashville
+  - nashville-civil-war-battles-ghosts
 ---
 
 The Ryman has hosted everyone from Hank Williams to Johnny Cash. Staff and performers say some of them never left.

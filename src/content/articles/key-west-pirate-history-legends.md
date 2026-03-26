@@ -8,6 +8,13 @@ coverImage: "/images/articles/key-west-pirate-history-legends.webp"
 coverAlt: "Pirates of Key West: Wreckers, Smugglers, and Legends"
 author: "Cursed Tours"
 hub: "key-west-haunted-history"
+hubSlug: key-west
+hubUrl: /key-west-ghost-tours/
+relatedArticles:
+  - captain-tonys-saloon-key-west-haunted
+  - carl-von-cosel-elena-hoyos-key-west
+  - fort-east-martello-key-west-haunted
+  - fort-zachary-taylor-key-west-haunted
 ---
 
 The line between wrecking and piracy in Key West was never as clear as the federal court wanted it to be. For much of the 19th century, the island operated in a gray zone where salvage, smuggling, and outright theft overlapped. Pirates left their mark on the landscape—literally, in the form of a hanging tree still visible today at Captain Tony's Saloon—and their legacy shaped Key West's culture of rebellion and self-reliance in ways the town still embodies.

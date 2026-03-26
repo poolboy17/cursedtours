@@ -8,6 +8,13 @@ coverImage: "/images/articles/tower-of-london-ghost-stories.webp"
 coverAlt: "Tower of London Ghosts: Nine Centuries of the Restless Dead"
 author: "Cursed Tours"
 hub: "london-haunted-history"
+hubSlug: london
+hubUrl: /london-ghost-tours/
+relatedArticles:
+  - anne-boleyn-execution-tower
+  - haunted-pubs-of-london
+  - jack-the-ripper-london-walking-guide
+  - london-plague-pits-hidden-history
 ---
 
 The Tower has served as palace, prison, and execution ground. Its ghosts include two murdered princes, multiple beheaded queens, and a spectral bear.

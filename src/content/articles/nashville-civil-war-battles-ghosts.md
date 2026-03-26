@@ -8,6 +8,13 @@ coverImage: "/images/articles/nashville-civil-war-battles-ghosts.webp"
 coverAlt: "Nashville's Civil War Ghosts: The Battle That Saved the Union"
 author: "Cursed Tours"
 hub: "nashville-haunted-history"
+hubSlug: nashville
+hubUrl: /nashville-ghost-tours/
+relatedArticles:
+  - bell-witch-tennessee-legend
+  - hermitage-hotel-nashville-haunted
+  - most-haunted-places-in-nashville
+  - nashville-ryman-auditorium-ghosts
 ---
 
 The Battle of Nashville in 1864 was one of the most decisive Union victories. The dead from both sides are said to linger on the battlefield.

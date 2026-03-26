@@ -8,6 +8,13 @@ coverImage: "/images/articles/alamo-ghost-stories-san-antonio.webp"
 coverAlt: "The Alamo's Ghost Stories: The Battle That Never Ended"
 author: "Cursed Tours"
 hub: "san-antonio-haunted-history"
+hubSlug: san-antonio
+hubUrl: /san-antonio-ghost-tours/
+relatedArticles:
+  - menger-hotel-san-antonio-haunted
+  - most-haunted-places-in-san-antonio
+  - san-antonio-missions-dark-history
+  - san-antonio-railroad-ghost-tracks
 ---
 
 All 189 Texan defenders died at the Alamo in 1836. Mexican soldiers reported apparitions within days. Nearly 200 years later, the sightings continue.

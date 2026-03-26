@@ -8,6 +8,13 @@ coverImage: "/images/articles/kilmainham-gaol-dublin-haunted-history.webp"
 coverAlt: "Kilmainham Gaol: Dublin's Most Haunted Building"
 author: "Cursed Tours"
 hub: "dublin-haunted-history"
+hubSlug: dublin
+hubUrl: /dublin-ghost-tours/
+relatedArticles:
+  - bram-stoker-dublin-dracula-origins
+  - dublin-hellfire-club-legends
+  - most-haunted-places-in-dublin
+  - st-michans-church-dublin-mummies
 ---
 
 Kilmainham held and executed leaders of every Irish rebellion for over a century. The executions of 1916 sealed both its place in history and its haunted reputation.

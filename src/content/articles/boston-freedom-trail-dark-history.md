@@ -8,6 +8,13 @@ coverImage: "/images/articles/boston-freedom-trail-dark-history.webp"
 coverAlt: "The Freedom Trail's Dark Side: Death, Disease, and Revolution"
 author: "Cursed Tours"
 hub: "boston-haunted-history"
+hubSlug: boston
+hubUrl: /boston-ghost-tours/
+relatedArticles:
+  - boston-harbor-islands-ghost-stories
+  - boston-strangler-true-crime-history
+  - most-haunted-places-in-boston
+  - omni-parker-house-boston-haunted-history
 ---
 
 The Freedom Trail celebrates American independence — but beneath the patriotic narrative lie stories of execution, disease pits, and revolutionary violence.

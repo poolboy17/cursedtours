@@ -8,6 +8,13 @@ coverImage: "/images/articles/spanish-military-hospital-st-augustine.webp"
 coverAlt: "The Spanish Military Hospital: Surgery, Death, and Ghosts in Colonial St. Augustine"
 author: "Cursed Tours"
 hub: "st-augustine-haunted-history"
+hubSlug: st-augustine
+hubUrl: /st-augustine-ghost-tours/
+relatedArticles:
+  - castillo-de-san-marcos-haunted-history
+  - most-haunted-places-in-st-augustine
+  - st-augustine-lighthouse-ghost-stories
+  - st-augustine-oldest-city-dark-history
 ---
 
 Reconstructed on its original foundation, the Spanish Military Hospital offers a window into 18th-century medicine — and the ghosts of those it couldn't save.

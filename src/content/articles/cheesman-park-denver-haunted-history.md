@@ -8,6 +8,13 @@ coverImage: "/images/articles/cheesman-park-denver-haunted-history.webp"
 coverAlt: "Cheesman Park: Denver's Cemetery Scandal and Its Restless Dead"
 author: "Cursed Tours"
 hub: "denver-haunted-history"
+hubSlug: denver
+hubUrl: /denver-ghost-tours/
+relatedArticles:
+  - brown-palace-hotel-denver-ghosts
+  - denver-gold-rush-ghost-stories
+  - most-haunted-places-in-denver
+  - stanley-hotel-colorado-shining-inspiration
 ---
 
 Between 1890 and 1900, Denver underwent one of the largest municipal cemetery relocations in American history. In 1893, the City of Denver hired a contractor to move approximately 5,000 graves from the original City Cemetery (also known as Prospect Hill Cemetery) to Fairmount Cemetery and other burial grounds. The contractor, facing cost and time pressures, employed crude and expedient methods: he reportedly hacked bodies apart to fit more coffins into transport, and an estimated 1,200 to 1,500 remains were never accounted for and were simply left behind in the soil beneath what would become Cheesman Park.

@@ -8,6 +8,13 @@ coverImage: "/images/articles/rome-colosseum-ghost-stories-gladiators.webp"
 coverAlt: "The Colosseum's Ghosts: Gladiators, Martyrs, and 500 Years of Death"
 author: "Cursed Tours"
 hub: "rome-haunted-history"
+hubSlug: rome
+hubUrl: /rome-ghost-tours/
+relatedArticles:
+  - castel-sant-angelo-rome-haunted
+  - most-haunted-places-in-rome
+  - rome-catacombs-underground-dark-history
+  - rome-nero-haunted-legacy
 ---
 
 An estimated 400,000 people died in the Colosseum over four centuries of games. Night visitors report sounds, shadows, and presences among the ruins.

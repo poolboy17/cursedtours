@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-key-west.webp"
 coverAlt: "Most Haunted Places in Key West: From Robert the Doll to the Cemetery"
 author: "Cursed Tours"
 hub: "key-west-haunted-history"
+hubSlug: key-west
+hubUrl: /key-west-ghost-tours/
+relatedArticles:
+  - captain-tonys-saloon-key-west-haunted
+  - carl-von-cosel-elena-hoyos-key-west
+  - fort-east-martello-key-west-haunted
+  - fort-zachary-taylor-key-west-haunted
 ---
 
 The Travel Channel named Key West one of America's most haunted cities. The island called Bone Island by Spanish explorers has accumulated centuries of death from shipwrecks, [yellow fever](/articles/key-west-yellow-fever-fort-jefferson/), hurricanes, piracy, and warfare. Unlike many haunted destinations built on single tragedies, Key West's paranormal reputation rests on layers of historical trauma. Every building seems to house a story. Every street corner has witnessed death. The spirits reported here aren't theatrical—they're persistent, documented, and sometimes irritable. This is not a recreational haunting guide. These are real locations where people have experienced genuine anomalies.

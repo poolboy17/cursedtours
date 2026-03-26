@@ -8,6 +8,13 @@ coverImage: "/images/articles/robert-the-doll-key-west-haunted-history.webp"
 coverAlt: "Robert the Doll: The True Story of Key West's Most Haunted Object"
 author: "Cursed Tours"
 hub: "key-west-haunted-history"
+hubSlug: key-west
+hubUrl: /key-west-ghost-tours/
+relatedArticles:
+  - captain-tonys-saloon-key-west-haunted
+  - carl-von-cosel-elena-hoyos-key-west
+  - fort-east-martello-key-west-haunted
+  - fort-zachary-taylor-key-west-haunted
 ---
 
 Robert the Doll sits in a climate-controlled glass case at the Fort East Martello Museum in Key West, Florida—a small, pale figure in a white sailor suit that has attracted more correspondence than most of the island's living residents. He receives letters daily: apologies from strangers, requests for forgiveness, and confessions of misfortune. Some visitors claim that a single photograph taken without permission triggered years of bad luck. Others swear they saw the doll's expression change. The museum's collection contains over one thousand of these letters, catalogued and archived, each one a testimony to either a genuine haunting or one of the most effective folklore traditions ever created.

@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-new-orleans.webp"
 coverAlt: "Most Haunted Places in New Orleans"
 author: "Cursed Tours"
 hub: "new-orleans-voodoo-haunted-history"
+hubSlug: new-orleans
+hubUrl: /new-orleans-ghost-tours/
+relatedArticles:
+  - history-of-voodoo-in-new-orleans
+  - jean-lafitte-pirate-ghost-of-new-orleans
+  - lalaurie-mansion-true-story
+  - marie-laveau-voodoo-queen-of-new-orleans
 ---
 
 New Orleans contains more allegedly haunted locations per square mile than any other American city. This is not merely a tourism claim. The concentration reflects genuine history—centuries of epidemic disease, slavery, violence, and cultural practices that kept the dead present in daily life. The haunted reputation of New Orleans is built on real events in real buildings, many of which still stand and remain in active use.

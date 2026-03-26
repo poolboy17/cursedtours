@@ -8,6 +8,13 @@ coverImage: "/images/articles/stanley-hotel-colorado-shining-inspiration.webp"
 coverAlt: "The Stanley Hotel: The Real Inspiration for The Shining"
 author: "Cursed Tours"
 hub: "denver-haunted-history"
+hubSlug: denver
+hubUrl: /denver-ghost-tours/
+relatedArticles:
+  - brown-palace-hotel-denver-ghosts
+  - cheesman-park-denver-haunted-history
+  - denver-gold-rush-ghost-stories
+  - most-haunted-places-in-denver
 ---
 
 Stephen King spent one night at the Stanley Hotel in 1974. Room 217, a dream about his son, and the empty hotel became the foundation for his masterpiece.

@@ -8,6 +8,13 @@ coverImage: "/images/articles/paris-catacombs-dark-history.webp"
 coverAlt: "The Paris Catacombs: Six Million Dead Beneath the City of Light"
 author: "Cursed Tours"
 hub: "paris-haunted-history"
+hubSlug: paris
+hubUrl: /paris-ghost-tours/
+relatedArticles:
+  - most-haunted-places-in-paris
+  - paris-revolution-guillotine-haunted-sites
+  - pere-lachaise-cemetery-paris-ghosts
+  - phantom-of-the-opera-paris-true-story
 ---
 
 In the 1780s, Paris moved six million skeletons from overflowing cemeteries into abandoned quarries. The result is the world's largest ossuary.

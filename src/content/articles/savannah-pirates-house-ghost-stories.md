@@ -8,6 +8,13 @@ coverImage: "/images/articles/savannah-pirates-house-ghost-stories.webp"
 coverAlt: "The Pirates' House: Savannah's Oldest Haunted Tavern"
 author: "Cursed Tours"
 hub: "savannah-haunted-history"
+hubSlug: savannah
+hubUrl: /savannah-ghost-tours/
+relatedArticles:
+  - bonaventure-cemetery-savannah-history
+  - mercer-williams-house-savannah-haunted
+  - most-haunted-places-in-savannah
+  - savannah-civil-war-ghost-stories
 ---
 
 Built in 1753, the Pirates' House served as a seaman's tavern where sailors were drugged, shanghaied, and sometimes killed. The tunnels still exist.

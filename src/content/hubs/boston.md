@@ -51,6 +51,12 @@ faqs:
     PM. October is peak season. Winter tours are less crowded but dress warmly—Boston's
     waterfront wind makes evening walking tours significantly colder than the temperature
     suggests.
+spokes:
+  - "boston-freedom-trail-dark-history"
+  - "boston-harbor-islands-ghost-stories"
+  - "boston-strangler-true-crime-history"
+  - "most-haunted-places-in-boston"
+  - "omni-parker-house-boston-haunted-history"
 ---
 
 <section class="py-16 md:py-20 bg-[#0a0510]">   <div class="container px-4 mx-auto max-w-4xl">

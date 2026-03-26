@@ -8,6 +8,13 @@ coverImage: "/images/articles/new-orleans-voodoo-haunted-history-complete-guide.
 coverAlt: "New Orleans Voodoo & Haunted History"
 author: "Cursed Tours"
 hub: "new-orleans-voodoo-haunted-history"
+hubSlug: new-orleans
+hubUrl: /new-orleans-ghost-tours/
+relatedArticles:
+  - history-of-voodoo-in-new-orleans
+  - jean-lafitte-pirate-ghost-of-new-orleans
+  - lalaurie-mansion-true-story
+  - marie-laveau-voodoo-queen-of-new-orleans
 ---
 
 New Orleans is not merely haunted. It is saturated with the dead—their stories, their rituals, their refusal to be forgotten. No American city blends the supernatural into daily life as thoroughly as New Orleans, where voodoo altars share street corners with jazz clubs, where the dead are buried above ground because the ground itself rejects them, and where ghost tours are not novelty but navigation through layers of genuine history.

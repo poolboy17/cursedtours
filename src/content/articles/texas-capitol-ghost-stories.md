@@ -8,6 +8,13 @@ coverImage: "/images/articles/texas-capitol-ghost-stories.webp"
 coverAlt: "Texas Capitol Ghost Stories: Power, Politics, and the Paranormal"
 author: "Cursed Tours"
 hub: "austin-haunted-history"
+hubSlug: austin
+hubUrl: /austin-ghost-tours/
+relatedArticles:
+  - austin-moonlight-towers-history
+  - driskill-hotel-austin-haunted-history
+  - most-haunted-places-in-austin
+  - servant-girl-annihilator-austin-true-crime
 ---
 
 The Texas Capitol is the largest state capitol building in America. Its construction cost convict lives — and some say those workers still roam the halls.

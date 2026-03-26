@@ -8,6 +8,13 @@ coverImage: "/images/articles/why-were-women-targeted-in-the-salem-witch-trials.
 coverAlt: "Why Were Women Targeted in the Salem Witch Trials?"
 author: "Cursed Tours"
 hub: "salem-witch-trials"
+hubSlug: salem
+hubUrl: /salem-ghost-tours/
+relatedArticles:
+  - apologies-regret-and-reparations-after-salem
+  - how-the-salem-witch-trials-ended-and-why
+  - how-the-salem-witch-trials-worked-courts-evidence-and-confessions
+  - life-in-puritan-new-england-before-the-trials
 ---
 
 Of the more than two hundred people accused of witchcraft during the Salem witch trials, approximately three-quarters were women. This striking disproportion was not accidental. It reflected deep-seated beliefs about gender, spirituality, and social order that made women—particularly certain kinds of women—vulnerable to accusation in ways that men were not.

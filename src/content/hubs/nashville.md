@@ -46,6 +46,12 @@ faqs:
     October is peak season with additional offerings. Downtown walking tours cover
     approximately 1-1.5 miles over 90 minutes. Some companies offer combination tours
     that include bus transportation to sites outside the downtown core.
+spokes:
+  - "bell-witch-tennessee-legend"
+  - "hermitage-hotel-nashville-haunted"
+  - "most-haunted-places-in-nashville"
+  - "nashville-civil-war-battles-ghosts"
+  - "nashville-ryman-auditorium-ghosts"
 ---
 
 <section class="py-16 md:py-20 bg-[#0a0510]">   <div class="container px-4 mx-auto max-w-4xl">

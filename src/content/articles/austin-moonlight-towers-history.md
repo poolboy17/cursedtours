@@ -8,6 +8,13 @@ coverImage: "/images/articles/austin-moonlight-towers-history.webp"
 coverAlt: "Austin's Moonlight Towers: Lighting a City Afraid of the Dark"
 author: "Cursed Tours"
 hub: "austin-haunted-history"
+hubSlug: austin
+hubUrl: /austin-ghost-tours/
+relatedArticles:
+  - driskill-hotel-austin-haunted-history
+  - most-haunted-places-in-austin
+  - servant-girl-annihilator-austin-true-crime
+  - texas-capitol-ghost-stories
 ---
 
 After the Servant Girl murders, Austin installed 31 moonlight towers to banish the darkness. Seventeen still stand — the only ones left in the world.

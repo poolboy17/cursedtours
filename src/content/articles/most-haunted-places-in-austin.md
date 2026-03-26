@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-austin.webp"
 coverAlt: "Most Haunted Places in Austin: Keep Austin Haunted"
 author: "Cursed Tours"
 hub: "austin-haunted-history"
+hubSlug: austin
+hubUrl: /austin-ghost-tours/
+relatedArticles:
+  - austin-moonlight-towers-history
+  - driskill-hotel-austin-haunted-history
+  - servant-girl-annihilator-austin-true-crime
+  - texas-capitol-ghost-stories
 ---
 
 Austin's weird reputation extends to the supernatural — the city harbors ghost stories from its frontier days to the present.

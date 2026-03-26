@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-nashville.webp"
 coverAlt: "Most Haunted Places in Nashville: Music City's Dark Side"
 author: "Cursed Tours"
 hub: "nashville-haunted-history"
+hubSlug: nashville
+hubUrl: /nashville-ghost-tours/
+relatedArticles:
+  - bell-witch-tennessee-legend
+  - hermitage-hotel-nashville-haunted
+  - nashville-civil-war-battles-ghosts
+  - nashville-ryman-auditorium-ghosts
 ---
 
 Behind the neon glow of Broadway lies a city scarred by Civil War battles, tragic deaths, and ghost stories that locals take seriously.

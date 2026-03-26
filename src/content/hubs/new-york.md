@@ -52,6 +52,12 @@ faqs:
     conditions. Summer evening tours take advantage of longer daylight for pre-tour
     walking, while winter tours through the Village's narrow streets can be especially
     atmospheric in snow or fog.
+spokes:
+  - "greenwich-village-ghosts-new-york"
+  - "morris-jumel-mansion-new-york-haunted"
+  - "most-haunted-places-in-new-york"
+  - "new-york-abandoned-subway-stations"
+  - "new-york-tenement-ghost-stories"
 ---
 
 <section class="py-16 md:py-20 bg-[#0a0510]">   <div class="container px-4 mx-auto max-w-4xl">

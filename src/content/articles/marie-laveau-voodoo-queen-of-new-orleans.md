@@ -8,6 +8,13 @@ coverImage: "/images/articles/marie-laveau-voodoo-queen-of-new-orleans.webp"
 coverAlt: "Marie Laveau: Voodoo Queen of New Orleans"
 author: "Cursed Tours"
 hub: "new-orleans-voodoo-haunted-history"
+hubSlug: new-orleans
+hubUrl: /new-orleans-ghost-tours/
+relatedArticles:
+  - history-of-voodoo-in-new-orleans
+  - jean-lafitte-pirate-ghost-of-new-orleans
+  - lalaurie-mansion-true-story
+  - most-haunted-places-in-new-orleans
 ---
 
 Marie Laveau is the most famous figure in the history of New Orleans voodoo, and the most misunderstood. Popular culture has reduced her to a caricature—a mysterious woman casting spells and cursing enemies. The historical Marie Laveau was far more interesting. She was a free woman of color who wielded genuine social power in a rigidly hierarchical society, a spiritual leader who commanded respect across racial lines, and a community figure whose influence extended into politics, medicine, and the intimate secrets of the city's elite.

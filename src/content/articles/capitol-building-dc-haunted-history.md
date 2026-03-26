@@ -8,6 +8,13 @@ coverImage: "/images/articles/capitol-building-dc-haunted-history.webp"
 coverAlt: "The U.S. Capitol Building: Ghosts in the Halls of Power"
 author: "Cursed Tours"
 hub: "washington-dc-haunted-history"
+hubSlug: washington-dc
+hubUrl: /washington-dc-ghost-tours/
+relatedArticles:
+  - arlington-cemetery-ghost-stories-dc
+  - georgetown-exorcist-house-history
+  - most-haunted-places-in-washington-dc
+  - white-house-ghost-stories-lincoln
 ---
 
 The Capitol has witnessed assassinations, lying in state ceremonies, and two centuries of political drama. Its most famous apparition is Abraham Lincoln; its strangest legend involves the \"Demon Cat of Capitol Hill,\" a black feline said to appear before national tragedies and deaths of prominent senators, last documented in the 1950s.

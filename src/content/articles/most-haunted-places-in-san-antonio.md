@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-san-antonio.webp"
 coverAlt: "Most Haunted Places in San Antonio: From the Alamo to the Missions"
 author: "Cursed Tours"
 hub: "san-antonio-haunted-history"
+hubSlug: san-antonio
+hubUrl: /san-antonio-ghost-tours/
+relatedArticles:
+  - alamo-ghost-stories-san-antonio
+  - menger-hotel-san-antonio-haunted
+  - san-antonio-missions-dark-history
+  - san-antonio-railroad-ghost-tracks
 ---
 
 San Antonio's history stretches back 300 years through Spanish missions, the Texas Revolution, and frontier violence. The ghosts reflect every era.

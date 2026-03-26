@@ -8,6 +8,13 @@ coverImage: "/images/articles/castel-sant-angelo-rome-haunted.webp"
 coverAlt: "Castel Sant'Angelo: Rome's Fortress of Ghosts"
 author: "Cursed Tours"
 hub: "rome-haunted-history"
+hubSlug: rome
+hubUrl: /rome-ghost-tours/
+relatedArticles:
+  - most-haunted-places-in-rome
+  - rome-catacombs-underground-dark-history
+  - rome-colosseum-ghost-stories-gladiators
+  - rome-nero-haunted-legacy
 ---
 
 Built as a mausoleum, converted to a fortress, used as a papal prison and execution ground — Castel Sant'Angelo has earned every one of its ghost stories.

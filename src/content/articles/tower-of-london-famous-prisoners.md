@@ -8,6 +8,13 @@ coverImage: "/images/articles/tower-of-london-famous-prisoners.webp"
 coverAlt: "Famous Prisoners of the Tower of London"
 author: "Cursed Tours"
 hub: "tower-of-london-history"
+hubSlug: london
+hubUrl: /london-ghost-tours/
+relatedArticles:
+  - anne-boleyn-execution-tower
+  - haunted-pubs-of-london
+  - jack-the-ripper-london-walking-guide
+  - london-plague-pits-hidden-history
 ---
 
 ## Nine Centuries of Captivity

@@ -8,6 +8,13 @@ coverImage: "/images/articles/resurrection-mary-chicagos-most-famous-ghost.webp"
 coverAlt: "Resurrection Mary: Chicago's Most Famous Ghost"
 author: "Cursed Tours"
 hub: "chicago-haunted-history"
+hubSlug: chicago
+hubUrl: /chicago-ghost-tours/
+relatedArticles:
+  - bachelors-grove-cemetery-chicago
+  - chicago-gangster-ghosts
+  - chicagos-most-haunted-bars
+  - congress-plaza-hotel-haunted-history
 ---
 
 On a stretch of Archer Avenue in Justice, Illinois, southwest of Chicago, drivers have reported the same encounter for nearly a century. A young blonde woman in a white dress appears on the road or at a nearby dance hall. She accepts a ride. She sits quietly in the car. And as the vehicle passes Resurrection Cemetery, she vanishes—sometimes opening the car door, sometimes simply ceasing to exist.

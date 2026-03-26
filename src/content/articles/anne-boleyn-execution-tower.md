@@ -8,6 +8,13 @@ coverImage: "/images/articles/anne-boleyn-execution-tower.webp"
 coverAlt: "Anne Boleyn's Execution at the Tower of London"
 author: "Cursed Tours"
 hub: "tower-of-london-history"
+hubSlug: london
+hubUrl: /london-ghost-tours/
+relatedArticles:
+  - haunted-pubs-of-london
+  - jack-the-ripper-london-walking-guide
+  - london-plague-pits-hidden-history
+  - most-haunted-places-in-london
 ---
 
 ## The Fall of a Queen

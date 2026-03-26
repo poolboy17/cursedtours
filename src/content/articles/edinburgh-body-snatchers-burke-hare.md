@@ -8,6 +8,13 @@ coverImage: "/images/articles/edinburgh-body-snatchers-burke-hare.webp"
 coverAlt: "Burke and Hare: Edinburgh's Infamous Body Snatchers"
 author: "Cursed Tours"
 hub: "edinburgh-haunted-history"
+hubSlug: edinburgh
+hubUrl: /edinburgh-ghost-tours/
+relatedArticles:
+  - edinburgh-castle-ghosts-legends
+  - edinburgh-underground-vaults-history
+  - greyfriars-kirkyard-edinburgh-haunted
+  - most-haunted-places-in-edinburgh
 ---
 
 In 1828, William Burke and William Hare murdered at least 16 people and sold their bodies for medical dissection. Their story changed British law.

@@ -8,6 +8,13 @@ coverImage: "/images/articles/iroquois-theatre-fire-chicago.webp"
 coverAlt: "The Iroquois Theatre Fire of 1903"
 author: "Cursed Tours"
 hub: "chicago-haunted-history"
+hubSlug: chicago
+hubUrl: /chicago-ghost-tours/
+relatedArticles:
+  - bachelors-grove-cemetery-chicago
+  - chicago-gangster-ghosts
+  - chicagos-most-haunted-bars
+  - congress-plaza-hotel-haunted-history
 ---
 
 On December 30, 1903, at approximately 3:15 p.m., during a matinee performance of the musical Mr. Blue Beard at the Iroquois Theatre on West Randolph Street in Chicago's Loop district, a fire broke out backstage. Within fifteen minutes, 602 people were dead—crushed, burned, or suffocated in what remains the deadliest single-building fire in American history. Most of the victims were women and children attending the afternoon show during Christmas week, with approximately 200 victims under the age of fifteen.

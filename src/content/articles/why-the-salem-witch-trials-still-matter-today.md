@@ -8,6 +8,13 @@ coverImage: "/images/articles/why-the-salem-witch-trials-still-matter-today.webp
 coverAlt: "Why the Salem Witch Trials Still Matter Today"
 author: "Cursed Tours"
 hub: "salem-witch-trials"
+hubSlug: salem
+hubUrl: /salem-ghost-tours/
+relatedArticles:
+  - apologies-regret-and-reparations-after-salem
+  - how-the-salem-witch-trials-ended-and-why
+  - how-the-salem-witch-trials-worked-courts-evidence-and-confessions
+  - life-in-puritan-new-england-before-the-trials
 ---
 
 More than three centuries have passed since the Salem witch trials ended, yet they remain among the most frequently referenced events in American history. Salem has become shorthand for persecution, mass delusion, and institutional failure. But why? What makes events from 1692 relevant to people living in a world that no longer believes in literal witchcraft?

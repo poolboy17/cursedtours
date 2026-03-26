@@ -8,6 +8,13 @@ coverImage: "/images/articles/st-louis-cemetery-no-1-history-and-legends.webp"
 coverAlt: "St. Louis Cemetery No. 1: History"
 author: "Cursed Tours"
 hub: "new-orleans-voodoo-haunted-history"
+hubSlug: new-orleans
+hubUrl: /new-orleans-ghost-tours/
+relatedArticles:
+  - history-of-voodoo-in-new-orleans
+  - jean-lafitte-pirate-ghost-of-new-orleans
+  - lalaurie-mansion-true-story
+  - marie-laveau-voodoo-queen-of-new-orleans
 ---
 
 St. Louis Cemetery No. 1 is the oldest extant cemetery in New Orleans, established in 1789 when the city was still under Spanish colonial rule. It occupies a single city block at the edge of the French Quarter, and within its walls stand hundreds of above-ground tombs that house the remains of some of the most significant figures in New Orleans history. It is also, by widespread consensus, the most haunted cemetery in America.

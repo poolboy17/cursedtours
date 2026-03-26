@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-new-york.webp"
 coverAlt: "Most Haunted Places in New York City: Borough by Borough"
 author: "Cursed Tours"
 hub: "new-york-haunted-history"
+hubSlug: new-york
+hubUrl: /new-york-ghost-tours/
+relatedArticles:
+  - greenwich-village-ghosts-new-york
+  - morris-jumel-mansion-new-york-haunted
+  - new-york-abandoned-subway-stations
+  - new-york-tenement-ghost-stories
 ---
 
 Four centuries of history have left New York with ghost stories in every borough — from colonial-era taverns to Gilded Age mansions.

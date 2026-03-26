@@ -8,6 +8,13 @@ coverImage: "/images/articles/voodoo-vs-hoodoo-whats-the-difference.webp"
 coverAlt: "Voodoo vs Hoodoo: What's the Difference?"
 author: "Cursed Tours"
 hub: "new-orleans-voodoo-haunted-history"
+hubSlug: new-orleans
+hubUrl: /new-orleans-ghost-tours/
+relatedArticles:
+  - history-of-voodoo-in-new-orleans
+  - jean-lafitte-pirate-ghost-of-new-orleans
+  - lalaurie-mansion-true-story
+  - marie-laveau-voodoo-queen-of-new-orleans
 ---
 
 Voodoo and hoodoo are frequently confused, often used interchangeably, and sometimes deliberately conflated by people who should know better. In New Orleans, where both traditions have deep roots, the distinction matters—not as academic pedantry but as a matter of cultural respect and historical accuracy. They are related but fundamentally different: one is a religion, the other is a practice. Understanding the difference is essential to engaging honestly with [New Orleans' spiritual heritage](/articles/new-orleans-voodoo-haunted-history-complete-guide/).

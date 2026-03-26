@@ -8,6 +8,13 @@ coverImage: "/images/articles/new-york-tenement-ghost-stories.webp"
 coverAlt: "New York Tenement Ghost Stories: The Immigrant Dead"
 author: "Cursed Tours"
 hub: "new-york-haunted-history"
+hubSlug: new-york
+hubUrl: /new-york-ghost-tours/
+relatedArticles:
+  - greenwich-village-ghosts-new-york
+  - morris-jumel-mansion-new-york-haunted
+  - most-haunted-places-in-new-york
+  - new-york-abandoned-subway-stations
 ---
 
 Millions passed through New York's tenements — and thousands died in them. The Lower East Side's ghost stories are stories of immigration itself.

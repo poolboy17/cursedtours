@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-london.webp"
 coverAlt: "Most Haunted Places in London: From the Tower to the Tube"
 author: "Cursed Tours"
 hub: "london-haunted-history"
+hubSlug: london
+hubUrl: /london-ghost-tours/
+relatedArticles:
+  - anne-boleyn-execution-tower
+  - haunted-pubs-of-london
+  - jack-the-ripper-london-walking-guide
+  - london-plague-pits-hidden-history
 ---
 
 Two thousand years of history have left London with an extraordinary concentration of ghost stories — from Roman soldiers to wartime phantoms.

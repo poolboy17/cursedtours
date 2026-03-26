@@ -8,6 +8,13 @@ coverImage: "/images/articles/london-plague-pits-hidden-history.webp"
 coverAlt: "London's Plague Pits: The Hidden Dead Beneath the City"
 author: "Cursed Tours"
 hub: "london-haunted-history"
+hubSlug: london
+hubUrl: /london-ghost-tours/
+relatedArticles:
+  - anne-boleyn-execution-tower
+  - haunted-pubs-of-london
+  - jack-the-ripper-london-walking-guide
+  - most-haunted-places-in-london
 ---
 
 The Great Plague of 1665-1666 killed approximately 100,000 Londoners (roughly 20% of the city's population of 460,000). Many were buried in mass graves and plague pits that now lie beneath parks, London Underground stations, and office buildings across the City of London and Southwark.

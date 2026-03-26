@@ -8,6 +8,13 @@ coverImage: "/images/articles/morris-jumel-mansion-new-york-haunted.webp"
 coverAlt: "The Morris-Jumel Mansion: Manhattan's Most Haunted House"
 author: "Cursed Tours"
 hub: "new-york-haunted-history"
+hubSlug: new-york
+hubUrl: /new-york-ghost-tours/
+relatedArticles:
+  - greenwich-village-ghosts-new-york
+  - most-haunted-places-in-new-york
+  - new-york-abandoned-subway-stations
+  - new-york-tenement-ghost-stories
 ---
 
 Built in 1765, the Morris-Jumel Mansion served as Washington's headquarters, witnessed a scandalous marriage, and has been haunted ever since.

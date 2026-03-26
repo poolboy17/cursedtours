@@ -8,6 +8,13 @@ coverImage: "/images/articles/haunted-pubs-of-london.webp"
 coverAlt: "Haunted Pubs of London: Where History Drinks"
 author: "Cursed Tours"
 hub: "london-haunted-history"
+hubSlug: london
+hubUrl: /london-ghost-tours/
+relatedArticles:
+  - anne-boleyn-execution-tower
+  - jack-the-ripper-london-walking-guide
+  - london-plague-pits-hidden-history
+  - most-haunted-places-in-london
 ---
 
 London's oldest pubs have served ale for centuries — and many serve it alongside ghost stories that staff and regulars swear are true.

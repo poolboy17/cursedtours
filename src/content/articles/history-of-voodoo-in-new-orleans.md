@@ -8,6 +8,13 @@ coverImage: "/images/articles/history-of-voodoo-in-new-orleans.webp"
 coverAlt: "History of Voodoo in New Orleans"
 author: "Cursed Tours"
 hub: "new-orleans-voodoo-haunted-history"
+hubSlug: new-orleans
+hubUrl: /new-orleans-ghost-tours/
+relatedArticles:
+  - jean-lafitte-pirate-ghost-of-new-orleans
+  - lalaurie-mansion-true-story
+  - marie-laveau-voodoo-queen-of-new-orleans
+  - most-haunted-places-in-new-orleans
 ---
 
 Voodoo in New Orleans is not what most people think it is. The word conjures images from horror films—dolls stuck with pins, zombies, curses whispered in candlelit rooms. The reality is a complex, living spiritual tradition with deep roots in West African religion, shaped by the catastrophe of the Atlantic slave trade, adapted under Catholic colonialism, and evolved into something distinctly American in the streets of New Orleans.

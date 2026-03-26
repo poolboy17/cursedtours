@@ -8,6 +8,13 @@ coverImage: "/images/articles/boston-harbor-islands-ghost-stories.webp"
 coverAlt: "Boston Harbor Islands: Ghost Stories from Fort Warren and Beyond"
 author: "Cursed Tours"
 hub: "boston-haunted-history"
+hubSlug: boston
+hubUrl: /boston-ghost-tours/
+relatedArticles:
+  - boston-freedom-trail-dark-history
+  - boston-strangler-true-crime-history
+  - most-haunted-places-in-boston
+  - omni-parker-house-boston-haunted-history
 ---
 
 The islands in Boston Harbor have served as military forts, quarantine stations, and prisoner-of-war camps. Their ghost stories reflect centuries of isolation and death.

@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-st-augustine.webp"
 coverAlt: "Most Haunted Places in St. Augustine: America's Oldest Ghosts"
 author: "Cursed Tours"
 hub: "st-augustine-haunted-history"
+hubSlug: st-augustine
+hubUrl: /st-augustine-ghost-tours/
+relatedArticles:
+  - castillo-de-san-marcos-haunted-history
+  - spanish-military-hospital-st-augustine
+  - st-augustine-lighthouse-ghost-stories
+  - st-augustine-oldest-city-dark-history
 ---
 
 Founded in 1565, St. Augustine has had 460 years to accumulate ghost stories. It has not wasted the opportunity.

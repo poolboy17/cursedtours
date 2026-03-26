@@ -8,6 +8,13 @@ coverImage: "/images/articles/bram-stoker-dublin-dracula-origins.webp"
 coverAlt: "Bram Stoker's Dublin: Where Dracula Was Born"
 author: "Cursed Tours"
 hub: "dublin-haunted-history"
+hubSlug: dublin
+hubUrl: /dublin-ghost-tours/
+relatedArticles:
+  - dublin-hellfire-club-legends
+  - kilmainham-gaol-dublin-haunted-history
+  - most-haunted-places-in-dublin
+  - st-michans-church-dublin-mummies
 ---
 
 Bram Stoker grew up in Dublin's Clontarf neighborhood. The city's history, its graveyards, and a childhood illness shaped the imagination that created Dracula.

@@ -8,6 +8,13 @@ coverImage: "/images/articles/chicagos-most-haunted-bars.webp"
 coverAlt: "Chicago's Most Haunted Bars and Taverns"
 author: "Cursed Tours"
 hub: "chicago-haunted-history"
+hubSlug: chicago
+hubUrl: /chicago-ghost-tours/
+relatedArticles:
+  - bachelors-grove-cemetery-chicago
+  - chicago-gangster-ghosts
+  - congress-plaza-hotel-haunted-history
+  - eastland-disaster-chicago
 ---
 
 Chicago's bar culture predates Prohibition, survived Prohibition, and emerged from Prohibition with a collection of ghost stories that rival the city's official haunted landmarks. The oldest taverns in the city have been accumulating reports of unusual phenomena for generations—unexplained sounds, moving objects, spectral figures, and the pervasive sense that the after-hours crowd includes patrons who never left.

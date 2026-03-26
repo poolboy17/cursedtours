@@ -8,6 +8,13 @@ coverImage: "/images/articles/hh-holmes-murder-castle-chicago.webp"
 coverAlt: "H.H. Holmes and the Murder Castle"
 author: "Cursed Tours"
 hub: "chicago-haunted-history"
+hubSlug: chicago
+hubUrl: /chicago-ghost-tours/
+relatedArticles:
+  - bachelors-grove-cemetery-chicago
+  - chicago-gangster-ghosts
+  - chicagos-most-haunted-bars
+  - congress-plaza-hotel-haunted-history
 ---
 
 Herman Webster Mudgett was born in Gilmanton, New Hampshire, on May 16, 1861, into an affluent family where he displayed early intelligence alongside troubling behavior. By the time he was hanged in Philadelphia on May 7, 1896, he had adopted the aliases H.H. Holmes and Dr. Henry H. Holmes, confessed to 27 murders, and earned the distinction of being America's first documented serial killer. His instrument was not a weapon but a building—a three-story structure at 63rd and Wallace streets in Chicago's Englewood neighborhood, designed from the ground up as a facility for murder.

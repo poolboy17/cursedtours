@@ -8,6 +8,13 @@ coverImage: "/images/articles/hermitage-hotel-nashville-haunted.webp"
 coverAlt: "The Hermitage Hotel: Nashville's Grand Haunted Dame"
 author: "Cursed Tours"
 hub: "nashville-haunted-history"
+hubSlug: nashville
+hubUrl: /nashville-ghost-tours/
+relatedArticles:
+  - bell-witch-tennessee-legend
+  - most-haunted-places-in-nashville
+  - nashville-civil-war-battles-ghosts
+  - nashville-ryman-auditorium-ghosts
 ---
 
 Nashville's most elegant hotel, located at 231 6th Avenue North, has hosted six presidents, the suffrage movement's final battle in 1920, and a collection of ghosts who appreciate the luxury.

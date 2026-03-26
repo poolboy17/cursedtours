@@ -8,6 +8,13 @@ coverImage: "/images/articles/the-role-of-children-in-the-salem-witch-trials.web
 coverAlt: "The Role of Children in the Salem Witch Trials"
 author: "Cursed Tours"
 hub: "salem-witch-trials"
+hubSlug: salem
+hubUrl: /salem-ghost-tours/
+relatedArticles:
+  - apologies-regret-and-reparations-after-salem
+  - how-the-salem-witch-trials-ended-and-why
+  - how-the-salem-witch-trials-worked-courts-evidence-and-confessions
+  - life-in-puritan-new-england-before-the-trials
 ---
 
 Children played a central—and deeply troubling—role in the Salem witch trials. They were among the earliest accusers, some of the most influential witnesses, and, in a few cases, the accused themselves. Their testimony carried extraordinary weight in a society that equated youth with innocence, and once validated by adult authority, their claims helped drive the trials forward with alarming speed.

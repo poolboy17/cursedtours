@@ -45,6 +45,18 @@ faqs:
   answer: October is peak season for paranormal tourism, with Fantasy Fest adding
     to the atmosphere. But ghost tours run year-round, and the summer months offer
     smaller crowds and longer twilight hours.
+spokes:
+  - "captain-tonys-saloon-key-west-haunted"
+  - "carl-von-cosel-elena-hoyos-key-west"
+  - "fort-east-martello-key-west-haunted"
+  - "fort-zachary-taylor-key-west-haunted"
+  - "hemingway-house-key-west-ghosts"
+  - "key-west-cemetery-ghost-stories"
+  - "key-west-pirate-history-legends"
+  - "key-west-shipwrecks-wreckers-history"
+  - "key-west-yellow-fever-fort-jefferson"
+  - "most-haunted-places-in-key-west"
+  - "robert-the-doll-key-west-haunted-history"
 ---
 
 <!-- Intro Section -->

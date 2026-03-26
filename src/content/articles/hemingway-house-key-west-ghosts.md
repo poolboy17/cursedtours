@@ -8,6 +8,13 @@ coverImage: "/images/articles/hemingway-house-key-west-ghosts.webp"
 coverAlt: "The Hemingway House: Key West's Literary Ghost"
 author: "Cursed Tours"
 hub: "key-west-haunted-history"
+hubSlug: key-west
+hubUrl: /key-west-ghost-tours/
+relatedArticles:
+  - captain-tonys-saloon-key-west-haunted
+  - carl-von-cosel-elena-hoyos-key-west
+  - fort-east-martello-key-west-haunted
+  - fort-zachary-taylor-key-west-haunted
 ---
 
 Ernest Hemingway wrote some of his most important novels in a second-floor studio overlooking 907 Whitehead Street in Key West. He stood at a round table in that room, working through the mornings, crafting prose that would define twentieth-century American literature. He lived here from 1931 to 1939, then left the island for Cuba and Mexico and Europe. But according to staff members, museum guides, and visitors who have spent time in that studio across the decades, something of Hemingway remained. The sound of typewriter keys still clicks through the empty room. A tall bearded figure still stands at the window. The cats still stare at empty spaces, watching something visitors cannot see.

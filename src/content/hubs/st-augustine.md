@@ -48,6 +48,12 @@ faqs:
   answer: Many operators offer family-friendly tours that focus on history and lighter
     ghost stories. Standard evening tours may include content about death and violence
     unsuitable for young children.
+spokes:
+  - "castillo-de-san-marcos-haunted-history"
+  - "most-haunted-places-in-st-augustine"
+  - "spanish-military-hospital-st-augustine"
+  - "st-augustine-lighthouse-ghost-stories"
+  - "st-augustine-oldest-city-dark-history"
 ---
 
 <!-- Intro Section -->

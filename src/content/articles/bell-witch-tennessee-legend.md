@@ -8,6 +8,13 @@ coverImage: "/images/articles/bell-witch-tennessee-legend.webp"
 coverAlt: "The Bell Witch: Tennessee's Most Famous Haunting"
 author: "Cursed Tours"
 hub: "nashville-haunted-history"
+hubSlug: nashville
+hubUrl: /nashville-ghost-tours/
+relatedArticles:
+  - hermitage-hotel-nashville-haunted
+  - most-haunted-places-in-nashville
+  - nashville-civil-war-battles-ghosts
+  - nashville-ryman-auditorium-ghosts
 ---
 
 Between 1817 and 1821, the Bell family of Adams, Tennessee endured what may be the most documented haunting in American history.

@@ -8,6 +8,13 @@ coverImage: "/images/articles/were-the-salem-witch-trials-about-religion-or-powe
 coverAlt: "Salem Witch Trials: Religion or Power?"
 author: "Cursed Tours"
 hub: "salem-witch-trials"
+hubSlug: salem
+hubUrl: /salem-ghost-tours/
+relatedArticles:
+  - apologies-regret-and-reparations-after-salem
+  - how-the-salem-witch-trials-ended-and-why
+  - how-the-salem-witch-trials-worked-courts-evidence-and-confessions
+  - life-in-puritan-new-england-before-the-trials
 ---
 
 The Salem witch trials are often framed as a conflict between superstition and reason, a cautionary tale of religious fanaticism run amok. Yet this framing obscures a more uncomfortable truth: the trials were as much about power as they were about belief. Religion and authority were so deeply intertwined in Puritan Massachusetts that separating them is nearly impossible—and understanding that entanglement is essential to understanding Salem.

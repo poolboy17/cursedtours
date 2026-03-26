@@ -53,6 +53,12 @@ faqs:
     nightly. Tours typically last two to three hours and cover 1-2 miles of walking.
     Some companies offer tours in multiple languages including Italian, Spanish, French,
     and German.
+spokes:
+  - "castel-sant-angelo-rome-haunted"
+  - "most-haunted-places-in-rome"
+  - "rome-catacombs-underground-dark-history"
+  - "rome-colosseum-ghost-stories-gladiators"
+  - "rome-nero-haunted-legacy"
 ---
 
 <section class="py-16 md:py-20 bg-[#0a0510]">   <div class="container px-4 mx-auto max-w-4xl">

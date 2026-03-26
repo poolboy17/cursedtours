@@ -8,6 +8,13 @@ coverImage: "/images/articles/who-were-the-accused-witches-of-salem.webp"
 coverAlt: "Who Were the Accused Witches of Salem?"
 author: "Cursed Tours"
 hub: "salem-witch-trials"
+hubSlug: salem
+hubUrl: /salem-ghost-tours/
+relatedArticles:
+  - apologies-regret-and-reparations-after-salem
+  - how-the-salem-witch-trials-ended-and-why
+  - how-the-salem-witch-trials-worked-courts-evidence-and-confessions
+  - life-in-puritan-new-england-before-the-trials
 ---
 
 More than two hundred people were accused of witchcraft during the Salem witch trials. Twenty were executed, at least five others died in prison—including Sarah Osborne and an infant, Mercy Good, born to Sarah Good while in custody—and one man, Giles Corey, was pressed to death. These were not random victims of indiscriminate panic—they were individuals whose social positions, personal histories, and community relationships made them vulnerable to accusation in ways that reveal the underlying logic of the crisis.

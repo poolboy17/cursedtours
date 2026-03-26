@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-boston.webp"
 coverAlt: "Most Haunted Places in Boston: A Local's Guide"
 author: "Cursed Tours"
 hub: "boston-haunted-history"
+hubSlug: boston
+hubUrl: /boston-ghost-tours/
+relatedArticles:
+  - boston-freedom-trail-dark-history
+  - boston-harbor-islands-ghost-stories
+  - boston-strangler-true-crime-history
+  - omni-parker-house-boston-haunted-history
 ---
 
 From the Omni Parker House to the Granary Burying Ground, these are the locations where Boston's supernatural history is most concentrated.

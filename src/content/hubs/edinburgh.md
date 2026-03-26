@@ -43,6 +43,12 @@ faqs:
     conditions with early darkness and frequent mist. The Edinburgh Festival in August
     offers expanded tour options. Winter tours through the vaults are particularly
     intense due to cold, damp conditions underground.
+spokes:
+  - "edinburgh-body-snatchers-burke-hare"
+  - "edinburgh-castle-ghosts-legends"
+  - "edinburgh-underground-vaults-history"
+  - "greyfriars-kirkyard-edinburgh-haunted"
+  - "most-haunted-places-in-edinburgh"
 ---
 
 <!-- Intro Section -->

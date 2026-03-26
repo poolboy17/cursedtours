@@ -8,6 +8,13 @@ coverImage: "/images/articles/greenwich-village-ghosts-new-york.webp"
 coverAlt: "Greenwich Village Ghosts: New York's Most Haunted Neighborhood"
 author: "Cursed Tours"
 hub: "new-york-haunted-history"
+hubSlug: new-york
+hubUrl: /new-york-ghost-tours/
+relatedArticles:
+  - morris-jumel-mansion-new-york-haunted
+  - most-haunted-places-in-new-york
+  - new-york-abandoned-subway-stations
+  - new-york-tenement-ghost-stories
 ---
 
 The Village's winding streets predate the Manhattan grid — and its ghost stories predate the Republic.

@@ -8,6 +8,13 @@ coverImage: "/images/articles/salem-witch-trials-timeline.webp"
 coverAlt: "Timeline of the Salem witch trials from 1692 showing key dates and executions"
 author: "Cursed Tours"
 hub: "salem-witch-trials"
+hubSlug: salem
+hubUrl: /salem-ghost-tours/
+relatedArticles:
+  - apologies-regret-and-reparations-after-salem
+  - how-the-salem-witch-trials-ended-and-why
+  - how-the-salem-witch-trials-worked-courts-evidence-and-confessions
+  - life-in-puritan-new-england-before-the-trials
 ---
 
 ## How a Village Descended into Accusation Over Nine Months

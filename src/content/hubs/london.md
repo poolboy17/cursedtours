@@ -51,6 +51,16 @@ faqs:
     depth. Jack the Ripper tours benefit from extensive documentary evidence. Tours
     covering the Great Plague of 1665 and the Great Fire of 1666 provide broader historical
     context across central London landmarks.
+spokes:
+  - "anne-boleyn-execution-tower"
+  - "haunted-pubs-of-london"
+  - "jack-the-ripper-london-walking-guide"
+  - "london-plague-pits-hidden-history"
+  - "most-haunted-places-in-london"
+  - "princes-in-the-tower-mystery"
+  - "tower-of-london-famous-prisoners"
+  - "tower-of-london-ghost-stories"
+  - "tower-of-london-ravens-legend"
 ---
 
 <section class="py-16 md:py-20 bg-[#0a0510]">   <div class="container px-4 mx-auto max-w-4xl">

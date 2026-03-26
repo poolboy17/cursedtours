@@ -8,6 +8,13 @@ coverImage: "/images/articles/brown-palace-hotel-denver-ghosts.webp"
 coverAlt: "The Brown Palace Hotel: Denver's Grandest Ghost Story"
 author: "Cursed Tours"
 hub: "denver-haunted-history"
+hubSlug: denver
+hubUrl: /denver-ghost-tours/
+relatedArticles:
+  - cheesman-park-denver-haunted-history
+  - denver-gold-rush-ghost-stories
+  - most-haunted-places-in-denver
+  - stanley-hotel-colorado-shining-inspiration
 ---
 
 Open since 1892, the Brown Palace has hosted every president since Teddy Roosevelt — and a collection of ghosts who refuse to check out.

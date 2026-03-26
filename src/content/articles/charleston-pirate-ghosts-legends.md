@@ -8,6 +8,13 @@ coverImage: "/images/articles/charleston-pirate-ghosts-legends.webp"
 coverAlt: "Charleston's Pirate Ghosts: Blackbeard, Bonnet, and the Golden Age"
 author: "Cursed Tours"
 hub: "charleston-haunted-history"
+hubSlug: charleston
+hubUrl: /charleston-ghost-tours/
+relatedArticles:
+  - charleston-civil-war-ghost-stories
+  - charleston-old-city-jail-haunted-history
+  - charleston-unitarian-church-graveyard
+  - most-haunted-places-in-charleston
 ---
 
 Charleston was once blockaded by Blackbeard himself. The city executed dozens of pirates — and their ghosts haunt the waterfront.

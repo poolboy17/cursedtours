@@ -8,6 +8,13 @@ coverImage: "/images/articles/key-west-cemetery-ghost-stories.webp"
 coverAlt: "Key West Cemetery: 100,000 Burials on 19 Acres"
 author: "Cursed Tours"
 hub: "key-west-haunted-history"
+hubSlug: key-west
+hubUrl: /key-west-ghost-tours/
+relatedArticles:
+  - captain-tonys-saloon-key-west-haunted
+  - carl-von-cosel-elena-hoyos-key-west
+  - fort-east-martello-key-west-haunted
+  - fort-zachary-taylor-key-west-haunted
 ---
 
 The Key West Cemetery holds an estimated 100,000 burials on just 19 acres. The island's living population is roughly 25,000. The dead outnumber the living four to one. Every day, visitors walk among more graves than graves exist in most American towns, a stark and haunting reality that shapes the entire character of this place. This article is part of our [comprehensive Key West ghost tours guide](/key-west-ghost-tours/).

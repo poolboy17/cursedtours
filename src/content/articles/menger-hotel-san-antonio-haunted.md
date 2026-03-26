@@ -8,6 +8,13 @@ coverImage: "/images/articles/menger-hotel-san-antonio-haunted.webp"
 coverAlt: "The Menger Hotel: San Antonio's Grand Haunted Landmark"
 author: "Cursed Tours"
 hub: "san-antonio-haunted-history"
+hubSlug: san-antonio
+hubUrl: /san-antonio-ghost-tours/
+relatedArticles:
+  - alamo-ghost-stories-san-antonio
+  - most-haunted-places-in-san-antonio
+  - san-antonio-missions-dark-history
+  - san-antonio-railroad-ghost-tracks
 ---
 
 Open since 1859, the Menger sits next to the Alamo and has hosted President Theodore Roosevelt in 1898, author Oscar Wilde, and — according to documented guest accounts and paranormal investigations spanning the last 40 years — at least 32 reported spirits.

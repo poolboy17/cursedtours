@@ -8,6 +8,13 @@ coverImage: "/images/articles/charleston-civil-war-ghost-stories.webp"
 coverAlt: "Charleston's Civil War Ghosts: The Siege That Never Ended"
 author: "Cursed Tours"
 hub: "charleston-haunted-history"
+hubSlug: charleston
+hubUrl: /charleston-ghost-tours/
+relatedArticles:
+  - charleston-old-city-jail-haunted-history
+  - charleston-pirate-ghosts-legends
+  - charleston-unitarian-church-graveyard
+  - most-haunted-places-in-charleston
 ---
 
 Charleston endured the longest siege in modern warfare — 587 days of bombardment. The dead from both sides still make their presence felt.

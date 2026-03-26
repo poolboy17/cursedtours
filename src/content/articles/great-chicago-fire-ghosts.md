@@ -8,6 +8,13 @@ coverImage: "/images/articles/great-chicago-fire-ghosts.webp"
 coverAlt: "The Great Chicago Fire: Ghosts of 1871"
 author: "Cursed Tours"
 hub: "chicago-haunted-history"
+hubSlug: chicago
+hubUrl: /chicago-ghost-tours/
+relatedArticles:
+  - bachelors-grove-cemetery-chicago
+  - chicago-gangster-ghosts
+  - chicagos-most-haunted-bars
+  - congress-plaza-hotel-haunted-history
 ---
 
 On the evening of October 8, 1871, a fire started in or near the barn of Patrick O'Leary and his wife Catherine O'Leary at 137 DeKoven Street on Chicago's West Side. By the time it burned itself out on October 10, 1871, two days later, the Great Chicago Fire had killed an estimated 300 people, destroyed approximately 17,500 buildings across 3.3 square miles, and left 100,000 residents homeless—roughly one-third of Chicago's population of approximately 300,000.

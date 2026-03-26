@@ -42,6 +42,12 @@ faqs:
   answer: Some tours offer family-friendly versions. Standard evening tours typically
     include content about death, disease, and violence that may not be suitable for
     young children.
+spokes:
+  - "bonaventure-cemetery-savannah-history"
+  - "mercer-williams-house-savannah-haunted"
+  - "most-haunted-places-in-savannah"
+  - "savannah-civil-war-ghost-stories"
+  - "savannah-pirates-house-ghost-stories"
 ---
 
 <!-- Intro Section -->

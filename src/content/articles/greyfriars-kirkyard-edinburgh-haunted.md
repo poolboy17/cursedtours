@@ -8,6 +8,13 @@ coverImage: "/images/articles/greyfriars-kirkyard-edinburgh-haunted.webp"
 coverAlt: "Greyfriars Kirkyard: Edinburgh's Most Haunted Cemetery"
 author: "Cursed Tours"
 hub: "edinburgh-haunted-history"
+hubSlug: edinburgh
+hubUrl: /edinburgh-ghost-tours/
+relatedArticles:
+  - edinburgh-body-snatchers-burke-hare
+  - edinburgh-castle-ghosts-legends
+  - edinburgh-underground-vaults-history
+  - most-haunted-places-in-edinburgh
 ---
 
 Home to the Mackenzie Poltergeist, Greyfriars Bobby, and centuries of documented attacks on visitors — Greyfriars Kirkyard is not a quiet resting place.

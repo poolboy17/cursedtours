@@ -8,6 +8,13 @@ coverImage: "/images/articles/phantom-of-the-opera-paris-true-story.webp"
 coverAlt: "The Phantom of the Opera: The True Story Behind the Legend"
 author: "Cursed Tours"
 hub: "paris-haunted-history"
+hubSlug: paris
+hubUrl: /paris-ghost-tours/
+relatedArticles:
+  - most-haunted-places-in-paris
+  - paris-catacombs-dark-history
+  - paris-revolution-guillotine-haunted-sites
+  - pere-lachaise-cemetery-paris-ghosts
 ---
 
 The Palais Garnier really does have an underground lake, a chandelier that fell, and a history of mysterious events that inspired Gaston Leroux's novel.

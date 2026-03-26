@@ -8,6 +8,13 @@ coverImage: "/images/articles/how-the-salem-witch-trials-ended-and-why.webp"
 coverAlt: "How the Salem Witch Trials Ended (and Why)"
 author: "Cursed Tours"
 hub: "salem-witch-trials"
+hubSlug: salem
+hubUrl: /salem-ghost-tours/
+relatedArticles:
+  - apologies-regret-and-reparations-after-salem
+  - how-the-salem-witch-trials-worked-courts-evidence-and-confessions
+  - life-in-puritan-new-england-before-the-trials
+  - salem-witch-trials-myths-that-wont-die
 ---
 
 The Salem witch trials did not end because the community suddenly stopped believing in witchcraft. They did not end because reason triumphed over superstition or because the accusers confessed to lying. The trials ended because political authority intervened, evidentiary standards shifted, and the system that had produced executions was deliberately dismantled by those with power to do so.

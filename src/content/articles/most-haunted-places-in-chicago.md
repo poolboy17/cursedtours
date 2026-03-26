@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-chicago.webp"
 coverAlt: "Chicago's Most Haunted Places"
 author: "Cursed Tours"
 hub: "chicago-haunted-history"
+hubSlug: chicago
+hubUrl: /chicago-ghost-tours/
+relatedArticles:
+  - bachelors-grove-cemetery-chicago
+  - chicago-gangster-ghosts
+  - chicagos-most-haunted-bars
+  - congress-plaza-hotel-haunted-history
 ---
 
 Chicago collects ghosts the way other cities collect landmarks. A metropolis built on catastrophe—fire, flood, industrial disaster, organized violence—has produced a haunted landscape that stretches from the Loop to the distant suburbs. These are not places that rely on manufactured atmosphere or invented legends. They are locations where documented tragedy left a residue that decades of demolition, renovation, and redevelopment have failed to erase.

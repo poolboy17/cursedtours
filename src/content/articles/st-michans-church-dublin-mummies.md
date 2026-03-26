@@ -8,6 +8,13 @@ coverImage: "/images/articles/st-michans-church-dublin-mummies.webp"
 coverAlt: "St. Michan's Church: Dublin's 800-Year-Old Mummies"
 author: "Cursed Tours"
 hub: "dublin-haunted-history"
+hubSlug: dublin
+hubUrl: /dublin-ghost-tours/
+relatedArticles:
+  - bram-stoker-dublin-dracula-origins
+  - dublin-hellfire-club-legends
+  - kilmainham-gaol-dublin-haunted-history
+  - most-haunted-places-in-dublin
 ---
 
 In the vaults beneath St. Michan's Church lie mummified remains dating back centuries — preserved by the limestone walls and dry atmosphere.

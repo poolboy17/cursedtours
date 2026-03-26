@@ -8,6 +8,13 @@ coverImage: "/images/articles/fort-zachary-taylor-key-west-haunted.webp"
 coverAlt: "Fort Zachary Taylor: Key West's Most Haunted Military Fort"
 author: "Cursed Tours"
 hub: "key-west-haunted-history"
+hubSlug: key-west
+hubUrl: /key-west-ghost-tours/
+relatedArticles:
+  - captain-tonys-saloon-key-west-haunted
+  - carl-von-cosel-elena-hoyos-key-west
+  - fort-east-martello-key-west-haunted
+  - hemingway-house-key-west-ghosts
 ---
 
 Fort Zachary Taylor was built to be impregnable: five-foot-thick walls, a surrounding moat, and enough firepower to destroy any fleet that dared approach Key West. It saw action from the Civil War through the Cuban Missile Crisis. What it could not defend against were the diseases that killed its garrison by the score—and the ghosts those soldiers reportedly left behind.

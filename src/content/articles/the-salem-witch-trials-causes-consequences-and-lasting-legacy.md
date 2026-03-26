@@ -8,6 +8,13 @@ coverImage: "/images/articles/the-salem-witch-trials-causes-consequences-and-las
 coverAlt: "The Salem Witch Trials: Full History"
 author: "Cursed Tours"
 hub: "salem-witch-trials"
+hubSlug: salem
+hubUrl: /salem-ghost-tours/
+relatedArticles:
+  - apologies-regret-and-reparations-after-salem
+  - how-the-salem-witch-trials-ended-and-why
+  - how-the-salem-witch-trials-worked-courts-evidence-and-confessions
+  - life-in-puritan-new-england-before-the-trials
 ---
 
 The Salem witch trials of 1692–1693 remain one of the most unsettling episodes in American history. They are often remembered as a moment of mass hysteria or irrational superstition, yet such explanations flatten a far more complex reality. Salem was not chaos erupting from ignorance alone. It was a system—religious, legal, and social—operating under extreme pressure and failing in predictable ways.

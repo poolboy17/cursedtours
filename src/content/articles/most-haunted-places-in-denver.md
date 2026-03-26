@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-denver.webp"
 coverAlt: "Most Haunted Places in Denver: The Mile High City's Dark Side"
 author: "Cursed Tours"
 hub: "denver-haunted-history"
+hubSlug: denver
+hubUrl: /denver-ghost-tours/
+relatedArticles:
+  - brown-palace-hotel-denver-ghosts
+  - cheesman-park-denver-haunted-history
+  - denver-gold-rush-ghost-stories
+  - stanley-hotel-colorado-shining-inspiration
 ---
 
 Denver's ghost stories run from Gold Rush saloons to Victorian mansions — and one very famous park built on top of a cemetery.

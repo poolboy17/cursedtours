@@ -8,6 +8,13 @@ coverImage: "/images/articles/jack-the-ripper-london-walking-guide.webp"
 coverAlt: "Jack the Ripper: A Walking Guide Through Whitechapel"
 author: "Cursed Tours"
 hub: "london-haunted-history"
+hubSlug: london
+hubUrl: /london-ghost-tours/
+relatedArticles:
+  - anne-boleyn-execution-tower
+  - haunted-pubs-of-london
+  - london-plague-pits-hidden-history
+  - most-haunted-places-in-london
 ---
 
 The five canonical murders of 1888 happened within a half-mile radius. Most of the locations still exist — and the case remains unsolved.

@@ -43,6 +43,12 @@ faqs:
 - question: When is the best time for Charleston ghost tours?
   answer: Evening tours offer atmospheric lighting but book quickly, especially on
     weekends. Tours operate year-round, with October and spring being peak seasons.
+spokes:
+  - "charleston-civil-war-ghost-stories"
+  - "charleston-old-city-jail-haunted-history"
+  - "charleston-pirate-ghosts-legends"
+  - "charleston-unitarian-church-graveyard"
+  - "most-haunted-places-in-charleston"
 ---
 
 <!-- Intro Section -->

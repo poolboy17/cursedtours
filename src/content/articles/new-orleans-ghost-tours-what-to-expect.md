@@ -8,6 +8,13 @@ coverImage: "/images/articles/new-orleans-ghost-tours-what-to-expect.webp"
 coverAlt: "New Orleans Ghost Tours: What to Expect"
 author: "Cursed Tours"
 hub: "new-orleans-voodoo-haunted-history"
+hubSlug: new-orleans
+hubUrl: /new-orleans-ghost-tours/
+relatedArticles:
+  - history-of-voodoo-in-new-orleans
+  - jean-lafitte-pirate-ghost-of-new-orleans
+  - lalaurie-mansion-true-story
+  - marie-laveau-voodoo-queen-of-new-orleans
 ---
 
 New Orleans ghost tours are among the most popular tourist activities in the city, drawing hundreds of thousands of visitors each year—estimates suggest over 500,000 annually—into the French Quarter's narrow streets after dark for evening historical walks. But the quality, accuracy, and experience of these tours varies enormously—from rigorous historical walks led by knowledgeable guides to theatrical performances that prioritize entertainment over truth.

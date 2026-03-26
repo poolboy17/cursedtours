@@ -8,6 +8,13 @@ coverImage: "/images/articles/boston-strangler-true-crime-history.webp"
 coverAlt: "The Boston Strangler: True Crime Walking Tour Guide"
 author: "Cursed Tours"
 hub: "boston-haunted-history"
+hubSlug: boston
+hubUrl: /boston-ghost-tours/
+relatedArticles:
+  - boston-freedom-trail-dark-history
+  - boston-harbor-islands-ghost-stories
+  - most-haunted-places-in-boston
+  - omni-parker-house-boston-haunted-history
 ---
 
 Between 1962 and 1964, thirteen women were murdered in their Boston apartments. The case reshaped American true crime and still haunts the city.

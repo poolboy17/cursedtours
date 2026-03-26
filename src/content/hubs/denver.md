@@ -38,6 +38,12 @@ faqs:
     caught using child-sized coffins for adult remains to maximize his per-body payment.
     An estimated 2,000-5,000 bodies remain beneath the park. The 1982 film Poltergeist
     was partially inspired by this history.
+spokes:
+  - "brown-palace-hotel-denver-ghosts"
+  - "cheesman-park-denver-haunted-history"
+  - "denver-gold-rush-ghost-stories"
+  - "most-haunted-places-in-denver"
+  - "stanley-hotel-colorado-shining-inspiration"
 ---
 
 <section class="py-16 md:py-20 bg-[#0a0510]">   <div class="container px-4 mx-auto max-w-4xl">

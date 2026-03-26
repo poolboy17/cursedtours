@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-dublin.webp"
 coverAlt: "Most Haunted Places in Dublin: A Guide to the City's Dark Side"
 author: "Cursed Tours"
 hub: "dublin-haunted-history"
+hubSlug: dublin
+hubUrl: /dublin-ghost-tours/
+relatedArticles:
+  - bram-stoker-dublin-dracula-origins
+  - dublin-hellfire-club-legends
+  - kilmainham-gaol-dublin-haunted-history
+  - st-michans-church-dublin-mummies
 ---
 
 Dublin's ghost stories span a thousand years — from Viking raids to the Easter Rising, the city's dead are never far from the living.

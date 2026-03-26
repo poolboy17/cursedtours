@@ -8,6 +8,13 @@ coverImage: "/images/articles/what-the-salem-witch-trials-teach-us-about-moral-p
 coverAlt: "Salem Witch Trials & Moral Panic"
 author: "Cursed Tours"
 hub: "salem-witch-trials"
+hubSlug: salem
+hubUrl: /salem-ghost-tours/
+relatedArticles:
+  - apologies-regret-and-reparations-after-salem
+  - how-the-salem-witch-trials-ended-and-why
+  - how-the-salem-witch-trials-worked-courts-evidence-and-confessions
+  - life-in-puritan-new-england-before-the-trials
 ---
 
 The [witch trials of 1692](/articles/were-the-salem-witch-trials-about-religion-or-power/) have become a touchstone for understanding a phenomenon that recurs throughout human history: moral panic. When communities identify a threat—real or imagined—and respond with escalating fear, institutional mobilization, and the punishment of perceived enemies, the dynamics at work often mirror what happened in Salem in 1692.

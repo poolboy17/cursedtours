@@ -8,6 +8,13 @@ coverImage: "/images/articles/omni-parker-house-boston-haunted-history.webp"
 coverAlt: "The Omni Parker House: Boston's Most Haunted Hotel"
 author: "Cursed Tours"
 hub: "boston-haunted-history"
+hubSlug: boston
+hubUrl: /boston-ghost-tours/
+relatedArticles:
+  - boston-freedom-trail-dark-history
+  - boston-harbor-islands-ghost-stories
+  - boston-strangler-true-crime-history
+  - most-haunted-places-in-boston
 ---
 
 America's longest continuously operating hotel has hosted presidents, literary giants, and — according to staff and guests — a few permanent residents who never checked out.

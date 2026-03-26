@@ -8,6 +8,13 @@ coverImage: "/images/articles/bachelors-grove-cemetery-chicago.webp"
 coverAlt: "Bachelor's Grove: Most Haunted Cemetery"
 author: "Cursed Tours"
 hub: "chicago-haunted-history"
+hubSlug: chicago
+hubUrl: /chicago-ghost-tours/
+relatedArticles:
+  - chicago-gangster-ghosts
+  - chicagos-most-haunted-bars
+  - congress-plaza-hotel-haunted-history
+  - eastland-disaster-chicago
 ---
 
 Half a mile down a narrow trail through the Rubio Woods Forest Preserve in Midlothian, Illinois, located in Bremen Township in Cook County, a small clearing opens in the dense forest. Bachelor's Grove Cemetery occupies less than an acre, contains fewer than thirty visible graves, and has been officially abandoned since the 1960s. It is also, by any reasonable measure, the most extensively documented haunted graveyard in the United States.

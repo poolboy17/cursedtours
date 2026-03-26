@@ -55,6 +55,12 @@ faqs:
     where wounded soldiers were treated. The National Mall area served as a massive
     encampment during the war, and several Smithsonian buildings were used as hospitals
     and barracks.
+spokes:
+  - "arlington-cemetery-ghost-stories-dc"
+  - "capitol-building-dc-haunted-history"
+  - "georgetown-exorcist-house-history"
+  - "most-haunted-places-in-washington-dc"
+  - "white-house-ghost-stories-lincoln"
 ---
 
 <section class="py-16 md:py-20 bg-[#0a0510]">   <div class="container px-4 mx-auto max-w-4xl">

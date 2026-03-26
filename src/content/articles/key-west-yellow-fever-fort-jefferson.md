@@ -8,6 +8,13 @@ coverImage: "/images/articles/key-west-yellow-fever-fort-jefferson.webp"
 coverAlt: "Yellow Fever, Fort Jefferson, and the Dry Tortugas"
 author: "Cursed Tours"
 hub: "key-west-haunted-history"
+hubSlug: key-west
+hubUrl: /key-west-ghost-tours/
+relatedArticles:
+  - captain-tonys-saloon-key-west-haunted
+  - carl-von-cosel-elena-hoyos-key-west
+  - fort-east-martello-key-west-haunted
+  - fort-zachary-taylor-key-west-haunted
 ---
 
 Fort Jefferson sits on Garden Key in the Dry Tortugas, 70 miles west of Key West. It is the largest masonry structure in the Americas, a hexagonal fortress of 8-foot-thick walls rising 45 feet from the Caribbean, built to command the shipping lanes of the Gulf of Mexico. Yet no enemy cannon ever fired upon it. Instead, a far more lethal killer claimed hundreds of lives on this remote coral island: yellow fever.

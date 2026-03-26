@@ -8,6 +8,13 @@ coverImage: "/images/articles/san-antonio-missions-dark-history.webp"
 coverAlt: "San Antonio's Spanish Missions: Faith, Disease, and Haunted Grounds"
 author: "Cursed Tours"
 hub: "san-antonio-haunted-history"
+hubSlug: san-antonio
+hubUrl: /san-antonio-ghost-tours/
+relatedArticles:
+  - alamo-ghost-stories-san-antonio
+  - menger-hotel-san-antonio-haunted
+  - most-haunted-places-in-san-antonio
+  - san-antonio-railroad-ghost-tracks
 ---
 
 The five missions of San Antonio converted thousands — and buried thousands more. Their grounds carry 300 years of restless dead.

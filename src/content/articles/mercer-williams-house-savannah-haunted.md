@@ -8,6 +8,13 @@ coverImage: "/images/articles/mercer-williams-house-savannah-haunted.webp"
 coverAlt: "The Mercer-Williams House: Murder, Mystery, and Midnight"
 author: "Cursed Tours"
 hub: "savannah-haunted-history"
+hubSlug: savannah
+hubUrl: /savannah-ghost-tours/
+relatedArticles:
+  - bonaventure-cemetery-savannah-history
+  - most-haunted-places-in-savannah
+  - savannah-civil-war-ghost-stories
+  - savannah-pirates-house-ghost-stories
 ---
 
 Jim Williams shot his assistant Danny Hansford in the study in 1981. Four trials later, the house's reputation was sealed — and the ghosts multiplied.

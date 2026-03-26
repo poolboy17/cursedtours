@@ -8,6 +8,13 @@ coverImage: "/images/articles/st-augustine-lighthouse-ghost-stories.webp"
 coverAlt: "The St. Augustine Lighthouse: Florida's Most Haunted Landmark"
 author: "Cursed Tours"
 hub: "st-augustine-haunted-history"
+hubSlug: st-augustine
+hubUrl: /st-augustine-ghost-tours/
+relatedArticles:
+  - castillo-de-san-marcos-haunted-history
+  - most-haunted-places-in-st-augustine
+  - spanish-military-hospital-st-augustine
+  - st-augustine-oldest-city-dark-history
 ---
 
 Two girls drowned during the lighthouse's construction in 1873. Their laughter has been heard in the tower ever since.

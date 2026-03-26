@@ -8,6 +8,13 @@ coverImage: "/images/articles/rome-nero-haunted-legacy.webp"
 coverAlt: "Nero's Ghost: How Rome's Most Infamous Emperor Still Haunts the City"
 author: "Cursed Tours"
 hub: "rome-haunted-history"
+hubSlug: rome
+hubUrl: /rome-ghost-tours/
+relatedArticles:
+  - castel-sant-angelo-rome-haunted
+  - most-haunted-places-in-rome
+  - rome-catacombs-underground-dark-history
+  - rome-colosseum-ghost-stories-gladiators
 ---
 
 Nero's ghost was reportedly so troublesome that Pope Paschal II had a church built on his burial site to suppress it. It didn't entirely work.

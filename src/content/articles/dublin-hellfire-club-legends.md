@@ -8,6 +8,13 @@ coverImage: "/images/articles/dublin-hellfire-club-legends.webp"
 coverAlt: "The Hellfire Club: Dublin's Most Sinister Legend"
 author: "Cursed Tours"
 hub: "dublin-haunted-history"
+hubSlug: dublin
+hubUrl: /dublin-ghost-tours/
+relatedArticles:
+  - bram-stoker-dublin-dracula-origins
+  - kilmainham-gaol-dublin-haunted-history
+  - most-haunted-places-in-dublin
+  - st-michans-church-dublin-mummies
 ---
 
 On Montpelier Hill above Dublin sits a ruined hunting lodge where Ireland's elite allegedly held satanic rituals, black masses, and worse.

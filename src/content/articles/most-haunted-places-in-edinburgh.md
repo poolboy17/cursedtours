@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-edinburgh.webp"
 coverAlt: "Most Haunted Places in Edinburgh: A Complete Guide"
 author: "Cursed Tours"
 hub: "edinburgh-haunted-history"
+hubSlug: edinburgh
+hubUrl: /edinburgh-ghost-tours/
+relatedArticles:
+  - edinburgh-body-snatchers-burke-hare
+  - edinburgh-castle-ghosts-legends
+  - edinburgh-underground-vaults-history
+  - greyfriars-kirkyard-edinburgh-haunted
 ---
 
 Edinburgh may be the most haunted city in Europe. From the underground vaults to the castle esplanade, every corner carries a ghost story.

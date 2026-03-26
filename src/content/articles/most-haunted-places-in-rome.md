@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-rome.webp"
 coverAlt: "Most Haunted Places in Rome: Ghosts of the Eternal City"
 author: "Cursed Tours"
 hub: "rome-haunted-history"
+hubSlug: rome
+hubUrl: /rome-ghost-tours/
+relatedArticles:
+  - castel-sant-angelo-rome-haunted
+  - rome-catacombs-underground-dark-history
+  - rome-colosseum-ghost-stories-gladiators
+  - rome-nero-haunted-legacy
 ---
 
 Rome has been accumulating ghosts for nearly three millennia. From the Colosseum to the catacombs, the dead are everywhere.

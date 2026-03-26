@@ -8,6 +8,13 @@ coverImage: "/images/articles/georgetown-exorcist-house-history.webp"
 coverAlt: "The Georgetown Exorcist House: The True Story Behind the Film"
 author: "Cursed Tours"
 hub: "washington-dc-haunted-history"
+hubSlug: washington-dc
+hubUrl: /washington-dc-ghost-tours/
+relatedArticles:
+  - arlington-cemetery-ghost-stories-dc
+  - capitol-building-dc-haunted-history
+  - most-haunted-places-in-washington-dc
+  - white-house-ghost-stories-lincoln
 ---
 
 The Exorcist was based on a real 1949 exorcism in St. Louis involving a thirteen-year-old boy. The Georgetown steps and the house on Prospect Street became horror landmarks after director William Friedkin's 1973 film adaptation — and the neighborhood has never quite recovered.

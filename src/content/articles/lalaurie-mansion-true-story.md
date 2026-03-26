@@ -8,6 +8,13 @@ coverImage: "/images/articles/lalaurie-mansion-true-story.webp"
 coverAlt: "The LaLaurie Mansion: The True Story"
 author: "Cursed Tours"
 hub: "new-orleans-voodoo-haunted-history"
+hubSlug: new-orleans
+hubUrl: /new-orleans-ghost-tours/
+relatedArticles:
+  - history-of-voodoo-in-new-orleans
+  - jean-lafitte-pirate-ghost-of-new-orleans
+  - marie-laveau-voodoo-queen-of-new-orleans
+  - most-haunted-places-in-new-orleans
 ---
 
 The LaLaurie Mansion at 1140 Royal Street in New Orleans' French Quarter is the most famous haunted house in America. Its reputation rests not on supernatural legend but on documented historical horror—the discovery, in April 1834, that Madame Delphine LaLaurie had been systematically torturing enslaved people in the attic of her elegant home. The story requires no ghosts to be terrifying. It is a story about what happens when absolute power over other human beings operates behind closed doors, within a legal system designed to look away.

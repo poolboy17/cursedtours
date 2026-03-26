@@ -8,6 +8,13 @@ coverImage: "/images/articles/the-salem-witch-trial-accusers-who-were-they-reall
 coverAlt: "Salem Witch Trial Accusers: The Truth"
 author: "Cursed Tours"
 hub: "salem-witch-trials"
+hubSlug: salem
+hubUrl: /salem-ghost-tours/
+relatedArticles:
+  - apologies-regret-and-reparations-after-salem
+  - how-the-salem-witch-trials-ended-and-why
+  - how-the-salem-witch-trials-worked-courts-evidence-and-confessions
+  - life-in-puritan-new-england-before-the-trials
 ---
 
 The Salem witch trials are often told as a story about the accused—the victims who faced execution or imprisonment. But understanding Salem requires equal attention to those who made accusations. The accusers were not a monolithic group driven by a single motivation. They included children, adolescents, adults, and authority figures, each playing different roles in the crisis that consumed their community.

@@ -8,6 +8,13 @@ coverImage: "/images/articles/chicago-gangster-ghosts.webp"
 coverAlt: "Chicago Gangster Ghosts: Capone & Dillinger"
 author: "Cursed Tours"
 hub: "chicago-haunted-history"
+hubSlug: chicago
+hubUrl: /chicago-ghost-tours/
+relatedArticles:
+  - bachelors-grove-cemetery-chicago
+  - chicagos-most-haunted-bars
+  - congress-plaza-hotel-haunted-history
+  - eastland-disaster-chicago
 ---
 
 Between 1920 and 1933, Prohibition transformed Chicago into a war zone. Over 700 gangland murders occurred in the city during this period, most of them never solved. The violence was driven by the economics of illegal alcohol: an industry worth an estimated $100 million annually controlled by competing criminal organizations willing to kill for market share.

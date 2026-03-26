@@ -8,6 +8,13 @@ coverImage: "/images/articles/key-west-shipwrecks-wreckers-history.webp"
 coverAlt: "Key West Shipwrecks and the Wrecking Industry That Built Bone Island"
 author: "Cursed Tours"
 hub: "key-west-haunted-history"
+hubSlug: key-west
+hubUrl: /key-west-ghost-tours/
+relatedArticles:
+  - captain-tonys-saloon-key-west-haunted
+  - carl-von-cosel-elena-hoyos-key-west
+  - fort-east-martello-key-west-haunted
+  - fort-zachary-taylor-key-west-haunted
 ---
 
 By the 1830s, Key West was the wealthiest city per capita in the United States. The source of that wealth was catastrophe—maritime catastrophe, to be precise. Over 100 ships passed daily through the most dangerous waters in the Western Hemisphere, and at least one wrecked every week. The men who profited from those disasters built the mansions that still stand along Whitehead Street, founded the institutions that became the backbone of Old Town, and accumulated fortunes vast enough to rival industrial magnates on the mainland. Yet their wealth rested on a foundation of coral, blood, and stolen goods. This article is part of our [comprehensive Key West ghost tours guide](/key-west-ghost-tours/).

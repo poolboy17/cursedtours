@@ -43,6 +43,18 @@ faqs:
 - question: Do I need to book in advance?
   answer: Advance booking is recommended, especially during peak travel seasons and
     weekends.
+spokes:
+  - "history-of-voodoo-in-new-orleans"
+  - "jean-lafitte-pirate-ghost-of-new-orleans"
+  - "lalaurie-mansion-true-story"
+  - "marie-laveau-voodoo-queen-of-new-orleans"
+  - "most-haunted-places-in-new-orleans"
+  - "new-orleans-above-ground-burial-traditions"
+  - "new-orleans-french-quarter-ghost-stories"
+  - "new-orleans-ghost-tours-what-to-expect"
+  - "new-orleans-voodoo-haunted-history-complete-guide"
+  - "st-louis-cemetery-no-1-history-and-legends"
+  - "voodoo-vs-hoodoo-whats-the-difference"
 ---
 
 <!-- Intro Section -->

@@ -8,6 +8,13 @@ coverImage: "/images/articles/bonaventure-cemetery-savannah-history.webp"
 coverAlt: "Bonaventure Cemetery: Savannah's Hauntingly Beautiful City of the Dead"
 author: "Cursed Tours"
 hub: "savannah-haunted-history"
+hubSlug: savannah
+hubUrl: /savannah-ghost-tours/
+relatedArticles:
+  - mercer-williams-house-savannah-haunted
+  - most-haunted-places-in-savannah
+  - savannah-civil-war-ghost-stories
+  - savannah-pirates-house-ghost-stories
 ---
 
 Made famous by John Berendt’s 1994 bestseller *Midnight in the Garden of Good and Evil*, Bonaventure is part museum, part garden, and part ghost story.

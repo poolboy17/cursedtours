@@ -50,6 +50,17 @@ faqs:
   answer: October is peak season, but tours operate year-round. Summer evening tours
     offer comfortable walking weather, while winter tours through the city's underground
     passages provide shelter from the cold and an especially atmospheric experience.
+spokes:
+  - "bachelors-grove-cemetery-chicago"
+  - "chicago-gangster-ghosts"
+  - "chicagos-most-haunted-bars"
+  - "congress-plaza-hotel-haunted-history"
+  - "eastland-disaster-chicago"
+  - "great-chicago-fire-ghosts"
+  - "hh-holmes-murder-castle-chicago"
+  - "iroquois-theatre-fire-chicago"
+  - "most-haunted-places-in-chicago"
+  - "resurrection-mary-chicagos-most-famous-ghost"
 ---
 
 <!-- Intro Section -->

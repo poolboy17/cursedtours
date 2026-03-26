@@ -8,6 +8,13 @@ coverImage: "/images/articles/new-orleans-above-ground-burial-traditions.webp"
 coverAlt: "New Orleans Above-Ground Burials"
 author: "Cursed Tours"
 hub: "new-orleans-voodoo-haunted-history"
+hubSlug: new-orleans
+hubUrl: /new-orleans-ghost-tours/
+relatedArticles:
+  - history-of-voodoo-in-new-orleans
+  - jean-lafitte-pirate-ghost-of-new-orleans
+  - lalaurie-mansion-true-story
+  - marie-laveau-voodoo-queen-of-new-orleans
 ---
 
 New Orleans buries its dead above ground. This single fact, repeated in every guidebook and on every ghost tour, has become one of the city's defining images—rows of whitewashed tombs stretching across walled cemeteries that earned the name Cities of the Dead. But the reasons behind this tradition, its evolution over three centuries, and its cultural significance extend far beyond the simple explanation most visitors receive.

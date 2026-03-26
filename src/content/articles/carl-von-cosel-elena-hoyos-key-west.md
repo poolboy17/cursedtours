@@ -8,6 +8,13 @@ coverImage: "/images/articles/carl-von-cosel-elena-hoyos-key-west.webp"
 coverAlt: "Carl von Cosel and Elena Hoyos: Key West's Most Disturbing True Story"
 author: "Cursed Tours"
 hub: "key-west-haunted-history"
+hubSlug: key-west
+hubUrl: /key-west-ghost-tours/
+relatedArticles:
+  - captain-tonys-saloon-key-west-haunted
+  - fort-east-martello-key-west-haunted
+  - fort-zachary-taylor-key-west-haunted
+  - hemingway-house-key-west-ghosts
 ---
 
 In 1930, a 53-year-old German-born radiology technician at Key West's Marine Hospital became obsessed with a 21-year-old Cuban-American woman dying of tuberculosis. For the next decade, he would orchestrate a crime so profoundly disturbing that it would earn a place in the darkest corners of American true crime: the systematic theft, desecration, and imprisonment of a human corpse. What began as obsessive infatuation evolved into necromancy, driven by delusion so complete that the perpetrator saw himself not as a criminal, but as a lover.

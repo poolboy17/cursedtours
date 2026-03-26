@@ -42,6 +42,12 @@ faqs:
     Summer evening tours provide relief from daytime heat, as temperatures drop significantly
     after sunset. The River Walk is particularly atmospheric at night when the ambient
     lighting reflects off the water.
+spokes:
+  - "alamo-ghost-stories-san-antonio"
+  - "menger-hotel-san-antonio-haunted"
+  - "most-haunted-places-in-san-antonio"
+  - "san-antonio-missions-dark-history"
+  - "san-antonio-railroad-ghost-tracks"
 ---
 
 <section class="py-16 md:py-20 bg-[#0a0510]">   <div class="container px-4 mx-auto max-w-4xl">

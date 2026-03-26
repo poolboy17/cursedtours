@@ -8,6 +8,13 @@ coverImage: "/images/articles/congress-plaza-hotel-haunted-history.webp"
 coverAlt: "Congress Plaza Hotel: Haunted History"
 author: "Cursed Tours"
 hub: "chicago-haunted-history"
+hubSlug: chicago
+hubUrl: /chicago-ghost-tours/
+relatedArticles:
+  - bachelors-grove-cemetery-chicago
+  - chicago-gangster-ghosts
+  - chicagos-most-haunted-bars
+  - eastland-disaster-chicago
 ---
 
 The Congress Plaza Hotel at 520 South Michigan Avenue has been in continuous operation since 1893, when it opened to accommodate visitors to the World's Columbian Exposition. Designed by architect Clinton J. Warren, the hotel opened on June 2, 1893, and in the 131 years since, it has hosted presidents, gangsters, literary figures, and—according to staff and guests—a considerable population of the dead.

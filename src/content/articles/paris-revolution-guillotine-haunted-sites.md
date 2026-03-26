@@ -8,6 +8,13 @@ coverImage: "/images/articles/paris-revolution-guillotine-haunted-sites.webp"
 coverAlt: "Paris Revolution Ghosts: The Guillotine's Legacy"
 author: "Cursed Tours"
 hub: "paris-haunted-history"
+hubSlug: paris
+hubUrl: /paris-ghost-tours/
+relatedArticles:
+  - most-haunted-places-in-paris
+  - paris-catacombs-dark-history
+  - pere-lachaise-cemetery-paris-ghosts
+  - phantom-of-the-opera-paris-true-story
 ---
 
 The French Revolution sent 16,000 people to the guillotine. The execution sites, prisons, and mass graves are among Paris's most haunted locations.

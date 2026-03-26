@@ -8,6 +8,13 @@ coverImage: "/images/articles/tower-of-london-ravens-legend.webp"
 coverAlt: "The Ravens of the Tower of London: Legend, History, and Superstition"
 author: "Cursed Tours"
 hub: "tower-of-london-history"
+hubSlug: london
+hubUrl: /london-ghost-tours/
+relatedArticles:
+  - anne-boleyn-execution-tower
+  - haunted-pubs-of-london
+  - jack-the-ripper-london-walking-guide
+  - london-plague-pits-hidden-history
 ---
 
 ## The Prophecy That May Not Exist

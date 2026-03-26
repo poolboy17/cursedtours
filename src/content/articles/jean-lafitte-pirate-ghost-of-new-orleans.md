@@ -8,6 +8,13 @@ coverImage: "/images/articles/jean-lafitte-pirate-ghost-of-new-orleans.webp"
 coverAlt: "Jean Lafitte: Pirate Ghost of New Orleans"
 author: "Cursed Tours"
 hub: "new-orleans-voodoo-haunted-history"
+hubSlug: new-orleans
+hubUrl: /new-orleans-ghost-tours/
+relatedArticles:
+  - history-of-voodoo-in-new-orleans
+  - lalaurie-mansion-true-story
+  - marie-laveau-voodoo-queen-of-new-orleans
+  - most-haunted-places-in-new-orleans
 ---
 
 Jean Lafitte is the most romanticized figure in New Orleans history—a pirate, a smuggler, a patriot, and a ghost, depending on who is telling the story. His legend has been burnished by two centuries of retelling until the historical man has become almost invisible beneath the myth. But the real Lafitte is more interesting than the legend, and the ghost stories attached to his name reveal as much about New Orleans as they do about the man himself.

@@ -8,6 +8,13 @@ coverImage: "/images/articles/pere-lachaise-cemetery-paris-ghosts.webp"
 coverAlt: "Père Lachaise Cemetery: Famous Graves and Ghost Stories"
 author: "Cursed Tours"
 hub: "paris-haunted-history"
+hubSlug: paris
+hubUrl: /paris-ghost-tours/
+relatedArticles:
+  - most-haunted-places-in-paris
+  - paris-catacombs-dark-history
+  - paris-revolution-guillotine-haunted-sites
+  - phantom-of-the-opera-paris-true-story
 ---
 
 The world's most visited cemetery holds Oscar Wilde, Jim Morrison, Chopin, and Edith Piaf — and ghost stories attached to many of their graves.

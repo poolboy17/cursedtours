@@ -8,6 +8,13 @@ coverImage: "/images/articles/new-york-abandoned-subway-stations.webp"
 coverAlt: "New York's Abandoned Subway Stations: Ghost Stations Beneath the City"
 author: "Cursed Tours"
 hub: "new-york-haunted-history"
+hubSlug: new-york
+hubUrl: /new-york-ghost-tours/
+relatedArticles:
+  - greenwich-village-ghosts-new-york
+  - morris-jumel-mansion-new-york-haunted
+  - most-haunted-places-in-new-york
+  - new-york-tenement-ghost-stories
 ---
 
 Beneath the busiest subway system in America lie abandoned stations, sealed platforms, and tunnels where the past refuses to stay buried.

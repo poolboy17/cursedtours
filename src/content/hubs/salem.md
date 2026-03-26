@@ -46,6 +46,21 @@ faqs:
   answer: Quality varies significantly. The best tours separate documented trial history
     from later legends and clearly identify which stories have historical support
     versus folklore.
+spokes:
+  - "apologies-regret-and-reparations-after-salem"
+  - "how-the-salem-witch-trials-ended-and-why"
+  - "how-the-salem-witch-trials-worked-courts-evidence-and-confessions"
+  - "life-in-puritan-new-england-before-the-trials"
+  - "salem-witch-trials-myths-that-wont-die"
+  - "salem-witch-trials-timeline"
+  - "the-role-of-children-in-the-salem-witch-trials"
+  - "the-salem-witch-trial-accusers-who-were-they-really"
+  - "the-salem-witch-trials-causes-consequences-and-lasting-legacy"
+  - "were-the-salem-witch-trials-about-religion-or-power"
+  - "what-the-salem-witch-trials-teach-us-about-moral-panic"
+  - "who-were-the-accused-witches-of-salem"
+  - "why-the-salem-witch-trials-still-matter-today"
+  - "why-were-women-targeted-in-the-salem-witch-trials"
 ---
 
 <!-- Intro Section -->

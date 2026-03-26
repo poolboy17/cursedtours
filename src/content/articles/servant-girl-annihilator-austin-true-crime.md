@@ -8,6 +8,13 @@ coverImage: "/images/articles/servant-girl-annihilator-austin-true-crime.webp"
 coverAlt: "The Servant Girl Annihilator: America's First Serial Killer"
 author: "Cursed Tours"
 hub: "austin-haunted-history"
+hubSlug: austin
+hubUrl: /austin-ghost-tours/
+relatedArticles:
+  - austin-moonlight-towers-history
+  - driskill-hotel-austin-haunted-history
+  - most-haunted-places-in-austin
+  - texas-capitol-ghost-stories
 ---
 
 In 1884-1885, a killer stalked Austin's servant quarters, murdering eight people. The case was never solved — and predates [Jack the Ripper](/articles/jack-the-ripper-london-walking-guide/) by three years.

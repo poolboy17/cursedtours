@@ -8,6 +8,13 @@ coverImage: "/images/articles/apologies-regret-and-reparations-after-salem.webp"
 coverAlt: "Apologies, Regret, and Reparations After Salem"
 author: "Cursed Tours"
 hub: "salem-witch-trials"
+hubSlug: salem
+hubUrl: /salem-ghost-tours/
+relatedArticles:
+  - how-the-salem-witch-trials-ended-and-why
+  - how-the-salem-witch-trials-worked-courts-evidence-and-confessions
+  - life-in-puritan-new-england-before-the-trials
+  - salem-witch-trials-myths-that-wont-die
 ---
 
 When the Salem witch trials ended, the executions stopped—but the reckoning had barely begun. The community faced the devastating realization that innocent people had been condemned and killed through legal proceedings that had seemed, at the time, justified and necessary. What followed was not immediate accountability but a slow, incomplete process of acknowledgment, apology, and limited reparation.

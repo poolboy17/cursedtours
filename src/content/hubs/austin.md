@@ -41,6 +41,12 @@ faqs:
     Sixth Street, and the Warehouse District over 90 minutes to two hours. Some companies
     offer bus tours that cover additional sites including the UT campus, historic
     cemeteries, and sites outside the downtown core.
+spokes:
+  - "austin-moonlight-towers-history"
+  - "driskill-hotel-austin-haunted-history"
+  - "most-haunted-places-in-austin"
+  - "servant-girl-annihilator-austin-true-crime"
+  - "texas-capitol-ghost-stories"
 ---
 
 <section class="py-16 md:py-20 bg-[#0a0510]">   <div class="container px-4 mx-auto max-w-4xl">

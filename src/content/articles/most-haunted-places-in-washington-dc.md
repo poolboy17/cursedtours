@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-washington-dc.webp"
 coverAlt: "Most Haunted Places in Washington DC: Power, Death, and Ghosts"
 author: "Cursed Tours"
 hub: "washington-dc-haunted-history"
+hubSlug: washington-dc
+hubUrl: /washington-dc-ghost-tours/
+relatedArticles:
+  - arlington-cemetery-ghost-stories-dc
+  - capitol-building-dc-haunted-history
+  - georgetown-exorcist-house-history
+  - white-house-ghost-stories-lincoln
 ---
 
 The seat of American power is also one of its most haunted cities — presidents, soldiers, and assassins linger in its corridors.

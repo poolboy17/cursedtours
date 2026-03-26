@@ -8,6 +8,13 @@ coverImage: "/images/articles/captain-tonys-saloon-key-west-haunted.webp"
 coverAlt: "Captain Tony's Saloon: Key West's Most Haunted Bar"
 author: "Cursed Tours"
 hub: "key-west-haunted-history"
+hubSlug: key-west
+hubUrl: /key-west-ghost-tours/
+relatedArticles:
+  - carl-von-cosel-elena-hoyos-key-west
+  - fort-east-martello-key-west-haunted
+  - fort-zachary-taylor-key-west-haunted
+  - hemingway-house-key-west-ghosts
 ---
 
 The building at 428 Greene Street in Key West has housed the island's most disturbing secrets across 175 years. Built in 1851, it served sequentially as an ice house, the city morgue, a wireless telegraph station, a cigar factory, a speakeasy during Prohibition, a bordello, and finally as a saloon. There are bodies beneath the floor. A large tree grows through the center of the bar, its branches reaching through the roof. Seventeen people were hanged from that tree. This is [Key West's most thoroughly haunted establishment](/key-west-ghost-tours/), and its paranormal activity remains consistent across decades of documented accounts.

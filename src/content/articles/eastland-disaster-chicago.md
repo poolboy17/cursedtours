@@ -8,6 +8,13 @@ coverImage: "/images/articles/eastland-disaster-chicago.webp"
 coverAlt: "The Eastland Disaster: Chicago's Deadliest Day"
 author: "Cursed Tours"
 hub: "chicago-haunted-history"
+hubSlug: chicago
+hubUrl: /chicago-ghost-tours/
+relatedArticles:
+  - bachelors-grove-cemetery-chicago
+  - chicago-gangster-ghosts
+  - chicagos-most-haunted-bars
+  - congress-plaza-hotel-haunted-history
 ---
 
 On the morning of July 24, 1915, the SS Eastland sat docked at the Clark Street bridge on the Chicago River (at the corner of Clark and Wacker Drive), loading passengers for a Western Electric company picnic to Michigan City, Indiana. The ship never left the dock. At approximately 7:28 a.m., with over 2,500 passengers aboard, the Eastland rolled onto its port side in water approximately 20 feet deep. Within minutes, 844 people were dead—drowned, crushed, or suffocated in a disaster that remains the deadliest maritime disaster in Great Lakes history and the largest loss of life from a single shipwreck on the Great Lakes.

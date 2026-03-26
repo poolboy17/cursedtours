@@ -8,6 +8,13 @@ coverImage: "/images/articles/fort-east-martello-key-west-haunted.webp"
 coverAlt: "Fort East Martello: Key West's Haunted Civil War Fort"
 author: "Cursed Tours"
 hub: "key-west-haunted-history"
+hubSlug: key-west
+hubUrl: /key-west-ghost-tours/
+relatedArticles:
+  - captain-tonys-saloon-key-west-haunted
+  - carl-von-cosel-elena-hoyos-key-west
+  - fort-zachary-taylor-key-west-haunted
+  - hemingway-house-key-west-ghosts
 ---
 
 Fort East Martello stands on the southeastern shore of Key West, Florida as a monument to military ambition and a tomb for those who died of disease rather than enemy fire. Built in 1862 during the American Civil War (1861-1865), this brick fortress was designed as an impregnable coastal defense—yet no Confederate gun ever targeted it, no battle was fought within its walls, and no soldier was killed in combat within its garrison. Instead, yellow fever, malaria, and diphtheria claimed the men stationed here, turning what was meant to be a fortress into a charnel house. Today, more than 160 years later, Fort East Martello functions as a museum that houses some of America's most notorious paranormal artifacts. It remains one of the most actively haunted locations in the Caribbean, a place where documented historical horror provides ample context for the supernatural experiences visitors report.

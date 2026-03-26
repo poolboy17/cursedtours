@@ -8,6 +8,13 @@ coverImage: "/images/articles/savannah-civil-war-ghost-stories.webp"
 coverAlt: "Savannah's Civil War Ghosts: Sherman's March and the Dead Left Behind"
 author: "Cursed Tours"
 hub: "savannah-haunted-history"
+hubSlug: savannah
+hubUrl: /savannah-ghost-tours/
+relatedArticles:
+  - bonaventure-cemetery-savannah-history
+  - mercer-williams-house-savannah-haunted
+  - most-haunted-places-in-savannah
+  - savannah-pirates-house-ghost-stories
 ---
 
 Sherman spared Savannah from the torch, but the Civil War left thousands dead in and around the city. Their presence lingers.

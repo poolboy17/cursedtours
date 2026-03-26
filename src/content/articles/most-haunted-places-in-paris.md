@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-paris.webp"
 coverAlt: "Most Haunted Places in Paris: Ghosts of the City of Light"
 author: "Cursed Tours"
 hub: "paris-haunted-history"
+hubSlug: paris
+hubUrl: /paris-ghost-tours/
+relatedArticles:
+  - paris-catacombs-dark-history
+  - paris-revolution-guillotine-haunted-sites
+  - pere-lachaise-cemetery-paris-ghosts
+  - phantom-of-the-opera-paris-true-story
 ---
 
 Beneath the romance of Paris lies a city built on bones — millions of them. The ghosts of revolution, plague, and war haunt every arrondissement.

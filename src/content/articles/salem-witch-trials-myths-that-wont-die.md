@@ -8,6 +8,13 @@ coverImage: "/images/articles/salem-witch-trials-myths-that-wont-die.webp"
 coverAlt: "Salem Witch Trials Myths That Won't Die"
 author: "Cursed Tours"
 hub: "salem-witch-trials"
+hubSlug: salem
+hubUrl: /salem-ghost-tours/
+relatedArticles:
+  - apologies-regret-and-reparations-after-salem
+  - how-the-salem-witch-trials-ended-and-why
+  - how-the-salem-witch-trials-worked-courts-evidence-and-confessions
+  - life-in-puritan-new-england-before-the-trials
 ---
 
 The Salem witch trials have been the subject of plays, novels, films, and countless popular accounts. But popularity has come at a cost: the actual history has been obscured by myths that are more dramatic, more satisfying, or simply more familiar than the complicated truth. These myths persist because they serve narrative purposes—but they prevent genuine understanding of what happened and why.

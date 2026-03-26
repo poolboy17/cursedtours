@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-savannah.webp"
 coverAlt: "Most Haunted Places in Savannah: A Local's Guide"
 author: "Cursed Tours"
 hub: "savannah-haunted-history"
+hubSlug: savannah
+hubUrl: /savannah-ghost-tours/
+relatedArticles:
+  - bonaventure-cemetery-savannah-history
+  - mercer-williams-house-savannah-haunted
+  - savannah-civil-war-ghost-stories
+  - savannah-pirates-house-ghost-stories
 ---
 
 Built on top of colonial graves and scarred by war, fire, and [yellow fever](/articles/key-west-yellow-fever-fort-jefferson/), Savannah has earned its reputation as America's most haunted city.

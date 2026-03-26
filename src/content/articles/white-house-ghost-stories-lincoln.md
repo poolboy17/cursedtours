@@ -8,6 +8,13 @@ coverImage: "/images/articles/white-house-ghost-stories-lincoln.webp"
 coverAlt: "White House Ghost Stories: Lincoln's Spirit and the Haunted Presidency"
 author: "Cursed Tours"
 hub: "washington-dc-haunted-history"
+hubSlug: washington-dc
+hubUrl: /washington-dc-ghost-tours/
+relatedArticles:
+  - arlington-cemetery-ghost-stories-dc
+  - capitol-building-dc-haunted-history
+  - georgetown-exorcist-house-history
+  - most-haunted-places-in-washington-dc
 ---
 
 Lincoln's ghost has been seen by presidents, first ladies, and heads of state. He's the most reported — but far from the only — White House ghost.

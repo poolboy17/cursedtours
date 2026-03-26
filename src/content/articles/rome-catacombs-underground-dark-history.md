@@ -8,6 +8,13 @@ coverImage: "/images/articles/rome-catacombs-underground-dark-history.webp"
 coverAlt: "The Roman Catacombs: Miles of the Dead Beneath the Eternal City"
 author: "Cursed Tours"
 hub: "rome-haunted-history"
+hubSlug: rome
+hubUrl: /rome-ghost-tours/
+relatedArticles:
+  - castel-sant-angelo-rome-haunted
+  - most-haunted-places-in-rome
+  - rome-colosseum-ghost-stories-gladiators
+  - rome-nero-haunted-legacy
 ---
 
 Beneath Rome lie over 40 catacombs containing an estimated 750,000 burials. Only a fraction have been explored — and some sections remain sealed.

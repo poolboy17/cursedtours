@@ -8,6 +8,13 @@ coverImage: "/images/articles/new-orleans-french-quarter-ghost-stories.webp"
 coverAlt: "French Quarter Ghost Stories"
 author: "Cursed Tours"
 hub: "new-orleans-voodoo-haunted-history"
+hubSlug: new-orleans
+hubUrl: /new-orleans-ghost-tours/
+relatedArticles:
+  - history-of-voodoo-in-new-orleans
+  - jean-lafitte-pirate-ghost-of-new-orleans
+  - lalaurie-mansion-true-story
+  - marie-laveau-voodoo-queen-of-new-orleans
 ---
 
 The French Quarter of New Orleans—the Vieux Carré—occupies roughly thirteen blocks by six blocks along a bend in the Mississippi River. Within this compact grid, nearly every building carries history that stretches back centuries. And within that history, death is a recurring character. Fire, disease, murder, slavery, war, and simple human cruelty have left their marks on the Quarter's architecture and its stories.

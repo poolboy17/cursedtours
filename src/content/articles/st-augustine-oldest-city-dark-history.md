@@ -8,6 +8,13 @@ coverImage: "/images/articles/st-augustine-oldest-city-dark-history.webp"
 coverAlt: "St. Augustine's Dark History: 460 Years of Violence, Disease, and Ghosts"
 author: "Cursed Tours"
 hub: "st-augustine-haunted-history"
+hubSlug: st-augustine
+hubUrl: /st-augustine-ghost-tours/
+relatedArticles:
+  - castillo-de-san-marcos-haunted-history
+  - most-haunted-places-in-st-augustine
+  - spanish-military-hospital-st-augustine
+  - st-augustine-lighthouse-ghost-stories
 ---
 
 America's oldest city has been sacked, burned, besieged, and ravaged by disease more times than any other settlement on the continent.

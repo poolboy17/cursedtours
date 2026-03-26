@@ -8,6 +8,13 @@ coverImage: "/images/articles/most-haunted-places-in-charleston.webp"
 coverAlt: "Most Haunted Places in Charleston: The Holy City's Dark Side"
 author: "Cursed Tours"
 hub: "charleston-haunted-history"
+hubSlug: charleston
+hubUrl: /charleston-ghost-tours/
+relatedArticles:
+  - charleston-civil-war-ghost-stories
+  - charleston-old-city-jail-haunted-history
+  - charleston-pirate-ghosts-legends
+  - charleston-unitarian-church-graveyard
 ---
 
 Charleston's genteel facade hides a violent history — pirate executions, Civil War bombardment, and the horrors of the slave trade haunt every cobblestone.

@@ -8,6 +8,13 @@ coverImage: "/images/articles/edinburgh-underground-vaults-history.webp"
 coverAlt: "Edinburgh's Underground Vaults: What Lies Beneath the Royal Mile"
 author: "Cursed Tours"
 hub: "edinburgh-haunted-history"
+hubSlug: edinburgh
+hubUrl: /edinburgh-ghost-tours/
+relatedArticles:
+  - edinburgh-body-snatchers-burke-hare
+  - edinburgh-castle-ghosts-legends
+  - greyfriars-kirkyard-edinburgh-haunted
+  - most-haunted-places-in-edinburgh
 ---
 
 Sealed for nearly 200 years, the vaults beneath Edinburgh's South Bridge have become one of the world's most investigated paranormal locations.

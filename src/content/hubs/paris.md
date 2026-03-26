@@ -44,6 +44,12 @@ faqs:
     and the Palais Garnier opera house each have documented histories of reported
     phenomena. The Paris Catacombs are also the site of an unmapped section where
     explorers have reported disorientation and panic.
+spokes:
+  - "most-haunted-places-in-paris"
+  - "paris-catacombs-dark-history"
+  - "paris-revolution-guillotine-haunted-sites"
+  - "pere-lachaise-cemetery-paris-ghosts"
+  - "phantom-of-the-opera-paris-true-story"
 ---
 
 <section class="py-16 md:py-20 bg-[#0a0510]">   <div class="container px-4 mx-auto max-w-4xl">

@@ -8,6 +8,13 @@ coverImage: "/images/articles/driskill-hotel-austin-haunted-history.webp"
 coverAlt: "The Driskill Hotel: Austin's Most Haunted Landmark"
 author: "Cursed Tours"
 hub: "austin-haunted-history"
+hubSlug: austin
+hubUrl: /austin-ghost-tours/
+relatedArticles:
+  - austin-moonlight-towers-history
+  - most-haunted-places-in-austin
+  - servant-girl-annihilator-austin-true-crime
+  - texas-capitol-ghost-stories
 ---
 
 Colonel Jesse Driskill built his grand hotel in 1886. He lost it within a year — but his ghost, and others, never left the building.

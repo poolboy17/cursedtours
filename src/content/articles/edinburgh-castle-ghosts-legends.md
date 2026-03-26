@@ -8,6 +8,13 @@ coverImage: "/images/articles/edinburgh-castle-ghosts-legends.webp"
 coverAlt: "Edinburgh Castle: Ghosts, Dungeons, and a Thousand Years of Death"
 author: "Cursed Tours"
 hub: "edinburgh-haunted-history"
+hubSlug: edinburgh
+hubUrl: /edinburgh-ghost-tours/
+relatedArticles:
+  - edinburgh-body-snatchers-burke-hare
+  - edinburgh-underground-vaults-history
+  - greyfriars-kirkyard-edinburgh-haunted
+  - most-haunted-places-in-edinburgh
 ---
 
 Perched on an extinct volcano, Edinburgh Castle has witnessed more sieges, executions, and imprisonments than almost any fortress in Europe.

@@ -8,6 +8,13 @@ coverImage: "/images/articles/charleston-old-city-jail-haunted-history.webp"
 coverAlt: "The Old Charleston Jail: America's Most Haunted Prison"
 author: "Cursed Tours"
 hub: "charleston-haunted-history"
+hubSlug: charleston
+hubUrl: /charleston-ghost-tours/
+relatedArticles:
+  - charleston-civil-war-ghost-stories
+  - charleston-pirate-ghosts-legends
+  - charleston-unitarian-church-graveyard
+  - most-haunted-places-in-charleston
 ---
 
 Built in 1802, the Old City Jail held pirates, Civil War prisoners, and some of America's most notorious criminals for 137 years.

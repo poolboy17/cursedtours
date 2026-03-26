@@ -8,6 +8,13 @@ coverImage: "/images/articles/life-in-puritan-new-england-before-the-trials.webp
 coverAlt: "Life in Puritan New England Before the Trials"
 author: "Cursed Tours"
 hub: "salem-witch-trials"
+hubSlug: salem
+hubUrl: /salem-ghost-tours/
+relatedArticles:
+  - apologies-regret-and-reparations-after-salem
+  - how-the-salem-witch-trials-ended-and-why
+  - how-the-salem-witch-trials-worked-courts-evidence-and-confessions
+  - salem-witch-trials-myths-that-wont-die
 ---
 
 Before the Salem witch trials erupted in 1692, the people of Massachusetts Bay Colony lived within one of the most tightly controlled social orders in the colonial world. Puritan New England was not simply a place defined by religious devotion—it was an entire system of life built on theological certainty, communal surveillance, and rigid expectations of conformity. Understanding what daily existence looked like in this world is essential to grasping why the witch trials unfolded as they did.

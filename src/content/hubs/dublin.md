@@ -36,6 +36,12 @@ faqs:
     offer family-specific tours with age-appropriate content. The Gravediggers Tour
     and literary ghost walks tend to be the most accessible for younger audiences,
     while jail tours can be more intense.
+spokes:
+  - "bram-stoker-dublin-dracula-origins"
+  - "dublin-hellfire-club-legends"
+  - "kilmainham-gaol-dublin-haunted-history"
+  - "most-haunted-places-in-dublin"
+  - "st-michans-church-dublin-mummies"
 ---
 
 <section class="py-16 md:py-20 bg-[#0a0510]">   <div class="container px-4 mx-auto max-w-4xl">

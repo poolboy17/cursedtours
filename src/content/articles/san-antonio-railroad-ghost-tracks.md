@@ -8,6 +8,13 @@ coverImage: "/images/articles/san-antonio-railroad-ghost-tracks.webp"
 coverAlt: "The Ghost Tracks of San Antonio: Legend, Lore, and the Truth"
 author: "Cursed Tours"
 hub: "san-antonio-haunted-history"
+hubSlug: san-antonio
+hubUrl: /san-antonio-ghost-tours/
+relatedArticles:
+  - alamo-ghost-stories-san-antonio
+  - menger-hotel-san-antonio-haunted
+  - most-haunted-places-in-san-antonio
+  - san-antonio-missions-dark-history
 ---
 
 For decades, visitors placed their cars on the railroad tracks at Shane Road. The cars moved uphill. Locals said it was the ghosts of dead children.

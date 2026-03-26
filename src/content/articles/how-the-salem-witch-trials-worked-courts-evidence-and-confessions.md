@@ -8,6 +8,13 @@ coverImage: "/images/articles/how-the-salem-witch-trials-worked-courts-evidence-
 coverAlt: "How the Salem Witch Trials Worked"
 author: "Cursed Tours"
 hub: "salem-witch-trials"
+hubSlug: salem
+hubUrl: /salem-ghost-tours/
+relatedArticles:
+  - apologies-regret-and-reparations-after-salem
+  - how-the-salem-witch-trials-ended-and-why
+  - life-in-puritan-new-england-before-the-trials
+  - salem-witch-trials-myths-that-wont-die
 ---
 
 The Salem witch trials were not lawless mob violence. They were legal proceedings conducted through formal courts, with warrants, examinations, indictments, trials, and executions carried out according to established procedures. This legality makes Salem more disturbing, not less—it demonstrates how judicial systems can produce catastrophic injustice while following their own rules.

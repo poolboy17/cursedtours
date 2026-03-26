@@ -8,6 +8,13 @@ coverImage: "/images/articles/denver-gold-rush-ghost-stories.webp"
 coverAlt: "Denver's Gold Rush Ghosts: Boomtown Violence and the Restless Dead"
 author: "Cursed Tours"
 hub: "denver-haunted-history"
+hubSlug: denver
+hubUrl: /denver-ghost-tours/
+relatedArticles:
+  - brown-palace-hotel-denver-ghosts
+  - cheesman-park-denver-haunted-history
+  - most-haunted-places-in-denver
+  - stanley-hotel-colorado-shining-inspiration
 ---
 
 Denver was born from gold fever in 1858. The lawless boomtown years left a trail of bodies — and ghost stories that survived long after the gold ran out.
