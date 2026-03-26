@@ -12,6 +12,8 @@ const articles = defineCollection({
     coverAlt: z.string(),
     author: z.string(),
     hub: z.string(),
+    hubSlug: z.string().optional(),
+    hubUrl: z.string().optional(),
     relatedArticles: z.array(z.string()).optional().default([]),
     draft: z.boolean().optional().default(false),
   }),
@@ -43,6 +45,7 @@ const hubs = defineCollection({
       question: z.string(),
       answer: z.string(),
     })),
+    spokes: z.array(z.string()).optional().default([]),
   }),
 });
 
