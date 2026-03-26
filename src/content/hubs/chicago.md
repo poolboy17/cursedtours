@@ -275,4 +275,4 @@ spokes:
   </section>
 
     <!-- Mobile Tour Cards (hidden on desktop where sidebar shows) -->
-    <MobileTourCards tours={tours} />
+    <TourGrid tours={tours} />

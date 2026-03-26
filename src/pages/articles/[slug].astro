@@ -3,8 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import { buildSchemas } from '../../lib/schema';
 import { getCollection, render } from 'astro:content';
 import { CATEGORIES } from '../../data/articles';
-import { CITY_TOURS } from '../../data/cityTours';
-import CdnImage from '../../components/CdnImage.astro';
+import { TOURS } from '../../data/tours';
+import SiteImage from '../../components/SiteImage.astro';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles', ({ data }) => !data.draft);
@@ -26,9 +26,9 @@ const related = allArticles
 
 const categoryInfo = CATEGORIES[entry.data.categorySlug];
 const cityKey = categoryInfo?.city;
-const cityTours = cityKey ? CITY_TOURS[cityKey] : undefined;
-const heroTour = cityTours?.find(t => t.tier === 'hero');
-const budgetTour = cityTours?.find(t => t.tier === 'budget');
+const tours = cityKey ? TOURS[cityKey] : undefined;
+const heroTour = tours?.find(t => t.tier === 'hero');
+const budgetTour = tours?.find(t => t.tier === 'budget');
 const publishDate = new Date(entry.data.date).toLocaleDateString('en-US', {
   year: 'numeric', month: 'long', day: 'numeric'
 });
@@ -68,7 +68,7 @@ const readingTime = Math.ceil(wordCount / 250);
   <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
     {entry.data.coverImage && (
       <div class="absolute inset-0">
-        <CdnImage src={entry.data.coverImage} alt={entry.data.coverAlt || entry.data.title} width={1200} height={675} loading="eager" class="w-full h-full object-cover opacity-20" decoding="async" />
+        <SiteImage src={entry.data.coverImage} alt={entry.data.coverAlt || entry.data.title} width={1200} height={675} loading="eager" class="w-full h-full object-cover opacity-20" decoding="async" />
         <div class="absolute inset-0 bg-gradient-to-b from-[#0a0510]/60 via-[#0a0510]/80 to-[#0a0510]"></div>
       </div>
     )}
@@ -142,7 +142,7 @@ const readingTime = Math.ceil(wordCount / 250);
               <a href={heroTour.viatorUrl} target="_blank" rel="noopener noreferrer nofollow"
                 class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                 <div class="aspect-video overflow-hidden">
-                  <CdnImage src={heroTour.image} alt={heroTour.title} width={400} height={225} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
+                  <SiteImage src={heroTour.image} alt={heroTour.title} width={400} height={225} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
                 </div>
                 <div class="p-4">
                   <span class="text-xs text-yellow-400 font-medium uppercase tracking-wider">Top Tour</span>
@@ -213,7 +213,7 @@ const readingTime = Math.ceil(wordCount / 250);
             <a href={`/articles/${r.slug}/`} class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
               {r.data.coverImage && (
                 <div class="aspect-video overflow-hidden">
-                  <CdnImage src={r.data.coverImage} alt={r.data.coverAlt || r.data.title} width={400} height={225} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
+                  <SiteImage src={r.data.coverImage} alt={r.data.coverAlt || r.data.title} width={400} height={225} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
                 </div>
               )}
               <div class="p-4">

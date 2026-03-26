@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { CATEGORIES } from '../data/articles';
 import { DESTINATIONS } from '../data/destinations';
-import { getAllBlogHubSlugs } from '../data/blogHubs';
+import { getAllBlogHubSlugs } from '../data/hubs';
 
 export const GET: APIRoute = async () => {
   const site = 'https://cursedtours.com';
@@ -21,7 +21,7 @@ export const GET: APIRoute = async () => {
   ];
 
   const destinations = Object.keys(DESTINATIONS);
-  const blogHubs = getAllBlogHubSlugs();
+  const hubs = getAllBlogHubSlugs();
   const utilities = ['about', 'contact', 'editorial-policy', 'privacy-policy', 'terms'];
   const articleEntries = await getCollection('articles', ({ data }) => !data.draft);
   const articles = articleEntries.map(e => ({ slug: e.slug }));
@@ -43,7 +43,7 @@ export const GET: APIRoute = async () => {
     ...cityHubs.map(c => entry(`/${c}-ghost-tours/`, '0.9', 'monthly')),
     ...destinations.map(d => entry(`/destinations/${d}/`, '0.9', 'monthly')),
     entry('/blog/', '0.7', 'weekly'),
-    ...blogHubs.map(b => entry(`/blog/${b}/`, '0.9', 'monthly')),
+    ...hubs.map(b => entry(`/blog/${b}/`, '0.9', 'monthly')),
     entry('/experiences/', '0.6', 'monthly'),
     ...experiences.map(e => entry(`/experiences/${e}/`, '0.6', 'monthly')),
     ...articles.map(a => entry(`/articles/${a.slug}/`, '0.7', 'weekly')),

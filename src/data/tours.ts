@@ -8,7 +8,7 @@ import type { FeaturedTour } from './destinations'
 
 const AFF = 'pid=P00166886&mcid=42383'
 
-export const CITY_TOURS: Record<string, FeaturedTour[]> = {
+export const TOURS: Record<string, FeaturedTour[]> = {
   'austin': [
     {
       productCode: '53526P1',
