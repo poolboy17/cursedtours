@@ -1,0 +1,213 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TourSidebar from '../components/TourSidebar.astro';
+import MobileTourCards from '../components/MobileTourCards.astro';
+import CityHubCategoryNav from '../components/CityHubCategoryNav.astro';
+import CityHubSectionDividers from '../components/CityHubSectionDividers.astro';
+import CdnImage from '../components/CdnImage.astro';
+import { getCollection, render } from 'astro:content';
+import { CITY_TOURS } from '../data/cityTours';
+import { CATEGORIES } from '../data/articles';
+
+export async function getStaticPaths() {
+  const hubs = await getCollection('hubs');
+  return hubs.map(hub => ({
+    params: { city: hub.data.tourKey },
+    props: { hub },
+  }));
+}
+
+const { hub } = Astro.props;
+const { Content } = await render(hub);
+const { title, hubSlug, city, tourKey, metaDescription, heroImage,
+        latitude, longitude, region, country, priceRange, touristType,
+        tourCount, articleCount, categories, faqs } = hub.data;
+
+const tours = CITY_TOURS[tourKey] || [];
+
+// Get articles for this city hub
+const allArticles = await getCollection('articles', ({ data }) => !data.draft);
+const categorySlug = Object.keys(CATEGORIES).find(k => CATEGORIES[k]?.city === tourKey);
+const hubArticles = categorySlug
+  ? allArticles.filter(a => a.data.categorySlug === categorySlug).slice(0, 12)
+  : [];
+
+// Get other city hubs for the CTA section
+const allHubs = await getCollection('hubs');
+const otherHubs = allHubs
+  .filter(h => h.data.tourKey !== tourKey)
+  .sort(() => 0.5 - Math.random())
+  .slice(0, 6);
+---
+
+<Layout
+  title={title}
+  description={metaDescription}
+  canonical={`https://cursedtours.com/${hubSlug}/`}
+  ogImage={heroImage}
+>
+  <!-- FAQ Schema -->
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+
+  <!-- BreadcrumbList Schema -->
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cursedtours.com/" },
+      { "@type": "ListItem", "position": 2, "name": `${city} Ghost Tours`, "item": `https://cursedtours.com/${hubSlug}/` }
+    ]
+  })} />
+
+  <!-- TouristAttraction Schema -->
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    "name": `${city} Ghost Tours`,
+    "description": metaDescription,
+    "url": `https://cursedtours.com/${hubSlug}/`,
+    "image": `https://cursedtours.com${heroImage}`,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": city,
+      "addressRegion": region,
+      "addressCountry": country
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": latitude,
+      "longitude": longitude
+    },
+    "priceRange": priceRange,
+    "touristType": touristType,
+    "isAccessibleForFree": false
+  })} />
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-[#0a0510]">
+    <div class="absolute pointer-events-none z-[1] opacity-40 sm:opacity-80 md:opacity-100 w-[60%] sm:w-[70%] md:w-[75%] max-w-[900px] h-full right-[-10%] sm:right-[-5%] top-0">
+      <CdnImage src={heroImage} alt="" width={1536} height={1024} loading="eager" class="w-full h-full object-contain" decoding="async" />
+    </div>
+    <div class="relative z-10 flex items-end md:min-h-[55vh]">
+      <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-8 pb-10 sm:pt-10 sm:pb-12 md:pt-0 md:pb-14">
+        <div class="max-w-xl">
+          <nav class="mb-4 text-sm">
+            <ol class="flex items-center gap-2 text-[#7a6e8c]">
+              <li><a href="/" class="text-[#8a7e9c] hover:text-purple-400 transition-colors">Home</a></li>
+              <li class="text-[#4a3f5a]">/</li>
+              <li class="text-[#a89bb8] font-medium">{city} Ghost Tours</li>
+            </ol>
+          </nav>
+          <p class="text-sm font-semibold tracking-[0.2em] uppercase mb-4" style="color: #a855f7;">
+            {tourCount} Tours &middot; {articleCount} Articles
+          </p>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-white mb-4" style="font-family: 'Cinzel', serif;">
+            {city} Ghost Tours
+          </h1>
+          <CityHubCategoryNav categories={categories} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Body Content (unique per city, from .md body) -->
+  <div class="bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-6xl">
+      <div class="lg:flex lg:gap-10">
+        <div class="lg:w-2/3">
+          <div class="hub-body text-gray-300 text-lg leading-relaxed">
+            <Content />
+          </div>
+          <CityHubSectionDividers count={categories.length} />
+        </div>
+        <TourSidebar tours={tours} />
+      </div>
+    </div>
+  </div>
+
+  <MobileTourCards tours={tours} />
+
+  <!-- Articles Section -->
+  {hubArticles.length > 0 && (
+    <section class="py-16 md:py-20 bg-[#0a0510]">
+      <div class="container px-4 mx-auto max-w-6xl">
+        <div class="text-center mb-10">
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style="color: #a855f7;">Related Reading</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3" style="font-family: 'Cinzel', serif;">Explore {city} Articles</h2>
+          <p class="text-base" style="color: #7a6b8a;">In-depth guides to {city}'s haunted history, famous ghosts, and dark legends.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {hubArticles.map((article) => (
+            <a href={`/articles/${article.slug}/`} class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-purple-500/50 transition-all duration-300">
+              <div class="aspect-video overflow-hidden">
+                <CdnImage src={article.data.coverImage} alt={article.data.coverAlt || article.data.title} width={1792} height={1024} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" />
+              </div>
+              <div class="p-4">
+                <span class="inline-block px-2 py-0.5 text-xs font-medium rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">Featured</span>
+                <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors line-clamp-2">{article.data.title}</h3>
+                <p class="text-sm text-gray-400 mt-2 line-clamp-2">{article.data.excerpt}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ Section -->
+  <section class="py-16 md:py-24" style="background: linear-gradient(180deg, rgba(15,10,26,0) 0%, rgba(15,10,26,0.6) 50%, rgba(15,10,26,0) 100%);">
+    <div class="container px-4 mx-auto max-w-3xl">
+      <div class="text-center mb-10">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style="color: #a855f7;">Common Questions</p>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white" style="font-family: 'Cinzel', serif;">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-3">
+        {faqs.map((faq) => (
+          <details class="group rounded-xl" style="border: 1px solid #3d2a4d; background: rgba(26,16,37,0.3);">
+            <summary class="flex cursor-pointer items-center justify-between p-5 text-white font-medium text-sm sm:text-base select-none">
+              {faq.question}
+              <svg class="h-5 w-5 flex-shrink-0 ml-4 transition-transform duration-200 group-open:rotate-180" style="color: #7a6b8a;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="px-5 pb-5 text-sm leading-relaxed" style="color: #c8bdd8;">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="explore-more" class="py-16 md:py-24">
+    <div class="container px-4 mx-auto max-w-4xl text-center">
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style="color: #a855f7;">Keep Exploring</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4" style="font-family: 'Cinzel', serif;">Explore More Haunted Cities</h2>
+      <p class="text-base mb-8" style="color: #7a6b8a;">Discover ghost tours in other historic cities.</p>
+      <div class="flex flex-wrap justify-center gap-2">
+        {otherHubs.map((other) => (
+          <a href={`/${other.data.hubSlug}/`} class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105" style="border: 1px solid #3d2a4d; background: rgba(26,16,37,0.3); color: #c8bdd8;">
+            {other.data.city}
+            <svg class="w-3.5 h-3.5" style="color:#7a6b8a;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  .hub-body h2 {
+    font-size: 1.875rem; font-weight: 700; color: #fff;
+    margin-top: 3rem; margin-bottom: 1.5rem;
+  }
+  .hub-body section { padding: 3rem 0; }
+  .hub-body p { margin-bottom: 1rem; }
+</style>

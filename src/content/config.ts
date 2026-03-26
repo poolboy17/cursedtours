@@ -17,4 +17,33 @@ const articles = defineCollection({
   }),
 });
 
-export const collections = { articles };
+const hubs = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    hubSlug: z.string(),
+    city: z.string(),
+    tourKey: z.string(),
+    metaDescription: z.string(),
+    heroImage: z.string(),
+    latitude: z.number(),
+    longitude: z.number(),
+    region: z.string(),
+    country: z.string().default('US'),
+    priceRange: z.string(),
+    touristType: z.string(),
+    tourCount: z.number().default(0),
+    articleCount: z.number().default(0),
+    categories: z.array(z.object({
+      id: z.string(),
+      icon: z.string(),
+      label: z.string(),
+    })),
+    faqs: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })),
+  }),
+});
+
+export const collections = { articles, hubs };

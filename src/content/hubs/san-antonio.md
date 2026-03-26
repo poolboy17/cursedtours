@@ -1,0 +1,208 @@
+---
+title: 'San Antonio Ghost Tours: Alamo & River Walk | Cursed Tours'
+hubSlug: san-antonio-ghost-tours
+city: San Antonio
+tourKey: san-antonio
+metaDescription: San Antonio ghost tours covering the Alamo, Spanish missions, the
+  River Walk, and centuries of hauntings in Texas's most haunted city.
+heroImage: /images/heroes/san-antonio-hero.webp
+latitude: 29.4241
+longitude: -98.4936
+region: TX
+country: US
+priceRange: $25 – $45
+touristType: History enthusiasts, paranormal investigators
+tourCount: 10
+articleCount: 6
+categories:
+- id: alamo
+  icon: 🏰
+  label: The Alamo
+- id: missions
+  icon: ⛪
+  label: Missions
+- id: riverwalk
+  icon: 🌊
+  label: River Walk
+- id: hotels
+  icon: 🏨
+  label: Haunted Hotels
+- id: cemeteries
+  icon: ⚰️
+  label: Cemeteries
+faqs:
+- question: Is the Alamo really haunted?
+  answer: The Alamo has generated reports of unexplained phenomena since at least
+    the 1830s. After the battle on March 6, 1836, General Santa Anna ordered the fortress
+    demolished, but his soldiers reportedly refused, claiming they saw spectral figures
+    guarding the walls with flaming swords. Modern visitors and staff have reported
+    cold spots, shadowy figures, and unexplained sounds in the chapel and grounds.
+- question: When is the best time for San Antonio ghost tours?
+  answer: Tours operate year-round. October is peak season with extended offerings.
+    Summer evening tours provide relief from daytime heat, as temperatures drop significantly
+    after sunset. The River Walk is particularly atmospheric at night when the ambient
+    lighting reflects off the water.
+---
+
+<section class="py-16 md:py-20 bg-[#0a0510]">   <div class="container px-4 mx-auto max-w-4xl">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          San Antonio's haunted history begins with the Alamo, where approximately 200 Texian defenders were killed on March 6, 1836, in one of the most famous battles in American history. General Santa Anna ordered the defenders' bodies burned in funeral pyres rather than buried—a decision that, combined with the violence of the battle itself, has fueled supernatural reports at the site for nearly two centuries.
+        </p>
+        <p>
+          But the Alamo is only the most famous chapter in a city founded as a Spanish mission in 1718. San Antonio's five UNESCO World Heritage missions, built to convert indigenous populations to Christianity, were also sites of epidemic disease, cultural destruction, and forced labor. The missions' graveyards hold the remains of thousands of indigenous people who died of European diseases within decades of contact.
+        </p>
+        <p>
+          Ghost tours in San Antonio navigate between these colonial-era missions, the Alamo, the atmospheric River Walk, and a collection of haunted hotels and historic buildings that make the city one of the most consistently haunted destinations in the American South. The convergence of Spanish colonial, Mexican, and Texan history creates a layered supernatural landscape unlike anywhere else in the United States.
+        </p>
+      </div>
+    </div>
+  </section>
+<section class="py-16 md:py-20 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why San Antonio Is Haunted</h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4 border-l-2 border-purple-500/30 pl-8">
+        <p>
+          The Battle of the Alamo lasted 13 days. When Mexican forces breached the walls on March 6, 1836, the fighting was hand-to-hand. Nearly all defenders were killed, including James Bowie, who was too ill to leave his cot and was reportedly bayoneted where he lay. William B. Travis was among the first to fall, shot in the head while defending the north wall. The fate of Davy Crockett remains debated—some accounts say he died fighting, others that he was captured and executed.
+        </p>
+        <p>
+          Santa Anna ordered the defenders' bodies burned rather than buried. Three funeral pyres were constructed, and the remains were set alight. The pyres reportedly burned for days. Some human remains were later collected and interred, but the exact location of the burial—and whether all remains were recovered—is unknown. Archaeological investigations have found human bone fragments in the soil around the Alamo complex.
+        </p>
+        <p>
+          The Spanish missions—San José, Concepción, San Juan, and Espada, in addition to the Alamo (Mission San Antonio de Valero)—experienced devastating mortality among their indigenous populations. European diseases including smallpox, measles, and cholera killed thousands of Coahuiltecan, Apache, and other peoples who had been concentrated in mission communities with no immunity. The missions' cemeteries contain mass graves that were never fully mapped.
+        </p>
+        <p>
+          The Menger Hotel, built in 1859 adjacent to the Alamo, is considered one of the most haunted hotels in Texas. Teddy Roosevelt recruited Rough Riders in its bar. The hotel has 32 documented spirits according to paranormal investigators, including a former chambermaid named Sallie White who was shot by her husband in 1876 and reportedly still appears in the hallways carrying fresh towels.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="bg-[#0a0510] pb-2">
+    <div class="container px-4 mx-auto max-w-6xl">
+      <CityHubCategoryNav categories={categories} />
+    </div>
+  </div>
+  <!-- Content + Sidebar wrapper -->
+  <div class="bg-[#0a0510]">
+    <div class="container px-4 mx-auto max-w-6xl">
+      <div class="lg:flex lg:gap-10">
+        <div class="lg:w-2/3">
+
+
+  <section id="alamo" class="py-12 md:py-16 relative overflow-hidden">
+    <div class="absolute -left-24 top-1/4 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative z-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏰</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">The Alamo</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
+        <p>
+          The earliest supernatural reports at the Alamo date to 1836 itself, when Mexican soldiers sent to demolish the remaining walls reportedly fled, claiming spectral figures with flaming swords appeared to guard the entrance. Whether this account is historical or legendary, it established a tradition of Alamo ghost sightings that has continued unbroken for nearly 200 years.
+        </p>
+        <div class="my-8 py-8 text-center bg-gradient-to-b from-purple-950/[0.12] via-purple-950/[0.04] to-transparent rounded-xl">
+          <div class="text-4xl md:text-5xl font-bold text-purple-400" style="font-family: 'Cinzel', serif; text-shadow: 0 0 30px rgba(168, 85, 247, 0.35), 0 0 60px rgba(168, 85, 247, 0.12);">13</div>
+          <p class="text-sm text-[#a89bb8] mt-2 tracking-wide uppercase">DAYS OF THE SIEGE AT THE ALAMO</p>
+        </div>
+<p>
+          Modern reports from visitors and staff include cold spots in the chapel, unexplained shadows in the Long Barrack, and the sound of boots on stone floors when no one is present. Security cameras have recorded anomalous light patterns and movement after hours. The Alamo's grounds, which encompass the original mission complex, retain the footprint of the 1836 battlefield.
+        </p>
+        <div class="my-8 border-l-4 border-purple-500/50 pl-6 pr-4 py-4 bg-purple-950/[0.15] rounded-r-lg">
+          <p class="text-lg italic text-[#c4b5fd]/80">&ldquo;Nearly 200 defenders held the Alamo for thirteen days against thousands of Mexican soldiers before the final assault on March 6, 1836.&rdquo;</p>
+        </div>
+        <p>
+          The Alamo is open daily and free to enter, though timed-entry tickets are required. Ghost tours do not enter the Alamo itself but use the grounds and surrounding streets as a narrative anchor, combining the battle history with the mission's earlier use as a Spanish colonial outpost and its even earlier use as a Coahuiltecan gathering place.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<section id="missions" class="py-12 md:py-16 relative overflow-hidden">
+    <div class="absolute -right-24 top-1/3 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative z-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">⛪</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Spanish Mission Tours</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
+        <p>
+          Mission San José, known as the "Queen of the Missions," is the largest and best-preserved of San Antonio's missions. Its Rose Window, carved in limestone around 1775, is considered one of the finest examples of Spanish Colonial architecture in North America. The mission's cemetery and surrounding grounds have generated reports of apparitions, particularly near the granary and the Indian quarters.
+        </p>
+        <p>
+          Mission Concepción retains the oldest unrestored stone church in America, with original frescoes still visible on its interior walls. The mission was the site of the Battle of Concepción in 1835, a precursor to the Alamo. The combination of military history, religious history, and mass indigenous mortality creates a site of unusual historical density.
+        </p>
+        <p>
+          The San Antonio Missions National Historical Park, administered by the National Park Service, encompasses all four southern missions. The 15-mile Mission Trail connects them and passes through neighborhoods that developed around the original mission communities. Tours that cover multiple missions typically require transportation, as walking distances between sites range from 2 to 4 miles.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<section id="riverwalk" class="py-12 md:py-16 relative overflow-hidden">
+    <div class="absolute -left-16 top-1/2 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative z-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🌊</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">River Walk Ghost Tours</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
+        <p>
+          The San Antonio River Walk, a network of walkways along the banks of the San Antonio River one story below street level, passes through the heart of the city's haunted geography. The river itself was the reason for the city's founding—both the Spanish missions and the Alamo were built along its banks. Floods repeatedly devastated the riverside communities until the WPA constructed the current walkway system in the 1930s and 1940s.
+        </p>
+        <div class="my-8 py-8 text-center bg-gradient-to-b from-purple-950/[0.12] via-purple-950/[0.04] to-transparent rounded-xl">
+          <div class="text-4xl md:text-5xl font-bold text-purple-400" style="font-family: 'Cinzel', serif; text-shadow: 0 0 30px rgba(168, 85, 247, 0.35), 0 0 60px rgba(168, 85, 247, 0.12);">1921</div>
+          <p class="text-sm text-[#a89bb8] mt-2 tracking-wide uppercase">THE GREAT FLOOD THAT SHAPED THE RIVER WALK</p>
+        </div>
+        <p>
+          Evening tours along the River Walk combine the atmospheric setting—stone bridges, overhanging trees, ambient lighting reflected in the water—with stories specific to the buildings lining its banks. The Spanish Governor's Palace, the oldest building in downtown San Antonio, dates to 1722 and has generated reports of unexplained activity since the 19th century.
+        </p>
+        <p>
+          The river's below-street-level position creates a natural acoustic separation from the city above, making the walking experience quieter and more intimate than street-level tours. Tour groups of 15-20 people typically move at a leisurely pace, with stops every few hundred yards for extended storytelling.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<section id="hotels" class="py-12 md:py-16 relative overflow-hidden">
+    <div class="absolute -right-16 bottom-1/4 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative z-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏨</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Haunted Hotels</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
+        <p>
+          The Menger Hotel, operating since 1859, sits directly adjacent to the Alamo. Its bar—a replica of the taproom at the House of Lords in London—is where Teddy Roosevelt recruited his Rough Riders in 1898. The hotel claims 32 documented spirits, the most active being Sallie White, a chambermaid shot and killed by her husband in 1876. Guests have reported seeing her carrying towels in the original wing's hallways.
+        </p>
+<p>
+          The Emily Morgan Hotel, built in 1926 as a medical facility, was converted into a hotel and named after the legendary "Yellow Rose of Texas." The building's history as a hospital, including its use during epidemics, contributes to reports of unexplained activity on multiple floors. The hotel's Gothic Revival architecture, visible from the Alamo grounds, adds to its atmosphere.
+        </p>
+        <p>
+          The Sheraton Gunter Hotel, built in 1909, is associated with one of San Antonio's most gruesome cold cases. In 1965, a guest reportedly checked in with a large trunk and was later found to have dismembered a body in Room 636. The room has been renumbered, but staff and guests continue to report unexplained activity on that floor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<section id="cemeteries" class="py-12 md:py-16 relative overflow-hidden">
+    <div class="absolute -left-20 bottom-1/3 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative z-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">⚰️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Historic Cemeteries</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
+        <p>
+          San Fernando Cemetery No. 1 and No. 2, established in 1852 and 1921 respectively, contain the graves of Tejano families who have lived in San Antonio for generations. The cemeteries' elaborate monuments, Day of the Dead decorations, and ongoing cultural significance make them living historical sites rather than abandoned graveyards.
+        </p>
+        <p>
+          The City Cemetery complexes on the east side include sections designated by ethnicity and religion during the segregation era. Confederate and Union soldiers are buried in adjacent sections of the National Cemetery. The layered social history visible in the cemetery's layout provides context for San Antonio's complex racial and cultural dynamics.
+        </p>
+      </div>
+    </div>
+  </section>
+
+    <!-- Mobile Tour Cards (hidden on desktop where sidebar shows) -->
+    <MobileTourCards tours={tours} />

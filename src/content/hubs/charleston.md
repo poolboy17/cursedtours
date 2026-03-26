@@ -1,0 +1,206 @@
+---
+title: 'Charleston Ghost Tours 2026: Old City Jail, Haunted History & Pub Crawls |
+  Cursed Tours'
+hubSlug: charleston-ghost-tours
+city: Charleston
+tourKey: charleston
+metaDescription: Book the best Charleston ghost tours in 2026. Explore the Old City
+  Jail, haunted graveyards, historic district walks, and spirited pub crawls through
+  the Holy City.
+heroImage: /images/heroes/charleston-hero.webp
+latitude: 32.7765
+longitude: -79.9311
+region: SC
+country: US
+priceRange: $28 – $55
+touristType: History enthusiasts, paranormal investigators
+tourCount: 12
+articleCount: 8
+categories:
+- id: historic-district
+  icon: 🏛️
+  label: Historic District
+- id: cemeteries
+  icon: ⚰️
+  label: Cemeteries
+- id: dungeons
+  icon: ⛓️
+  label: Dungeons & Prisons
+- id: pub-crawls
+  icon: 🍺
+  label: Pub Crawls
+- id: carriage-tours
+  icon: 🐴
+  label: Carriage Tours
+faqs:
+- question: What is the most haunted location in Charleston?
+  answer: The Old City Jail, which held prisoners from 1802 to 1939 including Civil
+    War prisoners and serial killer Lavinia Fisher, is consistently reported as the
+    most active paranormal location.
+- question: Are there ghost tours that go inside buildings?
+  answer: Yes. The Old Exchange and Provost Dungeon, Old City Jail, and several haunted
+    taverns and restaurants allow interior access on certain tours.
+- question: When is the best time for Charleston ghost tours?
+  answer: Evening tours offer atmospheric lighting but book quickly, especially on
+    weekends. Tours operate year-round, with October and spring being peak seasons.
+---
+
+<!-- Intro Section -->
+  <section class="py-16 md:py-20 bg-[#0a0510]">   <div class="container px-4 mx-auto max-w-4xl">
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+        <p>
+          Charleston, founded in 1670 as Charles Town, earned the nickname "Holy City" for its religious tolerance and abundance of church steeples. But beneath its gracious antebellum facades lies a darker history: Charleston served as the primary port of entry for enslaved Africans brought to North America. An estimated 40% of all enslaved people who entered what is now the United States passed through Charleston Harbor.
+        </p>
+        <p>
+          The city endured siege during the Revolutionary War, bombardment during the Civil War, a devastating earthquake in 1886, and hurricanes too numerous to count. Yellow fever epidemics struck repeatedly throughout the 18th and 19th centuries. Pirates were hanged at White Point Garden, their bodies left on display as warnings to others.
+        </p>
+        <p>
+          Charleston's ghost stories reflect this layered history. Tours navigate between sites associated with the domestic slave trade, battlefields from two wars, plague victims, executed pirates, and the city's notorious jail that held prisoners for 137 years.
+        </p>
+      </div>
+    </div>
+  </section>
+<!-- Why Haunted Section -->
+  <section class="py-16 md:py-20 bg-[#0f0a1a]">
+    <div class="container px-4 mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why Charleston Is Haunted</h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-4 border-l-2 border-purple-500/30 pl-8">
+        <p>
+          Gadsden's Wharf, now a park near the South Carolina Aquarium, processed enslaved Africans for sale to plantations throughout the South. The Sullivan's Island pest houses, where arriving ships quarantined before unloading their human cargo, saw death on a scale that earned the island the nickname "the Ellis Island of Black America"—though with far different implications.
+        </p>
+        <p>
+          The Charleston Earthquake of 1886 killed over 100 people and damaged 2,000 buildings. It remains the most powerful earthquake ever recorded in the southeastern United States. The city rebuilt, incorporating visible "earthquake bolts" that still mark buildings throughout the peninsula.
+        </p>
+        <p>
+          The Old City Jail operated from 1802 to 1939, housing everyone from Civil War prisoners to common criminals to Denmark Vesey, executed for planning a slave rebellion in 1822. Lavinia Fisher, often called America's first female serial killer, was hanged after operating out of the Six Mile Wayfarer House. The jail's conditions were notoriously brutal.
+        </p>
+        <p>
+          Fort Sumter, where the Civil War began in April 1861, sits in Charleston Harbor. The city endured the longest siege in American military history—587 days of Union bombardment that reduced much of downtown to rubble. Thousands died within the city walls.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="historic-district" class="py-12 md:py-16 relative overflow-hidden">
+    <div class="absolute -left-24 top-1/4 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative z-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🏛️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Historic District Walking Tours</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
+        <p>
+          Walking tours through the Historic District pass Charleston's most documented haunted locations. The Dock Street Theatre, built on the site of a hotel where a working woman named Nettie reportedly fell to her death, claims multiple active spirits including actors from centuries of theatrical productions.
+        </p>
+        <div class="my-8 py-8 text-center bg-gradient-to-b from-purple-950/[0.12] via-purple-950/[0.04] to-transparent rounded-xl">
+          <div class="text-4xl md:text-5xl font-bold text-purple-400" style="font-family: 'Cinzel', serif; text-shadow: 0 0 30px rgba(168, 85, 247, 0.35), 0 0 60px rgba(168, 85, 247, 0.12);">40%</div>
+          <p class="text-sm text-[#a89bb8] mt-2 tracking-wide uppercase">OF ENSLAVED AFRICANS ENTERED THROUGH CHARLESTON</p>
+        </div>
+<p>
+          The Unitarian Church cemetery on Archdale Street contains graves dating to 1772 and reports of apparitions among its crumbling stones. Edgar Allan Poe was stationed at nearby Fort Moultrie in 1827, and his experience in Charleston influenced "The Gold-Bug."
+        </p>
+        <div class="my-8 border-l-4 border-purple-500/50 pl-6 pr-4 py-4 bg-purple-950/[0.15] rounded-r-lg">
+          <p class="text-lg italic text-[#c4b5fd]/80">&ldquo;Nearly half of all enslaved Africans brought to North America passed through Charleston’s port, the largest point of entry for the slave trade on the continent.&rdquo;</p>
+        </div>
+        <p>
+          Rainbow Row, Charleston's iconic pastel-painted houses, stands on former merchant's row where enslaved people were once sold alongside imported goods. Tours that address this history provide essential context for understanding Charleston's built environment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<section id="cemeteries" class="py-12 md:py-16 relative overflow-hidden">
+    <div class="absolute -right-24 top-1/3 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative z-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">⚰️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Cemetery Tours</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
+        <p>
+          Magnolia Cemetery, opened in 1850 on the banks of the Cooper River, holds Confederate generals, plantation owners, and victims of the 1886 earthquake. Its Victorian monuments and moss-draped oaks create an atmosphere that attracted visitors even before ghost tours existed.
+        </p>
+        <p>
+          The churchyards of St. Philip's and St. Michael's, both downtown, contain 18th-century graves of Charleston's founding families. John C. Calhoun is buried at St. Philip's. These active churches offer daytime tours that combine architecture, history, and ghost lore.
+        </p>
+        <p>
+          Circular Congregational Church's graveyard, the oldest English burial ground in Charleston, dates to 1681. Revolutionary War patriots, plague victims, and some of the city's earliest settlers rest in its crowded grounds.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<section id="dungeons" class="py-12 md:py-16 relative overflow-hidden">
+    <div class="absolute -left-16 top-1/2 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative z-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">⛓️</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Dungeons & Prison Tours</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
+        <p>
+          The Old Exchange and Provost Dungeon at the foot of Broad Street held American patriots during British occupation in the Revolutionary War. The dungeon's brick walls have been preserved, and tours descend into the cells where prisoners awaited execution or release.
+        </p>
+        <div class="my-8 py-8 text-center bg-gradient-to-b from-purple-950/[0.12] via-purple-950/[0.04] to-transparent rounded-xl">
+          <div class="text-4xl md:text-5xl font-bold text-purple-400" style="font-family: 'Cinzel', serif; text-shadow: 0 0 30px rgba(168, 85, 247, 0.35), 0 0 60px rgba(168, 85, 247, 0.12);">137</div>
+          <p class="text-sm text-[#a89bb8] mt-2 tracking-wide uppercase">YEARS THE OLD CITY JAIL HELD PRISONERS</p>
+        </div>
+        <p>
+          The Old City Jail, now home to the American College of the Building Arts, offers some of the city's most intensive paranormal experiences. The building's history includes Lavinia Fisher, Civil War prisoners, and generations of inmates who lived and died in brutal conditions.
+        </p>
+        <p>
+          Tours of the jail range from historical overviews to hands-on paranormal investigations with equipment provided. The upper floors, unused since the jail closed, retain a palpable atmosphere that affects even skeptical visitors.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<section id="pub-crawls" class="py-12 md:py-16 relative overflow-hidden">
+    <div class="absolute -right-16 bottom-1/4 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative z-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🍺</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Haunted Pub Crawls</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
+        <p>
+          Charleston's pub crawl scene offers a different atmosphere than Savannah's, with drinks consumed at each stop rather than carried between bars. Poogan's Porch, a restaurant in a Victorian house, claims a ghost named Zoe who appears to diners and staff.
+        </p>
+<p>
+          The Blind Tiger Pub takes its name from Prohibition-era speakeasies that displayed stuffed tigers to indicate illegal alcohol was available. The building dates to the 19th century and has its own reported hauntings.
+        </p>
+        <p>
+          Tommy Condon's Irish Pub and Restaurant occupies a building where Confederate soldiers once gathered. Tours typically visit 3-4 establishments over two hours, with time for drinks and stories at each stop.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<section id="carriage-tours" class="py-12 md:py-16 relative overflow-hidden">
+    <div class="absolute -left-20 bottom-1/3 w-72 h-72 bg-purple-900/[0.06] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative z-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🐴</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Ghost Carriage Tours</h2>
+      </div>
+      <div class="text-gray-300 leading-relaxed space-y-4 bg-[#0d0816]/60 rounded-xl p-6 md:p-8 border border-purple-500/[0.06]">
+        <p>
+          Horse-drawn carriage tours offer a unique perspective on Charleston's haunted history, covering more ground than walking tours while maintaining an intimate atmosphere. Evening departures enhance the storytelling with gaslight-era ambiance.
+        </p>
+        <div class="my-8 py-8 text-center bg-gradient-to-b from-purple-950/[0.12] via-purple-950/[0.04] to-transparent rounded-xl">
+          <div class="text-4xl md:text-5xl font-bold text-purple-400" style="font-family: 'Cinzel', serif; text-shadow: 0 0 30px rgba(168, 85, 247, 0.35), 0 0 60px rgba(168, 85, 247, 0.12);">587</div>
+          <p class="text-sm text-[#a89bb8] mt-2 tracking-wide uppercase">DAYS OF UNION BOMBARDMENT DURING THE CIVIL WAR</p>
+        </div>
+        <p>
+          Carriage routes are assigned by lottery to manage traffic in the Historic District, so specific stops vary. Guides adapt their stories to whatever route they draw, ensuring repeat visitors hear different tales.
+        </p>
+        <p>
+          Tours typically last one hour and pass through the French Quarter, the Battery, and residential streets lined with antebellum mansions. The pace allows for detailed storytelling at each significant location.
+        </p>
+      </div>
+    </div>
+  </section>
+
+    <!-- Mobile Tour Cards (hidden on desktop where sidebar shows) -->
+    <MobileTourCards tours={tours} />
