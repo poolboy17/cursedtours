@@ -36,6 +36,8 @@ import SiteImage from '../components/SiteImage.astro';
   {canonical && <link rel="canonical" href={canonical} />}
   <link rel="alternate" type="application/rss+xml" title="Cursed Tours RSS Feed" href="https://cursedtours.com/rss.xml" />
   
+  {lcpImage && <link rel="preload" as="image" href={lcpImage} fetchpriority="high" />}
+  
   <!-- Open Graph -->
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
@@ -60,10 +62,18 @@ import SiteImage from '../components/SiteImage.astro';
   <!-- LCP Image Preload -->
   {lcpImage && <link rel="preload" as="image" href={lcpImage} fetchpriority="high" />}
   
-  <!-- DNS prefetch for external image CDNs -->
-  <link rel="dns-prefetch" href="https://media-cdn.tripadvisor.com">
-  
+  <!-- Self-hosted fonts — no external requests -->
   <style is:global>
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 300; font-display: swap; src: url('/fonts/inter-300.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/inter-400.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/inter-500.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/inter-600.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/inter-700.woff2') format('woff2'); }
+    @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/cinzel-400.woff2') format('woff2'); }
+    @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/cinzel-500.woff2') format('woff2'); }
+    @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/cinzel-600.woff2') format('woff2'); }
+    @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/cinzel-700.woff2') format('woff2'); }
+
     :root {
       --color-bg-darkest: #0a0510;
       --color-bg-dark: #0f0a1a;
