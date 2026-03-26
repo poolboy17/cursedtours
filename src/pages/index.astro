@@ -117,6 +117,7 @@ import SiteImage from '../components/SiteImage.astro';
   ogImage="https://cursedtours.com/images/homepage-hero.webp"
   ogImageWidth={1792}
   ogImageHeight={1024}
+  lcpImage="/.netlify/images?url=/images/homepage-hero.webp&w=800"
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteLd)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationLd)} />
@@ -128,7 +129,7 @@ import SiteImage from '../components/SiteImage.astro';
   <section class="relative overflow-hidden" style="min-height: clamp(480px, 75vh, 720px);">
     <!-- Background image -->
     <div class="absolute inset-0">
-      <SiteImage src="/images/homepage-hero.webp" alt="Ghostly figure in a haunted house during a ghost tour" width={1536} height={1024} loading="eager" class="w-full h-full object-cover" decoding="async" />
+      <SiteImage src="/images/homepage-hero.webp" alt="Ghostly figure in a haunted house during a ghost tour" width={1536} height={1024} loading="eager" fetchpriority="high" class="w-full h-full object-cover" decoding="async" />
       <!-- Gradient overlays for text readability -->
       <div class="absolute inset-0" style="background: linear-gradient(to top, #0a0510 0%, rgba(10,5,16,0.85) 30%, rgba(10,5,16,0.4) 60%, rgba(10,5,16,0.2) 100%);"></div>
       <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(10,5,16,0.6) 0%, transparent 60%);"></div>

@@ -1,4 +1,10 @@
 ---
+import '@fontsource-variable/inter';
+import '@fontsource/cinzel/400.css';
+import '@fontsource/cinzel/500.css';
+import '@fontsource/cinzel/600.css';
+import '@fontsource/cinzel/700.css';
+
 interface Props {
   title: string;
   description?: string;
@@ -8,9 +14,10 @@ interface Props {
   ogImageHeight?: number;
   noindex?: boolean;
   schemas?: object[];
+  lcpImage?: string;
 }
 
-const { title, description = "Explore ghost tours across America's most haunted cities.", canonical, ogImage = '/images/og-homepage.webp', ogImageWidth = 1200, ogImageHeight = 630, noindex = false, schemas = [] } = Astro.props;
+const { title, description = "Explore ghost tours across America's most haunted cities.", canonical, ogImage = '/images/og-homepage.webp', ogImageWidth = 1200, ogImageHeight = 630, noindex = false, schemas = [], lcpImage } = Astro.props;
 const siteUrl = 'https://cursedtours.com';
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 import SiteImage from '../components/SiteImage.astro';
@@ -50,12 +57,8 @@ import SiteImage from '../components/SiteImage.astro';
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   ))}
   
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.removeAttribute('media')" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+  <!-- LCP Image Preload -->
+  {lcpImage && <link rel="preload" as="image" href={lcpImage} fetchpriority="high" />}
   
   <!-- DNS prefetch for external image CDNs -->
   <link rel="dns-prefetch" href="https://media-cdn.tripadvisor.com">
