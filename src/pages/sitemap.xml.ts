@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
-import { getAllArticles, CATEGORIES } from '../data/articles';
+import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../data/articles';
 import { DESTINATIONS } from '../data/destinations';
 import { getAllBlogHubSlugs } from '../data/blogHubs';
 
@@ -22,7 +23,8 @@ export const GET: APIRoute = async () => {
   const destinations = Object.keys(DESTINATIONS);
   const blogHubs = getAllBlogHubSlugs();
   const utilities = ['about', 'contact', 'editorial-policy', 'privacy-policy', 'terms'];
-  const articles = getAllArticles();
+  const articleEntries = await getCollection('articles', ({ data }) => !data.draft);
+  const articles = articleEntries.map(e => ({ slug: e.slug }));
 
   function entry(path: string, priority: string, changefreq: string) {
     return `  <url>

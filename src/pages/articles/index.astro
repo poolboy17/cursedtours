@@ -1,13 +1,14 @@
 ---
-import { CATEGORIES, getAllArticles, getArticlesByCategory } from '../../data/articles';
+import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../../data/articles';
 import Layout from '../../layouts/Layout.astro';
 
-const allArticles = getAllArticles();
+const allEntries = await getCollection('articles', ({ data }) => !data.draft);
+allEntries.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
-// Show categories that have articles, in a sensible order.
-// Each category links to its city hub page.
+// Group by categorySlug
 const categoryOrder = Object.keys(CATEGORIES).filter(
-  slug => getArticlesByCategory(slug).length > 0
+  slug => allEntries.some(e => e.data.categorySlug === slug)
 );
 ---
 
@@ -24,11 +25,11 @@ const categoryOrder = Object.keys(CATEGORIES).filter(
     "url": "https://cursedtours.com/articles/",
     "mainEntity": {
       "@type": "ItemList",
-      "itemListElement": allArticles.slice(0, 50).map((article, i) => ({
+      "itemListElement": allEntries.slice(0, 50).map((entry, i) => ({
         "@type": "ListItem",
         "position": i + 1,
-        "name": article.title,
-        "url": `https://cursedtours.com/articles/${article.slug}/`
+        "name": entry.data.title,
+        "url": `https://cursedtours.com/articles/${entry.slug}/`
       }))
     },
     "breadcrumb": {
@@ -61,7 +62,7 @@ const categoryOrder = Object.keys(CATEGORIES).filter(
         <div class="flex gap-2 md:gap-3 min-w-max md:justify-center">
           {categoryOrder.map((catSlug) => {
             const cat = CATEGORIES[catSlug];
-            const count = getArticlesByCategory(catSlug).length;
+            const count = allEntries.filter(e => e.data.categorySlug === catSlug).length;
             return (
               <a
                 href={`#${catSlug}`}
@@ -79,11 +80,11 @@ const categoryOrder = Object.keys(CATEGORIES).filter(
 
   {categoryOrder.map((catSlug) => {
     const cat = CATEGORIES[catSlug];
-    const articles = getArticlesByCategory(catSlug);
-    // Put longest (featured) article first
-    articles.sort((a, b) => b.content.split(/\s+/).length - a.content.split(/\s+/).length);
-    const featured = articles[0];
-    const rest = articles.slice(1);
+    const catArticles = allEntries
+      .filter(e => e.data.categorySlug === catSlug)
+      .sort((a, b) => (b.body?.split(/\s+/).length || 0) - (a.body?.split(/\s+/).length || 0));
+    const featured = catArticles[0];
+    const rest = catArticles.slice(1);
 
     return (
       <section id={catSlug} class="py-12 md:py-16 bg-[#0a0510] border-t border-white/5">
@@ -98,65 +99,59 @@ const categoryOrder = Object.keys(CATEGORIES).filter(
             )}
           </div>
 
-          {/* Featured article - displayed large */}
+          {/* Featured article */}
           {featured && (
             <a
               href={`/articles/${featured.slug}/`}
               class="group block mb-8 rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 md:flex"
             >
-              {featured.featuredImage?.sourceUrl && (
+              {featured.data.coverImage && (
                 <div class="md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
                   <img
-                    src={featured.featuredImage.sourceUrl}
-                    alt={featured.featuredImage.altText || featured.title}
+                    src={featured.data.coverImage}
+                    alt={featured.data.coverAlt || featured.data.title}
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    width="800"
-                    height="450"
-                    loading="lazy"
-                    decoding="async"
+                    width="800" height="450" loading="lazy" decoding="async"
                   />
                 </div>
               )}
               <div class="p-6 md:w-3/5 flex flex-col justify-center">
                 <span class="text-xs text-purple-400 font-medium uppercase tracking-wider mb-2">Featured Guide</span>
                 <h3 class="text-xl md:text-2xl font-bold text-white group-hover:text-purple-400 transition-colors mb-3">
-                  {featured.title}
+                  {featured.data.title}
                 </h3>
-                <p class="text-gray-400 line-clamp-3">{featured.excerpt}</p>
+                <p class="text-gray-400 line-clamp-3">{featured.data.excerpt}</p>
                 <span class="mt-4 text-sm text-gray-500">
-                  {Math.ceil(featured.content.split(/\s+/).length / 250)} min read
+                  {Math.ceil((featured.body?.split(/\s+/).length || 0) / 250)} min read
                 </span>
               </div>
             </a>
           )}
 
-          {/* Remaining articles - grid */}
+          {/* Remaining articles grid */}
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {rest.map((article) => (
+            {rest.map((entry) => (
               <a
-                href={`/articles/${article.slug}/`}
+                href={`/articles/${entry.slug}/`}
                 class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
               >
-                {article.featuredImage?.sourceUrl && (
+                {entry.data.coverImage && (
                   <div class="aspect-video overflow-hidden">
                     <img
-                      src={article.featuredImage.sourceUrl}
-                      alt={article.featuredImage.altText || article.title}
+                      src={entry.data.coverImage}
+                      alt={entry.data.coverAlt || entry.data.title}
                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      width="400"
-                      height="225"
-                      loading="lazy"
-                      decoding="async"
+                      width="400" height="225" loading="lazy" decoding="async"
                     />
                   </div>
                 )}
                 <div class="p-4">
                   <h3 class="text-white font-semibold group-hover:text-purple-400 transition-colors line-clamp-2 mb-2">
-                    {article.title}
+                    {entry.data.title}
                   </h3>
-                  <p class="text-sm text-gray-400 line-clamp-2">{article.excerpt}</p>
+                  <p class="text-sm text-gray-400 line-clamp-2">{entry.data.excerpt}</p>
                   <span class="block mt-3 text-xs text-gray-500">
-                    {Math.ceil(article.content.split(/\s+/).length / 250)} min read
+                    {Math.ceil((entry.body?.split(/\s+/).length || 0) / 250)} min read
                   </span>
                 </div>
               </a>
@@ -170,15 +165,11 @@ const categoryOrder = Object.keys(CATEGORIES).filter(
 
 <style>
   .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    display: -webkit-box; -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; overflow: hidden;
   }
   .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    display: -webkit-box; -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical; overflow: hidden;
   }
 </style>

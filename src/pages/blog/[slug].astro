@@ -1,5 +1,5 @@
 ---
-import { getArticlesByCategory } from '../../data/articles';
+import { getCollection } from 'astro:content';
 import { BLOG_HUBS } from '../../data/blogHubs';
 import Layout from '../../layouts/Layout.astro';
 
@@ -11,7 +11,19 @@ export async function getStaticPaths() {
 }
 
 const { hub } = Astro.props;
-const articles = getArticlesByCategory(hub.categorySlug);
+const allEntries = await getCollection('articles', ({ data }) => !data.draft);
+// Adapter: map content collection entries to old Article shape for template compatibility
+const articles = allEntries
+  .filter(e => e.data.categorySlug === hub.categorySlug)
+  .sort((a, b) => (b.body?.split(/\s+/).length || 0) - (a.body?.split(/\s+/).length || 0))
+  .map(e => ({
+    slug: e.slug,
+    title: e.data.title,
+    excerpt: e.data.excerpt,
+    content: e.body || '',
+    readingTime: Math.ceil((e.body?.split(/\s+/).length || 0) / 250),
+    featuredImage: { sourceUrl: e.data.coverImage, altText: e.data.coverAlt || e.data.title },
+  }));
 
 // Sort: pillars first (by word count desc), then clusters by date
 articles.sort((a, b) => {

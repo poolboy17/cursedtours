@@ -1,9 +1,10 @@
 ---
-import { getArticlesByCategory } from '../../data/articles';
+import { getCollection } from 'astro:content';
 import { getAllBlogHubs } from '../../data/blogHubs';
 import Layout from '../../layouts/Layout.astro';
 
 const hubs = getAllBlogHubs();
+const allEntries = await getCollection('articles', ({ data }) => !data.draft);
 ---
 
 <Layout
@@ -50,7 +51,7 @@ const hubs = getAllBlogHubs();
     <div class="container px-4 mx-auto max-w-6xl">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {hubs.map(hub => {
-          const articleCount = getArticlesByCategory(hub.categorySlug).length;
+          const articleCount = allEntries.filter(e => e.data.categorySlug === hub.categorySlug).length;
           return (
             <a
               href={`/blog/${hub.slug}/`}

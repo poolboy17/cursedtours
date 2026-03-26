@@ -1,8 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getAllArticles } from '../data/articles';
+import { getCollection } from 'astro:content';
 
-const recentArticles = getAllArticles().slice(0, 4);
+const allEntries = await getCollection('articles', ({ data }) => !data.draft);
+allEntries.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+// Adapter: map content collection entries to the old Article shape for template compatibility
+const recentArticles = allEntries.slice(0, 4).map(e => ({
+  slug: e.slug,
+  title: e.data.title,
+  excerpt: e.data.excerpt,
+  content: e.body || '',
+  readingTime: Math.ceil((e.body?.split(/\s+/).length || 0) / 250),
+  featuredImage: { sourceUrl: e.data.coverImage, altText: e.data.coverAlt || e.data.title },
+}));
 
 const featuredCities = [
   { name: 'New Orleans', slug: 'new-orleans-ghost-tours', image: '/images/city-hubs/new-orleans.webp', tagline: 'Voodoo, vampires & French Quarter hauntings', tours: '12+ tours' },

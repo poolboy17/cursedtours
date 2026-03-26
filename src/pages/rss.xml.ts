@@ -1,31 +1,20 @@
 import rss from '@astrojs/rss';
 import type { APIContext } from 'astro';
-
-interface RssArticleModule {
-  title: string;
-  date: string;
-  excerpt: string;
-  uri: string;
-  status?: string;
-}
+import { getCollection } from 'astro:content';
 
 export async function GET(context: APIContext) {
-  const articles = Object.values(
-    import.meta.glob('../data/articles/*.json', { eager: true }) as Record<string, RssArticleModule>
-  )
-    .filter((a) => a.status === 'publish')
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 50);
+  const articles = await getCollection('articles', ({ data }) => !data.draft);
+  articles.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
   return rss({
     title: 'Cursed Tours — Ghost Tours & Haunted Experiences',
     description: 'Ghost tours, haunted places, and dark travel guides from around the world.',
     site: context.site!,
-    items: articles.map((a) => ({
-      title: a.title,
-      pubDate: new Date(a.date),
-      description: a.excerpt,
-      link: a.uri,
+    items: articles.slice(0, 50).map((entry) => ({
+      title: entry.data.title,
+      pubDate: new Date(entry.data.date),
+      description: entry.data.excerpt,
+      link: `/articles/${entry.slug}/`,
     })),
   });
 }
