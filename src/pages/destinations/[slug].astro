@@ -1,8 +1,7 @@
 ---
 import CdnImage from '../../components/CdnImage.astro';
 import TourSidebar from '../../components/TourSidebar.astro';
-import type { Article } from '../../data/articles';
-import { getAllArticles } from '../../data/articles';
+import { getCollection } from 'astro:content';
 import type { AuthoritativeSource, ContentSection, DestinationData, FeaturedTour } from '../../data/destinations';
 import { DESTINATIONS } from '../../data/destinations';
 import Layout from '../../layouts/Layout.astro';
@@ -19,10 +18,19 @@ type RelatedDestination = DestinationData['relatedDestinations'][number];
 
 const { destination } = Astro.props as { destination: DestinationData };
 
-const allArticles = getAllArticles();
+const allEntries = await getCollection('articles', ({ data }) => !data.draft);
 const relatedArticles = (destination.relatedArticleSlugs || [])
-  .map((slug: string) => allArticles.find(a => a.slug === slug))
-  .filter((article): article is Article => Boolean(article));
+  .map((slug: string) => {
+    const entry = allEntries.find(a => a.slug === slug);
+    if (!entry) return null;
+    return {
+      slug: entry.slug,
+      title: entry.data.title,
+      excerpt: entry.data.excerpt,
+      featuredImage: { sourceUrl: entry.data.coverImage, altText: entry.data.coverAlt || entry.data.title },
+    };
+  })
+  .filter(Boolean);
 
 const faqLd = {
   "@context": "https://schema.org",
@@ -173,7 +181,7 @@ const otherTours = tours.filter((t: FeaturedTour) => t.tier !== 'hero');
             <div class="mb-8">
               <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Related Articles</h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {relatedArticles.slice(0, 6).map((article: Article) => (
+                {relatedArticles.slice(0, 6).map((article) => (
                   <a href={`/articles/${article.slug}/`}
                     class="group block rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                     {article.featuredImage?.sourceUrl && (
