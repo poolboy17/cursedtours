@@ -7,9 +7,10 @@ interface Props {
   ogImageWidth?: number;
   ogImageHeight?: number;
   noindex?: boolean;
+  schemas?: object[];
 }
 
-const { title, description = "Explore ghost tours across America's most haunted cities.", canonical, ogImage = '/images/og-homepage.webp', ogImageWidth = 1200, ogImageHeight = 630, noindex = false } = Astro.props;
+const { title, description = "Explore ghost tours across America's most haunted cities.", canonical, ogImage = '/images/og-homepage.webp', ogImageWidth = 1200, ogImageHeight = 630, noindex = false, schemas = [] } = Astro.props;
 const siteUrl = 'https://cursedtours.com';
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 import CdnImage from '../components/CdnImage.astro';
@@ -43,6 +44,11 @@ import CdnImage from '../components/CdnImage.astro';
   <meta name="twitter:title" content={title}>
   <meta name="twitter:description" content={description}>
   <meta name="twitter:image" content={ogImageUrl} />
+  
+  <!-- JSON-LD Structured Data -->
+  {schemas.map(schema => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
