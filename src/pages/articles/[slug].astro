@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { buildSchemas } from '../../lib/schema';
 import { getCollection, render } from 'astro:content';
 import { CATEGORIES } from '../../data/articles';
 import { CITY_TOURS } from '../../data/cityTours';
@@ -33,51 +34,22 @@ const publishDate = new Date(entry.data.date).toLocaleDateString('en-US', {
 });
 
 const parentHref = categoryInfo?.hubPage || null;
-const parentUrl = parentHref ? `https://cursedtours.com${parentHref}` : null;
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": entry.data.title,
-  "description": entry.data.excerpt,
-  "image": entry.data.coverImage,
-  "datePublished": entry.data.date.toISOString(),
-  ...(categoryInfo && { "articleSection": categoryInfo.name }),
-  "author": [
-    { "@type": "Person", "name": "Cursed Tours Editorial Team", "url": "https://cursedtours.com/about/" },
-    { "@type": "Organization", "name": "Cursed Tours", "url": "https://cursedtours.com" }
-  ],
-  "publisher": {
-    "@type": "Organization",
-    "name": "Cursed Tours",
-    "url": "https://cursedtours.com",
-    "logo": { "@type": "ImageObject", "url": "https://cursedtours.com/images/logo.png" }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": `https://cursedtours.com/articles/${entry.slug}/`
-  }
-};
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Articles", url: "/articles/" },
+  ...(categoryInfo && parentHref ? [{ name: categoryInfo.name, url: parentHref }] : []),
+  { name: entry.data.title },
+];
 
-const breadcrumbLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cursedtours.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://cursedtours.com/articles/" },
-    ...(categoryInfo && parentUrl ? [{
-      "@type": "ListItem", "position": 3,
-      "name": categoryInfo.name,
-      "item": parentUrl
-    }] : []),
-    {
-      "@type": "ListItem",
-      "position": categoryInfo && parentUrl ? 4 : 3,
-      "name": entry.data.title,
-      "item": `https://cursedtours.com/articles/${entry.slug}/`
-    }
-  ]
-};
+const schemas = buildSchemas("article", {
+  headline: entry.data.title,
+  description: entry.data.excerpt,
+  image: entry.data.coverImage,
+  datePublished: entry.data.date.toISOString(),
+  articleSection: categoryInfo?.name,
+  url: `https://cursedtours.com/articles/${entry.slug}/`,
+}, breadcrumbs);
 
 // Estimate reading time from rendered content
 const wordCount = entry.body?.split(/\s+/).length || 0;
@@ -89,9 +61,8 @@ const readingTime = Math.ceil(wordCount / 250);
   description={entry.data.excerpt}
   canonical={`https://cursedtours.com/articles/${entry.slug}/`}
   ogImage={entry.data.coverImage}
+  schemas={schemas}
 >
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
 
   <!-- Hero -->
   <section class="relative py-12 md:py-20 overflow-hidden bg-[#0a0510]">
