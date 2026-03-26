@@ -19,7 +19,7 @@ export const CITY_TOURS: Record<string, FeaturedTour[]> = {
       reviews: 1250,
       duration: '1.5 hours',
       tier: 'hero',
-      viatorUrl: `https://www.viator.com/tours/Austin/Haunted-Austin-Ghost-Tour/d911-53526P1?${AFF}`,
+      viatorUrl: `https://www.viator.com/tours/Austin/Haunted-Austin-Ghost-Tour/d5021-53526P1?${AFF}`,
     },
     {
       productCode: '309417P1',
@@ -30,7 +30,7 @@ export const CITY_TOURS: Record<string, FeaturedTour[]> = {
       reviews: 380,
       duration: '1 hour',
       tier: 'budget',
-      viatorUrl: `https://www.viator.com/tours/Austin/Ghosts-of-Austin-Walking-Tour/d911-309417P1?${AFF}`,
+      viatorUrl: `https://www.viator.com/tours/Austin/Ghosts-of-Austin-Walking-Tour/d5021-309417P1?${AFF}`,
     },
     {
       productCode: '309417P3',
@@ -41,7 +41,7 @@ export const CITY_TOURS: Record<string, FeaturedTour[]> = {
       reviews: 220,
       duration: '2 hours',
       tier: 'premium',
-      viatorUrl: `https://www.viator.com/tours/Austin/Haunted-Pub-Crawl-Austin/d911-309417P3?${AFF}`,
+      viatorUrl: `https://www.viator.com/tours/Austin/Haunted-Pub-Crawl-Austin/d5021-309417P3?${AFF}`,
     },
   ],
   'new-orleans': [
