@@ -4,7 +4,7 @@ date: 2026-03-26
 excerpt: "The Boston Strangler murders of 1962-1964 left a mark on specific neighborhoods across eastern Massachusetts that persists in local memory today."
 category: "Boston Dark History"
 categorySlug: "boston-dark-history"
-coverImage: "/images/articles/boston-strangler-haunted-locations.webp"
+coverImage: "/images/articles/most-haunted-places-in-boston.webp"
 coverAlt: "Historic brownstone apartments in Boston's Beacon Hill neighborhood at dusk"
 author: "Cursed Tours"
 hub: "boston-dark-history"

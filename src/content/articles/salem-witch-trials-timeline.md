@@ -4,7 +4,7 @@ date: 2026-02-24
 excerpt: "Between February 1692 and May 1693, Salem descended into witchcraft accusations that resulted in 19 executions."
 category: "Salem Witch Trials"
 categorySlug: "salem-witch-trials"
-coverImage: "/images/articles/salem-witch-trials-timeline.webp"
+coverImage: "/images/banners/salem-witch-trials.webp"
 coverAlt: "Timeline of the Salem witch trials from 1692 showing key dates and executions"
 author: "Cursed Tours"
 hub: "salem-witch-trials"

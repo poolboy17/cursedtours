@@ -4,7 +4,7 @@ date: 2026-03-26
 excerpt: "Chicago's haunted hotels are some of the most actively reported paranormal sites in the Midwest, with documented histories stretching back to the 1890s."
 category: "Chicago Haunted History"
 categorySlug: "chicago-haunted-history"
-coverImage: "/images/articles/most-haunted-hotels-in-chicago.webp"
+coverImage: "/images/articles/most-haunted-places-in-chicago.webp"
 coverAlt: "The Congress Plaza Hotel facade at dusk with dramatic clouds overhead"
 author: "Cursed Tours"
 hub: "chicago-haunted-history"
